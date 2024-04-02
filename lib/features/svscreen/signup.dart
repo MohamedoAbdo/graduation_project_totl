@@ -15,8 +15,11 @@ class signup extends StatefulWidget {
 class _signupState extends State<signup> {
   final _forKey = GlobalKey<FormState>();
   bool ispassword = true;
+  bool ispassword2 = true;
+
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
+  TextEditingController passwordcontroller2 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -206,7 +209,7 @@ class _signupState extends State<signup> {
                     top: 16, right: 16, left: 16, bottom: 0),
                 child: TextFormField(
                   keyboardType: TextInputType.visiblePassword,
-                  controller: passwordcontroller,
+                  controller: passwordcontroller2,
                   obscureText: ispassword,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (value) {

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tourism_app/features/svscreen/ar.dart';
+import 'package:tourism_app/features/svscreen/en.dart';
+import 'package:tourism_app/features/svscreen/fa.dart';
 
 import 'package:tourism_app/features/svscreen/profile.dart';
 
@@ -121,8 +124,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                               onTap: () async {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ChangeLanguage()),
+                                  MaterialPageRoute(builder: (context) => en()),
                                 );
 
                                 ;
@@ -177,8 +179,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                               onTap: () async {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ChangeLanguage()),
+                                  MaterialPageRoute(builder: (context) => ar()),
                                 );
 
                                 ;
@@ -232,8 +233,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                               onTap: () async {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ChangeLanguage()),
+                                  MaterialPageRoute(builder: (context) => fa()),
                                 );
 
                                 ;
