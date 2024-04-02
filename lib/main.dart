@@ -1,35 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tourism_app/features/home/meto/scan_design.dart';
-import 'package:tourism_app/features/home/presentation/quick_servay/quick_survey%201.dart';
-import 'package:tourism_app/features/home/presentation/quick_servay/quick_survey%202.dart';
-import 'package:tourism_app/features/svscreen/ChangeLanguage.dart';
-import 'package:tourism_app/features/svscreen/Coastaltourism.dart';
-import 'package:tourism_app/features/svscreen/Giza.dart';
-import 'package:tourism_app/features/svscreen/PharaonicVillage.dart';
-import 'package:tourism_app/features/svscreen/Restaurants.dart';
-import 'package:tourism_app/features/svscreen/TourismType.dart';
-import 'package:tourism_app/features/svscreen/aboutus.dart';
-import 'package:tourism_app/features/svscreen/bage1.dart';
-import 'package:tourism_app/features/svscreen/edetprofile.dart';
-import 'package:tourism_app/features/svscreen/profile.dart';
-import 'package:tourism_app/features/svscreen/signin.dart';
-import 'package:tourism_app/features/svscreen/signup.dart';
-import 'package:tourism_app/features/svscreen/streo.dart';
-import 'package:tourism_app/features/svscreen/verification.dart';
 import 'package:tourism_app/splash/splash.dart';
-
-import 'features/home/meto/scan_action.dart';
-import 'features/home/notivigation/notifigation.dart';
-import 'features/home/presentation/favourite/favourite.dart';
-import 'features/home/presentation/home_view.dart';
-import 'features/home/presentation/password_view/create_new_pass.dart';
-import 'features/home/presentation/password_view/forget_pass.dart';
-import 'features/home/presentation/scan_result/scan_result.dart';
-import 'features/home/presentation/tourism_info.dart';
-import 'features/home/presentation/transport/transport.dart';
-import 'features/home/presentation/trip_info/trip_info.dart';
-import 'features/search/search.dart';
-
 void main() {
   runApp(const MyApp());
 }
