@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tourism_app/features/svscreen/ar.dart';
 import 'package:tourism_app/features/svscreen/bage2.dart';
+import 'package:tourism_app/features/svscreen/en.dart';
+import 'package:tourism_app/features/svscreen/fa.dart';
 
 class bage1 extends StatefulWidget {
   @override
@@ -88,7 +91,7 @@ class _bage1State extends State<bage1> {
                           onTap: () async {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => bage2()),
+                              MaterialPageRoute(builder: (context) => en()),
                             );
 
                             ;
@@ -138,7 +141,7 @@ class _bage1State extends State<bage1> {
                           onTap: () async {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => bage2()),
+                              MaterialPageRoute(builder: (context) => ar()),
                             );
 
                             ;
@@ -190,7 +193,7 @@ class _bage1State extends State<bage1> {
                           onTap: () async {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => bage2()),
+                              MaterialPageRoute(builder: (context) => fa()),
                             );
 
                             ;
