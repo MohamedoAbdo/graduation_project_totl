@@ -53,7 +53,7 @@ class _signinState extends State<signin> {
                   ],
                 ),
                 SizedBox(
-                  height: 52,
+                  height: MediaQuery.of(context).size.height * .052,
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * .5,
@@ -89,7 +89,7 @@ class _signinState extends State<signin> {
                           fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w500,
-                          height: 0.09,
+                          height: MediaQuery.of(context).size.height * .00009,
                         ),
                       ),
                       // border: OutlineInputBorder()
@@ -119,7 +119,7 @@ class _signinState extends State<signin> {
                           fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w500,
-                          height: 0.09,
+                          height: MediaQuery.of(context).size.height * .0009,
                         ),
                       ),
                       prefixIcon: Icon(
@@ -169,7 +169,7 @@ class _signinState extends State<signin> {
                           fontSize: 12,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w500,
-                          height: 2,
+                          height: MediaQuery.of(context).size.height * .002,
                         ),
                         textAlign: TextAlign.right,
                       ),

@@ -23,7 +23,8 @@ class _bage6State extends State<bage6> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 30),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * .03),
                 child: Row(
                   children: [
                     InkWell(
@@ -56,22 +57,22 @@ class _bage6State extends State<bage6> {
                         fontSize: 24,
                         fontFamily: 'inter',
                         fontWeight: FontWeight.w500,
-                        height: 2,
+                        height: MediaQuery.of(context).size.height * .002,
                       ),
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: MediaQuery.of(context).size.height * .04,
               ),
               Image.asset(
                 'assets/image/photo_35.png',
-                width: 355,
-                height: 12,
+                width: MediaQuery.of(context).size.width * .955,
+                height: MediaQuery.of(context).size.height * .012,
               ),
               SizedBox(
-                height: 40,
+                height: MediaQuery.of(context).size.height * .04,
               ),
               //
               Row(
@@ -82,14 +83,14 @@ class _bage6State extends State<bage6> {
                       color: Color(0xff6C3428),
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
-                      height: 1.7,
+                      height: MediaQuery.of(context).size.height * .0017,
                     ),
                   ),
                 ],
               ),
               //
               SizedBox(
-                height: 32,
+                height: MediaQuery.of(context).size.height * .032,
               ),
               Container(
                 child: Column(
@@ -110,7 +111,8 @@ class _bage6State extends State<bage6> {
                               color: Color(0xff6C3428),
                               fontSize: 24,
                               fontWeight: FontWeight.w500,
-                              height: 1.7,
+                              height:
+                                  MediaQuery.of(context).size.height * .0017,
                             ),
                           ),
                         ],
@@ -118,7 +120,7 @@ class _bage6State extends State<bage6> {
                     ),
                     //
                     SizedBox(
-                      height: 10,
+                      height: MediaQuery.of(context).size.height * .01,
                     ),
 
                     InkWell(
@@ -136,7 +138,8 @@ class _bage6State extends State<bage6> {
                               color: Color(0xff6C3428),
                               fontSize: 24,
                               fontWeight: FontWeight.w500,
-                              height: 1.7,
+                              height:
+                                  MediaQuery.of(context).size.height * .0017,
                             ),
                           ),
                         ],
@@ -144,14 +147,14 @@ class _bage6State extends State<bage6> {
                     ),
                   ],
                 ),
-                width: 396,
-                height: 150,
+                width: MediaQuery.of(context).size.width * .955,
+                height: MediaQuery.of(context).size.height * .150,
                 padding: const EdgeInsets.all(20),
                 decoration: ShapeDecoration(
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
                     side: BorderSide(
-                      width: 2,
+                      width: MediaQuery.of(context).size.width * .002,
                       strokeAlign: BorderSide.strokeAlignCenter,
                       color: Color(0xFFE4D1B9),
                     ),
@@ -160,7 +163,7 @@ class _bage6State extends State<bage6> {
                 ),
               ),
               SizedBox(
-                height: 24,
+                height: MediaQuery.of(context).size.height * .024,
               ),
               //
             ],

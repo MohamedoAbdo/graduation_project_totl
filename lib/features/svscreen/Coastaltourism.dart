@@ -31,7 +31,8 @@ class _CoastaltourismState extends State<Coastaltourism> {
                         width: MediaQuery.of(context).size.width * 1.0,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 50),
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * 0.05),
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
@@ -59,7 +60,8 @@ class _CoastaltourismState extends State<Coastaltourism> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 215),
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * .215),
                         child: Row(
                           children: [
                             Row(

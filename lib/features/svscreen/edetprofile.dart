@@ -24,7 +24,8 @@ class _edetprofileState extends State<edetprofile> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 30),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * .030),
                 child: Row(
                   children: [
                     InkWell(
@@ -59,7 +60,7 @@ class _edetprofileState extends State<edetprofile> {
                         fontSize: 24,
                         fontFamily: 'intr',
                         fontWeight: FontWeight.w500,
-                        height: 2,
+                        height: MediaQuery.of(context).size.height * .002,
                       ),
                     ),
                   ],
@@ -73,7 +74,7 @@ class _edetprofileState extends State<edetprofile> {
                 radius: 50.0,
                 backgroundImage: AssetImage('assets/image/Ellipse 93.png'),
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: MediaQuery.of(context).size.height * .016),
               const Text(
                 'Gamila_hesham',
                 style: TextStyle(
@@ -135,7 +136,7 @@ class _edetprofileState extends State<edetprofile> {
                         fontSize: 16,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
-                        height: 0.09,
+                        height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
 
@@ -167,7 +168,7 @@ class _edetprofileState extends State<edetprofile> {
                         fontSize: 16,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
-                        height: 0.09,
+                        height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
                     prefixIcon: Icon(
@@ -201,7 +202,7 @@ class _edetprofileState extends State<edetprofile> {
                         fontSize: 16,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
-                        height: 0.09,
+                        height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
                     prefixIcon: Icon(

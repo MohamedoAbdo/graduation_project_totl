@@ -36,7 +36,8 @@ class _GizaState extends State<Giza> {
                         width: MediaQuery.of(context).size.width * 1.0,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 50),
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * 0.05),
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
@@ -130,12 +131,14 @@ class _GizaState extends State<Giza> {
                               color: Color(0xFF6C3428),
                               fontSize: 24,
                               fontWeight: FontWeight.w500,
-                              height: 1.5,
+                              height:
+                                  MediaQuery.of(context).size.height * .0015,
                             ),
                           ),
                         ),
 
-                        SizedBox(height: 32),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * .032),
                         Row(
                           children: [
                             Row(

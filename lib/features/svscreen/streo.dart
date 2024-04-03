@@ -80,7 +80,8 @@ class _streoState extends State<streo> {
                   children: [
                     Column(
                       children: [
-                        SizedBox(height: 30),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * .030),
 
                         Row(
                           children: [
@@ -242,7 +243,9 @@ class _streoState extends State<streo> {
                                         color: Color(0xFF6C3428),
                                         fontSize: 16,
                                         fontWeight: FontWeight.w500,
-                                        height: 1.5,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                .0015,
                                       ))
                                 ],
                               ),
@@ -271,7 +274,9 @@ class _streoState extends State<streo> {
                                         color: Color(0xFF6C3428),
                                         fontSize: 16,
                                         fontWeight: FontWeight.w500,
-                                        height: 1.5,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                .0015,
                                       ))
                                 ],
                               ),
@@ -300,7 +305,9 @@ class _streoState extends State<streo> {
                                         color: Color(0xFF6C3428),
                                         fontSize: 16,
                                         fontWeight: FontWeight.w500,
-                                        height: 1.5,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                .0015,
                                       ))
                                 ],
                               ),

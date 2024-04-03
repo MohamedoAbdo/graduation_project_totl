@@ -109,7 +109,9 @@ class _bage1State extends State<bage1> {
                                         fontSize: 16,
                                         fontFamily: 'intr',
                                         fontWeight: FontWeight.w500,
-                                        height: 2,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                .002,
                                       ),
                                       textAlign: TextAlign.right,
                                     ),
@@ -125,7 +127,8 @@ class _bage1State extends State<bage1> {
                               color: Colors.white,
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
-                                  width: 2,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.002,
                                   strokeAlign: BorderSide.strokeAlignCenter,
                                   color: Color(0xFFE4D1B9),
                                 ),
@@ -159,7 +162,9 @@ class _bage1State extends State<bage1> {
                                         fontSize: 16,
                                         fontFamily: 'intr',
                                         fontWeight: FontWeight.w500,
-                                        height: 2,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                .002,
                                       ),
                                       textAlign: TextAlign.right,
                                     ),
@@ -175,7 +180,8 @@ class _bage1State extends State<bage1> {
                               color: Colors.white,
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
-                                  width: 2,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.002,
                                   strokeAlign: BorderSide.strokeAlignCenter,
                                   color: Color(0xFFE4D1B9),
                                 ),
@@ -211,7 +217,9 @@ class _bage1State extends State<bage1> {
                                         fontSize: 16,
                                         fontFamily: 'intr',
                                         fontWeight: FontWeight.w500,
-                                        height: 2,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                .002,
                                       ),
                                       textAlign: TextAlign.right,
                                     ),
@@ -227,7 +235,8 @@ class _bage1State extends State<bage1> {
                               color: Colors.white,
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
-                                  width: 2,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.002,
                                   strokeAlign: BorderSide.strokeAlignCenter,
                                   color: Color(0xFFE4D1B9),
                                 ),

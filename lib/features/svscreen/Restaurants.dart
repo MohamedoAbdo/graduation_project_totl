@@ -33,12 +33,12 @@ class _RestaurantsState extends State<Restaurants> {
         ),
         child: Text(
           label,
-          style: const TextStyle(
+          style: TextStyle(
             color: Color(0xFFBE8C63),
             fontSize: 24,
             fontFamily: 'Poppins',
             fontWeight: FontWeight.w500,
-            height: 1,
+            height: MediaQuery.of(context).size.height * .001,
           ),
         ),
       ),
@@ -73,7 +73,7 @@ class _RestaurantsState extends State<Restaurants> {
                 color: const Color(0xFFF3F3F3),
                 shape: RoundedRectangleBorder(
                   side: BorderSide(
-                    width: 2,
+                    width: MediaQuery.of(context).size.height * .002,
                     strokeAlign: BorderSide.strokeAlignCenter,
                     color: Color(0xFFE4D1B9),
                   ),
@@ -107,7 +107,7 @@ class _RestaurantsState extends State<Restaurants> {
                     color: Color(0xff6C3428),
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
-                    height: 1.7,
+                    height: MediaQuery.of(context).size.height * .0017,
                   ),
                 ),
               ],

@@ -13,7 +13,8 @@ class aboutus extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 30),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.03),
                 child: Row(
                   children: [
                     InkWell(

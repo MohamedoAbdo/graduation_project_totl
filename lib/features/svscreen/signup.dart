@@ -75,7 +75,7 @@ class _signupState extends State<signup> {
                         fontSize: 17,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w700,
-                        height: 0.09,
+                        height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
 
@@ -109,7 +109,7 @@ class _signupState extends State<signup> {
                         fontSize: 17,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w700,
-                        height: 0.09,
+                        height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
 
@@ -141,7 +141,7 @@ class _signupState extends State<signup> {
                         fontSize: 17,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w700,
-                        height: 0.09,
+                        height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
                     prefixIcon: Icon(
@@ -175,7 +175,7 @@ class _signupState extends State<signup> {
                         fontSize: 17,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w700,
-                        height: 0.09,
+                        height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
                     prefixIcon: Icon(
@@ -225,7 +225,7 @@ class _signupState extends State<signup> {
                         fontSize: 17,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w700,
-                        height: 0.09,
+                        height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
                     prefixIcon: Icon(
@@ -295,7 +295,7 @@ class _signupState extends State<signup> {
                       fontSize: 12,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
-                      height: 1.60,
+                      height: MediaQuery.of(context).size.height * .0016,
                     ),
                   ),
                   InkWell(
@@ -312,7 +312,7 @@ class _signupState extends State<signup> {
                         fontSize: 12,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
-                        height: 1.50,
+                        height: MediaQuery.of(context).size.height * .0015,
                       ),
                     ),
                   ),

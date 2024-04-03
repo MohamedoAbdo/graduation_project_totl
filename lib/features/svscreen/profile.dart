@@ -25,7 +25,8 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 30),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * .030),
                 child: Row(
                   children: [
                     InkWell(
@@ -83,7 +84,7 @@ class ProfileScreen extends StatelessWidget {
                   color: Color(0xff6C3428),
                 ),
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: MediaQuery.of(context).size.height * .016),
               InkWell(
                 onTap: () async {
                   Navigator.push(
@@ -183,7 +184,7 @@ class ProfileScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.height * .380,
                 height: MediaQuery.of(context).size.height * .003,
               ),
-              SizedBox(height: 10),
+              SizedBox(height: MediaQuery.of(context).size.height * .010),
               //
               MaterialButton(
                 onPressed: () {

@@ -143,7 +143,10 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                             fontSize: 16,
                                             fontFamily: 'intr',
                                             fontWeight: FontWeight.w500,
-                                            height: 2,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                .002,
                                           ),
                                           textAlign: TextAlign.right,
                                         ),
@@ -160,7 +163,8 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
                                     side: BorderSide(
-                                      width: 2,
+                                      width: MediaQuery.of(context).size.width *
+                                          .002,
                                       strokeAlign: BorderSide.strokeAlignCenter,
                                       color: Color(0xFFE4D1B9),
                                     ),
@@ -198,7 +202,10 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                             fontSize: 16,
                                             fontFamily: 'intr',
                                             fontWeight: FontWeight.w500,
-                                            height: 2,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                .002,
                                           ),
                                           textAlign: TextAlign.right,
                                         ),
@@ -215,7 +222,8 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
                                     side: BorderSide(
-                                      width: 2,
+                                      width: MediaQuery.of(context).size.width *
+                                          .002,
                                       strokeAlign: BorderSide.strokeAlignCenter,
                                       color: Color(0xFFE4D1B9),
                                     ),
@@ -252,7 +260,10 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                             fontSize: 16,
                                             fontFamily: 'intr',
                                             fontWeight: FontWeight.w500,
-                                            height: 2,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                .002,
                                           ),
                                           textAlign: TextAlign.right,
                                         ),
@@ -269,7 +280,8 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
                                     side: BorderSide(
-                                      width: 2,
+                                      width: MediaQuery.of(context).size.width *
+                                          .002,
                                       strokeAlign: BorderSide.strokeAlignCenter,
                                       color: Color(0xFFE4D1B9),
                                     ),

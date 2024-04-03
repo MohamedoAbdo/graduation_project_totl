@@ -32,7 +32,8 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                       ),
                       //
                       Padding(
-                        padding: const EdgeInsets.only(top: 30),
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * 0.05),
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
@@ -60,7 +61,8 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                       ),
                       //
                       Padding(
-                        padding: EdgeInsets.only(top: 245),
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * 0.245),
                         child: Row(
                           children: [
                             Row(
@@ -71,7 +73,8 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                                     color: Color(0xFFE4D1B9),
                                     fontSize: 24,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.8,
+                                    height: MediaQuery.of(context).size.height *
+                                        .0018,
                                   ),
                                 ),
                               ],
