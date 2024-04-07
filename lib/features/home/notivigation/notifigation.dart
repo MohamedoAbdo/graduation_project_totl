@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Notifica extends StatelessWidget {
   Notifica({super.key});
@@ -9,17 +10,17 @@ class Notifica extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(
-              top: 50,
-              left: 12,
-              bottom: 20,
+            padding:  EdgeInsets.only(
+              top: 50.h,
+              left: 12.w,
+              bottom: 20.h,
             ),
             child: Container(
               child: Row(
                 children: [
                   Icon(
                     Icons.arrow_back_ios_new,
-                    size: 24,
+                    size: 24.w,
                     color: Color(0xff6C3428),
                   ),
                   SizedBox(
@@ -29,7 +30,7 @@ class Notifica extends StatelessWidget {
                     'Notification',
                     style: TextStyle(
                       color: Color(0xff6C3428),
-                      fontSize: 24,
+                      fontSize: 24.sp,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                     ),

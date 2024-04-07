@@ -1,6 +1,4 @@
-import 'dart:html';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tourism_app/features/svscreen/bage6.dart';
 import 'package:tourism_app/features/svscreen/signin.dart';

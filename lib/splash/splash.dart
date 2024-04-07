@@ -30,14 +30,9 @@ class _SplashState extends State<Splash> {
 
   void navigateToHome() {
     Future.delayed(
-      const Duration(seconds: 2),
+       Duration(seconds: 2),
       () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => bage1(),
-          ),
-        );
+        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => bage1(),),(route) =>false, );
       },
     );
   }
