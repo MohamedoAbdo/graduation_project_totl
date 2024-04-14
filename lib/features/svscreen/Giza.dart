@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
-import 'package:tourism_app/features/svscreen/Coastaltourism.dart';
 import 'package:tourism_app/features/svscreen/PharaonicVillage.dart';
 
 class Giza extends StatefulWidget {
@@ -15,6 +15,10 @@ class _GizaState extends State<Giza> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 32;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 24;
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -30,10 +34,10 @@ class _GizaState extends State<Giza> {
                 child: Column(
                   children: [
                     Stack(children: [
-                      Image.asset(
-                        'assets/image/Rectangle 333.png',
-                        height: MediaQuery.of(context).size.height * .365,
-                        width: MediaQuery.of(context).size.width * 1.0,
+                      Container(
+                        child: Image.asset(
+                          'assets/image/Rectangle 332.png',
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(
@@ -41,10 +45,9 @@ class _GizaState extends State<Giza> {
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Home_Screen()),
-                            );
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Home_Screen()));
                           },
                           child: Row(
                             children: [
@@ -92,7 +95,7 @@ class _GizaState extends State<Giza> {
                             textAlign: TextAlign.left,
                             style: TextStyle(
                               color: Color(0xFF6C3428),
-                              fontSize: 24,
+                              fontSize: fontSize24,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -106,13 +109,17 @@ class _GizaState extends State<Giza> {
                           width: MediaQuery.of(context).size.width * 1.0,
                           color: Colors.white,
                           child: Center(
-                            child: Text(
-                              '   Lorem ipsum dolor sit amet, consectetur\n   Adipiscing elit, sed do eiusmod tempor incididunt\n   Ut labore et dolore magna aliqua. Ut enim ad\n   Minim veniam.\n   Lorem ipsum dolor sit amet, consectetur\n   Adipiscing elit, sed do eiusmod tempor incididunt\n   Ut labore et dolore magna aliqua. Ut enim ad\n   Minim veniam.Lorem ipsum dolor sit amet,\n   Consectetur adipiscing elit, sed do eiusmod\n   Tempor incididunt ut labore et dolore magna\n   Aliqua. Ut enim ad minim veniam.\n   Lorem ipsum dolor sit amet, consectetur\n   Adipiscing elit, sed do eiusmod tempor incididunt\n   Ut labore et dolore magna aliqua. Ut enim ad\n   Minim veniam .Ut enim ad minim veniam.Lorem\n   Ipsum dolor sit amet, consectetur adipiscing elit .   ',
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                color: Color(0xFFBE8C63),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 16, right: 16, left: 16, bottom: 16),
+                              child: Text(
+                                'Lorem ipsum dolor sit amet, consectetur\nAdipiscing elit, sed do eiusmod tempor incididunt\nUt labore et dolore magna aliqua. Ut enim ad\nMinim veniam.\nLorem ipsum dolor sit amet, consectetur\nAdipiscing elit, sed do eiusmod tempor incididunt\nUt labore et dolore magna aliqua. Ut enim ad\nMinim veniam.Lorem ipsum dolor sit amet,\nConsectetur adipiscing elit, sed do eiusmod\nTempor incididunt ut labore et dolore magna\nAliqua. Ut enim ad minim veniam.\nLorem ipsum dolor sit amet, consectetur\nAdipiscing elit, sed do eiusmod tempor incididunt\nUt labore et dolore magna aliqua. Ut enim ad\nMinim veniam .Ut enim ad minim veniam.Lorem\nIpsum dolor sit amet, consectetur adipiscing elit .   ',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  color: Color(0xFFBE8C63),
+                                  fontSize: fontSize16,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
@@ -129,7 +136,7 @@ class _GizaState extends State<Giza> {
                             textAlign: TextAlign.left,
                             style: TextStyle(
                               color: Color(0xFF6C3428),
-                              fontSize: 24,
+                              fontSize: fontSize24,
                               fontWeight: FontWeight.w500,
                               height:
                                   MediaQuery.of(context).size.height * .0015,
@@ -146,7 +153,7 @@ class _GizaState extends State<Giza> {
                                 Row(
                                   children: [
                                     Text(
-                                      "   ",
+                                      "  ",
                                     )
                                   ],
                                 ),
@@ -235,7 +242,7 @@ class _GizaState extends State<Giza> {
                                 Row(
                                   children: [
                                     Text(
-                                      "   ",
+                                      "  ",
                                     )
                                   ],
                                 ),
@@ -313,6 +320,7 @@ class _GizaState extends State<Giza> {
                           ],
                         ),
                         SizedBox(
+                          width: MediaQuery.of(context).size.width * 1,
                           height: MediaQuery.of(context).size.height * .02,
                         ),
                       ],

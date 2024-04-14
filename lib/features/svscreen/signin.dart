@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:tourism_app/features/home/presentation/password_view/forget_pass.dart';
 import 'package:tourism_app/features/svscreen/bage6.dart';
 import 'package:tourism_app/features/svscreen/signup.dart';
@@ -20,6 +21,10 @@ class _signinState extends State<signin> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -36,7 +41,7 @@ class _signinState extends State<signin> {
                       children: [
                         Container(
                           width: MediaQuery.of(context).size.width * 1.0,
-                          height: MediaQuery.of(context).size.height * .1,
+                          height: MediaQuery.of(context).size.height * .15,
                           child: Text(
                             '  Log Into \n  Your Account..',
                             style: TextStyle(
@@ -53,17 +58,16 @@ class _signinState extends State<signin> {
                   ],
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .052,
+                  height: MediaQuery.of(context).size.height * .040,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width * .5,
                   height: MediaQuery.of(context).size.height * .15,
                   child: Image.asset("assets/image/bro.png"),
 
                   //_LoginscreenState
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .052,
+                  height: MediaQuery.of(context).size.height * .030,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
@@ -216,16 +220,18 @@ class _signinState extends State<signin> {
                   height: MediaQuery.of(context).size.height * .03,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("     "),
                     Image.asset(
                       "assets/image/Line 2.png",
-                      width: MediaQuery.of(context).size.width * 0.30,
+                      width: MediaQuery.of(context).size.width * 0.25,
                       height: MediaQuery.of(context).size.height * .009,
                     ),
                     Row(
                       children: [
-                        Text("      Login With       ",
+                        Text(" Login With  ",
+                            textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Color(0xFFBE8C63),
                               fontSize: 16,
@@ -236,26 +242,24 @@ class _signinState extends State<signin> {
                     ),
                     Image.asset(
                       "assets/image/Line 2.png",
-                      width: MediaQuery.of(context).size.width * 0.30,
+                      width: MediaQuery.of(context).size.width * 0.25,
                       height: MediaQuery.of(context).size.height * .009,
                     )
                   ],
                 ),
+
                 SizedBox(
                   height: MediaQuery.of(context).size.height * .01,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(
-                      children: [
-                        Text(
-                          "                                               ",
-                        )
-                      ],
+                      children: [],
                     ),
                     Image.asset(
                       "assets/image/Group 3.png",
-                      width: MediaQuery.of(context).size.width * 0.07,
+                      width: MediaQuery.of(context).size.width * 0.150,
                       height: MediaQuery.of(context).size.height * .065,
                     ),
                     Image.asset(

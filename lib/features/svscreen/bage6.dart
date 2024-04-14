@@ -17,6 +17,10 @@ class _bage6State extends State<bage6> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
       body: Form(
         child: SingleChildScrollView(
@@ -24,7 +28,7 @@ class _bage6State extends State<bage6> {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * .03),
+                    top: MediaQuery.of(context).size.height * .07),
                 child: Row(
                   children: [
                     InkWell(
@@ -68,8 +72,7 @@ class _bage6State extends State<bage6> {
               ),
               Image.asset(
                 'assets/image/photo_35.png',
-                width: MediaQuery.of(context).size.width * .955,
-                height: MediaQuery.of(context).size.height * .012,
+                width: MediaQuery.of(context).size.height * .380,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * .04,
@@ -149,7 +152,7 @@ class _bage6State extends State<bage6> {
                 ),
                 width: MediaQuery.of(context).size.width * .955,
                 height: MediaQuery.of(context).size.height * .150,
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(15),
                 decoration: ShapeDecoration(
                   color: Colors.white,
                   shape: RoundedRectangleBorder(

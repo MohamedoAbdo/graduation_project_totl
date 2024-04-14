@@ -40,6 +40,10 @@ class _verificationState extends State<verification> {
   //
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -100,6 +104,7 @@ class _verificationState extends State<verification> {
                         height: MediaQuery.of(context).size.height * .06,
                         width: MediaQuery.of(context).size.height * .05,
                         child: TextField(
+                          autofocus: true,
                           onChanged: (value) {
                             if (value.length == 1) {
                               FocusScope.of(context).nextFocus();
@@ -118,7 +123,6 @@ class _verificationState extends State<verification> {
                         height: MediaQuery.of(context).size.height * .06,
                         width: MediaQuery.of(context).size.height * .05,
                         child: TextField(
-                          autofocus: true,
                           onChanged: (value) {
                             if (value.length == 1) {
                               FocusScope.of(context).nextFocus();
@@ -192,19 +196,28 @@ class _verificationState extends State<verification> {
                       fontWeight: FontWeight.w500,
                       height: MediaQuery.of(context).size.height * .0015,
                     ),
+                    textAlign: TextAlign.left,
                   ),
-                  Text(
-                      "                                                                        "),
-                  Text(
-                    '$counter',
-                    style: TextStyle(
-                      color: Color(0xFFBE8C63),
-                      fontSize: 16,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w500,
-                      height: MediaQuery.of(context).size.height * .0016,
-                    ),
-                  ),
+                ],
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        '$counter    ',
+                        style: TextStyle(
+                          color: Color(0xFFBE8C63),
+                          fontSize: 16,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                          height: MediaQuery.of(context).size.height * .0016,
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
               //
@@ -280,50 +293,5 @@ class _verificationState extends State<verification> {
     c4.dispose();
     _timer.cancel();
     super.dispose();
-  }
-}
-
-class TextFieldOTP extends StatelessWidget {
-  bool first;
-  bool last;
-  TextEditingController controller;
-
-  TextFieldOTP({
-    required this.first,
-    required this.last,
-    required this.controller,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          border: Border.all(
-            width: 3.5,
-            color: Color(0xFFE4D1B9),
-          ),
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.white),
-      child: TextField(
-        onChanged: ((value) {
-          if (value.isNotEmpty && last == false) {
-            FocusScope.of(context).nextFocus();
-          } else if (value.isEmpty && first == false) {
-            FocusScope.of(context).previousFocus();
-          }
-        }),
-        keyboardType: TextInputType.number,
-        inputFormatters: [LengthLimitingTextInputFormatter(1)],
-        textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 30),
-        decoration: InputDecoration(
-            border: InputBorder.none,
-            constraints: BoxConstraints(
-              maxHeight: MediaQuery.sizeOf(context).width / 6,
-              maxWidth: MediaQuery.sizeOf(context).width / 7,
-            )),
-      ),
-    );
   }
 }

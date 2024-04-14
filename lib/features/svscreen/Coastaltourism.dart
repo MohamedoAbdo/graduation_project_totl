@@ -15,6 +15,10 @@ class _CoastaltourismState extends State<Coastaltourism> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
       body: Form(
         key: _formKey,
@@ -26,13 +30,11 @@ class _CoastaltourismState extends State<Coastaltourism> {
                   children: [
                     Stack(children: [
                       Image.asset(
-                        'assets/image/photo_33.jpg',
-                        height: MediaQuery.of(context).size.height * .30,
-                        width: MediaQuery.of(context).size.width * 1.0,
+                        'assets/image/00.png',
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * 0.05),
+                            top: MediaQuery.of(context).size.height * 0.07),
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
@@ -53,33 +55,12 @@ class _CoastaltourismState extends State<Coastaltourism> {
                               Icon(
                                 Icons.arrow_back_ios,
                                 color: Color(0xFF6C3428),
-                                size: 30,
+                                size: 23,
                               ),
                             ],
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * .215),
-                        child: Row(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  '   Coastal tourism    ',
-                                  style: TextStyle(
-                                    color: Color(0xFFE4D1B9),
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        //
-                      )
                     ])
                   ],
                 ),
@@ -90,12 +71,16 @@ class _CoastaltourismState extends State<Coastaltourism> {
                 width: MediaQuery.of(context).size.width * 1.0,
                 color: Colors.white,
                 child: Center(
-                  child: Text(
-                    'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam.\n Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam.Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna\naliqua. Ut enim ad minim veniam.\nLorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam .Ut enim ad minim veniam.Lorem\nipsum dolor sit amet, consectetur adipiscing elit .   ',
-                    style: TextStyle(
-                      color: Color(0xFFBE8C63),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        top: 10, right: 16, left: 16, bottom: 0),
+                    child: Text(
+                      'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam.\n Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam.Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna\naliqua. Ut enim ad minim veniam.\nLorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam .Ut enim ad minim veniam.Lorem\nipsum dolor sit amet, consectetur adipiscing elit .   ',
+                      style: TextStyle(
+                        color: Color(0xFFBE8C63),
+                        fontSize: fontSize16,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ),
@@ -269,6 +254,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                 ],
               ),
               SizedBox(
+                width: MediaQuery.of(context).size.width * 1,
                 height: MediaQuery.of(context).size.height * .02,
               ),
             ],

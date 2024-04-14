@@ -15,13 +15,18 @@ class ChangeLanguage extends StatefulWidget {
 class _ChangeLanguageState extends State<ChangeLanguage> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
       body: Container(
         child: SingleChildScrollView(
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 30),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * .03),
                 child: Row(
                   children: [
                     InkWell(
@@ -53,7 +58,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                       'Change Language    ',
                       style: TextStyle(
                         color: Color(0xff6C3428),
-                        fontSize: 32,
+                        fontSize: fontSize32,
                         fontFamily: 'intr',
                         fontWeight: FontWeight.w500,
                       ),
@@ -91,7 +96,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                   "  Change Language ",
                                   style: TextStyle(
                                     color: Color(0xff6C3428),
-                                    fontSize: 32,
+                                    fontSize: fontSize32,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -110,7 +115,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                   "  choose your preferred language to\n           continue your adventure. ",
                                   style: TextStyle(
                                     color: Color(0xFFBE8C63),
-                                    fontSize: 16,
+                                    fontSize: fontSize16,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
@@ -140,7 +145,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                           "English",
                                           style: TextStyle(
                                             color: Color(0xFFBE8C63),
-                                            fontSize: 16,
+                                            fontSize: fontSize16,
                                             fontFamily: 'intr',
                                             fontWeight: FontWeight.w500,
                                             height: MediaQuery.of(context)
@@ -158,7 +163,8 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                 width: MediaQuery.of(context).size.width * .93,
                                 height:
                                     MediaQuery.of(context).size.height * .055,
-                                padding: const EdgeInsets.all(7),
+                                padding: EdgeInsets.all(
+                                    MediaQuery.of(context).size.height * .004),
                                 decoration: ShapeDecoration(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
@@ -199,7 +205,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                           "العربيه",
                                           style: TextStyle(
                                             color: Color(0xFFBE8C63),
-                                            fontSize: 16,
+                                            fontSize: fontSize16,
                                             fontFamily: 'intr',
                                             fontWeight: FontWeight.w500,
                                             height: MediaQuery.of(context)
@@ -217,7 +223,8 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                 width: MediaQuery.of(context).size.width * 0.92,
                                 height:
                                     MediaQuery.of(context).size.height * .055,
-                                padding: const EdgeInsets.all(7),
+                                padding: EdgeInsets.all(
+                                    MediaQuery.of(context).size.height * .004),
                                 decoration: ShapeDecoration(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
@@ -257,7 +264,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                           "French",
                                           style: TextStyle(
                                             color: Color(0xFFBE8C63),
-                                            fontSize: 16,
+                                            fontSize: fontSize16,
                                             fontFamily: 'intr',
                                             fontWeight: FontWeight.w500,
                                             height: MediaQuery.of(context)
@@ -275,7 +282,8 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                 width: MediaQuery.of(context).size.width * 0.92,
                                 height:
                                     MediaQuery.of(context).size.height * .055,
-                                padding: const EdgeInsets.all(7),
+                                padding: EdgeInsets.all(
+                                    MediaQuery.of(context).size.height * .004),
                                 decoration: ShapeDecoration(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(

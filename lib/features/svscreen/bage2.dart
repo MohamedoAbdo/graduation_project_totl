@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:sizer/sizer.dart';
 import 'package:tourism_app/features/svscreen/bage3.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class bage2 extends StatefulWidget {
   const bage2({super.key});
@@ -13,6 +15,10 @@ class bage2 extends StatefulWidget {
 class _bage2State extends State<bage2> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 32;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 14;
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -30,10 +36,10 @@ class _bage2State extends State<bage2> {
             Row(
               children: [
                 Text(
-                  '    Lorem Ipsum Dolor    ',
+                  S.of(context).title,
                   style: TextStyle(
                     color: Color(0xFFE4D1B9),
-                    fontSize: 24,
+                    fontSize: fontSize24,
                     fontFamily: 'inter',
                     fontWeight: FontWeight.w600,
                     height: MediaQuery.of(context).size.height * .002,
@@ -44,13 +50,17 @@ class _bage2State extends State<bage2> {
             SizedBox(
               height: MediaQuery.of(context).size.height * .02,
             ),
-            Text(
-              'Lorem Ipsum Dolor Sit Amet, Consectetur \nAdipiscing Elit, Sed Do Eiusmod Tempor Incididunt \nUt Labore Et Dolore Magna Aliqua. Ut Enim Ad \nMinim Veniam     ',
-              style: TextStyle(
-                color: Color(0xFFE4D1B9),
-                fontSize: 16,
-                fontFamily: 'inter',
-                fontWeight: FontWeight.w500,
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 10, right: 16, left: 16, bottom: 0),
+              child: Text(
+                S.of(context).text,
+                style: TextStyle(
+                  color: Color(0xFFE4D1B9),
+                  fontSize: fontSize16,
+                  fontFamily: 'inter',
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
             SizedBox(
@@ -67,10 +77,10 @@ class _bage2State extends State<bage2> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    "Next",
+                    S.of(context).next,
                     style: TextStyle(
                       color: Color(0xFFE4D1B9),
-                      fontSize: 24,
+                      fontSize: fontSize24,
                       fontFamily: 'inter',
                       fontWeight: FontWeight.w500,
                       height: MediaQuery.of(context).size.height * .0015,
@@ -82,6 +92,7 @@ class _bage2State extends State<bage2> {
               ),
             ),
             SizedBox(
+              width: MediaQuery.of(context).size.width * 1,
               height: MediaQuery.of(context).size.height * .087,
             ),
           ]),

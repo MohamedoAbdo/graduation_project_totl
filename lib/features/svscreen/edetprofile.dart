@@ -17,6 +17,10 @@ class _edetprofileState extends State<edetprofile> {
   TextEditingController passwordcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 40;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 32;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 24;
     return Scaffold(
       body: Form(
         key: _formKey,
@@ -54,10 +58,10 @@ class _edetprofileState extends State<edetprofile> {
                       ),
                     ),
                     Text(
-                      'Edet profile    ',
+                      'Edit profile    ',
                       style: TextStyle(
                         color: Color(0xff6C3428),
-                        fontSize: 24,
+                        fontSize: fontSize24,
                         fontFamily: 'intr',
                         fontWeight: FontWeight.w500,
                         height: MediaQuery.of(context).size.height * .002,
@@ -75,10 +79,10 @@ class _edetprofileState extends State<edetprofile> {
                 backgroundImage: AssetImage('assets/image/Ellipse 93.png'),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * .016),
-              const Text(
+              Text(
                 'Gamila_hesham',
                 style: TextStyle(
-                  fontSize: 24.0,
+                  fontSize: fontSize24,
                   fontWeight: FontWeight.w500,
                   color: Color(0xff6C3428),
                 ),
@@ -99,7 +103,7 @@ class _edetprofileState extends State<edetprofile> {
                       'Name',
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
-                        fontSize: 16,
+                        fontSize: fontSize16,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
                         height: 0.09,
@@ -133,7 +137,7 @@ class _edetprofileState extends State<edetprofile> {
                       'Email',
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
-                        fontSize: 16,
+                        fontSize: fontSize16,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
                         height: MediaQuery.of(context).size.height * .00009,
@@ -165,7 +169,7 @@ class _edetprofileState extends State<edetprofile> {
                       'Phone',
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
-                        fontSize: 16,
+                        fontSize: fontSize16,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
                         height: MediaQuery.of(context).size.height * .00009,
@@ -199,7 +203,7 @@ class _edetprofileState extends State<edetprofile> {
                       'password',
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
-                        fontSize: 16,
+                        fontSize: fontSize16,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
                         height: MediaQuery.of(context).size.height * .00009,
@@ -257,7 +261,7 @@ class _edetprofileState extends State<edetprofile> {
                       'save',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
+                        fontSize: fontSize16,
                         fontWeight: FontWeight.w500,
                       ),
                     ),

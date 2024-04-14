@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tourism_app/features/svscreen/responsive_text.dart';
+import 'package:tourism_app/features/svscreen/signin.dart';
 import 'package:tourism_app/features/svscreen/streo.dart';
 
 class Restaurants extends StatefulWidget {
@@ -8,45 +10,12 @@ class Restaurants extends StatefulWidget {
 
 class _RestaurantsState extends State<Restaurants> {
   @override
-  Container _buildCategoryContainer(
-    String label,
-  ) {
-    return Container(
-      width: MediaQuery.of(context).size.height * .140,
-      height: MediaQuery.of(context).size.height * .05,
-      padding: const EdgeInsets.only(left: 5, right: 5, top: 5),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ButtonStyle(
-          overlayColor: MaterialStateProperty.all(
-            const Color(0xff6C3428),
-          ),
-          backgroundColor: MaterialStateProperty.all(Color(0xFFFFFFFF)),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
-              side: const BorderSide(
-                color: Color(0xFFE4D1B9),
-              ),
-            ),
-          ),
-        ),
-        child: Text(
-          label,
-          style: TextStyle(
-            color: Color(0xFFBE8C63),
-            fontSize: 24,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w500,
-            height: MediaQuery.of(context).size.height * .001,
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -64,36 +33,43 @@ class _RestaurantsState extends State<Restaurants> {
           mainAxisSize: MainAxisSize.max,
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * .02,
+              height: MediaQuery.of(context).size.height * .04,
             ),
-            Container(
-              width: MediaQuery.of(context).size.height * .396,
-              height: MediaQuery.of(context).size.height * .06,
-              decoration: ShapeDecoration(
-                color: const Color(0xFFF3F3F3),
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    width: MediaQuery.of(context).size.height * .002,
-                    strokeAlign: BorderSide.strokeAlignCenter,
-                    color: Color(0xFFE4D1B9),
-                  ),
-                  borderRadius: BorderRadius.circular(25),
-                ),
-              ),
-              child: TextField(
-                decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Color(0xFFFFFFFF),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(25),
-                      borderSide: BorderSide.none,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Material(
+                shadowColor: Color(0xffE4D1B9),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Container(
+                    height: 55,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0xFFBE8C63),
+                            ),
+                            borderRadius: BorderRadius.circular(
+                              22,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Colors.white,
+                            ),
+                            borderRadius: BorderRadius.circular(
+                              16,
+                            ),
+                          ),
+                          hintText: 'Search',
+                          hintStyle: TextStyle(color: Color(0xffE4D1B9)),
+                          prefixIcon: Icon(Icons.search),
+                          prefixIconColor: Color(0xffE4D1B9)),
                     ),
-                    hintText: "Search ",
-                    hintStyle: TextStyle(
-                        fontSize: 24,
-                        color: Color(0xFFBE8C63),
-                        fontWeight: FontWeight.w500),
-                    prefixIcon: Icon(Icons.search)),
+                  ),
+                ),
               ),
             ),
             SizedBox(
@@ -105,40 +81,79 @@ class _RestaurantsState extends State<Restaurants> {
                   "   Suggestted For You:",
                   style: TextStyle(
                     color: Color(0xff6C3428),
-                    fontSize: 24,
+                    fontSize: fontSize24,
                     fontWeight: FontWeight.w500,
                     height: MediaQuery.of(context).size.height * .0017,
                   ),
                 ),
               ],
             ),
+
+            //
             SizedBox(
+              width: MediaQuery.of(context).size.width * 1.0,
               height: MediaQuery.of(context).size.height * .03,
             ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => streo()),
-                );
-              },
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Container(
-                  width: MediaQuery.of(context).size.height * .430,
-                  height: MediaQuery.of(context).size.height * .05,
-                  child: Column(
-                    children: [
-                      Row(
+            Padding(
+              padding:
+                  const EdgeInsets.only(top: 5, right: 5, left: 5, bottom: 5),
+              child: Row(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => streo()),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, right: 5, left: 5, bottom: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           _buildCategoryContainer('streo'),
-                          _buildCategoryContainer('kfc'),
-                          _buildCategoryContainer('bazoka'),
                         ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => streo()),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, right: 5, left: 5, bottom: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _buildCategoryContainer('streo'),
+                        ],
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => streo()),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, right: 5, left: 5, bottom: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _buildCategoryContainer('streo'),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
 
@@ -146,45 +161,173 @@ class _RestaurantsState extends State<Restaurants> {
             SizedBox(
               height: MediaQuery.of(context).size.height * .03,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Container(
-                width: MediaQuery.of(context).size.height * .430,
-                height: MediaQuery.of(context).size.height * .05,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        _buildCategoryContainer('streo'),
-                        _buildCategoryContainer('kfc'),
-                        _buildCategoryContainer('bazoka'),
-                      ],
+            Padding(
+              padding:
+                  const EdgeInsets.only(top: 5, right: 5, left: 5, bottom: 5),
+              child: Row(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => streo()),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, right: 5, left: 5, bottom: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _buildCategoryContainer('streo'),
+                        ],
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => streo()),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, right: 5, left: 5, bottom: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _buildCategoryContainer('streo'),
+                        ],
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => streo()),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, right: 5, left: 5, bottom: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _buildCategoryContainer('streo'),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             //
             SizedBox(
               height: MediaQuery.of(context).size.height * .03,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Container(
-                width: MediaQuery.of(context).size.height * .430,
-                height: MediaQuery.of(context).size.height * .05,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        _buildCategoryContainer('bazoka'),
-                      ],
+            Padding(
+              padding:
+                  const EdgeInsets.only(top: 5, right: 5, left: 5, bottom: 5),
+              child: Row(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => streo()),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, right: 5, left: 5, bottom: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _buildCategoryContainer('streo'),
+                        ],
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => streo()),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, right: 5, left: 5, bottom: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _buildCategoryContainer('streo'),
+                        ],
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => streo()),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, right: 5, left: 5, bottom: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _buildCategoryContainer('streo'),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
+            //
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 1.0,
+              height: MediaQuery.of(context).size.height * .03,
+            ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Container _buildCategoryContainer(
+    String label,
+  ) {
+    return Container(
+      width: MediaQuery.of(context).size.width * .3,
+      height: MediaQuery.of(context).size.height * .04,
+      padding: const EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 5),
+      decoration: ShapeDecoration(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+            width: MediaQuery.of(context).size.width * .002,
+            strokeAlign: BorderSide.strokeAlignCenter,
+            color: Color(0xFFE4D1B9),
+          ),
+          borderRadius: BorderRadius.circular(25),
+        ),
+      ),
+      //
+      child: Text(
+        label,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          color: Color(0xFFBE8C63),
+          fontSize: 24,
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w500,
+          height: MediaQuery.of(context).size.height * .001,
         ),
       ),
     );

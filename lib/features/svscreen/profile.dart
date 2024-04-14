@@ -6,7 +6,6 @@ import 'package:tourism_app/features/home/presentation/favourite/favourite.dart'
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/search/search.dart';
 import 'package:tourism_app/features/svscreen/ChangeLanguage.dart';
-import 'package:tourism_app/features/svscreen/PharaonicVillage.dart';
 import 'package:tourism_app/features/svscreen/edetprofile.dart';
 import 'package:tourism_app/features/svscreen/signin.dart';
 
@@ -15,6 +14,10 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     final GlobalKey<ScaffoldState> key = GlobalKey();
 
     return Scaffold(
@@ -58,7 +61,7 @@ class ProfileScreen extends StatelessWidget {
                       ' Profile    ',
                       style: TextStyle(
                         color: Color(0xff6C3428),
-                        fontSize: 24,
+                        fontSize: fontSize24,
                         fontFamily: 'intr',
                         fontWeight: FontWeight.w500,
                       ),
@@ -79,7 +82,7 @@ class ProfileScreen extends StatelessWidget {
               Text(
                 ' Gamila_hesham',
                 style: TextStyle(
-                  fontSize: 24.0,
+                  fontSize: fontSize24,
                   fontWeight: FontWeight.w500,
                   color: Color(0xff6C3428),
                 ),
@@ -117,7 +120,8 @@ class ProfileScreen extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Color(0xffE4D1B9),
-                                fontSize: 17,
+                                fontSize:
+                                    MediaQuery.of(context).size.height * .019,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w600,
                               ),
@@ -141,12 +145,10 @@ class ProfileScreen extends StatelessWidget {
               ),
               Image.asset(
                 'assets/image/Line 9.png',
-                width: MediaQuery.of(context).size.height * .380,
-                height: MediaQuery.of(context).size.height * .003,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * .010),
               _settingItem(
-                title: ' Language',
+                title: 'Language',
                 onTap: () {
                   Navigator.push(
                       context,
@@ -156,8 +158,6 @@ class ProfileScreen extends StatelessWidget {
               ),
               Image.asset(
                 'assets/image/Line 9.png',
-                width: MediaQuery.of(context).size.height * .380,
-                height: MediaQuery.of(context).size.height * .003,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * .01),
               _settingItem(
@@ -169,10 +169,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               Image.asset(
                 'assets/image/Line 9.png',
-                width: MediaQuery.of(context).size.height * .380,
-                height: MediaQuery.of(context).size.height * .003,
               ),
-              SizedBox(height: 10),
               _settingItem(
                 title: 'Help',
                 onTap: () {
@@ -181,8 +178,6 @@ class ProfileScreen extends StatelessWidget {
               ),
               Image.asset(
                 'assets/image/Line 9.png',
-                width: MediaQuery.of(context).size.height * .380,
-                height: MediaQuery.of(context).size.height * .003,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * .010),
               //
@@ -197,7 +192,7 @@ class ProfileScreen extends StatelessWidget {
                     title: 'Are You Sure You Want To Log Out?',
                     titleTextStyle: TextStyle(
                       color: Color(0xff6C3428),
-                      fontSize: 16,
+                      fontSize: fontSize16,
                       fontFamily: 'intr',
                       fontWeight: FontWeight.w500,
                     ),
@@ -210,7 +205,7 @@ class ProfileScreen extends StatelessWidget {
                     btnCancelColor: Colors.white,
                     buttonsTextStyle: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16,
+                      fontSize: fontSize16,
                       fontFamily: 'intr',
                       fontWeight: FontWeight.w500,
                     ),
@@ -218,7 +213,7 @@ class ProfileScreen extends StatelessWidget {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => signin()));
                     },
-                    btnOkText: ("   Log Out"),
+                    btnOkText: ("     Log Out"),
                     btnOkColor: Colors.white,
                   )..show();
                 },
@@ -229,7 +224,7 @@ class ProfileScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
-                        fontSize: 16,
+                        fontSize: fontSize16,
                         fontFamily: 'intr',
                         fontWeight: FontWeight.w500,
                       ),
@@ -237,9 +232,6 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .032,
-              )
             ],
           ),
         ),

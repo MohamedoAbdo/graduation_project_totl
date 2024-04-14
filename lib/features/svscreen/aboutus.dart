@@ -7,6 +7,10 @@ class aboutus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 32;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 24;
     return Scaffold(
       body: Form(
         child: SingleChildScrollView(
@@ -14,7 +18,7 @@ class aboutus extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.03),
+                    top: MediaQuery.of(context).size.height * 0.05),
                 child: Row(
                   children: [
                     InkWell(
@@ -45,7 +49,7 @@ class aboutus extends StatelessWidget {
                       'About Us    ',
                       style: TextStyle(
                         color: Color(0xff6C3428),
-                        fontSize: 32,
+                        fontSize: fontSize24,
                         fontFamily: 'intr',
                         fontWeight: FontWeight.w500,
                       ),
@@ -53,103 +57,119 @@ class aboutus extends StatelessWidget {
                   ],
                 ),
               ),
+
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              Row(
-                children: [
-                  Text(
-                    'Lorem Ipsum Dolor Sit Amet:    ',
-                    textAlign: TextAlign.right,
-                    style: TextStyle(
-                      color: Color(0xff6C3428),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
+              Container(
+                width: MediaQuery.of(context).size.width * 1,
+                child: Text(
+                  '   Lorem Ipsum Dolor Sit Amet:    ',
+                  style: TextStyle(
+                    color: Color(0xFF6C3428),
+                    fontSize: fontSize16,
+                    fontFamily: 'inter',
+                    fontWeight: FontWeight.w600,
+                    height: MediaQuery.of(context).size.height * .002,
                   ),
-                ],
+                ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              Row(
-                children: [
-                  Text(
-                    '    Consectetur adipiscing elit, sed do eiusmod \n    Tempor incididunt ut labore et dolore magna \n    Aliqua. Ut enim ad minim veniam. \n    Lorem ipsum dolor sit amet, consectetur \n    Adipiscing elit, sed do eiusmod tempor incididunt \n    Ut labore et dolore magna aliqua. Ut enim Ad \n    minim veniam.Lorem ipsum dolor sit amet.    ',
-                    textAlign: TextAlign.left,
+              //
+
+              //
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 16, right: 16, left: 16, bottom: 16),
+                child: Container(
+                  child: Text(
+                    'Consectetur adipiscing elit, sed do eiusmod \nTempor incididunt ut labore et dolore magna \nAliqua. Ut enim ad minim veniam. \nLorem ipsum dolor sit amet, consectetur \nAdipiscing elit, sed do eiusmod tempor incididunt \nUt labore et dolore magna aliqua. Ut enim Ad \nminim veniam.Lorem ipsum dolor sit amet.',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+                      fontSize: fontSize16,
+                      fontFamily: 'inter',
+                      fontWeight: FontWeight.w600,
+                      height: MediaQuery.of(context).size.height * .002,
                     ),
                   ),
-                ],
+                ),
+              ),
+
+              //
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 1,
+                child: Text(
+                  '   Lorem Ipsum Dolor Sit Amet:    ',
+                  style: TextStyle(
+                    color: Color(0xFF6C3428),
+                    fontSize: fontSize16,
+                    fontFamily: 'inter',
+                    fontWeight: FontWeight.w600,
+                    height: MediaQuery.of(context).size.height * .002,
+                  ),
+                ),
+              ),
+              //
+
+              //
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 16, right: 16, left: 16, bottom: 16),
+                child: Container(
+                  child: Text(
+                    'Consectetur adipiscing elit, sed do eiusmod \nTempor incididunt ut labore et dolore magna \nAliqua. Ut enim ad minim veniam. \nLorem ipsum dolor sit amet, consectetur \nAdipiscing elit, sed do eiusmod tempor incididunt \nUt labore et dolore magna aliqua. Ut enim Ad \nminim veniam.Lorem ipsum dolor sit amet.',
+                    style: TextStyle(
+                      color: Color(0xFFBE8C63),
+                      fontSize: fontSize16,
+                      fontFamily: 'inter',
+                      fontWeight: FontWeight.w600,
+                      height: MediaQuery.of(context).size.height * .002,
+                    ),
+                  ),
+                ),
               ),
               //
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              Row(
-                children: [
-                  Text(
-                    'Lorem Ipsum Dolor Sit Amet:    ',
-                    textAlign: TextAlign.right,
-                    style: TextStyle(
-                      color: Color(0xff6C3428),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              Row(
-                children: [
-                  Text(
-                    '    Consectetur adipiscing elit, sed do eiusmod \n    Tempor incididunt ut labore et dolore magna \n    Aliqua. Ut enim ad minim veniam. \n    Lorem ipsum dolor sit amet, consectetur \n    Adipiscing elit, sed do eiusmod tempor incididunt \n    Ut labore et dolore magna aliqua. Ut enim Ad \n    minim veniam.Lorem ipsum dolor sit amet.    ',
-                    style: TextStyle(
-                      color: Color(0xFFBE8C63),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
+              Container(
+                width: MediaQuery.of(context).size.width * 1,
+                child: Text(
+                  '   Lorem Ipsum Dolor Sit Amet:    ',
+                  style: TextStyle(
+                    color: Color(0xFF6C3428),
+                    fontSize: fontSize16,
+                    fontFamily: 'inter',
+                    fontWeight: FontWeight.w600,
+                    height: MediaQuery.of(context).size.height * .002,
                   ),
-                ],
+                ),
               ),
               //
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              Row(
-                children: [
-                  Text(
-                    'Lorem Ipsum Dolor Sit Amet:    ',
-                    textAlign: TextAlign.right,
-                    style: TextStyle(
-                      color: Color(0xff6C3428),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              Row(
-                children: [
-                  Text(
-                    '    Consectetur adipiscing elit, sed do eiusmod \n    Tempor incididunt ut labore et dolore magna \n    Aliqua. Ut enim ad minim veniam. \n    Lorem ipsum dolor sit amet, consectetur \n    Adipiscing elit, sed do eiusmod tempor incididunt \n    Ut labore et dolore magna aliqua. Ut enim Ad \n    minim veniam.Lorem ipsum dolor sit amet.    ',
-                    textAlign: TextAlign.left,
+
+              //
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 16, right: 16, left: 16, bottom: 16),
+                child: Container(
+                  child: Text(
+                    'Consectetur adipiscing elit, sed do eiusmod \nTempor incididunt ut labore et dolore magna \nAliqua. Ut enim ad minim veniam. \nLorem ipsum dolor sit amet, consectetur \nAdipiscing elit, sed do eiusmod tempor incididunt \nUt labore et dolore magna aliqua. Ut enim Ad \nminim veniam.Lorem ipsum dolor sit amet.',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+                      fontSize: fontSize16,
+                      fontFamily: 'inter',
+                      fontWeight: FontWeight.w600,
+                      height: MediaQuery.of(context).size.height * .002,
                     ),
                   ),
-                ],
+                ),
               ),
+              //
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
