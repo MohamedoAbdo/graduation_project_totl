@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff6C3428)),
         useMaterial3: true,
       ),
-      home: Restaurants(),
+      home: Splash(),
     );
   }
 }

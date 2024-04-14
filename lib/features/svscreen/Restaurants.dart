@@ -28,7 +28,9 @@ class _RestaurantsState extends State<Restaurants> {
           icon: Icon(Icons.arrow_back_ios),
         ),
       ),
-      body: SingleChildScrollView(
+      body: Container(
+        width: MediaQuery.of(context).size.width * 1.0,
+        height: MediaQuery.of(context).size.height * 1.5,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -96,7 +98,7 @@ class _RestaurantsState extends State<Restaurants> {
             ),
             Padding(
               padding:
-                  const EdgeInsets.only(top: 5, right: 5, left: 5, bottom: 5),
+                  const EdgeInsets.only(top: 5, right: 5, left: 0, bottom: 5),
               child: Row(
                 children: [
                   InkWell(
@@ -163,7 +165,7 @@ class _RestaurantsState extends State<Restaurants> {
             ),
             Padding(
               padding:
-                  const EdgeInsets.only(top: 5, right: 5, left: 5, bottom: 5),
+                  const EdgeInsets.only(top: 5, right: 5, left: 0, bottom: 5),
               child: Row(
                 children: [
                   InkWell(
@@ -229,7 +231,7 @@ class _RestaurantsState extends State<Restaurants> {
             ),
             Padding(
               padding:
-                  const EdgeInsets.only(top: 5, right: 5, left: 5, bottom: 5),
+                  const EdgeInsets.only(top: 5, right: 5, left: 0, bottom: 5),
               child: Row(
                 children: [
                   InkWell(
@@ -305,7 +307,7 @@ class _RestaurantsState extends State<Restaurants> {
   ) {
     return Container(
       width: MediaQuery.of(context).size.width * .3,
-      height: MediaQuery.of(context).size.height * .04,
+      height: MediaQuery.of(context).size.height * .045,
       padding: const EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 5),
       decoration: ShapeDecoration(
         color: Colors.white,
