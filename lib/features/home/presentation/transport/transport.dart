@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 
 class Transprant extends StatelessWidget {
@@ -24,9 +25,9 @@ class Transprant extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Home_Screen()));
+                              builder: (context) => const Home_Screen()));
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_back_ios_new,
                       color: Color(0xff6C3428),
                     ),
@@ -34,7 +35,7 @@ class Transprant extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.height * 0.02,
                   ),
-                  Text(
+                  const Text(
                     'Transportation',
                     style: TextStyle(
                       color: Color(0xff6C3428),
@@ -48,10 +49,10 @@ class Transprant extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              Row(
+              const Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                    padding: EdgeInsets.symmetric(horizontal: 12.0),
                     child: Text(
                       'Ride_Hailing Services:',
                       style: TextStyle(
@@ -68,18 +69,18 @@ class Transprant extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.04,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Stack(
                     alignment: Alignment.bottomCenter,
                     children: [
                       Image.asset(
                         'assets/image/uber.png',
-                        width: MediaQuery.of(context).size.height * 0.20,
+                        width: 188.w,
                       ),
                       Image.asset(
                         'assets/image/uberr.png',
-                        width: MediaQuery.of(context).size.height * 0.20,
+                        width: 188.w,
                       ),
                     ],
                   ),
@@ -88,11 +89,11 @@ class Transprant extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/image/careem.png',
-                        width: MediaQuery.of(context).size.height * 0.20,
+                        width: 188.w,
                       ),
                       Image.asset(
                         'assets/image/careemm.png',
-                        width: MediaQuery.of(context).size.height * 0.20,
+                        width: 188.w,
                       ),
                     ],
                   ),
@@ -101,8 +102,8 @@ class Transprant extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.0),
                 child: Text(
                   'Car_Rental:',
                   style: TextStyle(
@@ -117,119 +118,25 @@ class Transprant extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
               GridView.count(
+                physics: const BouncingScrollPhysics(),
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
-                children: [
-                  Container(
-                    child: Column(
-                      children: [
-                        Stack(children: [
+                mainAxisSpacing: 20.h,
+                crossAxisSpacing: 20.w,
+                childAspectRatio: 187.w / 188.h,
+                children: List.generate(
+                    10,
+                    (index) =>
+                        Stack(alignment: Alignment.bottomCenter, children: [
                           Image.asset(
                             'assets/image/car.png',
-                            width: MediaQuery.of(context).size.height * 0.20,
+                            // width: MediaQuery.of(context).size.height * 0.25,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 140),
-                            child: Image.asset(
-                              'assets/image/carr.png',
-                              width: MediaQuery.of(context).size.height * 0.20,
-                            ),
-                          ),
-                        ])
-                      ],
-                    ),
-                  ),
-                  Container(
-                    child: Column(
-                      children: [
-                        Stack(children: [
                           Image.asset(
-                            'assets/image/hala.png',
-                            width: MediaQuery.of(context).size.height * 0.20,
+                            'assets/image/carr.png',
+                            width:187.w,
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 140),
-                            child: Image.asset(
-                              'assets/image/halal.png',
-                              width: MediaQuery.of(context).size.height * 0.20,
-                            ),
-                          )
-                        ])
-                      ],
-                    ),
-                  ),
-                  Container(
-                      child: Column(children: [
-                    Stack(children: [
-                      Image.asset(
-                        'assets/image/car4u.png',
-                        width: MediaQuery.of(context).size.height * 0.20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 140),
-                        child: Image.asset(
-                          'assets/image/car2u.png',
-                          width: MediaQuery.of(context).size.height * 0.20,
-                        ),
-                      ),
-                    ])
-                  ])),
-                  Container(
-                    child: Column(
-                      children: [
-                        Stack(children: [
-                          Image.asset(
-                            'assets/image/phot.png',
-                            width: MediaQuery.of(context).size.height * 0.20,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 140),
-                            child: Image.asset(
-                              'assets/image/phot2.png',
-                              width: MediaQuery.of(context).size.height * 0.20,
-                            ),
-                          )
-                        ])
-                      ],
-                    ),
-                  ),
-                  Container(
-                      child: Column(children: [
-                    Stack(children: [
-                      Image.asset(
-                        'assets/image/uber.png',
-                        width: MediaQuery.of(context).size.height * 0.20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 140),
-                        child: Image.asset(
-                          'assets/image/uberr.png',
-                          width: MediaQuery.of(context).size.height * 0.20,
-                        ),
-                      ),
-                    ])
-                  ])),
-                  Container(
-                    child: Column(
-                      children: [
-                        Stack(children: [
-                          Image.asset(
-                            'assets/image/careem.png',
-                            width: MediaQuery.of(context).size.height * 0.20,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 140),
-                            child: Image.asset(
-                              'assets/image/careemm.png',
-                              width: MediaQuery.of(context).size.height * 0.20,
-                            ),
-                          )
-                        ])
-                      ],
-                    ),
-                  ),
-                ],
+                        ])),
               )
             ],
           ),

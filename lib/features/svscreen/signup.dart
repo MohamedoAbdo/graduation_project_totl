@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tourism_app/features/svscreen/bage6.dart';
 import 'package:tourism_app/features/svscreen/signin.dart';
@@ -77,7 +78,7 @@ class _signupState extends State<signup> {
                       ),
                     ),
 
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.person,
                       color: Color(0xffBE8C63),
                     ),
@@ -103,7 +104,7 @@ class _signupState extends State<signup> {
                     label: Text(
                       'Email',
                       style: TextStyle(
-                        color: Color(0xFFBE8C63),
+                        color: const Color(0xFFBE8C63),
                         fontSize: 17,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w700,
@@ -111,7 +112,7 @@ class _signupState extends State<signup> {
                       ),
                     ),
 
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.email,
                       color: Color(0xffBE8C63),
                     ),

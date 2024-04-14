@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/features/home/presentation/password_view/create_new_pass.dart';
 import 'package:tourism_app/features/svscreen/controllers.dart';
 import 'package:tourism_app/features/svscreen/signin.dart';
@@ -187,7 +188,7 @@ class _verificationState extends State<verification> {
                     "   Code Reload In",
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                       height: MediaQuery.of(context).size.height * .0015,
@@ -199,7 +200,7 @@ class _verificationState extends State<verification> {
                     '$counter',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                       height: MediaQuery.of(context).size.height * .0016,

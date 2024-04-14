@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 
 class QuickPage1 extends StatefulWidget {
@@ -97,11 +98,11 @@ class _QuickPage1State extends State<QuickPage1> {
                   Padding(
                     padding: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.01),
-                    child: const Text(
+                    child:  Text(
                       'What Tourisms Do You Prefer ?',
                       style: TextStyle(
-                        color: Color(0xff6C3428),
-                        fontSize: 24,
+                        color: const Color(0xff6C3428),
+                        fontSize: 24.sp,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
                         height: 0,
@@ -279,26 +280,26 @@ class _QuickPage1State extends State<QuickPage1> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Container(
-                                width: 20,
-                                height: 20,
+                                width: 20.w,
+                                height: 20.h,
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     border: Border.all(
                                         color: const Color(0xffE4D1B9), width: 1.9)),
                                 child: c == "10"
-                                    ? const CircleAvatar(
-                                        radius: 5.5,
-                                        backgroundColor: Color(0xffE4D1B9))
+                                    ?  CircleAvatar(
+                                        radius: 5.5.r,
+                                        backgroundColor: const Color(0xffE4D1B9))
                                     : const SizedBox.shrink()),
                             const SizedBox(
                               width: 15,
                             ),
-                            const Text(
+                             Text(
                               'Archaeological Tourism',
                               style: TextStyle(
-                                color: Color(0xff6C3428),
-                                fontSize: 24,
+                                color: const Color(0xff6C3428),
+                                fontSize: 24.sp,
                                 fontFamily: 'Inter',
                                 fontWeight: FontWeight.w400,
                                 height: 0,

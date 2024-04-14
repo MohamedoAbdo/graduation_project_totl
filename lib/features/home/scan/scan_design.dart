@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-import 'package:tourism_app/features/home/meto/scan_action.dart';
+import 'package:tourism_app/features/home/scan/scan_action.dart';
 
 class ScanDesign extends StatefulWidget {
   const ScanDesign({Key? key}) : super(key: key);

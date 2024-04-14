@@ -9,6 +9,7 @@ import 'package:tourism_app/features/svscreen/ChangeLanguage.dart';
 import 'package:tourism_app/features/svscreen/PharaonicVillage.dart';
 import 'package:tourism_app/features/svscreen/edetprofile.dart';
 import 'package:tourism_app/features/svscreen/signin.dart';
+import '../home/scan/scan_design.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -34,10 +35,10 @@ class ProfileScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Home_Screen()),
+                              builder: (context) => const Home_Screen()),
                         );
                       },
-                      child: Row(
+                      child: const Row(
                         children: [
                           Row(
                             children: [
@@ -54,7 +55,7 @@ class ProfileScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Text(
+                    const Text(
                       ' Profile    ',
                       style: TextStyle(
                         color: Color(0xff6C3428),
@@ -69,14 +70,14 @@ class ProfileScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * .05,
               ),
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 60.0,
                 backgroundImage: AssetImage('assets/image/Ellipse 93.png'),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * .016,
               ),
-              Text(
+              const Text(
                 ' Gamila_hesham',
                 style: TextStyle(
                   fontSize: 24.0,
@@ -89,7 +90,7 @@ class ProfileScreen extends StatelessWidget {
                 onTap: () async {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => edetprofile()),
+                    MaterialPageRoute(builder: (context) => const edetprofile()),
                   );
 
                   ;
@@ -100,10 +101,10 @@ class ProfileScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.height * .172,
                     height: MediaQuery.of(context).size.height * .051,
                     decoration: BoxDecoration(
-                      color: Color(0xFFBE8C63),
+                      color: const Color(0xFFBE8C63),
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Row(
+                    child: const Row(
                       children: [
                         Row(
                           children: [
@@ -151,7 +152,7 @@ class ProfileScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => ChangeLanguage()));
+                          builder: (context) => const ChangeLanguage()));
                 },
               ),
               Image.asset(
@@ -164,7 +165,7 @@ class ProfileScreen extends StatelessWidget {
                 title: 'Favourite',
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Favourite()));
+                      MaterialPageRoute(builder: (context) => const Favourite()));
                 },
               ),
               Image.asset(
@@ -172,7 +173,7 @@ class ProfileScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.height * .380,
                 height: MediaQuery.of(context).size.height * .003,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               _settingItem(
                 title: 'Help',
                 onTap: () {
@@ -195,7 +196,7 @@ class ProfileScreen extends StatelessWidget {
                     dialogType: DialogType.noHeader,
                     animType: AnimType.rightSlide,
                     title: 'Are You Sure You Want To Log Out?',
-                    titleTextStyle: TextStyle(
+                    titleTextStyle: const TextStyle(
                       color: Color(0xff6C3428),
                       fontSize: 16,
                       fontFamily: 'intr',
@@ -205,10 +206,10 @@ class ProfileScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProfileScreen()));
+                              builder: (context) => const ProfileScreen()));
                     },
                     btnCancelColor: Colors.white,
-                    buttonsTextStyle: TextStyle(
+                    buttonsTextStyle: const TextStyle(
                       color: Color(0xFFBE8C63),
                       fontSize: 16,
                       fontFamily: 'intr',
@@ -216,13 +217,13 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     btnOkOnPress: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => signin()));
+                          MaterialPageRoute(builder: (context) => const signin()));
                     },
                     btnOkText: ("   Log Out"),
                     btnOkColor: Colors.white,
                   )..show();
                 },
-                child: Row(
+                child: const Row(
                   children: [
                     Text(
                       "Log Out",
@@ -249,31 +250,35 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         child: FloatingActionButton(
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 3, color: Colors.brown),
+            side: const BorderSide(width: 3, color: Colors.brown),
             borderRadius: BorderRadius.circular(100),
           ),
-          backgroundColor: Color(
+          backgroundColor: const Color(
             0xff6C3428,
           ),
-          child: Icon(
+          child: const Icon(
             Icons.camera_alt_rounded,
             size: 32,
             color: Color(
               0xffE4D1B9,
             ),
           ),
-          onPressed: () {},
+          onPressed: () {Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const ScanDesign()),
+          );},
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         height: MediaQuery.of(context).size.height * 0.1,
         padding: EdgeInsets.zero,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 4,
         child: Container(
           padding: EdgeInsets.zero,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
@@ -292,9 +297,9 @@ class ProfileScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Home_Screen()));
+                              builder: (context) => const Home_Screen()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -308,9 +313,9 @@ class ProfileScreen extends StatelessWidget {
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Favourite()));
+                          MaterialPageRoute(builder: (context) => const Favourite()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -329,9 +334,9 @@ class ProfileScreen extends StatelessWidget {
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Search()));
+                          MaterialPageRoute(builder: (context) => const Search()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -347,9 +352,9 @@ class ProfileScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProfileScreen()));
+                              builder: (context) => const ProfileScreen()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -377,8 +382,8 @@ class ProfileScreen extends StatelessWidget {
       child: ListTile(
         onTap: onTap,
         title: Text(title),
-        textColor: Color(0xFFBE8C63),
-        titleTextStyle: TextStyle(
+        textColor: const Color(0xFFBE8C63),
+        titleTextStyle: const TextStyle(
           fontSize: 16,
           fontFamily: 'Inter',
           fontWeight: FontWeight.w500,

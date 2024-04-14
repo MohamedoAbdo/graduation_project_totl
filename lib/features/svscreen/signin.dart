@@ -37,7 +37,7 @@ class _signinState extends State<signin> {
                         Container(
                           width: MediaQuery.of(context).size.width * 1.0,
                           height: MediaQuery.of(context).size.height * .1,
-                          child: Text(
+                          child: const Text(
                             '  Log Into \n  Your Account..',
                             style: TextStyle(
                               color: Color(0xff6C3428),
@@ -77,7 +77,7 @@ class _signinState extends State<signin> {
                       }
                     },
                     decoration: InputDecoration(
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Icons.email,
                         color: Color(0xFFBE8C63),
                         size: 20,
@@ -85,7 +85,7 @@ class _signinState extends State<signin> {
                       label: Text(
                         'E-Mail',
                         style: TextStyle(
-                          color: Color(0xFFBE8C63),
+                          color: const Color(0xFFBE8C63),
                           fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w500,
@@ -115,21 +115,21 @@ class _signinState extends State<signin> {
                       label: Text(
                         ' password',
                         style: TextStyle(
-                          color: Color(0xFFBE8C63),
+                          color: const Color(0xFFBE8C63),
                           fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w500,
                           height: MediaQuery.of(context).size.height * .0009,
                         ),
                       ),
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Icons.lock,
                         color: Color(0xFFBE8C63),
                         size: 20,
                       ),
                       suffixIcon: ispassword
                           ? IconButton(
-                              icon: Icon(Icons.visibility_off),
+                              icon: const Icon(Icons.visibility_off),
                               onPressed: () {
                                 setState(() {
                                   ispassword = !ispassword;
@@ -137,7 +137,7 @@ class _signinState extends State<signin> {
                               },
                             )
                           : IconButton(
-                              icon: Icon(Icons.visibility),
+                              icon: const Icon(Icons.visibility),
                               onPressed: () {
                                 setState(() {
                                   ispassword = !ispassword;
@@ -162,18 +162,21 @@ class _signinState extends State<signin> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
-                        "Forget password?",
-                        style: TextStyle(
-                          color: Color(0xFFBE8C63),
-                          fontSize: 12,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w500,
-                          height: MediaQuery.of(context).size.height * .002,
+                      InkWell(
+                        child: Text(
+                          "Forget password?",
+                          style: TextStyle(
+                            color: const Color(0xFFBE8C63),
+                            fontSize: 12,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w500,
+                            height: MediaQuery.of(context).size.height * .002,
+                          ),
+                          textAlign: TextAlign.right,
                         ),
-                        textAlign: TextAlign.right,
+                        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgetPass()));},
                       ),
-                      Text("    ")
+                      const Text("    ")
                     ],
                   ),
                 ),
@@ -194,10 +197,10 @@ class _signinState extends State<signin> {
                       height: MediaQuery.of(context).size.height * .055,
                       width: MediaQuery.of(context).size.width * 0.5,
                       decoration: BoxDecoration(
-                        color: Color(0xFFBE8C63),
+                        color: const Color(0xFFBE8C63),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Login",
                           textAlign: TextAlign.center,
@@ -217,13 +220,12 @@ class _signinState extends State<signin> {
                 ),
                 Row(
                   children: [
-                    Text("     "),
                     Image.asset(
                       "assets/image/Line 2.png",
                       width: MediaQuery.of(context).size.width * 0.30,
                       height: MediaQuery.of(context).size.height * .009,
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text("      Login With       ",
                             style: TextStyle(
@@ -246,7 +248,7 @@ class _signinState extends State<signin> {
                 ),
                 Row(
                   children: [
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           "                                               ",
@@ -271,7 +273,7 @@ class _signinState extends State<signin> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'you don’t have account?',
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
@@ -284,10 +286,10 @@ class _signinState extends State<signin> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => signup()),
+                          MaterialPageRoute(builder: (context) => const signup()),
                         );
                       },
-                      child: Text(
+                      child: const Text(
                         "   sign up",
                         style: TextStyle(
                           color: Color(0xff6C3428),

@@ -4,9 +4,8 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
-import 'package:tourism_app/features/svscreen/streo.dart';
-
 import '../home/presentation/favourite/favourite.dart';
+import '../home/scan/scan_design.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
@@ -27,7 +26,7 @@ class _SearchState extends State<Search> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Material(
-              shadowColor: Color(0xffE4D1B9),
+              shadowColor: const Color(0xffE4D1B9),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Container(
@@ -37,7 +36,7 @@ class _SearchState extends State<Search> {
                         filled: true,
                         fillColor: Colors.white,
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0xFFBE8C63),
                           ),
                           borderRadius: BorderRadius.circular(
@@ -53,9 +52,9 @@ class _SearchState extends State<Search> {
                           ),
                         ),
                         hintText: 'Search',
-                        hintStyle: TextStyle(color: Color(0xffE4D1B9)),
-                        prefixIcon: Icon(Icons.search),
-                        prefixIconColor: Color(0xffE4D1B9)),
+                        hintStyle: const TextStyle(color: Color(0xffE4D1B9)),
+                        prefixIcon: const Icon(Icons.search),
+                        prefixIconColor: const Color(0xffE4D1B9)),
                   ),
                 ),
               ),
@@ -64,7 +63,7 @@ class _SearchState extends State<Search> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.03,
           ),
-          Row(
+          const Row(
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
@@ -80,7 +79,7 @@ class _SearchState extends State<Search> {
               ),
             ],
           ),
-          Row(
+          const Row(
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
@@ -97,7 +96,7 @@ class _SearchState extends State<Search> {
             ],
           ),
           //
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
           //
           MaterialButton(
             onPressed: () {
@@ -110,7 +109,7 @@ class _SearchState extends State<Search> {
                 title: 'Location Access',
                 desc:
                     "please allow kemet access to your location \n    to find restaurants or caffees near you.",
-                titleTextStyle: TextStyle(
+                titleTextStyle: const TextStyle(
                   color: Color(0xff6C3428),
                   fontSize: 16,
                   fontFamily: 'intr',
@@ -118,10 +117,10 @@ class _SearchState extends State<Search> {
                 ),
                 btnCancelOnPress: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Search()));
+                      MaterialPageRoute(builder: (context) => const Search()));
                 },
                 btnCancelColor: Colors.white,
-                buttonsTextStyle: TextStyle(
+                buttonsTextStyle: const TextStyle(
                   color: Color(0xFFBE8C63),
                   fontSize: 16,
                   fontFamily: 'intr',
@@ -141,10 +140,10 @@ class _SearchState extends State<Search> {
                 width: 180,
                 height: 51,
                 decoration: BoxDecoration(
-                  color: Color(0xFFBE8C63),
+                  color: const Color(0xFFBE8C63),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Center(
+                child: const Center(
                   child: Row(
                     children: [
                       Text(
@@ -171,31 +170,35 @@ class _SearchState extends State<Search> {
         backgroundColor: Colors.white,
         child: FloatingActionButton(
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 3, color: Colors.brown),
+            side: const BorderSide(width: 3, color: Colors.brown),
             borderRadius: BorderRadius.circular(100),
           ),
-          backgroundColor: Color(
+          backgroundColor: const Color(
             0xff6C3428,
           ),
-          child: Icon(
+          child: const Icon(
             Icons.camera_alt_rounded,
             size: 32,
             color: Color(
               0xffE4D1B9,
             ),
           ),
-          onPressed: () {},
+          onPressed: () {Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const ScanDesign()),
+          );},
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         height: MediaQuery.of(context).size.height * 0.1,
         padding: EdgeInsets.zero,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 4,
         child: Container(
           padding: EdgeInsets.zero,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
@@ -214,9 +217,9 @@ class _SearchState extends State<Search> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Home_Screen()));
+                              builder: (context) => const Home_Screen()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -230,9 +233,9 @@ class _SearchState extends State<Search> {
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Favourite()));
+                          MaterialPageRoute(builder: (context) => const Favourite()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -251,9 +254,9 @@ class _SearchState extends State<Search> {
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Search()));
+                          MaterialPageRoute(builder: (context) => const Search()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -269,9 +272,9 @@ class _SearchState extends State<Search> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProfileScreen()));
+                              builder: (context) => const ProfileScreen()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
