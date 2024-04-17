@@ -1,7 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:sizer/sizer.dart';
 import 'package:tourism_app/features/svscreen/bage3.dart';
 import 'package:tourism_app/generated/l10n.dart';
 
@@ -16,7 +14,6 @@ class _bage2State extends State<bage2> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
     double fontSize24 = (screenWidth <= 600) ? 24 : 32;
     double fontSize16 = (screenWidth <= 600) ? 16 : 14;
     return Scaffold(

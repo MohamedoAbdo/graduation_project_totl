@@ -15,7 +15,6 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
     double fontSize24 = (screenWidth <= 600) ? 24 : 28;
     double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
@@ -75,7 +74,7 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                     'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam.\n Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam.Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna\naliqua. Ut enim ad minim veniam.\nLorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam .Ut enim ad minim veniam.Lorem\nipsum dolor sit amet, consectetur adipiscing elit .   ',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16,
+                      fontSize: fontSize16,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -88,7 +87,7 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                     '    Some Pics&Video:     ',
                     style: TextStyle(
                       color: Color(0xFF6C3428),
-                      fontSize: 24,
+                      fontSize: fontSize24,
                       fontWeight: FontWeight.w500,
                     ),
                   ),

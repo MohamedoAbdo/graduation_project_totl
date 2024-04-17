@@ -4,7 +4,6 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
-import 'package:tourism_app/features/svscreen/streo.dart';
 
 import '../home/presentation/favourite/favourite.dart';
 
@@ -23,44 +22,107 @@ class _SearchState extends State<Search> {
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.07,
+            width: MediaQuery.of(context).size.width * 1.0,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Material(
-              shadowColor: Color(0xffE4D1B9),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Container(
-                  height: 55,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFFBE8C63),
-                          ),
-                          borderRadius: BorderRadius.circular(
-                            22,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Colors.white,
-                          ),
-                          borderRadius: BorderRadius.circular(
-                            16,
-                          ),
-                        ),
-                        hintText: 'Search',
-                        hintStyle: TextStyle(color: Color(0xffE4D1B9)),
-                        prefixIcon: Icon(Icons.search),
-                        prefixIconColor: Color(0xffE4D1B9)),
+          Row(
+            children: [
+              Padding(
+                padding:
+                    EdgeInsets.only(top: 16, right: 0, left: 16, bottom: 16),
+                child: Material(
+                  shadowColor: Color(0xffE4D1B9),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 0.0),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.055,
+                      width: MediaQuery.of(context).size.width * 0.75,
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xFFBE8C63),
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                22,
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.white,
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                16,
+                              ),
+                            ),
+                            hintText: 'Search',
+                            hintStyle: TextStyle(color: Color(0xffE4D1B9)),
+                            prefixIconColor: Color(0xffE4D1B9)),
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
+              //
+              MaterialButton(
+                onPressed: () {
+                  AwesomeDialog(
+                    width: MediaQuery.of(context).size.width * 1,
+                    bodyHeaderDistance: 24,
+                    context: context,
+                    dialogType: DialogType.noHeader,
+                    animType: AnimType.rightSlide,
+                    title: 'Location Access',
+                    desc:
+                        "please allow kemet access to your location \n    to find restaurants or caffees near you.",
+                    titleTextStyle: TextStyle(
+                      color: Color(0xff6C3428),
+                      fontSize: 16,
+                      fontFamily: 'intr',
+                      fontWeight: FontWeight.w500,
+                    ),
+                    btnCancelOnPress: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Search()));
+                    },
+                    btnCancelColor: Colors.white,
+                    buttonsTextStyle: TextStyle(
+                      color: Color(0xFFBE8C63),
+                      fontSize: 16,
+                      fontFamily: 'intr',
+                      fontWeight: FontWeight.w500,
+                    ),
+                    btnOkOnPress: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Restaurants()));
+                    },
+                    btnOkText: ("   Allow"),
+                    btnOkColor: Color(0xff6C3428),
+                  )..show();
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(0),
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF6C3428),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Icon(
+                      Icons.search,
+                      color: Color(0xFFBE8C63),
+                      size: 30,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
+
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.03,
           ),
@@ -69,7 +131,7 @@ class _SearchState extends State<Search> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  'Now You Can Search About Near Coffee Or',
+                  'Now You Can Search About Near Coffee Or\nRestaurant.',
                   style: TextStyle(
                     color: Color(0xFFBE8C63),
                     fontSize: 16,
@@ -80,89 +142,7 @@ class _SearchState extends State<Search> {
               ),
             ],
           ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  'Restaurant.',
-                  style: TextStyle(
-                    color: Color(0xFFBE8C63),
-                    fontSize: 16,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          //
-          SizedBox(height: 50),
-          //
-          MaterialButton(
-            onPressed: () {
-              AwesomeDialog(
-                width: 450,
-                bodyHeaderDistance: 32,
-                context: context,
-                dialogType: DialogType.noHeader,
-                animType: AnimType.rightSlide,
-                title: 'Location Access',
-                desc:
-                    "please allow kemet access to your location \n    to find restaurants or caffees near you.",
-                titleTextStyle: TextStyle(
-                  color: Color(0xff6C3428),
-                  fontSize: 16,
-                  fontFamily: 'intr',
-                  fontWeight: FontWeight.w500,
-                ),
-                btnCancelOnPress: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Search()));
-                },
-                btnCancelColor: Colors.white,
-                buttonsTextStyle: TextStyle(
-                  color: Color(0xFFBE8C63),
-                  fontSize: 16,
-                  fontFamily: 'intr',
-                  fontWeight: FontWeight.w500,
-                ),
-                btnOkOnPress: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Restaurants()));
-                },
-                btnOkText: ("   Allow"),
-                btnOkColor: Colors.white,
-              )..show();
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: 180,
-                height: 51,
-                decoration: BoxDecoration(
-                  color: Color(0xFFBE8C63),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Row(
-                    children: [
-                      Text(
-                        "                Search",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Color(0xFFE4D1B9),
-                          fontSize: 16,
-                          fontFamily: 'inter',
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
+
           //
         ],
       ),

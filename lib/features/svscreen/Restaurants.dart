@@ -28,9 +28,7 @@ class _RestaurantsState extends State<Restaurants> {
           icon: Icon(Icons.arrow_back_ios),
         ),
       ),
-      body: Container(
-        width: MediaQuery.of(context).size.width * 1.0,
-        height: MediaQuery.of(context).size.height * 1.5,
+      body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [

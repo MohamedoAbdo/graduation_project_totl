@@ -15,7 +15,6 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
     double fontSize24 = (screenWidth <= 600) ? 24 : 28;
     double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     final GlobalKey<ScaffoldState> key = GlobalKey();
@@ -214,7 +213,7 @@ class ProfileScreen extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => signin()));
                     },
                     btnOkText: ("     Log Out"),
-                    btnOkColor: Colors.white,
+                    btnOkColor: Color(0xff6C3428),
                   )..show();
                 },
                 child: Row(
