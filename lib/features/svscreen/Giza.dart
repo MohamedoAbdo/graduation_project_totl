@@ -16,6 +16,7 @@ class _GizaState extends State<Giza> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
     double fontSize24 = (screenWidth <= 600) ? 24 : 32;
     double fontSize16 = (screenWidth <= 600) ? 16 : 24;
     return Scaffold(

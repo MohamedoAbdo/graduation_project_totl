@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tourism_app/features/svscreen/ar.dart';
 import 'package:tourism_app/features/svscreen/ar_lan.dart';
+import 'package:tourism_app/features/svscreen/en.dart';
 import 'package:tourism_app/features/svscreen/en_lan.dart';
+import 'package:tourism_app/features/svscreen/fa.dart';
 import 'package:tourism_app/features/svscreen/fa_lan.dart';
 
 import 'package:tourism_app/features/svscreen/profile.dart';
@@ -17,6 +20,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
     double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
       body: Container(

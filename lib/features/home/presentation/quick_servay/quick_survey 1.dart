@@ -19,8 +19,9 @@ class _QuickPage1State extends State<QuickPage1> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            vertical:MediaQuery.of(context).size.width * 0.04 ,
-              horizontal: MediaQuery.of(context).size.width * 0.04, ),
+            vertical: MediaQuery.of(context).size.width * 0.04,
+            horizontal: MediaQuery.of(context).size.width * 0.04,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -328,8 +329,10 @@ class _QuickPage1State extends State<QuickPage1> {
                     height: 51,
                     minWidth: 190,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Home_Screen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Home_Screen()));
                     },
                     child: Text(
                       'Submit',

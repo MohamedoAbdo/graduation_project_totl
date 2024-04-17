@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tourism_app/features/svscreen/Giza.dart';
 import 'package:tourism_app/features/svscreen/TourismType.dart';
+import 'package:tourism_app/features/svscreen/streo.dart';
 
 class Coastaltourism extends StatefulWidget {
   const Coastaltourism({super.key});
@@ -14,6 +16,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
     double fontSize24 = (screenWidth <= 600) ? 24 : 28;
     double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
@@ -88,7 +91,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                     '   some pics:     ',
                     style: TextStyle(
                       color: Color(0xFF6C3428),
-                      fontSize: fontSize24,
+                      fontSize: 24,
                       fontWeight: FontWeight.w500,
                     ),
                   ),

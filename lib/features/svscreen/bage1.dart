@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tourism_app/features/svscreen/ar.dart';
+import 'package:tourism_app/features/svscreen/bage2.dart';
 import 'package:tourism_app/features/svscreen/en.dart';
 import 'package:tourism_app/features/svscreen/fa.dart';
 
@@ -14,6 +15,7 @@ class _bage1State extends State<bage1> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
     double fontSize18 = (screenWidth <= 600) ? 18 : 22;
     return Scaffold(
       //appBar: AppBar(

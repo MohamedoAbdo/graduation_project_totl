@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
+import 'package:tourism_app/features/svscreen/bage2.dart';
 import 'package:tourism_app/generated/l10n.dart';
 
 class ar_lan extends StatefulWidget {

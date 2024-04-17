@@ -61,7 +61,7 @@ class _ScanDesignState extends State<ScanDesign> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.05,
           ),
-           Image.asset('assets/image/svan_design.png'),
+          Image.asset('assets/image/svan_design.png'),
           const SizedBox(
             height: 64,
           ),
