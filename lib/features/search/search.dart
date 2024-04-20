@@ -23,7 +23,7 @@ class _SearchState extends State<Search> {
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.07,
-            width: MediaQuery.of(context).size.width * 1.0,
+            width: MediaQuery.of(context).size.width * .9,
           ),
           Row(
             children: [
@@ -32,35 +32,32 @@ class _SearchState extends State<Search> {
                     EdgeInsets.only(top: 16.h, right: 0, left: 15.w, bottom: 16.h),
                 child: Material(
                   shadowColor: Color(0xffE4D1B9),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 0.0),
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.055,
-                      width: MediaQuery.of(context).size.width * 0.75,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0xFFBE8C63),
-                              ),
-                              borderRadius: BorderRadius.circular(
-                                22.r,
-                              ),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.055,
+                    width: 305.w,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0xFFBE8C63),
                             ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Colors.white,
-                              ),
-                              borderRadius: BorderRadius.circular(
-                                16.r,
-                              ),
+                            borderRadius: BorderRadius.circular(
+                              22.r,
                             ),
-                            hintText: 'Search',
-                            hintStyle: TextStyle(color: Color(0xffE4D1B9)),
-                            prefixIconColor: Color(0xffE4D1B9)),
-                      ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Colors.white,
+                            ),
+                            borderRadius: BorderRadius.circular(
+                              16.r,
+                            ),
+                          ),
+                          hintText: 'Search',
+                          hintStyle: TextStyle(color: Color(0xffE4D1B9)),
+                          prefixIconColor: Color(0xffE4D1B9)),
                     ),
                   ),
                 ),
@@ -69,7 +66,7 @@ class _SearchState extends State<Search> {
               MaterialButton(
                 onPressed: () {
                   AwesomeDialog(
-                    width: MediaQuery.of(context).size.width * 1,
+                    // width: MediaQuery.of(context).size.width * 1,
                     bodyHeaderDistance: 24.w,
                     context: context,
                     dialogType: DialogType.noHeader,
