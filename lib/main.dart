@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tourism_app/features/home/presentation/home_view.dart';
+import 'package:tourism_app/features/search/search.dart';
+import 'package:tourism_app/features/svscreen/Giza.dart';
+import 'package:tourism_app/features/svscreen/Restaurants.dart';
+import 'package:tourism_app/features/svscreen/TourismType.dart';
+import 'package:tourism_app/features/svscreen/responsive_text.dart';
+import 'package:tourism_app/features/svscreen/streo.dart';
+import 'package:tourism_app/features/svscreen/verification.dart';
 import 'package:tourism_app/splash/splash.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,28 +19,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.`
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(428, 926),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, child) => MaterialApp(
-        // debugShowCheckedModeBanner: false,
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff6C3428)),
-          // useMaterial3: true,
-        ),
-        home: child,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff6C3428)),
+        useMaterial3: true,
       ),
-      child: const Splash(),
-      // child: MaterialApp(
-      //   debugShowCheckedModeBanner: false,
-      //   theme: ThemeData(
-      //     colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff6C3428)),
-      //     useMaterial3: true,
-      //   ),
-      //   home: Splash(),
-      // ),
+      home: Splash(),
     );
   }
 }

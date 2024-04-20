@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:tourism_app/features/svscreen/Giza.dart';
 
@@ -34,7 +35,7 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                       //
                       Padding(
                         padding: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * 0.05),
+                            top: MediaQuery.of(context).size.height * 0.07),
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
@@ -61,6 +62,25 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                         ),
                       ),
                       //
+                      Row(
+                        children: [
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * .6,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: MediaQuery.of(context).size.height * 0.0),
+                            child: Text(
+                              "data",
+                              style: TextStyle(
+                                color: Color(0xFF6C3428),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ])
                   ],
                 ),
