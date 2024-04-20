@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:tourism_app/features/home/presentation/password_view/forget_pass.dart';
 import 'package:tourism_app/features/svscreen/bage6.dart';
 import 'package:tourism_app/features/svscreen/signup.dart';
@@ -20,8 +21,11 @@ class _signinState extends State<signin> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -37,8 +41,8 @@ class _signinState extends State<signin> {
                       children: [
                         Container(
                           width: MediaQuery.of(context).size.width * 1.0,
-                          height: MediaQuery.of(context).size.height * .1,
-                          child: const Text(
+                          height: MediaQuery.of(context).size.height * .15,
+                          child: Text(
                             '  Log Into \n  Your Account..',
                             style: TextStyle(
                               color: Color(0xff6C3428),
@@ -54,17 +58,16 @@ class _signinState extends State<signin> {
                   ],
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .052,
+                  height: MediaQuery.of(context).size.height * .040,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width * .5,
                   height: MediaQuery.of(context).size.height * .15,
                   child: Image.asset("assets/image/bro.png"),
 
                   //_LoginscreenState
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .052,
+                  height: MediaQuery.of(context).size.height * .030,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
@@ -78,7 +81,7 @@ class _signinState extends State<signin> {
                       }
                     },
                     decoration: InputDecoration(
-                      prefixIcon: const Icon(
+                      prefixIcon: Icon(
                         Icons.email,
                         color: Color(0xFFBE8C63),
                         size: 20,
@@ -86,7 +89,7 @@ class _signinState extends State<signin> {
                       label: Text(
                         'E-Mail',
                         style: TextStyle(
-                          color: const Color(0xFFBE8C63),
+                          color: Color(0xFFBE8C63),
                           fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w500,
@@ -116,21 +119,21 @@ class _signinState extends State<signin> {
                       label: Text(
                         ' password',
                         style: TextStyle(
-                          color: const Color(0xFFBE8C63),
+                          color: Color(0xFFBE8C63),
                           fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w500,
                           height: MediaQuery.of(context).size.height * .0009,
                         ),
                       ),
-                      prefixIcon: const Icon(
+                      prefixIcon: Icon(
                         Icons.lock,
                         color: Color(0xFFBE8C63),
                         size: 20,
                       ),
                       suffixIcon: ispassword
                           ? IconButton(
-                              icon: const Icon(Icons.visibility_off),
+                              icon: Icon(Icons.visibility_off),
                               onPressed: () {
                                 setState(() {
                                   ispassword = !ispassword;
@@ -138,7 +141,7 @@ class _signinState extends State<signin> {
                               },
                             )
                           : IconButton(
-                              icon: const Icon(Icons.visibility),
+                              icon: Icon(Icons.visibility),
                               onPressed: () {
                                 setState(() {
                                   ispassword = !ispassword;
@@ -163,21 +166,18 @@ class _signinState extends State<signin> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      InkWell(
-                        child: Text(
-                          "Forget password?",
-                          style: TextStyle(
-                            color: const Color(0xFFBE8C63),
-                            fontSize: 12,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w500,
-                            height: MediaQuery.of(context).size.height * .002,
-                          ),
-                          textAlign: TextAlign.right,
+                      Text(
+                        "Forget password?",
+                        style: TextStyle(
+                          color: Color(0xFFBE8C63),
+                          fontSize: 12,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                          height: MediaQuery.of(context).size.height * .002,
                         ),
-                        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgetPass()));},
+                        textAlign: TextAlign.right,
                       ),
-                      const Text("    ")
+                      Text("    ")
                     ],
                   ),
                 ),
@@ -198,10 +198,10 @@ class _signinState extends State<signin> {
                       height: MediaQuery.of(context).size.height * .055,
                       width: MediaQuery.of(context).size.width * 0.5,
                       decoration: BoxDecoration(
-                        color: const Color(0xFFBE8C63),
+                        color: Color(0xFFBE8C63),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Text(
                           "Login",
                           textAlign: TextAlign.center,
@@ -220,15 +220,18 @@ class _signinState extends State<signin> {
                   height: MediaQuery.of(context).size.height * .03,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Text("     "),
                     Image.asset(
                       "assets/image/Line 2.png",
-                      width: MediaQuery.of(context).size.width * 0.30,
+                      width: MediaQuery.of(context).size.width * 0.25,
                       height: MediaQuery.of(context).size.height * .009,
                     ),
-                    const Row(
+                    Row(
                       children: [
-                        Text("      Login With       ",
+                        Text(" Login With  ",
+                            textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Color(0xFFBE8C63),
                               fontSize: 16,
@@ -239,26 +242,24 @@ class _signinState extends State<signin> {
                     ),
                     Image.asset(
                       "assets/image/Line 2.png",
-                      width: MediaQuery.of(context).size.width * 0.30,
+                      width: MediaQuery.of(context).size.width * 0.25,
                       height: MediaQuery.of(context).size.height * .009,
                     )
                   ],
                 ),
+
                 SizedBox(
                   height: MediaQuery.of(context).size.height * .01,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Row(
-                      children: [
-                        Text(
-                          "                                               ",
-                        )
-                      ],
+                    Row(
+                      children: [],
                     ),
                     Image.asset(
                       "assets/image/Group 3.png",
-                      width: MediaQuery.of(context).size.width * 0.07,
+                      width: MediaQuery.of(context).size.width * 0.150,
                       height: MediaQuery.of(context).size.height * .065,
                     ),
                     Image.asset(
@@ -274,7 +275,7 @@ class _signinState extends State<signin> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                    Text(
                       'you don’t have account?',
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
@@ -287,10 +288,10 @@ class _signinState extends State<signin> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const signup()),
+                          MaterialPageRoute(builder: (context) => signup()),
                         );
                       },
-                      child: const Text(
+                      child: Text(
                         "   sign up",
                         style: TextStyle(
                           color: Color(0xff6C3428),

@@ -13,6 +13,10 @@ class bage1 extends StatefulWidget {
 class _bage1State extends State<bage1> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize18 = (screenWidth <= 600) ? 18 : 22;
     return Scaffold(
       //appBar: AppBar(
       //backgroundColor: Colors.white,
@@ -30,7 +34,8 @@ class _bage1State extends State<bage1> {
 
             image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage("assets/image/photo_8.jpg"))),
+                image: AssetImage(
+                    "assets/image/photo_3_2024-04-20_15-55-17.jpg"))),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -60,8 +65,10 @@ class _bage1State extends State<bage1> {
                               "  Language Selection ",
                               style: TextStyle(
                                 color: Color(0xff6C3428),
-                                fontSize: 32,
+                                fontSize: fontSize32,
                                 fontWeight: FontWeight.w600,
+                                height:
+                                    MediaQuery.of(context).size.height * .001,
                               ),
                             ),
                           ),
@@ -78,7 +85,7 @@ class _bage1State extends State<bage1> {
                               "  Choose your preferred language To \n              start your adventure. ",
                               style: TextStyle(
                                 color: Color(0xFFBE8C63),
-                                fontSize: 16,
+                                fontSize: fontSize18,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -106,7 +113,7 @@ class _bage1State extends State<bage1> {
                                       "English",
                                       style: TextStyle(
                                         color: Color(0xFFBE8C63),
-                                        fontSize: 16,
+                                        fontSize: fontSize18,
                                         fontFamily: 'intr',
                                         fontWeight: FontWeight.w500,
                                         height:
@@ -122,7 +129,9 @@ class _bage1State extends State<bage1> {
                             ),
                             width: MediaQuery.of(context).size.width * 0.93,
                             height: MediaQuery.of(context).size.height * .055,
-                            padding: const EdgeInsets.all(7),
+                            padding: EdgeInsets.all(
+                              MediaQuery.of(context).size.height * .004,
+                            ),
                             decoration: ShapeDecoration(
                               color: Colors.white,
                               shape: RoundedRectangleBorder(
@@ -159,7 +168,7 @@ class _bage1State extends State<bage1> {
                                       "العربيه",
                                       style: TextStyle(
                                         color: Color(0xFFBE8C63),
-                                        fontSize: 16,
+                                        fontSize: fontSize18,
                                         fontFamily: 'intr',
                                         fontWeight: FontWeight.w500,
                                         height:
@@ -175,7 +184,9 @@ class _bage1State extends State<bage1> {
                             ),
                             width: MediaQuery.of(context).size.width * 0.93,
                             height: MediaQuery.of(context).size.height * .055,
-                            padding: const EdgeInsets.all(7),
+                            padding: EdgeInsets.all(
+                              MediaQuery.of(context).size.height * .004,
+                            ),
                             decoration: ShapeDecoration(
                               color: Colors.white,
                               shape: RoundedRectangleBorder(
@@ -214,7 +225,7 @@ class _bage1State extends State<bage1> {
                                       "French",
                                       style: TextStyle(
                                         color: Color(0xFFBE8C63),
-                                        fontSize: 16,
+                                        fontSize: fontSize18,
                                         fontFamily: 'intr',
                                         fontWeight: FontWeight.w500,
                                         height:
@@ -230,7 +241,9 @@ class _bage1State extends State<bage1> {
                             ),
                             width: MediaQuery.of(context).size.width * 0.93,
                             height: MediaQuery.of(context).size.height * .055,
-                            padding: const EdgeInsets.all(7),
+                            padding: EdgeInsets.all(
+                              MediaQuery.of(context).size.height * .004,
+                            ),
                             decoration: ShapeDecoration(
                               color: Colors.white,
                               shape: RoundedRectangleBorder(

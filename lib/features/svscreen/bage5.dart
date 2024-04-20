@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:tourism_app/features/svscreen/signin.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class bage5 extends StatefulWidget {
   const bage5({super.key});
@@ -11,6 +13,10 @@ class bage5 extends StatefulWidget {
 class _bage5State extends State<bage5> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -18,7 +24,8 @@ class _bage5State extends State<bage5> {
 
             image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage("assets/image/photo_31.jpg"))),
+                image:
+                    AssetImage("assets/image/photo_2024-04-20_15-55-52.jpg"))),
         child: SingleChildScrollView(
           child: Column(children: [
             SizedBox(
@@ -28,10 +35,10 @@ class _bage5State extends State<bage5> {
             Row(
               children: [
                 Text(
-                  '    Lorem Ipsum Dolor    ',
+                  S.of(context).title,
                   style: TextStyle(
                     color: Color(0xFFE4D1B9),
-                    fontSize: 24,
+                    fontSize: fontSize24,
                     fontFamily: 'inter',
                     fontWeight: FontWeight.w600,
                     height: MediaQuery.of(context).size.height * .002,
@@ -42,13 +49,17 @@ class _bage5State extends State<bage5> {
             SizedBox(
               height: MediaQuery.of(context).size.height * .02,
             ),
-            Text(
-              'Lorem Ipsum Dolor Sit Amet, Consectetur \nAdipiscing Elit, Sed Do Eiusmod Tempor Incididunt \nUt Labore Et Dolore Magna Aliqua. Ut Enim Ad \nMinim Veniam     ',
-              style: TextStyle(
-                color: Color(0xFFE4D1B9),
-                fontSize: 16,
-                fontFamily: 'inter',
-                fontWeight: FontWeight.w500,
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 10, right: 16, left: 16, bottom: 0),
+              child: Text(
+                S.of(context).text,
+                style: TextStyle(
+                  color: Color(0xFFE4D1B9),
+                  fontSize: fontSize16,
+                  fontFamily: 'inter',
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
             SizedBox(
@@ -65,10 +76,10 @@ class _bage5State extends State<bage5> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    "Next",
+                    S.of(context).next,
                     style: TextStyle(
                       color: Color(0xFFE4D1B9),
-                      fontSize: 24,
+                      fontSize: fontSize24,
                       fontFamily: 'inter',
                       fontWeight: FontWeight.w500,
                       height: MediaQuery.of(context).size.height * .0015,

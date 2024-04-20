@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tourism_app/features/home/presentation/quick_servay/quick_survey%201.dart';
 import 'package:tourism_app/features/home/presentation/quick_servay/quick_survey%202.dart';
-import 'package:tourism_app/features/svscreen/bage5.dart';
 import 'package:tourism_app/features/svscreen/signin.dart';
 
 class bage6 extends StatefulWidget {
@@ -17,15 +16,18 @@ class _bage6State extends State<bage6> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Form(
         child: SingleChildScrollView(
           child: Column(
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * .05),
+                    top: MediaQuery.of(context).size.height * .07),
                 child: Row(
                   children: [
                     InkWell(
@@ -55,7 +57,7 @@ class _bage6State extends State<bage6> {
                       '  Quick Survey    ',
                       style: TextStyle(
                         color: Color(0xff6C3428),
-                        fontSize: 24,
+                        fontSize: fontSize24,
                         fontFamily: 'inter',
                         fontWeight: FontWeight.w500,
                         height: MediaQuery.of(context).size.height * .002,
@@ -67,7 +69,13 @@ class _bage6State extends State<bage6> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * .04,
               ),
-
+              Image.asset(
+                'assets/image/photo_35.png',
+                width: MediaQuery.of(context).size.height * .380,
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .04,
+              ),
               //
               Row(
                 children: [
@@ -75,7 +83,7 @@ class _bage6State extends State<bage6> {
                     "  Did You Visit Egypt Before ?",
                     style: TextStyle(
                       color: Color(0xff6C3428),
-                      fontSize: 24,
+                      fontSize: fontSize24,
                       fontWeight: FontWeight.w600,
                       height: MediaQuery.of(context).size.height * .0017,
                     ),
@@ -103,7 +111,7 @@ class _bage6State extends State<bage6> {
                             "Yes",
                             style: TextStyle(
                               color: Color(0xff6C3428),
-                              fontSize: 24,
+                              fontSize: fontSize24,
                               fontWeight: FontWeight.w500,
                               height:
                                   MediaQuery.of(context).size.height * .0017,
@@ -130,7 +138,7 @@ class _bage6State extends State<bage6> {
                             "No",
                             style: TextStyle(
                               color: Color(0xff6C3428),
-                              fontSize: 24,
+                              fontSize: fontSize24,
                               fontWeight: FontWeight.w500,
                               height:
                                   MediaQuery.of(context).size.height * .0017,
@@ -143,7 +151,7 @@ class _bage6State extends State<bage6> {
                 ),
                 width: MediaQuery.of(context).size.width * .955,
                 height: MediaQuery.of(context).size.height * .150,
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(15),
                 decoration: ShapeDecoration(
                   color: Colors.white,
                   shape: RoundedRectangleBorder(

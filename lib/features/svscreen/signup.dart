@@ -22,6 +22,10 @@ class _signupState extends State<signup> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
       body: Form(
         key: _forKey,
@@ -314,6 +318,9 @@ class _signupState extends State<signup> {
                         height: MediaQuery.of(context).size.height * .0015,
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * .08,
                   ),
                 ],
               ),

@@ -49,6 +49,36 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `    Lorem Ipsum Dolor    `
+  String get title {
+    return Intl.message(
+      '    Lorem Ipsum Dolor    ',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem Ipsum Dolor Sit Amet, Consectetur \nAdipiscing Elit, Sed Do Eiusmod Tempor  Incididunt \nUt Labore Et Dolore Magna Aliqua. Ut Enim  Ad \nMinim Veniam`
+  String get text {
+    return Intl.message(
+      'Lorem Ipsum Dolor Sit Amet, Consectetur \nAdipiscing Elit, Sed Do Eiusmod Tempor  Incididunt \nUt Labore Et Dolore Magna Aliqua. Ut Enim  Ad \nMinim Veniam',
+      name: 'text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -58,7 +88,6 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
-      Locale.fromSubtags(languageCode: 'fa'),
     ];
   }
 
