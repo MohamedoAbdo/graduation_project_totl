@@ -22,7 +22,7 @@ class _SplashState extends State<Splash> {
       width: double.maxFinite,
       height: double.maxFinite,
       child: Image.asset(
-        "assets/image/splash.png",
+        "assets/image/photo_8_2024-04-20_15-55-17.jpg",
         fit: BoxFit.fill,
       ),
     );

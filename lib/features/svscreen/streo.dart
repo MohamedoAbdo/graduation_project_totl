@@ -33,7 +33,7 @@ class _streoState extends State<streo> {
                   children: [
                     Stack(children: [
                       Image.asset(
-                        'assets/image/Untitled.png',
+                        'assets/image/photo_7_2024-04-20_15-55-17.jpg',
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 50),

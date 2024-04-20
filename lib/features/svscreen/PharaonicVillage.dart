@@ -120,7 +120,7 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                             child: Column(children: [
                           Stack(children: [
                             Image.asset(
-                              'assets/image/Group 11595.png',
+                              'assets/image/Rectangle 336.png',
                               height: MediaQuery.of(context).size.height * .25,
                               width: MediaQuery.of(context).size.width * .45,
                             ),
@@ -150,7 +150,7 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                             child: Column(children: [
                           Stack(children: [
                             Image.asset(
-                              'assets/image/Group 11595.png',
+                              'assets/image/Rectangle 336 (1).png',
                               height: MediaQuery.of(context).size.height * .25,
                               width: MediaQuery.of(context).size.width * .45,
                             ),
@@ -189,7 +189,7 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                             child: Column(children: [
                           Stack(children: [
                             Image.asset(
-                              'assets/image/Group 11595.png',
+                              'assets/image/Rectangle 336 (2).png',
                               height: MediaQuery.of(context).size.height * .25,
                               width: MediaQuery.of(context).size.width * .45,
                             ),
@@ -220,7 +220,7 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 11595.png',
+                                  'assets/image/Rectangle 336 (3).png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:

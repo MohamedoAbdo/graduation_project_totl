@@ -24,7 +24,8 @@ class _bage5State extends State<bage5> {
 
             image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage("assets/image/photo_31.jpg"))),
+                image:
+                    AssetImage("assets/image/photo_2024-04-20_15-55-52.jpg"))),
         child: SingleChildScrollView(
           child: Column(children: [
             SizedBox(

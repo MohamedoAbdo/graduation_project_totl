@@ -133,7 +133,7 @@ class _TourismTypeState extends State<TourismType> {
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.95,
 
-                  child: Image.asset("assets/image/Rectangle 336.png"),
+                  child: Image.asset("assets/image/Rectangle 3350.png"),
 
                   //_LoginscreenState
                 ),

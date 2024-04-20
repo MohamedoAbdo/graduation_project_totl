@@ -23,7 +23,8 @@ class _bage3State extends State<bage3> {
 
             image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage("assets/image/photo_5.jpg"))),
+                image: AssetImage(
+                    "assets/image/photo_1_2024-04-20_15-55-17.jpg"))),
         child: SingleChildScrollView(
           child: Column(children: [
             SizedBox(

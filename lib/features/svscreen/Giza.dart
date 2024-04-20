@@ -21,11 +21,7 @@ class _GizaState extends State<Giza> {
     double fontSize16 = (screenWidth <= 600) ? 16 : 24;
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-            //color: Colors.blue
-
-            image: DecorationImage(
-                image: AssetImage("assets/image/Rectangle 333.png"))),
+        decoration: const BoxDecoration(color: Colors.black),
         key: _formKey,
         child: SingleChildScrollView(
           child: Column(
@@ -36,7 +32,7 @@ class _GizaState extends State<Giza> {
                     Stack(children: [
                       Container(
                         child: Image.asset(
-                          'assets/image/Rectangle 332.png',
+                          'assets/image/photo_6_2024-04-20_15-55-17.jpg',
                         ),
                       ),
                       Padding(
@@ -211,7 +207,7 @@ class _GizaState extends State<Giza> {
                                       children: [
                                         Stack(children: [
                                           Image.asset(
-                                            'assets/image/Group 11594.png',
+                                            'assets/image/Group 11595.png',
                                             height: MediaQuery.of(context)
                                                     .size
                                                     .height *
@@ -260,7 +256,7 @@ class _GizaState extends State<Giza> {
                                       children: [
                                         Stack(children: [
                                           Image.asset(
-                                            'assets/image/Group 11594.png',
+                                            'assets/image/Group 11596.png',
                                             height: MediaQuery.of(context)
                                                     .size
                                                     .height *
@@ -300,7 +296,7 @@ class _GizaState extends State<Giza> {
                                       children: [
                                         Stack(children: [
                                           Image.asset(
-                                            'assets/image/Group 11594.png',
+                                            'assets/image/Group 11597.png',
                                             height: MediaQuery.of(context)
                                                     .size
                                                     .height *
