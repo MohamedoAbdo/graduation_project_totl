@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
@@ -28,7 +29,7 @@ class _SearchState extends State<Search> {
             children: [
               Padding(
                 padding:
-                    EdgeInsets.only(top: 16, right: 0, left: 16, bottom: 16),
+                    EdgeInsets.only(top: 16.h, right: 0, left: 15.w, bottom: 16.h),
                 child: Material(
                   shadowColor: Color(0xffE4D1B9),
                   child: Padding(
@@ -45,7 +46,7 @@ class _SearchState extends State<Search> {
                                 color: Color(0xFFBE8C63),
                               ),
                               borderRadius: BorderRadius.circular(
-                                22,
+                                22.r,
                               ),
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -53,7 +54,7 @@ class _SearchState extends State<Search> {
                                 color: Colors.white,
                               ),
                               borderRadius: BorderRadius.circular(
-                                16,
+                                16.r,
                               ),
                             ),
                             hintText: 'Search',
@@ -69,7 +70,7 @@ class _SearchState extends State<Search> {
                 onPressed: () {
                   AwesomeDialog(
                     width: MediaQuery.of(context).size.width * 1,
-                    bodyHeaderDistance: 24,
+                    bodyHeaderDistance: 24.w,
                     context: context,
                     dialogType: DialogType.noHeader,
                     animType: AnimType.rightSlide,
@@ -78,7 +79,7 @@ class _SearchState extends State<Search> {
                         "please allow kemet access to your location \n    to find restaurants or caffees near you.",
                     titleTextStyle: TextStyle(
                       color: Color(0xff6C3428),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontFamily: 'intr',
                       fontWeight: FontWeight.w500,
                     ),
@@ -89,7 +90,7 @@ class _SearchState extends State<Search> {
                     btnCancelColor: Colors.white,
                     buttonsTextStyle: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontFamily: 'intr',
                       fontWeight: FontWeight.w500,
                     ),
