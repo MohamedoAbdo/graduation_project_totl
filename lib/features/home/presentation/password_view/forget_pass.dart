@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/features/svscreen/verification.dart';
 
 class ForgetPass extends StatelessWidget {
@@ -39,7 +40,7 @@ class ForgetPass extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0xFFBE8C63),
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w400,
                   ),

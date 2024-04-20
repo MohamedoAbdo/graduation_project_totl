@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Taba extends StatelessWidget {
   const Taba({super.key});
@@ -6,6 +7,7 @@ class Taba extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -125,7 +127,7 @@ class Taba extends StatelessWidget {
                     '_We Will Go To The Citadel Of Salah El-Din And',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                     ),
@@ -159,7 +161,7 @@ class Taba extends StatelessWidget {
                     '_Visit Fjord Bay, And This is The Place Where I ',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                     ),
@@ -176,7 +178,7 @@ class Taba extends StatelessWidget {
                     ' Shoot Many Movies, Such As The Road To Eilat.',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                     ),
@@ -332,7 +334,7 @@ class Taba extends StatelessWidget {
                     'Address : 1eladawy St. Elfardos Square (Second ',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                     ),

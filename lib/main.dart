@@ -1,37 +1,39 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:tourism_app/features/home/presentation/home_view.dart';
-import 'package:tourism_app/features/search/search.dart';
-import 'package:tourism_app/features/svscreen/Giza.dart';
-import 'package:tourism_app/features/svscreen/Restaurants.dart';
-import 'package:tourism_app/features/svscreen/TourismType.dart';
-import 'package:tourism_app/features/svscreen/responsive_text.dart';
-import 'package:tourism_app/features/svscreen/streo.dart';
-import 'package:tourism_app/features/svscreen/verification.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/splash/splash.dart';
-
-import 'features/svscreen/Coastaltourism.dart';
-
 void main() {
-  runApp(DevicePreview(builder: (context) => MyApp()));
-  //runApp(const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // This widget is the root of your application.`
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff6C3428)),
-        useMaterial3: true,
+    return ScreenUtilInit(
+      designSize: const Size(428, 926),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) => MaterialApp(
+        // debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff6C3428)),
+          // useMaterial3: true,
+        ),
+        home: child,
       ),
-      home: Splash(),
+      child: const Splash(),
+      // child: MaterialApp(
+      //   debugShowCheckedModeBanner: false,
+      //   theme: ThemeData(
+      //     colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff6C3428)),
+      //     useMaterial3: true,
+      //   ),
+      //   home: Splash(),
+      // ),
     );
   }
 }
 //Splash
-//Home_Screen

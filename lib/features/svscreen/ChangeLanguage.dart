@@ -23,6 +23,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
     double fontSize24 = (screenWidth <= 600) ? 24 : 28;
     double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
         child: SingleChildScrollView(
           child: Column(

@@ -71,7 +71,7 @@ class _TourismTypeState extends State<TourismType> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Coastaltourism()),
+                    MaterialPageRoute(builder: (context) => Coastal()),
                   );
                 },
                 child: Container(
@@ -127,7 +127,7 @@ class _TourismTypeState extends State<TourismType> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Coastaltourism()),
+                    MaterialPageRoute(builder: (context) => Coastal()),
                   );
                 },
                 child: Container(
@@ -183,7 +183,7 @@ class _TourismTypeState extends State<TourismType> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Coastaltourism()),
+                    MaterialPageRoute(builder: (context) => Coastal()),
                   );
                 },
                 child: Container(
@@ -239,7 +239,7 @@ class _TourismTypeState extends State<TourismType> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Coastaltourism()),
+                    MaterialPageRoute(builder: (context) => Coastal()),
                   );
                 },
                 child: Container(

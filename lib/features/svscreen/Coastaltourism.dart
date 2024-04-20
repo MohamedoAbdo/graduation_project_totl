@@ -1,265 +1,238 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tourism_app/features/svscreen/Giza.dart';
-import 'package:tourism_app/features/svscreen/TourismType.dart';
-import 'package:tourism_app/features/svscreen/streo.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Coastaltourism extends StatefulWidget {
-  const Coastaltourism({super.key});
+class Coastal extends StatelessWidget {
+  const Coastal({super.key});
 
-  @override
-  State<Coastaltourism> createState() => _CoastaltourismState();
-}
-
-class _CoastaltourismState extends State<Coastaltourism> {
-  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
-    double fontSize24 = (screenWidth <= 600) ? 24 : 28;
-    double fontSize16 = (screenWidth <= 600) ? 16 : 22;
+    List photo1 = [
+      'assets/image/blue_laggon.png',
+      'assets/image/ford_pay.png',
+      'assets/image/blue_laggon.png',
+      'assets/image/ford_pay.png',
+    ];
     return Scaffold(
-      body: Form(
-        key: _formKey,
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: SafeArea(
           child: Column(
             children: [
-              Container(
-                child: Column(
-                  children: [
-                    Stack(children: [
-                      Image.asset(
-                        'assets/image/00.png',
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * 0.07),
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => TourismType()),
-                            );
-                          },
-                          child: Row(
-                            children: [
-                              Row(
-                                children: [
-                                  Text(
-                                    "     ",
-                                  )
-                                ],
-                              ),
-                              Icon(
-                                Icons.arrow_back_ios,
-                                color: Color(0xFF6C3428),
-                                size: 23,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ])
-                  ],
-                ),
+              Stack(
+                children: [
+                  ClipRRect(
+                      child: Image(
+                        image: AssetImage("assets/image/coastal.png"),
+                        fit: BoxFit.cover,
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * 0.24,
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 127.0),
+                    child: Image(
+                        image: AssetImage('assets/image/coustal tourism.png')),
+                  )
+                ],
               ),
-
-              Container(
-                height: MediaQuery.of(context).size.height * .45,
-                width: MediaQuery.of(context).size.width * 1.0,
-                color: Colors.white,
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        top: 10, right: 16, left: 16, bottom: 0),
+              SizedBox(
+                height: 24,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
                     child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam.\n Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam.Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna\naliqua. Ut enim ad minim veniam.\nLorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam .Ut enim ad minim veniam.Lorem\nipsum dolor sit amet, consectetur adipiscing elit .   ',
+                      'Lorem Ipsum Dolor Sit Amet, Consectetur Adipi',
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
-                        fontSize: fontSize16,
+                        fontSize: 16.sp,
+                        fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                  ),
-                ),
-              ),
-              Row(
-                children: [
-                  Text(
-                    '   some pics:     ',
-                    style: TextStyle(
-                      color: Color(0xFF6C3428),
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
+                  )
                 ],
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .02,
-              ),
-              Row(
-                children: [
-                  Row(
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "   ",
-                          )
-                        ],
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Coastaltourism()),
-                          );
-                        },
-                        child: Container(
-                          child: Column(
-                            children: [
-                              Stack(children: [
-                                Image.asset(
-                                  'assets/image/Group 115940.png',
-                                  height:
-                                      MediaQuery.of(context).size.height * .25,
-                                  width:
-                                      MediaQuery.of(context).size.width * .45,
-                                ),
-                              ])
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "      ",
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Coastaltourism()),
-                          );
-                        },
-                        child: Container(
-                          child: Column(
-                            children: [
-                              Stack(children: [
-                                Image.asset(
-                                  'assets/image/Group 115950.png',
-                                  height:
-                                      MediaQuery.of(context).size.height * .25,
-                                  width:
-                                      MediaQuery.of(context).size.width * .45,
-                                ),
-                              ])
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .02,
-              ),
-              //
 
               Row(
                 children: [
-                  Row(
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "   ",
-                          )
-                        ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text(
+                      'Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt',
+                      style: TextStyle(
+                        color: Color(0xFFBE8C63),
+                        fontSize: 16.sp,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
                       ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Coastaltourism()),
-                          );
-                        },
-                        child: Container(
-                          child: Column(
-                            children: [
-                              Stack(children: [
-                                Image.asset(
-                                  'assets/image/Group 115960.png',
-                                  height:
-                                      MediaQuery.of(context).size.height * .25,
-                                  width:
-                                      MediaQuery.of(context).size.width * .45,
-                                ),
-                              ])
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "      ",
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Coastaltourism()),
-                          );
-                        },
-                        child: Container(
-                          child: Column(
-                            children: [
-                              Stack(children: [
-                                Image.asset(
-                                  'assets/image/Group 115970.png',
-                                  height:
-                                      MediaQuery.of(context).size.height * .25,
-                                  width:
-                                      MediaQuery.of(context).size.width * .45,
-                                ),
-                              ])
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  )
                 ],
               ),
+
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text(
+                      'Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad',
+                      style: TextStyle(
+                        color: Color(0xFFBE8C63),
+                        fontSize: 16.sp,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text(
+                      'Minim Veniam.',
+                      style: TextStyle(
+                        color: Color(0xFFBE8C63),
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text(
+                      'Lorem Ipsum Dolor Sit Amet, Consectetur ',
+                      style: TextStyle(
+                        color: Color(0xFFBE8C63),
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text(
+                      'Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt',
+                      style: TextStyle(
+                        color: Color(0xFFBE8C63),
+                        fontSize: 16.sp,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text(
+                      'Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad  ',
+                      style: TextStyle(
+                        color: Color(0xFFBE8C63),
+                        fontSize: 16.sp,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text(
+                      'Minim Veniam.Lorem Ipsum Dolor Sit Amet,',
+                      style: TextStyle(
+                        color: Color(0xFFBE8C63),
+                        fontSize: 16.sp,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+
+
+
+
               SizedBox(
-                width: MediaQuery.of(context).size.width * 1,
-                height: MediaQuery.of(context).size.height * .02,
+                height: 24,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text(
+                      'Some Pics:',
+                      style: TextStyle(
+                        color: Color(0xff6C3428),
+                        fontSize: 24,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: 24),
+              GridView.count(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 5,
+                childAspectRatio: 188 / 200,
+                children: List.generate(
+                    photo1.length,
+                        (index) => GridViewItem(
+                      photo1: photo1[index],
+                    )),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class GridViewItem extends StatelessWidget {
+  const GridViewItem({
+    super.key,
+    this.photo1,
+  });
+
+  final photo1;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(photo1,),
+        ),
+
+        borderRadius: BorderRadius.circular(20),
       ),
     );
   }

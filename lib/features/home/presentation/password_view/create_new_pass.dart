@@ -60,27 +60,19 @@ class CreatNEWPass extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: TextFormField(
-              cursorColor: Color(0xffBE8C63),
               onChanged: (value) => print(value),
               decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xffBE8C63),
-                  ),
-                ),
-                border: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 50)),
                 prefixIcon: Icon(
                   Icons.lock,
-                  color: Color(0xffBE8C63),
                   size: 18,
+                  color: Color(0xffBE8C63),
                 ),
-                hintText: "password",
+                hintText: 'Password',
                 hintStyle: TextStyle(
                   color: Color(0xFFBE8C63),
-                  fontSize: 18,
+                  fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w500,
                 ),
@@ -93,26 +85,19 @@ class CreatNEWPass extends StatelessWidget {
 
           //Padding(padding: EdgeInsets.symmetric(vertical: 10)),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18),
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: TextFormField(
-              cursorColor: Color(0xffBE8C63),
               onChanged: (value) => print(value),
               decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xffBE8C63),
-                  ),
-                ),
-                // border:InputBorder.none ,
                 prefixIcon: Icon(
                   Icons.lock,
+                  size: 18,
                   color: Color(0xffBE8C63),
-                  size: 20,
                 ),
                 hintText: 'Confirm Password',
                 hintStyle: TextStyle(
                   color: Color(0xFFBE8C63),
-                  fontSize: 18,
+                  fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w500,
                 ),

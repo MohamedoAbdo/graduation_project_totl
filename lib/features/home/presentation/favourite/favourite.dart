@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/search/search.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
+import '../../scan/scan_design.dart';
 
 class Favourite extends StatelessWidget {
   const Favourite({super.key});
@@ -9,16 +12,23 @@ class Favourite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+
       appBar: AppBar(
-        leading: Icon(
-          Icons.arrow_back_ios_new,
-          color: Color(0xff6C3428),
-          size: 24,
-        ),
         backgroundColor: Colors.white,
+
+        leading: InkWell(
+            child: const Icon(
+              Icons.arrow_back_ios_new,
+              color: Color(0xff6C3428),
+              size: 24,
+            ),
+            onTap: () {
+              Navigator.of(context).pop();
+            }),
         elevation: 0,
         titleSpacing: 0,
-        title: Padding(
+        title: const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
           child: Text(
             'Favourite',
@@ -31,82 +41,84 @@ class Favourite extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding:
-            EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
-        child: GridView.count(
-          crossAxisCount: 2,
-          children: [
-            Container(
-                child: Column(children: [
-              Stack(children: [
-                Image.asset(
-                  'assets/image/pharaonic.png',
-                  width: MediaQuery.of(context).size.width * 0.45,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.16),
-                  child: Image.asset(
-                    'assets/image/pharaonic village.png',
-                    width: MediaQuery.of(context).size.width * 0.45,
-                  ),
-                ),
-              ])
-            ])),
-            Container(
-              child: Column(
-                children: [
-                  Stack(children: [
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: GridView.count(
+                physics: const BouncingScrollPhysics(),
+                crossAxisCount: 2,
+                mainAxisSpacing: 20.h,
+                crossAxisSpacing: 20.w,
+                childAspectRatio: 188.w / 188.h,
+                children: List.generate(
+                  2,
+                  (index) =>
+                      Stack(alignment: Alignment.bottomCenter, children: [
                     Image.asset(
                       'assets/image/streo.png',
-                      width: MediaQuery.of(context).size.width * 0.45,
+                      // width: 188.w,
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.16),
-                      child: Image.asset(
-                        'assets/image/streo restaurant.png',
-                        width: MediaQuery.of(context).size.width * 0.45,
+                    Container(
+                      height: 45.h,
+                      width: 170.w,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: const Color(0xff6C3428).withOpacity(.6),
+                        borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(20.r),
+                            bottomLeft: Radius.circular(20.r)),
                       ),
-                    )
-                  ])
-                ],
+                      child: Text(
+                        'streo restaurant',
+                        style: TextStyle(
+                            fontSize: 16.sp, color: const Color(0xffE4D1B9)),
+                      ),
+                    ),
+                  ]),
+                ),
               ),
             ),
-          ],
-        ),
+          )
+        ],
       ),
       floatingActionButton: CircleAvatar(
         radius: 32,
         backgroundColor: Colors.white,
         child: FloatingActionButton(
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 3, color: Colors.brown),
+            side: const BorderSide(width: 3, color: Colors.brown),
             borderRadius: BorderRadius.circular(100),
           ),
-          backgroundColor: Color(
+          backgroundColor: const Color(
             0xff6C3428,
           ),
-          child: Icon(
+          child: const Icon(
             Icons.camera_alt_rounded,
             size: 32,
             color: Color(
               0xffE4D1B9,
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ScanDesign()),
+            );
+          },
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         height: MediaQuery.of(context).size.height * 0.1,
         padding: EdgeInsets.zero,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 4,
         child: Container(
           padding: EdgeInsets.zero,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
@@ -125,9 +137,9 @@ class Favourite extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Home_Screen()));
+                              builder: (context) => const Home_Screen()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -140,10 +152,12 @@ class Favourite extends StatelessWidget {
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Favourite()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Favourite()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -161,10 +175,12 @@ class Favourite extends StatelessWidget {
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Search()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Search()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -180,9 +196,9 @@ class Favourite extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProfileScreen()));
+                              builder: (context) => const ProfileScreen()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(

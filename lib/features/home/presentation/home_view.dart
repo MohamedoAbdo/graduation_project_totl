@@ -8,6 +8,7 @@ import 'package:tourism_app/features/svscreen/PharaonicVillage.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
 
 import '../../search/search.dart';
+import '../scan/scan_design.dart';
 import 'drawer.dart';
 
 class Home_Screen extends StatefulWidget {
@@ -48,6 +49,7 @@ class _Home_ScreenState extends State<Home_Screen> {
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
+
               backgroundColor: Colors.white,
               title: Padding(
                 padding: const EdgeInsets.only(top: 12.0),
@@ -140,7 +142,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Coastaltourism()),
+                                  builder: (context) => Coastal()),
                             );
                           },
                           child: Padding(
@@ -226,7 +228,13 @@ class _Home_ScreenState extends State<Home_Screen> {
               0xffE4D1B9,
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ScanDesign()),
+            );
+          },
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
