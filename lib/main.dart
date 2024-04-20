@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff6C3428)),
-          useMaterial3: true,
+          // useMaterial3: true,
         ),
         home: child,
       ),

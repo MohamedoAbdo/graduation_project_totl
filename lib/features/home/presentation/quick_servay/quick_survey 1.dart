@@ -48,7 +48,7 @@ class _QuickPage1State extends State<QuickPage1> {
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.06,
+                height: MediaQuery.of(context).size.height * 0.03,
               ),
               const Row(
                 children: [
@@ -82,7 +82,7 @@ class _QuickPage1State extends State<QuickPage1> {
                           borderSide: BorderSide(color: Color(0xffE4D1B9)),
                           borderRadius:
                               BorderRadius.all(Radius.elliptical(18, 18))),
-                      labelText: 'Enter Your Name',
+                      labelText: 'Enter Places Name',
                       labelStyle: TextStyle(color: Color(0xffE4D1B9)),
                       enabledBorder: OutlineInputBorder(
                           borderRadius:

@@ -63,7 +63,7 @@ class NavDrawer extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.05,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 24),
+              padding: EdgeInsets.symmetric(vertical: 0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -118,7 +118,7 @@ class NavDrawer extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 24),
+              padding: EdgeInsets.symmetric(vertical: 4),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,

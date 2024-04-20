@@ -19,6 +19,7 @@ class ProfileScreen extends StatelessWidget {
     final GlobalKey<ScaffoldState> key = GlobalKey();
 
     return Scaffold(
+      backgroundColor: Colors.white,
       key: key,
       body: SingleChildScrollView(
         child: Padding(

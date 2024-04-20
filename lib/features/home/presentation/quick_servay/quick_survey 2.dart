@@ -47,7 +47,7 @@ class _QuickState extends State<Quick> {
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.1,
+                height: MediaQuery.of(context).size.height * 0.05,
               ),
               Row(
                 children: [

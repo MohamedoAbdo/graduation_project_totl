@@ -18,13 +18,14 @@ class _bage6State extends State<bage6> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Form(
         child: SingleChildScrollView(
           child: Column(
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * .03),
+                    top: MediaQuery.of(context).size.height * .05),
                 child: Row(
                   children: [
                     InkWell(
@@ -66,14 +67,7 @@ class _bage6State extends State<bage6> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * .04,
               ),
-              Image.asset(
-                'assets/image/photo_35.png',
-                width: MediaQuery.of(context).size.width * .955,
-                height: MediaQuery.of(context).size.height * .012,
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .04,
-              ),
+
               //
               Row(
                 children: [
