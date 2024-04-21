@@ -122,7 +122,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 11594.png',
+                                  'assets/image/Group 115940.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:
@@ -157,7 +157,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 11594.png',
+                                  'assets/image/Group 115950.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:
@@ -201,7 +201,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 11594.png',
+                                  'assets/image/Group 115960.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:
@@ -236,7 +236,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 11594.png',
+                                  'assets/image/Group 115970.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:

@@ -62,25 +62,6 @@ class _PharaonicVillageState extends State<PharaonicVillage> {
                         ),
                       ),
                       //
-                      Row(
-                        children: [
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height * .6,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(
-                                top: MediaQuery.of(context).size.height * 0.0),
-                            child: Text(
-                              "data",
-                              style: TextStyle(
-                                color: Color(0xFF6C3428),
-                                fontSize: 24,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
                     ])
                   ],
                 ),
