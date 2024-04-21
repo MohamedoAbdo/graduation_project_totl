@@ -44,7 +44,7 @@ class _bage1State extends State<bage1> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 1.0,
-                height: MediaQuery.of(context).size.height * .48,
+                height: MediaQuery.of(context).size.height * .52,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
