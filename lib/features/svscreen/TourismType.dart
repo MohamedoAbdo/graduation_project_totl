@@ -71,13 +71,13 @@ class _TourismTypeState extends State<TourismType> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Coastal()),
+                    MaterialPageRoute(builder: (context) => Coastaltourism()),
                   );
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.95,
 
-                  child: Image.asset("assets/image/Rectangle 335.png"),
+                  child: Image.asset("assets/image/Rectangle 3351.png"),
 
                   //_LoginscreenState
                 ),
@@ -127,7 +127,7 @@ class _TourismTypeState extends State<TourismType> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Coastal()),
+                    MaterialPageRoute(builder: (context) => Coastaltourism()),
                   );
                 },
                 child: Container(
@@ -183,7 +183,7 @@ class _TourismTypeState extends State<TourismType> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Coastal()),
+                    MaterialPageRoute(builder: (context) => Coastaltourism()),
                   );
                 },
                 child: Container(
@@ -239,7 +239,7 @@ class _TourismTypeState extends State<TourismType> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Coastal()),
+                    MaterialPageRoute(builder: (context) => Coastaltourism()),
                   );
                 },
                 child: Container(

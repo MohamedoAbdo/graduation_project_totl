@@ -49,7 +49,6 @@ class _Home_ScreenState extends State<Home_Screen> {
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
-
               backgroundColor: Colors.white,
               title: Padding(
                 padding: const EdgeInsets.only(top: 12.0),
@@ -142,7 +141,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Coastal()),
+                                  builder: (context) => Coastaltourism()),
                             );
                           },
                           child: Padding(
@@ -231,8 +230,7 @@ class _Home_ScreenState extends State<Home_Screen> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => ScanDesign()),
+              MaterialPageRoute(builder: (context) => ScanDesign()),
             );
           },
         ),
