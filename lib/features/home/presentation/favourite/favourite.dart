@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
-import 'package:tourism_app/features/search/search.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
+import 'package:tourism_app/features/svscreen/search.dart';
 import '../../scan/scan_design.dart';
 
 class Favourite extends StatelessWidget {
@@ -13,10 +13,8 @@ class Favourite extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
       appBar: AppBar(
         backgroundColor: Colors.white,
-
         leading: InkWell(
             child: const Icon(
               Icons.arrow_back_ios_new,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
+import 'package:tourism_app/features/svscreen/streo.dart';
 
 import '../home/presentation/favourite/favourite.dart';
 
@@ -23,18 +23,17 @@ class _SearchState extends State<Search> {
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.07,
-            width: MediaQuery.of(context).size.width * .9,
           ),
           Row(
             children: [
               Padding(
                 padding:
-                    EdgeInsets.only(top: 16.h, right: 0, left: 15.w, bottom: 16.h),
+                    EdgeInsets.only(top: 16, right: 0, left: 16, bottom: 16),
                 child: Material(
                   shadowColor: Color(0xffE4D1B9),
                   child: SizedBox(
                     height: MediaQuery.of(context).size.height * 0.055,
-                    width: 305.w,
+                    width: 290,
                     child: TextFormField(
                       decoration: InputDecoration(
                           filled: true,
@@ -44,7 +43,7 @@ class _SearchState extends State<Search> {
                               color: Color(0xFFBE8C63),
                             ),
                             borderRadius: BorderRadius.circular(
-                              22.r,
+                              22,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
@@ -52,7 +51,7 @@ class _SearchState extends State<Search> {
                               color: Colors.white,
                             ),
                             borderRadius: BorderRadius.circular(
-                              16.r,
+                              16,
                             ),
                           ),
                           hintText: 'Search',
@@ -66,8 +65,8 @@ class _SearchState extends State<Search> {
               MaterialButton(
                 onPressed: () {
                   AwesomeDialog(
-                    // width: MediaQuery.of(context).size.width * 1,
-                    bodyHeaderDistance: 24.w,
+                    width: MediaQuery.of(context).size.width * 1,
+                    bodyHeaderDistance: 24,
                     context: context,
                     dialogType: DialogType.noHeader,
                     animType: AnimType.rightSlide,
@@ -76,7 +75,7 @@ class _SearchState extends State<Search> {
                         "please allow kemet access to your location \n    to find restaurants or caffees near you.",
                     titleTextStyle: TextStyle(
                       color: Color(0xff6C3428),
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       fontFamily: 'intr',
                       fontWeight: FontWeight.w500,
                     ),
@@ -87,7 +86,7 @@ class _SearchState extends State<Search> {
                     btnCancelColor: Colors.white,
                     buttonsTextStyle: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       fontFamily: 'intr',
                       fontWeight: FontWeight.w500,
                     ),
@@ -120,7 +119,6 @@ class _SearchState extends State<Search> {
               ),
             ],
           ),
-
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.03,
           ),
@@ -129,7 +127,7 @@ class _SearchState extends State<Search> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  'Now You Can Search About Near Coffee Or\nRestaurant.',
+                  'Now You Can Search About Near Coffee Or',
                   style: TextStyle(
                     color: Color(0xFFBE8C63),
                     fontSize: 16,
@@ -140,6 +138,25 @@ class _SearchState extends State<Search> {
               ),
             ],
           ),
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: Text(
+                  'Restaurant.',
+                  style: TextStyle(
+                    color: Color(0xFFBE8C63),
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          //
+          SizedBox(height: 50),
+          //
 
           //
         ],

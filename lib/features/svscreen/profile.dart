@@ -4,9 +4,9 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:tourism_app/features/home/notivigation/notifigation.dart';
 import 'package:tourism_app/features/home/presentation/favourite/favourite.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
-import 'package:tourism_app/features/search/search.dart';
 import 'package:tourism_app/features/svscreen/ChangeLanguage.dart';
 import 'package:tourism_app/features/svscreen/edetprofile.dart';
+import 'package:tourism_app/features/svscreen/search.dart';
 import 'package:tourism_app/features/svscreen/signin.dart';
 
 class ProfileScreen extends StatelessWidget {

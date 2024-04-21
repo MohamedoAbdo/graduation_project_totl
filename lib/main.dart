@@ -2,7 +2,6 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/home/presentation/password_view/forget_pass.dart';
-import 'package:tourism_app/features/search/search.dart';
 import 'package:tourism_app/features/svscreen/Giza.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
 import 'package:tourism_app/features/svscreen/TourismType.dart';
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff6C3428)),
         useMaterial3: true,
       ),
-      home: Splash(),
+      home: Home_Screen(),
     );
   }
 }

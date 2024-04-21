@@ -6,8 +6,8 @@ import 'package:tourism_app/features/svscreen/Coastaltourism.dart';
 import 'package:tourism_app/features/svscreen/Giza.dart';
 import 'package:tourism_app/features/svscreen/PharaonicVillage.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
+import 'package:tourism_app/features/svscreen/search.dart';
 
-import '../../search/search.dart';
 import '../scan/scan_design.dart';
 import 'drawer.dart';
 

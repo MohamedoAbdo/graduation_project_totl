@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:tourism_app/features/search/search.dart';
 import 'package:tourism_app/features/svscreen/Coastaltourism.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
+import 'package:tourism_app/features/svscreen/search.dart';
 
 class streo extends StatefulWidget {
   const streo({super.key});

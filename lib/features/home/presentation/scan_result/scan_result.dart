@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tourism_app/features/svscreen/search.dart';
 
-import '../../../search/search.dart';
 import '../favourite/favourite.dart';
 import '../home_view.dart';
 
@@ -436,10 +436,11 @@ class ScanResult extends StatelessWidget {
                 children: [
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
-                    onPressed: ()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_Screen()));
-
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Home_Screen()));
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -453,9 +454,9 @@ class ScanResult extends StatelessWidget {
                   ),
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
-                    onPressed: ()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Favourite()));
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Favourite()));
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -475,8 +476,8 @@ class ScanResult extends StatelessWidget {
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Search()));
-
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Search()));
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -507,7 +508,6 @@ class ScanResult extends StatelessWidget {
           ),
         ),
       ),
-
     );
   }
 }
