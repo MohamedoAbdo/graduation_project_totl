@@ -40,7 +40,7 @@ class ForgetPass extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0xFFBE8C63),
-                    fontSize: 16.sp,
+                    fontSize: 16,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w400,
                   ),
