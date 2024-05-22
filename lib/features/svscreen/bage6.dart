@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tourism_app/features/home/presentation/quick_servay/quick_survey%201.dart';
 import 'package:tourism_app/features/home/presentation/quick_servay/quick_survey%202.dart';
 import 'package:tourism_app/features/svscreen/signin.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class bage6 extends StatefulWidget {
   @override
@@ -108,7 +109,7 @@ class _bage6State extends State<bage6> {
                       child: Row(
                         children: [
                           Text(
-                            "Yes",
+                            S.of(context).mohammed,
                             style: TextStyle(
                               color: Color(0xff6C3428),
                               fontSize: fontSize24,
