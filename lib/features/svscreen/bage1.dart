@@ -40,7 +40,7 @@ class _bage1State extends State<bage1> {
           child: Column(
             children: [
               SizedBox(
-                width: MediaQuery.of(context).size.height * .48,
+                height: MediaQuery.of(context).size.height * .48,
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 1.0,
