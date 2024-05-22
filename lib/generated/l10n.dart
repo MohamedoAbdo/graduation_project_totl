@@ -79,6 +79,26 @@ class S {
       args: [],
     );
   }
+
+  /// `mohammedabdo`
+  String get mohammed {
+    return Intl.message(
+      'mohammedabdo',
+      name: 'mohammed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `elgazouly`
+  String get elgazouly {
+    return Intl.message(
+      'elgazouly',
+      name: 'elgazouly',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -88,6 +108,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'fr'),
     ];
   }
 

@@ -3,8 +3,8 @@ import 'package:tourism_app/features/svscreen/ar.dart';
 import 'package:tourism_app/features/svscreen/ar_lan.dart';
 import 'package:tourism_app/features/svscreen/en.dart';
 import 'package:tourism_app/features/svscreen/en_lan.dart';
-import 'package:tourism_app/features/svscreen/fa.dart';
-import 'package:tourism_app/features/svscreen/fa_lan.dart';
+import 'package:tourism_app/features/svscreen/fr.dart';
+import 'package:tourism_app/features/svscreen/fr_lan.dart';
 
 import 'package:tourism_app/features/svscreen/profile.dart';
 
@@ -255,7 +255,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => fa_lan()),
+                                      builder: (context) => fr_lan()),
                                 );
 
                                 ;

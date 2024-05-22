@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tourism_app/features/svscreen/ar.dart';
 import 'package:tourism_app/features/svscreen/bage2.dart';
 import 'package:tourism_app/features/svscreen/en.dart';
-import 'package:tourism_app/features/svscreen/fa.dart';
+import 'package:tourism_app/features/svscreen/fr.dart';
 
 class bage1 extends StatefulWidget {
   @override
@@ -210,7 +210,7 @@ class _bage1State extends State<bage1> {
                           onTap: () async {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => fa()),
+                              MaterialPageRoute(builder: (context) => fr()),
                             );
 
                             ;

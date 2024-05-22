@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a fr locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,16 +18,14 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'fr';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "elgazouly": MessageLookupByLibrary.simpleMessage("elgazouly"),
-        "mohammed": MessageLookupByLibrary.simpleMessage("mohammedabdo"),
-        "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "text": MessageLookupByLibrary.simpleMessage(
-            "Lorem Ipsum Dolor Sit Amet, Consectetur \nAdipiscing Elit, Sed Do Eiusmod Tempor  Incididunt \nUt Labore Et Dolore Magna Aliqua. Ut Enim  Ad \nMinim Veniam"),
+            "لوريم إيبسوم دولور سيت أميت، كونسيكتور \nلوريم إيبسوم دولور سيت أميت، كونسيكتور  \nUt لوريم إيبسوم دولور سيت أميت، كونسيكتور  \n لوريم إيبسوم دولور سيت أميت، كونسيكتور "),
         "title":
-            MessageLookupByLibrary.simpleMessage("    Lorem Ipsum Dolor    ")
+            MessageLookupByLibrary.simpleMessage("    لوريم إيبسوم دولور    ")
       };
 }

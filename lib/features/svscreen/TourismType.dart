@@ -67,6 +67,8 @@ class _TourismTypeState extends State<TourismType> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * .03,
               ),
+              //1
+
               InkWell(
                 onTap: () {
                   Navigator.push(
@@ -75,54 +77,71 @@ class _TourismTypeState extends State<TourismType> {
                   );
                 },
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.95,
+                  child: Column(
+                    children: [
+                      Container(
+                        child: Image.asset("assets/image/Rectangle 3351.png"),
+                      ),
 
-                  child: Image.asset("assets/image/Rectangle 3351.png"),
+                      //
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 1,
+                        child: Text(
+                          '  Coastal Tourism    ',
+                          style: TextStyle(
+                            color: Color(0xFF6C3428),
+                            fontSize: fontSize24,
+                            fontFamily: 'inter',
+                            fontWeight: FontWeight.w600,
+                            height: MediaQuery.of(context).size.height * .002,
+                          ),
+                        ),
+                      ),
 
-                  //_LoginscreenState
-                ),
-              ),
-              //
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 1,
-                child: Text(
-                  '  Coastal Tourism    ',
-                  style: TextStyle(
-                    color: Color(0xFF6C3428),
-                    fontSize: fontSize24,
-                    fontFamily: 'inter',
-                    fontWeight: FontWeight.w600,
-                    height: MediaQuery.of(context).size.height * .002,
+                      //
+                      //
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 16, right: 16, left: 16, bottom: 16),
+                        child: Container(
+                          child: Text(
+                            'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
+                            style: TextStyle(
+                              color: Color(0xFFBE8C63),
+                              fontSize: fontSize16,
+                              fontFamily: 'inter',
+                              fontWeight: FontWeight.w600,
+                              height: MediaQuery.of(context).size.height * .002,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ),
-
-              //
-
-              //
-              Padding(
-                padding: const EdgeInsets.only(
-                    top: 16, right: 16, left: 16, bottom: 16),
-                child: Container(
-                  child: Text(
-                    'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
-                    style: TextStyle(
-                      color: Color(0xFFBE8C63),
-                      fontSize: fontSize16,
-                      fontFamily: 'inter',
-                      fontWeight: FontWeight.w600,
-                      height: MediaQuery.of(context).size.height * .002,
+                  width: MediaQuery.of(context).size.width * .955,
+                  height: MediaQuery.of(context).size.height * .58,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: MediaQuery.of(context).size.width * .002,
+                        strokeAlign: BorderSide.strokeAlignCenter,
+                        color: Color(0xFFE4D1B9),
+                      ),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 ),
               ),
+              //
               //2
               SizedBox(
                 height: MediaQuery.of(context).size.height * .03,
               ),
+
               InkWell(
                 onTap: () {
                   Navigator.push(
@@ -131,54 +150,74 @@ class _TourismTypeState extends State<TourismType> {
                   );
                 },
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.95,
+                  child: Column(
+                    children: [
+                      Container(
+                        child: Image.asset("assets/image/Rectangle 3350.png"),
 
-                  child: Image.asset("assets/image/Rectangle 3350.png"),
+                        //_LoginscreenState
+                      ),
 
-                  //_LoginscreenState
-                ),
-              ),
-              //
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 1,
-                child: Text(
-                  '  Religious Tourism    ',
-                  style: TextStyle(
-                    color: Color(0xFF6C3428),
-                    fontSize: fontSize24,
-                    fontFamily: 'inter',
-                    fontWeight: FontWeight.w600,
-                    height: MediaQuery.of(context).size.height * .002,
+                      //
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 1,
+                        child: Text(
+                          '  Religious Tourism    ',
+                          style: TextStyle(
+                            color: Color(0xFF6C3428),
+                            fontSize: fontSize24,
+                            fontFamily: 'inter',
+                            fontWeight: FontWeight.w600,
+                            height: MediaQuery.of(context).size.height * .002,
+                          ),
+                        ),
+                      ),
+
+                      //
+
+                      //
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 16, right: 16, left: 16, bottom: 16),
+                        child: Container(
+                          child: Text(
+                            'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
+                            style: TextStyle(
+                              color: Color(0xFFBE8C63),
+                              fontSize: fontSize16,
+                              fontFamily: 'inter',
+                              fontWeight: FontWeight.w600,
+                              height: MediaQuery.of(context).size.height * .002,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ),
-
-              //
-
-              //
-              Padding(
-                padding: const EdgeInsets.only(
-                    top: 16, right: 16, left: 16, bottom: 16),
-                child: Container(
-                  child: Text(
-                    'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
-                    style: TextStyle(
-                      color: Color(0xFFBE8C63),
-                      fontSize: fontSize16,
-                      fontFamily: 'inter',
-                      fontWeight: FontWeight.w600,
-                      height: MediaQuery.of(context).size.height * .002,
+                  width: MediaQuery.of(context).size.width * .955,
+                  height: MediaQuery.of(context).size.height * .58,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: MediaQuery.of(context).size.width * .002,
+                        strokeAlign: BorderSide.strokeAlignCenter,
+                        color: Color(0xFFE4D1B9),
+                      ),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 ),
               ),
+
               //3
               SizedBox(
                 height: MediaQuery.of(context).size.height * .03,
               ),
+
               InkWell(
                 onTap: () {
                   Navigator.push(
@@ -187,46 +226,64 @@ class _TourismTypeState extends State<TourismType> {
                   );
                 },
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.95,
+                  child: Column(
+                    children: [
+                      Container(
+                        child: Image.asset("assets/image/Rectangle 337.png"),
 
-                  child: Image.asset("assets/image/Rectangle 337.png"),
+                        //_LoginscreenState
+                      ),
 
-                  //_LoginscreenState
-                ),
-              ),
-              //
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 1,
-                child: Text(
-                  '  Medical Tourism    ',
-                  style: TextStyle(
-                    color: Color(0xFF6C3428),
-                    fontSize: fontSize24,
-                    fontFamily: 'inter',
-                    fontWeight: FontWeight.w600,
-                    height: MediaQuery.of(context).size.height * .002,
+                      //
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 1,
+                        child: Text(
+                          '  Medical Tourism    ',
+                          style: TextStyle(
+                            color: Color(0xFF6C3428),
+                            fontSize: fontSize24,
+                            fontFamily: 'inter',
+                            fontWeight: FontWeight.w600,
+                            height: MediaQuery.of(context).size.height * .002,
+                          ),
+                        ),
+                      ),
+
+                      //
+
+                      //
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 16, right: 16, left: 16, bottom: 16),
+                        child: Container(
+                          child: Text(
+                            'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
+                            style: TextStyle(
+                              color: Color(0xFFBE8C63),
+                              fontSize: fontSize16,
+                              fontFamily: 'inter',
+                              fontWeight: FontWeight.w600,
+                              height: MediaQuery.of(context).size.height * .002,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ),
-
-              //
-
-              //
-              Padding(
-                padding: const EdgeInsets.only(
-                    top: 16, right: 16, left: 16, bottom: 16),
-                child: Container(
-                  child: Text(
-                    'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
-                    style: TextStyle(
-                      color: Color(0xFFBE8C63),
-                      fontSize: fontSize16,
-                      fontFamily: 'inter',
-                      fontWeight: FontWeight.w600,
-                      height: MediaQuery.of(context).size.height * .002,
+                  width: MediaQuery.of(context).size.width * .955,
+                  height: MediaQuery.of(context).size.height * .58,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: MediaQuery.of(context).size.width * .002,
+                        strokeAlign: BorderSide.strokeAlignCenter,
+                        color: Color(0xFFE4D1B9),
+                      ),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 ),
@@ -243,46 +300,53 @@ class _TourismTypeState extends State<TourismType> {
                   );
                 },
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.95,
+                  child: Column(
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.95,
 
-                  child: Image.asset("assets/image/Rectangle 338.png"),
+                        child: Image.asset("assets/image/Rectangle 338.png"),
 
-                  //_LoginscreenState
-                ),
-              ),
-              //
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 1,
-                child: Text(
-                  '  Archaeological Tourism    ',
-                  style: TextStyle(
-                    color: Color(0xFF6C3428),
-                    fontSize: fontSize24,
-                    fontFamily: 'inter',
-                    fontWeight: FontWeight.w600,
-                    height: MediaQuery.of(context).size.height * .002,
-                  ),
-                ),
-              ),
-              //
+                        //_LoginscreenState
+                      ),
 
-              //
-              Padding(
-                padding: const EdgeInsets.only(
-                    top: 16, right: 16, left: 16, bottom: 16),
-                child: Container(
-                  child: Text(
-                    'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
-                    style: TextStyle(
-                      color: Color(0xFFBE8C63),
-                      fontSize: fontSize16,
-                      fontFamily: 'inter',
-                      fontWeight: FontWeight.w600,
-                      height: MediaQuery.of(context).size.height * .002,
-                    ),
+                      //
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 1,
+                        child: Text(
+                          '  Archaeological Tourism    ',
+                          style: TextStyle(
+                            color: Color(0xFF6C3428),
+                            fontSize: fontSize24,
+                            fontFamily: 'inter',
+                            fontWeight: FontWeight.w600,
+                            height: MediaQuery.of(context).size.height * .002,
+                          ),
+                        ),
+                      ),
+                      //
+
+                      //
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 16, right: 16, left: 16, bottom: 16),
+                        child: Container(
+                          child: Text(
+                            'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
+                            style: TextStyle(
+                              color: Color(0xFFBE8C63),
+                              fontSize: fontSize16,
+                              fontFamily: 'inter',
+                              fontWeight: FontWeight.w600,
+                              height: MediaQuery.of(context).size.height * .002,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
