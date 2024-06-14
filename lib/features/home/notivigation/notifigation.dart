@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class Notifica extends StatelessWidget {
   Notifica({super.key});
@@ -31,7 +32,7 @@ class Notifica extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.02,
                 ),
                 Text(
-                  'Notification',
+                  S.of(context).notification,
                   style: TextStyle(
                     color: Color(0xff6C3428),
                     fontSize: 24,
@@ -45,10 +46,10 @@ class Notifica extends StatelessWidget {
           Expanded(
             child: ListView.separated(
                 itemBuilder: (context, index) => Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 16),
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.93,
-                        height: MediaQuery.of(context).size.height * 0.15,
+                        height: MediaQuery.of(context).size.height * 0.155,
                         padding: EdgeInsets.all(16),
                         decoration: ShapeDecoration(
                           color: Colors.white,
@@ -66,16 +67,7 @@ class Notifica extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Now When You Book From App You Can Get',
-                              style: TextStyle(
-                                color: Color(0xFFBE8C63),
-                                fontSize: 16,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            Text(
-                              '10% Discount On Taba Trip.',
+                              S.of(context).not_text1,
                               style: TextStyle(
                                 color: Color(0xFFBE8C63),
                                 fontSize: 16,
@@ -90,7 +82,7 @@ class Notifica extends StatelessWidget {
                 separatorBuilder: (context, index) => SizedBox(
                       height: 20,
                     ),
-                itemCount: 2),
+                itemCount: 1),
           )
         ],
       ),

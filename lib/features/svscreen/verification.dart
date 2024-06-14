@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tourism_app/features/home/presentation/password_view/create_new_pass.dart';
 import 'package:tourism_app/features/svscreen/controllers.dart';
-import 'package:tourism_app/features/svscreen/signin.dart';
+import 'package:tourism_app/features/svscreen/login.dart';
 
 class verification extends StatefulWidget {
   const verification({super.key});

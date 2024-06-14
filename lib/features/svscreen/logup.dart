@@ -1,8 +1,11 @@
-
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:tourism_app/features/svscreen/bage6.dart';
-import 'package:tourism_app/features/svscreen/signin.dart';
+import 'package:tourism_app/features/svscreen/login.dart';
+import 'package:tourism_app/models/refresh_model.dart';
+import 'package:tourism_app/services/refresh.dart';
 
 class signup extends StatefulWidget {
   const signup({super.key});
@@ -19,7 +22,8 @@ class _signupState extends State<signup> {
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
   TextEditingController passwordcontroller2 = TextEditingController();
-
+  String? Name, Email, password, image;
+  int? Phone;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -70,6 +74,9 @@ class _signupState extends State<signup> {
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 0),
                 child: TextFormField(
+                  onChanged: (value) {
+                    Name = value;
+                  },
                   decoration: InputDecoration(
                     label: Text(
                       'Name',
@@ -96,14 +103,17 @@ class _signupState extends State<signup> {
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 0),
                 child: TextFormField(
+                  onChanged: (value) {
+                    Email = value;
+                  },
                   controller: emailcontroller,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (value) {
-                    if (value == null ||
-                        value.contains('@gmail.com') == false) {
-                      return 'Enter valid Email';
-                    }
-                  },
+//validator: (value) {
+                  //if (value == null ||
+//value.contains('@gmail.com') == false) {
+//return 'Enter valid Email';
+//}
+//},
                   decoration: InputDecoration(
                     label: Text(
                       'Email',
@@ -130,6 +140,10 @@ class _signupState extends State<signup> {
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 0),
                 child: TextFormField(
+                  onChanged: (value) {
+                    Phone = int.parse(value);
+                  },
+                  keyboardType: TextInputType.number,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (value) {
                     if (value == null || value.length < 11) {
@@ -161,7 +175,9 @@ class _signupState extends State<signup> {
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 0),
                 child: TextFormField(
-                  keyboardType: TextInputType.visiblePassword,
+                  onChanged: (value) {
+                    password = value;
+                  },
                   controller: passwordcontroller,
                   obscureText: ispassword,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -260,33 +276,40 @@ class _signupState extends State<signup> {
                 height: MediaQuery.of(context).size.height * .05,
               ),
               // bottom create
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Container(
-                  //padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Color(0xFFBE8C63),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: MediaQuery.of(context).size.height * .181,
-                  height: MediaQuery.of(context).size.height * .051,
-
-                  child: MaterialButton(
-                    onPressed: () async {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => bage6()));
-                    },
-                    child: Text(
-                      'sign in',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
+              GestureDetector(
+                onTap: () async {
+                  LogUp().logup(
+                    name: Name!,
+                    email: Email!,
+                    password: password!,
+                    phone: Phone!,
+                  );
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => bage6()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xFFBE8C63),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    width: MediaQuery.of(context).size.height * .181,
+                    height: MediaQuery.of(context).size.height * .051,
+                    child: Center(
+                      child: Text(
+                        'sign in',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
+
               //
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

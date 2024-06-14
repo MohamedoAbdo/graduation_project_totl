@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:tourism_app/features/svscreen/profile.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class edetprofile extends StatefulWidget {
   const edetprofile({super.key});
@@ -58,7 +59,7 @@ class _edetprofileState extends State<edetprofile> {
                       ),
                     ),
                     Text(
-                      'Edit profile    ',
+                      S.of(context).Edit_Profile,
                       style: TextStyle(
                         color: Color(0xff6C3428),
                         fontSize: fontSize24,
@@ -100,7 +101,7 @@ class _edetprofileState extends State<edetprofile> {
                 child: TextFormField(
                   decoration: InputDecoration(
                     label: Text(
-                      'Name',
+                      S.of(context).Name,
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
                         fontSize: fontSize16,
@@ -134,7 +135,7 @@ class _edetprofileState extends State<edetprofile> {
                   },
                   decoration: InputDecoration(
                     label: Text(
-                      'Email',
+                      S.of(context).Email,
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
                         fontSize: fontSize16,
@@ -166,7 +167,7 @@ class _edetprofileState extends State<edetprofile> {
                   },
                   decoration: InputDecoration(
                     label: Text(
-                      'Phone',
+                      S.of(context).Phone,
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
                         fontSize: fontSize16,
@@ -200,7 +201,7 @@ class _edetprofileState extends State<edetprofile> {
                   },
                   decoration: InputDecoration(
                     label: Text(
-                      'password',
+                      S.of(context).password,
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
                         fontSize: fontSize16,
@@ -258,7 +259,7 @@ class _edetprofileState extends State<edetprofile> {
                               builder: (context) => ProfileScreen()));
                     },
                     child: Text(
-                      'save',
+                      S.of(context).save,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: fontSize16,

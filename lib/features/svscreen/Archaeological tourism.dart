@@ -1,17 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tourism_app/features/svscreen/TourismType.dart';
 import 'package:tourism_app/generated/l10n.dart';
 
-class Coastaltourism extends StatefulWidget {
-  const Coastaltourism({super.key});
+class Archaeological extends StatefulWidget {
+  const Archaeological({super.key});
 
   @override
-  State<Coastaltourism> createState() => _CoastaltourismState();
+  State<Archaeological> createState() => _ArchaeologicalState();
 }
 
-class _CoastaltourismState extends State<Coastaltourism> {
+class _ArchaeologicalState extends State<Archaeological> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -28,11 +27,11 @@ class _CoastaltourismState extends State<Coastaltourism> {
                       Container(
                         height: MediaQuery.of(context).size.height * .3,
                         child: Image.asset(
-                          'assets/image/photo_33.jpg',
+                          'assets/image/Rectangle 338.png',
                         ),
                       ),
                       Positioned(
-                        top: MediaQuery.of(context).size.height * .245,
+                        top: MediaQuery.of(context).size.height * .250,
                         child: Container(
                           height: MediaQuery.of(context).size.height * .050,
                           width: MediaQuery.of(context).size.width * 1.0,
@@ -41,17 +40,14 @@ class _CoastaltourismState extends State<Coastaltourism> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * 0.250,
-                            right: 16,
-                            left: 16,
-                            bottom: 16),
+                      Positioned(
+                        top: MediaQuery.of(context).size.height * .250,
+                        left: MediaQuery.of(context).size.height * .016,
                         child: Container(
                           child: Column(
                             children: [
                               Text(
-                                S.of(context).Coastal_Tourism,
+                                S.of(context).Archaeological_tourism,
                                 style: TextStyle(
                                   color: Color(0xFFE4D1B9),
                                   fontSize: 24,
@@ -95,17 +91,19 @@ class _CoastaltourismState extends State<Coastaltourism> {
                   ],
                 ),
               ),
-
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .02,
+              ),
               Padding(
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 16),
                 child: Container(
-                  height: MediaQuery.of(context).size.height * .3,
+                  height: MediaQuery.of(context).size.height * .45,
                   width: MediaQuery.of(context).size.width * 1.0,
                   color: Colors.white,
                   child: Center(
                     child: Text(
-                      S.of(context).Coastal_text,
+                      S.of(context).Archaeological_text,
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
                         fontSize: 16,
@@ -115,19 +113,18 @@ class _CoastaltourismState extends State<Coastaltourism> {
                   ),
                 ),
               ),
-
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Text(
-                  S.of(context).some_pics,
-                  style: TextStyle(
-                    color: Color(0xFF6C3428),
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
+              Row(
+                children: [
+                  Text(
+                    S.of(context).some_pics,
+                    style: TextStyle(
+                      color: Color(0xFF6C3428),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
+                ],
               ),
-
               SizedBox(
                 height: MediaQuery.of(context).size.height * .02,
               ),
@@ -147,7 +144,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Coastaltourism()),
+                                builder: (context) => Archaeological()),
                           );
                         },
                         child: Container(
@@ -182,7 +179,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Coastaltourism()),
+                                builder: (context) => Archaeological()),
                           );
                         },
                         child: Container(
@@ -226,7 +223,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Coastaltourism()),
+                                builder: (context) => Archaeological()),
                           );
                         },
                         child: Container(
@@ -261,7 +258,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Coastaltourism()),
+                                builder: (context) => Archaeological()),
                           );
                         },
                         child: Container(

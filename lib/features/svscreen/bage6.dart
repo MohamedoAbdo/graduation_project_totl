@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/home/presentation/quick_servay/quick_survey%201.dart';
 import 'package:tourism_app/features/home/presentation/quick_servay/quick_survey%202.dart';
-import 'package:tourism_app/features/svscreen/signin.dart';
+import 'package:tourism_app/features/svscreen/login.dart';
 import 'package:tourism_app/generated/l10n.dart';
 
 class bage6 extends StatefulWidget {
@@ -109,7 +110,7 @@ class _bage6State extends State<bage6> {
                       child: Row(
                         children: [
                           Text(
-                            S.of(context).mohammed,
+                            "Yes",
                             style: TextStyle(
                               color: Color(0xff6C3428),
                               fontSize: fontSize24,
@@ -167,6 +168,27 @@ class _bage6State extends State<bage6> {
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * .024,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home_Screen()),
+                  );
+                },
+                child: Row(
+                  children: [
+                    Text(
+                      S.of(context).elgazouly,
+                      style: TextStyle(
+                        color: Color(0xff6C3428),
+                        fontSize: fontSize24,
+                        fontWeight: FontWeight.w500,
+                        height: MediaQuery.of(context).size.height * .0017,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               //
             ],

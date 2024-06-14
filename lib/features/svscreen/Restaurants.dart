@@ -1,6 +1,13 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:tourism_app/Restaurants/Bazooka.dart';
+import 'package:tourism_app/Restaurants/Carrefour.dart';
+import 'package:tourism_app/Restaurants/Karam%20Al-Sham.dart';
+import 'package:tourism_app/Restaurants/Kunafa%20and%20basbousa.dart';
+import 'package:tourism_app/Restaurants/b%20labn.dart';
 import 'package:tourism_app/features/svscreen/responsive_text.dart';
-import 'package:tourism_app/features/svscreen/signin.dart';
+import 'package:tourism_app/features/svscreen/login.dart';
 import 'package:tourism_app/features/svscreen/streo.dart';
 
 class Restaurants extends StatefulWidget {
@@ -43,30 +50,30 @@ class _RestaurantsState extends State<Restaurants> {
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Container(
                     height: 55,
-                    child: TextFormField(
+                    child: TextField(
+                      onSubmitted: (value) {
+                        print(value);
+                      },
                       decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFFBE8C63),
-                            ),
-                            borderRadius: BorderRadius.circular(
-                              22,
-                            ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xFFBE8C63),
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Colors.white,
-                            ),
-                            borderRadius: BorderRadius.circular(
-                              16,
-                            ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(22),
+                          borderSide: BorderSide(color: Color(0xFFBE8C63)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide(
+                            color: Color(0xFFBE8C63),
                           ),
-                          hintText: 'Search',
-                          hintStyle: TextStyle(color: Color(0xffE4D1B9)),
-                          prefixIcon: Icon(Icons.search),
-                          prefixIconColor: Color(0xffE4D1B9)),
+                        ),
+                        hintText: 'Search',
+                        hintStyle: TextStyle(color: Color(0xffE4D1B9)),
+                        suffixIcon: Icon(Icons.search),
+                      ),
                     ),
                   ),
                 ),
@@ -103,7 +110,7 @@ class _RestaurantsState extends State<Restaurants> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => streo()),
+                        MaterialPageRoute(builder: (context) => Karam()),
                       );
                     },
                     child: Padding(
@@ -112,7 +119,7 @@ class _RestaurantsState extends State<Restaurants> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          _buildCategoryContainer('streo'),
+                          _buildCategoryContainer('Karam Al-Sham'),
                         ],
                       ),
                     ),
@@ -121,7 +128,7 @@ class _RestaurantsState extends State<Restaurants> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => streo()),
+                        MaterialPageRoute(builder: (context) => B_labn()),
                       );
                     },
                     child: Padding(
@@ -130,7 +137,7 @@ class _RestaurantsState extends State<Restaurants> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          _buildCategoryContainer('streo'),
+                          _buildCategoryContainer('b labn'),
                         ],
                       ),
                     ),
@@ -139,7 +146,7 @@ class _RestaurantsState extends State<Restaurants> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => streo()),
+                        MaterialPageRoute(builder: (context) => Kunafa()),
                       );
                     },
                     child: Padding(
@@ -148,7 +155,7 @@ class _RestaurantsState extends State<Restaurants> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          _buildCategoryContainer('streo'),
+                          _buildCategoryContainer('Kunafa and basbousa'),
                         ],
                       ),
                     ),
@@ -170,7 +177,7 @@ class _RestaurantsState extends State<Restaurants> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => streo()),
+                        MaterialPageRoute(builder: (context) => Carrefour()),
                       );
                     },
                     child: Padding(
@@ -179,7 +186,7 @@ class _RestaurantsState extends State<Restaurants> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          _buildCategoryContainer('streo'),
+                          _buildCategoryContainer('Carrefour'),
                         ],
                       ),
                     ),
@@ -188,7 +195,7 @@ class _RestaurantsState extends State<Restaurants> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => streo()),
+                        MaterialPageRoute(builder: (context) => Bazooka()),
                       );
                     },
                     child: Padding(
@@ -197,7 +204,7 @@ class _RestaurantsState extends State<Restaurants> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          _buildCategoryContainer('streo'),
+                          _buildCategoryContainer('Bazooka'),
                         ],
                       ),
                     ),
@@ -224,71 +231,7 @@ class _RestaurantsState extends State<Restaurants> {
               ),
             ),
             //
-            SizedBox(
-              height: MediaQuery.of(context).size.height * .03,
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.only(top: 5, right: 5, left: 0, bottom: 5),
-              child: Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => streo()),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, right: 5, left: 5, bottom: 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _buildCategoryContainer('streo'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => streo()),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, right: 5, left: 5, bottom: 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _buildCategoryContainer('streo'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => streo()),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, right: 5, left: 5, bottom: 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _buildCategoryContainer('streo'),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
             //
             SizedBox(
               width: MediaQuery.of(context).size.width * 1.0,
@@ -324,7 +267,7 @@ class _RestaurantsState extends State<Restaurants> {
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Color(0xFFBE8C63),
-          fontSize: 24,
+          fontSize: 16,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w500,
           height: MediaQuery.of(context).size.height * .001,

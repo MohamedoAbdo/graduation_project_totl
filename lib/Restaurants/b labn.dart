@@ -5,15 +5,16 @@ import 'package:tourism_app/features/svscreen/Coastaltourism.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
 import 'package:tourism_app/features/svscreen/search.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
-class streo extends StatefulWidget {
-  const streo({super.key});
+class B_labn extends StatefulWidget {
+  const B_labn({super.key});
 
   @override
-  State<streo> createState() => _streoState();
+  State<B_labn> createState() => _streoState();
 }
 
-class _streoState extends State<streo> {
+class _streoState extends State<B_labn> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class _streoState extends State<streo> {
                   children: [
                     Stack(children: [
                       Image.asset(
-                        'assets/image/photo_7_2024-04-20_15-55-17.jpg',
+                        'assets/image/014.jpg',
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 50),
@@ -87,29 +88,18 @@ class _streoState extends State<streo> {
                         Container(
                             width: MediaQuery.of(context).size.width * 1.0,
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("  Streo",
+                                Text("  B labn",
                                     style: TextStyle(
                                       color: Color(0xFF6C3428),
                                       fontSize: fontSize24,
                                       fontWeight: FontWeight.w500,
                                     )),
-                                Container(
-                                  width: MediaQuery.of(context).size.width * .8,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Icon(
-                                        Icons.favorite,
-                                        color: Color(0xFF6C3428),
-                                      ),
-                                      Text(
-                                        "   ",
-                                        textAlign: TextAlign.left,
-                                      )
-                                    ],
-                                  ),
-                                )
+                                Icon(
+                                  Icons.favorite,
+                                  color: Color(0xFF6C3428),
+                                ),
                               ],
                             )),
 
@@ -125,7 +115,7 @@ class _streoState extends State<streo> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => streo()),
+                                          builder: (context) => B_labn()),
                                     );
                                   },
                                   child: Container(
@@ -133,11 +123,11 @@ class _streoState extends State<streo> {
                                       children: [
                                         Stack(children: [
                                           Image.asset(
-                                            'assets/image/photo_34.jpg',
+                                            'assets/image/0141.jpg',
                                             width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                .45,
+                                                .35,
                                             height: MediaQuery.of(context)
                                                     .size
                                                     .height *
@@ -153,7 +143,7 @@ class _streoState extends State<streo> {
                             Row(
                               children: [
                                 Text(
-                                  "   ",
+                                  "       ",
                                 )
                               ],
                             ),
@@ -164,7 +154,7 @@ class _streoState extends State<streo> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => streo()),
+                                          builder: (context) => B_labn()),
                                     );
                                   },
                                   child: Container(
@@ -172,11 +162,11 @@ class _streoState extends State<streo> {
                                       children: [
                                         Stack(children: [
                                           Image.asset(
-                                            'assets/image/photo_20.jpg',
+                                            'assets/image/0142.jpg',
                                             width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                .45,
+                                                .42,
                                             height: MediaQuery.of(context)
                                                     .size
                                                     .height *
@@ -200,7 +190,7 @@ class _streoState extends State<streo> {
                         Container(
                           width: MediaQuery.of(context).size.width * 1.0,
                           child: Text(
-                            '  Description:                                                          ',
+                            S.of(context).Description,
                             style: TextStyle(
                               color: Color(0xFF6C3428),
                               fontSize: fontSize16,
@@ -208,23 +198,21 @@ class _streoState extends State<streo> {
                             ),
                           ),
                         ),
-                        Container(
-                          width: MediaQuery.of(context).size.width * 1.0,
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                top: 16, right: 16, left: 16, bottom: 16),
-                            child: Container(
-                              height: MediaQuery.of(context).size.height * .3,
-                              width: MediaQuery.of(context).size.width * .9,
-                              color: Colors.white,
-                              child: Center(
-                                child: Text(
-                                  'Lorem ipsum dolor sit amet, consectetur\nAdipiscing elit, sed do eiusmod tempor incididunt\nUt labore et dolore magna aliqua. Ut enim ad\nMinim veniam.\nLorem ipsum dolor sit amet, consectetur\nAdipiscing elit, sed do eiusmod tempor incididunt\nUt labore et dolore magna aliqua.  .  ',
-                                  style: TextStyle(
-                                    color: Color(0xFFBE8C63),
-                                    fontSize: fontSize16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 16, right: 16, left: 16, bottom: 16),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * .4,
+                            width: MediaQuery.of(context).size.width * .9,
+                            color: Colors.white,
+                            child: Center(
+                              child: Text(
+                                S.of(context).B_labn,
+                                style: TextStyle(
+                                  color: Color(0xFFBE8C63),
+                                  fontSize: fontSize16,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                             ),
@@ -243,28 +231,33 @@ class _streoState extends State<streo> {
                             height: MediaQuery.of(context).size.height * .04),
 
                         Container(
-                          width: MediaQuery.of(context).size.height * .396,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.mail,
-                                color: Color(0xFF6C3428),
-                                size: 20,
-                              ),
-                              Row(
-                                children: [
-                                  Text("     Streo.restaurant.com    ",
-                                      style: TextStyle(
-                                        color: Color(0xFF6C3428),
-                                        fontSize: fontSize16,
-                                        fontWeight: FontWeight.w500,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                .0015,
-                                      ))
-                                ],
-                              ),
-                            ],
+                          width: MediaQuery.of(context).size.width * 1.0,
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 16, left: 16),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.mail,
+                                  color: Color(0xFF6C3428),
+                                  size: 20,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                        "    https://www.facebook.com/b labn/about",
+                                        style: TextStyle(
+                                          color: Color(0xFF6C3428),
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              .0015,
+                                        ))
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
 
@@ -274,28 +267,32 @@ class _streoState extends State<streo> {
                         //
 
                         Container(
-                          width: MediaQuery.of(context).size.height * .396,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.call,
-                                color: Color(0xFF6C3428),
-                                size: 20,
-                              ),
-                              Row(
-                                children: [
-                                  Text("     01092065207   ",
-                                      style: TextStyle(
-                                        color: Color(0xFF6C3428),
-                                        fontSize: fontSize16,
-                                        fontWeight: FontWeight.w500,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                .0015,
-                                      ))
-                                ],
-                              ),
-                            ],
+                          width: MediaQuery.of(context).size.width * 1.0,
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 16, left: 16),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.call,
+                                  color: Color(0xFF6C3428),
+                                  size: 20,
+                                ),
+                                Row(
+                                  children: [
+                                    Text("     1092131801   ",
+                                        style: TextStyle(
+                                          color: Color(0xFF6C3428),
+                                          fontSize: fontSize16,
+                                          fontWeight: FontWeight.w500,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              .0015,
+                                        ))
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
 
@@ -305,17 +302,19 @@ class _streoState extends State<streo> {
                         //
 
                         Container(
-                          width: MediaQuery.of(context).size.height * .396,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.location_on,
-                                color: Color(0xFF6C3428),
-                                size: 20,
-                              ),
-                              Row(
-                                children: [
-                                  Text("     Location    ",
+                          width: MediaQuery.of(context).size.width * 1.0,
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 16, left: 16),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.location_on,
+                                  color: Color(0xFF6C3428),
+                                  size: 20,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(16.0),
+                                  child: Text("المشايه امام الجامعة",
                                       style: TextStyle(
                                         color: Color(0xFF6C3428),
                                         fontSize: fontSize16,
@@ -323,10 +322,10 @@ class _streoState extends State<streo> {
                                         height:
                                             MediaQuery.of(context).size.height *
                                                 .0015,
-                                      ))
-                                ],
-                              ),
-                            ],
+                                      )),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
 

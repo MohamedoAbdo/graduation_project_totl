@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tourism_app/features/home/presentation/password_view/forget_pass.dart';
 import 'package:tourism_app/features/svscreen/bage6.dart';
-import 'package:tourism_app/features/svscreen/signup.dart';
+import 'package:tourism_app/features/svscreen/logup.dart';
 
 class signin extends StatefulWidget {
   const signin({super.key});
@@ -186,7 +186,7 @@ class _signinState extends State<signin> {
                 ),
 
                 InkWell(
-                  onTap: () async {
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => bage6()),

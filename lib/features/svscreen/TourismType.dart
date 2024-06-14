@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
+import 'package:tourism_app/features/svscreen/Archaeological%20tourism.dart';
 import 'package:tourism_app/features/svscreen/Coastaltourism.dart';
+import 'package:tourism_app/features/svscreen/Medical%20tourism.dart';
+import 'package:tourism_app/features/svscreen/Religious%20tourism.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class TourismType extends StatefulWidget {
   const TourismType({super.key});
@@ -53,7 +57,7 @@ class _TourismTypeState extends State<TourismType> {
                       ),
                     ),
                     Text(
-                      ' Tourism Type    ',
+                      S.of(context).tourism_type,
                       style: TextStyle(
                         color: Color(0xff6C3428),
                         fontSize: fontSize24,
@@ -90,7 +94,7 @@ class _TourismTypeState extends State<TourismType> {
                       Container(
                         width: MediaQuery.of(context).size.width * 1,
                         child: Text(
-                          '  Coastal Tourism    ',
+                          S.of(context).Coastal_Tourism,
                           style: TextStyle(
                             color: Color(0xFF6C3428),
                             fontSize: fontSize24,
@@ -108,7 +112,7 @@ class _TourismTypeState extends State<TourismType> {
                             top: 16, right: 16, left: 16, bottom: 16),
                         child: Container(
                           child: Text(
-                            'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
+                            S.of(context).ct_text,
                             style: TextStyle(
                               color: Color(0xFFBE8C63),
                               fontSize: fontSize16,
@@ -146,7 +150,7 @@ class _TourismTypeState extends State<TourismType> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Coastaltourism()),
+                    MaterialPageRoute(builder: (context) => Religioustourism()),
                   );
                 },
                 child: Container(
@@ -165,7 +169,7 @@ class _TourismTypeState extends State<TourismType> {
                       Container(
                         width: MediaQuery.of(context).size.width * 1,
                         child: Text(
-                          '  Religious Tourism    ',
+                          S.of(context).Religious_tourism,
                           style: TextStyle(
                             color: Color(0xFF6C3428),
                             fontSize: fontSize24,
@@ -184,7 +188,7 @@ class _TourismTypeState extends State<TourismType> {
                             top: 16, right: 16, left: 16, bottom: 16),
                         child: Container(
                           child: Text(
-                            'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
+                            S.of(context).rt_text,
                             style: TextStyle(
                               color: Color(0xFFBE8C63),
                               fontSize: fontSize16,
@@ -222,7 +226,7 @@ class _TourismTypeState extends State<TourismType> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Coastaltourism()),
+                    MaterialPageRoute(builder: (context) => Medicaltourism()),
                   );
                 },
                 child: Container(
@@ -241,7 +245,7 @@ class _TourismTypeState extends State<TourismType> {
                       Container(
                         width: MediaQuery.of(context).size.width * 1,
                         child: Text(
-                          '  Medical Tourism    ',
+                          S.of(context).Medical_tourism,
                           style: TextStyle(
                             color: Color(0xFF6C3428),
                             fontSize: fontSize24,
@@ -260,7 +264,7 @@ class _TourismTypeState extends State<TourismType> {
                             top: 16, right: 16, left: 16, bottom: 16),
                         child: Container(
                           child: Text(
-                            'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
+                            S.of(context).mt_text,
                             style: TextStyle(
                               color: Color(0xFFBE8C63),
                               fontSize: fontSize16,
@@ -296,7 +300,7 @@ class _TourismTypeState extends State<TourismType> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Coastaltourism()),
+                    MaterialPageRoute(builder: (context) => Archaeological()),
                   );
                 },
                 child: Container(
@@ -317,7 +321,7 @@ class _TourismTypeState extends State<TourismType> {
                       Container(
                         width: MediaQuery.of(context).size.width * 1,
                         child: Text(
-                          '  Archaeological Tourism    ',
+                          S.of(context).Archaeological_tourism,
                           style: TextStyle(
                             color: Color(0xFF6C3428),
                             fontSize: fontSize24,
@@ -335,7 +339,7 @@ class _TourismTypeState extends State<TourismType> {
                             top: 16, right: 16, left: 16, bottom: 16),
                         child: Container(
                           child: Text(
-                            'Lorem ipsum dolor sitametconsecteturadipiscing \nElit, sed do eiusmod tempor incididunt utlabore \nEt dolore magna aliqua. Ut enim ad minim \nveniam bhjgdhfdjhbanasvdjhdD .',
+                            S.of(context).at_text,
                             style: TextStyle(
                               color: Color(0xFFBE8C63),
                               fontSize: fontSize16,
@@ -347,6 +351,19 @@ class _TourismTypeState extends State<TourismType> {
                         ),
                       ),
                     ],
+                  ),
+                  width: MediaQuery.of(context).size.width * .955,
+                  height: MediaQuery.of(context).size.height * .58,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: MediaQuery.of(context).size.width * .002,
+                        strokeAlign: BorderSide.strokeAlignCenter,
+                        color: Color(0xFFE4D1B9),
+                      ),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                   ),
                 ),
               ),
