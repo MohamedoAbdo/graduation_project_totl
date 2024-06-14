@@ -158,10 +158,23 @@ class _signinState extends State<signin> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(
+                    if (_formKey.currentState!.validate()) {
+                bool result =await firebaselogin (emailcontroller.text,passwordcontroller.text);
+                   if(result ==true){ 
+
+                  //final SharedPreferences prefs = await SharedPreferences.getInstance();
+                  // await prefs.setString('email', emailcontroller.text);
+
+                  Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ForgetPass()),
                     );
+                   }else{ 
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('login faild')),
+                  );
+                   }
+                    
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -312,5 +325,23 @@ class _signinState extends State<signin> {
         ),
       ),
     );
+  }
+  Future<bool>firebaselogin(String email,String password)async{
+    try {
+  UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+    email: email,
+    password: password,
+  );
+   if(userCredential.user !=null){
+    return true;
+   }
+} on FirebaseAuthException catch (e) {
+  if (e.code == 'user-not-found') {
+    print('No user found for that email.');
+  } else if (e.code == 'wrong-password') {
+    print('Wrong password provided for that user.');
+  }
+}
+  return false;
   }
 }

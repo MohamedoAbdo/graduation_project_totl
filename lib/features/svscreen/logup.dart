@@ -276,40 +276,41 @@ class _signupState extends State<signup> {
                 height: MediaQuery.of(context).size.height * .05,
               ),
               // bottom create
-              GestureDetector(
-                onTap: () async {
-                  LogUp().logup(
-                    name: Name!,
-                    email: Email!,
-                    password: password!,
-                    phone: Phone!,
-                  );
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => bage6()));
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Color(0xFFBE8C63),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    width: MediaQuery.of(context).size.height * .181,
-                    height: MediaQuery.of(context).size.height * .051,
-                    child: Center(
-                      child: Text(
+                Padding(
+                padding: const EdgeInsets.all(20),
+                child: Container(
+                  //padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  width: 350,
+
+                  child: MaterialButton(onPressed: () async {
+                       if(_forKey.currentState!.validate()) {
+                         bool result =await fireBaseSingUp(emailcontroller.text, passwordcontroller.text);
+                         if(result == true){
+                           ScaffoldMessenger.of(context).showSnackBar(
+                             const SnackBar(content: Text('success')),
+                           );
+
+                           Navigator.push(context, MaterialPageRoute(
+                               builder: (context) => hoam()));
+                         }
+
+                       }
+                  },
+                    child:  Text(
                         'sign in',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
                         ),
-                      ),
-                    ),
-                  ),
+                      ),),
                 ),
               ),
-
+              
               //
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -352,5 +353,25 @@ class _signupState extends State<signup> {
         ),
       ),
     );
+  }
+   Future<bool> fireBaseSingUp(String email ,String password) async {
+    try {
+      UserCredential usercredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      if(usercredential.user !=null){
+        return true;
+      }
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
+      }
+    } catch (e) {
+      print(e);
+    }
+    return false;
   }
 }
