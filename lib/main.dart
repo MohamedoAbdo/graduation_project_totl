@@ -12,9 +12,6 @@ import 'package:tourism_app/features/svscreen/verification.dart';
 import 'package:tourism_app/splash/splash.dart';
 
 void main() {
-   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-);
   runApp(DevicePreview(builder: (context) => MyApp()));
   // runApp(const MyApp());
 }
