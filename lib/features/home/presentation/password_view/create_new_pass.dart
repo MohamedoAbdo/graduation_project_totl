@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tourism_app/features/svscreen/signin.dart';
+import 'package:tourism_app/features/svscreen/login.dart';
 
 class CreatNEWPass extends StatelessWidget {
   const CreatNEWPass({super.key});
@@ -125,7 +125,7 @@ class CreatNEWPass extends StatelessWidget {
               child: Text(
                 'Reset Password',
                 style: TextStyle(
-                  color: Color(0xffE4D1B9),
+                  color: Color(0xFFFFFFFF),
                   fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w600,

@@ -3,10 +3,11 @@ import 'package:tourism_app/features/svscreen/ar.dart';
 import 'package:tourism_app/features/svscreen/ar_lan.dart';
 import 'package:tourism_app/features/svscreen/en.dart';
 import 'package:tourism_app/features/svscreen/en_lan.dart';
-import 'package:tourism_app/features/svscreen/fa.dart';
-import 'package:tourism_app/features/svscreen/fa_lan.dart';
+import 'package:tourism_app/features/svscreen/fr.dart';
+import 'package:tourism_app/features/svscreen/fr_lan.dart';
 
 import 'package:tourism_app/features/svscreen/profile.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class ChangeLanguage extends StatefulWidget {
   const ChangeLanguage({super.key});
@@ -30,7 +31,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * .03),
+                    top: MediaQuery.of(context).size.height * .05),
                 child: Row(
                   children: [
                     InkWell(
@@ -59,12 +60,13 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                       ),
                     ),
                     Text(
-                      'Change Language    ',
+                      "Change Language ",
+                      // S.of(context).change_language,
                       style: TextStyle(
                         color: Color(0xff6C3428),
-                        fontSize: fontSize32,
+                        fontSize: fontSize24,
                         fontFamily: 'intr',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
@@ -97,7 +99,8 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                               color: Colors.white,
                               child: Center(
                                 child: Text(
-                                  "  Change Language ",
+                                  "Change Language ",
+                                  // S.of(context).change_language,
                                   style: TextStyle(
                                     color: Color(0xff6C3428),
                                     fontSize: fontSize32,
@@ -116,7 +119,9 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                               color: Colors.white,
                               child: Center(
                                 child: Text(
-                                  "  choose your preferred language to\n           continue your adventure. ",
+                                  " choose your preferred language to\ncontinue your adventure.",
+                                  //S.of(context).cl_text,
+                                  textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: Color(0xFFBE8C63),
                                     fontSize: fontSize16,
@@ -255,7 +260,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => fa_lan()),
+                                      builder: (context) => fr_lan()),
                                 );
 
                                 ;

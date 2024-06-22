@@ -194,7 +194,7 @@ class Favourite extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ProfileScreen()));
+                              builder: (context) => ProfileScreen()));
                     },
                     child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,

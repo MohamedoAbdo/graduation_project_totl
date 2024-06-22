@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tourism_app/features/home/presentation/transport/transport.dart';
 import 'package:tourism_app/features/svscreen/TourismType.dart';
 import 'package:tourism_app/features/svscreen/aboutus.dart';
+import 'package:tourism_app/features/svscreen/logup.dart';
 
 class NavDrawer extends StatelessWidget {
   const NavDrawer({super.key});
@@ -17,50 +18,7 @@ class NavDrawer extends StatelessWidget {
           padding: EdgeInsets.only(left: 24, right: 16),
           child: ListView(children: <Widget>[
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.15,
-            ),
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: 32,
-                  backgroundImage: AssetImage("assets/image/profile.png"),
-                ),
-                const SizedBox(
-                  width: 6.5,
-                ),
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'gamila_hesham',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xffE4D1B9)),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      'gamilaeladay@gmail.com',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xffE4D1B9)),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.05,
-            ),
-            const Divider(
-              color: Color(0xffE4D1B9),
-              thickness: 1,
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.05,
+              height: MediaQuery.of(context).size.height * 0.2,
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 0),

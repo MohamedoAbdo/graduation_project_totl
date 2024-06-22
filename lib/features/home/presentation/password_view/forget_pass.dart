@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/features/svscreen/verification.dart';
@@ -6,6 +7,7 @@ class ForgetPass extends StatelessWidget {
   ForgetPass({super.key});
 
   final forKey = GlobalKey<FormState>();
+  String? email;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +64,9 @@ class ForgetPass extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: TextFormField(
-              onChanged: (value) => print(value),
+              onChanged: (value) {
+                email = value;
+              },
               decoration: InputDecoration(
                 prefixIcon: Icon(
                   Icons.email,
@@ -98,7 +102,7 @@ class ForgetPass extends StatelessWidget {
               child: Text(
                 'Send Mail',
                 style: TextStyle(
-                  color: Color(0xffE4D1B9),
+                  color: Color(0xFFFFFFFF),
                   fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w600,

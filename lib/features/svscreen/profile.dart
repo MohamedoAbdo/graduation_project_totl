@@ -1,16 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:tourism_app/features/home/notivigation/notifigation.dart';
 import 'package:tourism_app/features/home/presentation/favourite/favourite.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/ChangeLanguage.dart';
 import 'package:tourism_app/features/svscreen/edetprofile.dart';
+import 'package:tourism_app/features/svscreen/logup.dart';
 import 'package:tourism_app/features/svscreen/search.dart';
-import 'package:tourism_app/features/svscreen/signin.dart';
+import 'package:tourism_app/features/svscreen/login.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  final _firestore = FirebaseFirestore.instance;
+  final _auth = FirebaseAuth.instance;
+  late User signedinuser;
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUser();
+  }
+
+  void getCurrentUser() {
+    try {
+      final user = _auth.currentUser;
+      if (user != null) {
+        signedinuser = user;
+        print(signedinuser.email);
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void messagesStreams() async {
+    await for (var snapshot in _firestore.collection('messages').snapshots()) {
+      for (var message in snapshot.docs) {
+        print(message.data());
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,12 +96,12 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      ' Profile    ',
+                      S.of(context).Profile,
                       style: TextStyle(
                         color: Color(0xff6C3428),
                         fontSize: fontSize24,
                         fontFamily: 'intr',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
@@ -79,8 +117,10 @@ class ProfileScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * .016,
               ),
+
               Text(
-                ' Gamila_hesham',
+                email,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: fontSize24,
                   fontWeight: FontWeight.w500,
@@ -101,32 +141,27 @@ class ProfileScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     width: MediaQuery.of(context).size.height * .172,
-                    height: MediaQuery.of(context).size.height * .051,
+                    height: MediaQuery.of(context).size.height * .060,
                     decoration: BoxDecoration(
                       color: Color(0xFFBE8C63),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                          children: [
-                            Text("   "),
-                            Icon(
-                              Icons.edit,
-                              color: Color(0xffE4D1B9),
-                            ),
-                            Text(
-                              "   Edit Profile",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Color(0xffE4D1B9),
-                                fontSize:
-                                    MediaQuery.of(context).size.height * .019,
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ],
+                        Icon(
+                          Icons.edit,
+                          color: Color(0xFFFFFFFF),
+                        ),
+                        Text(
+                          S.of(context).Edit_Profile,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color(0xFFFFFFFF),
+                            fontSize: MediaQuery.of(context).size.height * .019,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ],
                     ),
@@ -137,7 +172,7 @@ class ProfileScreen extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * .051,
               ),
               _settingItem(
-                title: 'Notification',
+                title: S.of(context).notification,
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Notifica()));
@@ -148,7 +183,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               SizedBox(height: MediaQuery.of(context).size.height * .010),
               _settingItem(
-                title: 'Language',
+                title: S.of(context).Language,
                 onTap: () {
                   Navigator.push(
                       context,
@@ -161,7 +196,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               SizedBox(height: MediaQuery.of(context).size.height * .01),
               _settingItem(
-                title: 'Favourite',
+                title: S.of(context).fav,
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Favourite()));
@@ -171,7 +206,7 @@ class ProfileScreen extends StatelessWidget {
                 'assets/image/Line 9.png',
               ),
               _settingItem(
-                title: 'Help',
+                title: S.of(context).Help,
                 onTap: () {
                   // Navigator.push( context, MaterialPageRoute( builder: (context) => PharaonicVillage()));
                 },
@@ -179,7 +214,7 @@ class ProfileScreen extends StatelessWidget {
               Image.asset(
                 'assets/image/Line 9.png',
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * .010),
+              SizedBox(height: MediaQuery.of(context).size.height * .032),
               //
               MaterialButton(
                 onPressed: () {
@@ -189,7 +224,7 @@ class ProfileScreen extends StatelessWidget {
                     context: context,
                     dialogType: DialogType.noHeader,
                     animType: AnimType.rightSlide,
-                    title: 'Are You Sure You Want To Log Out?',
+                    title: S.of(context).log_title,
                     titleTextStyle: TextStyle(
                       color: Color(0xff6C3428),
                       fontSize: fontSize16,
@@ -202,9 +237,10 @@ class ProfileScreen extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => ProfileScreen()));
                     },
+                    btnCancelText: (S.of(context).cancel),
                     btnCancelColor: Colors.white,
                     buttonsTextStyle: TextStyle(
-                      color: Color(0xFFBE8C63),
+                      color: Color(0xFFE4D1B9),
                       fontSize: fontSize16,
                       fontFamily: 'intr',
                       fontWeight: FontWeight.w500,
@@ -213,14 +249,14 @@ class ProfileScreen extends StatelessWidget {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => signin()));
                     },
-                    btnOkText: ("     Log Out"),
-                    btnOkColor: Color(0xff6C3428),
+                    btnOkText: (S.of(context).Log_Out),
+                    btnOkColor: Color(0xFFBE8C63),
                   )..show();
                 },
                 child: Row(
                   children: [
                     Text(
-                      "Log Out",
+                      S.of(context).Log_Out,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
@@ -250,9 +286,7 @@ class ProfileScreen extends StatelessWidget {
           child: Icon(
             Icons.camera_alt_rounded,
             size: 32,
-            color: Color(
-              0xffE4D1B9,
-            ),
+            color: Color(0xffE4D1B9),
           ),
           onPressed: () {},
         ),

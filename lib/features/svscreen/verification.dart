@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tourism_app/features/home/presentation/password_view/create_new_pass.dart';
 import 'package:tourism_app/features/svscreen/controllers.dart';
-import 'package:tourism_app/features/svscreen/signin.dart';
+import 'package:tourism_app/features/svscreen/login.dart';
 
 class verification extends StatefulWidget {
   const verification({super.key});
@@ -247,7 +247,7 @@ class _verificationState extends State<verification> {
                         "Verify",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Color(0xFFE4D1B9),
+                          color: Color(0xFFFFFFFF),
                           fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w500,

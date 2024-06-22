@@ -1,8 +1,18 @@
+import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:tourism_app/Helper/serices.dart';
+import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/bage6.dart';
-import 'package:tourism_app/features/svscreen/signin.dart';
+import 'package:tourism_app/features/svscreen/login.dart';
+import 'package:tourism_app/generated/l10n.dart';
+import 'package:tourism_app/models/refresh_model.dart';
+import 'package:tourism_app/services/refresh.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class signup extends StatefulWidget {
   const signup({super.key});
@@ -11,15 +21,54 @@ class signup extends StatefulWidget {
   State<signup> createState() => _signupState();
 }
 
+String email = '';
+String name = '';
+
 class _signupState extends State<signup> {
+  // ignore: prefer_typing_uninitialized_variables
+  final _firestore = FirebaseFirestore.instance;
+  TextEditingController nemecontroller = TextEditingController();
+  TextEditingController emailcontroller = TextEditingController();
+  void initstata() {
+    super.initState();
+    emailcontroller.addListener(() {
+      setState(() {
+        email = emailcontroller.text;
+      });
+    });
+    nemecontroller.addListener(() {
+      setState(() {
+        name = nemecontroller.text;
+      });
+    });
+  }
+
+  // void messagesStreams() async {
+  //   await for (var snapshot in _firestore.collection('messages').snapshots()) {
+  //     for (var message in snapshot.docs) {
+  //       print(message.data());
+  //     }
+  //   }
+  // }
+
+  void getmessaged() async {
+    final messages = await _firestore.collection('messages').get();
+    for (var message in messages.docs) {
+      print(message.data());
+    }
+  }
+
+  final auth = FirebaseAuth.instance;
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
+
   final _forKey = GlobalKey<FormState>();
   bool ispassword = true;
   bool ispassword2 = true;
 
-  TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
   TextEditingController passwordcontroller2 = TextEditingController();
-
+  late String Name, Email, password, image;
+  int? Phone;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -31,7 +80,7 @@ class _signupState extends State<signup> {
         key: _forKey,
         child: SingleChildScrollView(
           child: Column(
-            children: [
+            children: <Widget>[
               SizedBox(
                 height: MediaQuery.of(context).size.height * .04,
               ),
@@ -39,9 +88,9 @@ class _signupState extends State<signup> {
               Row(
                 children: [
                   Text(
-                    '  Create  \n  your account..',
+                    S.of(context).Create,
                     style: TextStyle(
-                      color: Color(0xff6C3428),
+                      color: Color(0xFF6C3428),
                       fontSize: 32,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
@@ -70,14 +119,18 @@ class _signupState extends State<signup> {
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 0),
                 child: TextFormField(
+                  onChanged: (value) {
+                    name = value;
+                  },
+                  controller: nemecontroller,
                   decoration: InputDecoration(
                     label: Text(
-                      'Name',
+                      S.of(context).Name,
                       style: TextStyle(
-                        color: Color(0xFFBE8C63),
-                        fontSize: 17,
+                        color: Color(0xFF6C3428),
+                        fontSize: 12,
                         fontFamily: 'Inter',
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
@@ -96,6 +149,9 @@ class _signupState extends State<signup> {
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 0),
                 child: TextFormField(
+                  onChanged: (value) {
+                    email = value;
+                  },
                   controller: emailcontroller,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (value) {
@@ -106,12 +162,12 @@ class _signupState extends State<signup> {
                   },
                   decoration: InputDecoration(
                     label: Text(
-                      'Email',
+                      S.of(context).Email,
                       style: TextStyle(
-                        color: const Color(0xFFBE8C63),
-                        fontSize: 17,
+                        color: const Color(0xFF6C3428),
+                        fontSize: 12,
                         fontFamily: 'Inter',
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
@@ -130,6 +186,10 @@ class _signupState extends State<signup> {
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 0),
                 child: TextFormField(
+                  onChanged: (value) {
+                    Phone = int.parse(value);
+                  },
+                  keyboardType: TextInputType.number,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (value) {
                     if (value == null || value.length < 11) {
@@ -138,12 +198,12 @@ class _signupState extends State<signup> {
                   },
                   decoration: InputDecoration(
                     label: Text(
-                      'Phone',
+                      S.of(context).Phone,
                       style: TextStyle(
-                        color: Color(0xFFBE8C63),
-                        fontSize: 17,
+                        color: Color(0xFF6C3428),
+                        fontSize: 12,
                         fontFamily: 'Inter',
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
@@ -161,7 +221,9 @@ class _signupState extends State<signup> {
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 0),
                 child: TextFormField(
-                  keyboardType: TextInputType.visiblePassword,
+                  onChanged: (value) {
+                    password = value;
+                  },
                   controller: passwordcontroller,
                   obscureText: ispassword,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -172,12 +234,12 @@ class _signupState extends State<signup> {
                   },
                   decoration: InputDecoration(
                     label: Text(
-                      'password',
+                      S.of(context).password,
                       style: TextStyle(
-                        color: Color(0xFFBE8C63),
-                        fontSize: 17,
+                        color: Color(0xFF6C3428),
+                        fontSize: 12,
                         fontFamily: 'Inter',
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
@@ -222,12 +284,12 @@ class _signupState extends State<signup> {
                   },
                   decoration: InputDecoration(
                     label: Text(
-                      'confirm password',
+                      S.of(context).password,
                       style: TextStyle(
-                        color: Color(0xFFBE8C63),
-                        fontSize: 17,
+                        color: Color(0xFF6C3428),
+                        fontSize: 12,
                         fontFamily: 'Inter',
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
@@ -273,11 +335,30 @@ class _signupState extends State<signup> {
 
                   child: MaterialButton(
                     onPressed: () async {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => bage6()));
+                      getmessaged();
+                      // messagesStreams();
+                      _firestore.collection('messages').add({
+                        'email': email,
+                        'name': name,
+                      });
+
+                      if (_forKey.currentState!.validate()) {
+                        bool result = await fireBaseSingUp(
+                            emailcontroller.text, passwordcontroller.text);
+                        if (result == true) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('success')),
+                          );
+
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Home_Screen()));
+                        }
+                      }
                     },
                     child: Text(
-                      'sign in',
+                      S.of(context).sign_in,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -288,16 +369,18 @@ class _signupState extends State<signup> {
                 ),
               ),
               //
+
+              //
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'you have account?',
+                    S.of(context).you_have,
                     style: TextStyle(
-                      color: Color(0xFFBE8C63),
+                      color: Color(0xFF6C3428),
                       fontSize: 12,
                       fontFamily: 'Inter',
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
                       height: MediaQuery.of(context).size.height * .0016,
                     ),
                   ),
@@ -309,12 +392,12 @@ class _signupState extends State<signup> {
                       );
                     },
                     child: Text(
-                      "  sign in",
+                      S.of(context).sign_in,
                       style: TextStyle(
-                        color: Color(0xff6C3428),
+                        color: Color(0xFFBE8C63),
                         fontSize: 12,
                         fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                         height: MediaQuery.of(context).size.height * .0015,
                       ),
                     ),
@@ -329,5 +412,27 @@ class _signupState extends State<signup> {
         ),
       ),
     );
+  }
+
+  Future<bool> fireBaseSingUp(String email, String password) async {
+    try {
+      UserCredential usercredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      if (usercredential.user != null) {
+        return true;
+      }
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
+      }
+    } catch (e) {
+      print(e);
+    }
+    return false;
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tourism_app/features/svscreen/Giza.dart';
+import 'package:flutter/widgets.dart';
 import 'package:tourism_app/features/svscreen/TourismType.dart';
-import 'package:tourism_app/features/svscreen/streo.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class Coastaltourism extends StatefulWidget {
   const Coastaltourism({super.key});
@@ -25,8 +25,42 @@ class _CoastaltourismState extends State<Coastaltourism> {
                 child: Column(
                   children: [
                     Stack(children: [
-                      Image.asset(
-                        'assets/image/00.png',
+                      Container(
+                        height: MediaQuery.of(context).size.height * .3,
+                        child: Image.asset(
+                          'assets/image/photo_33.jpg',
+                        ),
+                      ),
+                      Positioned(
+                        top: MediaQuery.of(context).size.height * .245,
+                        child: Container(
+                          height: MediaQuery.of(context).size.height * .050,
+                          width: MediaQuery.of(context).size.width * 1.0,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF6C3428).withOpacity(1.0),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * 0.250,
+                            right: 16,
+                            left: 16,
+                            bottom: 16),
+                        child: Container(
+                          child: Column(
+                            children: [
+                              Text(
+                                S.of(context).Coastal_Tourism,
+                                style: TextStyle(
+                                  color: Color(0xFFE4D1B9),
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(
@@ -61,40 +95,43 @@ class _CoastaltourismState extends State<Coastaltourism> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .02,
-              ),
+
               Padding(
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 16),
                 child: Container(
-                  height: MediaQuery.of(context).size.height * .45,
+                  height: MediaQuery.of(context).size.height * .3,
                   width: MediaQuery.of(context).size.width * 1.0,
                   color: Colors.white,
                   child: Center(
                     child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam.\n Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam.Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna\naliqua. Ut enim ad minim veniam.\nLorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt\nut labore et dolore magna aliqua. Ut enim ad\nminim veniam .Ut enim ad minim veniam.Lorem\nipsum dolor sit amet, consectetur adipiscing elit .   ',
+                      S.of(context).Coastal_text,
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
                         fontSize: 16,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
                 ),
               ),
+
               Row(
                 children: [
-                  Text(
-                    '   some pics:     ',
-                    style: TextStyle(
-                      color: Color(0xFF6C3428),
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(
+                      S.of(context).some_pics,
+                      style: TextStyle(
+                        color: Color(0xFF6C3428),
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ],
               ),
+
               SizedBox(
                 height: MediaQuery.of(context).size.height * .02,
               ),
@@ -128,6 +165,51 @@ class _CoastaltourismState extends State<Coastaltourism> {
                                   width:
                                       MediaQuery.of(context).size.width * .45,
                                 ),
+                                //
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              S.of(context).Blue_Lagoon,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Color(0xFFE4D1B9),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                //
                               ])
                             ],
                           ),
@@ -162,6 +244,49 @@ class _CoastaltourismState extends State<Coastaltourism> {
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              S.of(context).Ford_Bay,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Color(0xFFE4D1B9),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],
@@ -207,6 +332,49 @@ class _CoastaltourismState extends State<Coastaltourism> {
                                   width:
                                       MediaQuery.of(context).size.width * .45,
                                 ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              S.of(context).nuweiba,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Color(0xFFE4D1B9),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               ])
                             ],
                           ),
@@ -241,6 +409,49 @@ class _CoastaltourismState extends State<Coastaltourism> {
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              S.of(context).Marsa_Alam,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Color(0xFFE4D1B9),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],

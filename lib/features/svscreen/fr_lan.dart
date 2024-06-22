@@ -2,21 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/bage2.dart';
 import 'package:tourism_app/generated/l10n.dart';
 
-class fa extends StatefulWidget {
-  const fa({super.key});
+class fr_lan extends StatefulWidget {
+  const fr_lan({super.key});
 
   @override
-  State<fa> createState() => _faState();
+  State<fr_lan> createState() => _fr_lanState();
 }
 
-class _faState extends State<fa> {
+class _fr_lanState extends State<fr_lan> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: const Locale("fa"),
+      locale: const Locale("fr"),
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -24,7 +25,7 @@ class _faState extends State<fa> {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      home: bage2(),
+      home: Home_Screen(),
     );
   }
 }

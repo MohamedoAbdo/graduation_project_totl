@@ -5,18 +5,18 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tourism_app/features/svscreen/bage2.dart';
 import 'package:tourism_app/generated/l10n.dart';
 
-class fa_lan extends StatefulWidget {
-  const fa_lan({super.key});
+class fr extends StatefulWidget {
+  const fr({super.key});
 
   @override
-  State<fa_lan> createState() => _fa_lanState();
+  State<fr> createState() => _frState();
 }
 
-class _fa_lanState extends State<fa_lan> {
+class _frState extends State<fr> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: const Locale("fa"),
+      locale: const Locale("fr"),
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
