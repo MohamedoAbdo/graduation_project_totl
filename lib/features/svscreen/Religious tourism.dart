@@ -25,7 +25,7 @@ class _ReligioustourismState extends State<Religioustourism> {
                   children: [
                     Stack(children: [
                       Container(
-                        height: MediaQuery.of(context).size.height * .3,
+                        height: MediaQuery.of(context).size.height * .292,
                         child: Image.asset(
                           'assets/image/Rectangle 3350.png',
                         ),
@@ -36,7 +36,7 @@ class _ReligioustourismState extends State<Religioustourism> {
                           height: MediaQuery.of(context).size.height * .050,
                           width: MediaQuery.of(context).size.width * 1.0,
                           decoration: BoxDecoration(
-                            color: Color(0xFF6C3428).withOpacity(0.5),
+                            color: Color(0xFF6C3428).withOpacity(1),
                           ),
                         ),
                       ),
@@ -60,7 +60,7 @@ class _ReligioustourismState extends State<Religioustourism> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * 0.05),
+                            top: MediaQuery.of(context).size.height * 0.07),
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
@@ -91,9 +91,7 @@ class _ReligioustourismState extends State<Religioustourism> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .02,
-              ),
+
               Padding(
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 16),
@@ -115,12 +113,15 @@ class _ReligioustourismState extends State<Religioustourism> {
               ),
               Row(
                 children: [
-                  Text(
-                    S.of(context).some_pics,
-                    style: TextStyle(
-                      color: Color(0xFF6C3428),
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(
+                      S.of(context).some_pics,
+                      style: TextStyle(
+                        color: Color(0xFF6C3428),
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ],
@@ -128,6 +129,7 @@ class _ReligioustourismState extends State<Religioustourism> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * .02,
               ),
+              //
               Row(
                 children: [
                   Row(
@@ -152,11 +154,48 @@ class _ReligioustourismState extends State<Religioustourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 115940.png',
+                                  'assets/image/Group 115943.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          S.of(context).Muhammad_Ali_Mosque,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: Color(0xFFE4D1B9),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],
@@ -168,7 +207,7 @@ class _ReligioustourismState extends State<Religioustourism> {
                   Row(
                     children: [
                       Text(
-                        "      ",
+                        "  ",
                       )
                     ],
                   ),
@@ -187,11 +226,48 @@ class _ReligioustourismState extends State<Religioustourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 115950.png',
+                                  'assets/image/Group 115953.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          S.of(context).Khan,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: Color(0xFFE4D1B9),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],
@@ -231,11 +307,48 @@ class _ReligioustourismState extends State<Religioustourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 115960.png',
+                                  'assets/image/Group 115963.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          S.of(context).RED_MONASTERy,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: Color(0xFFE4D1B9),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],
@@ -247,7 +360,7 @@ class _ReligioustourismState extends State<Religioustourism> {
                   Row(
                     children: [
                       Text(
-                        "      ",
+                        "     ",
                       )
                     ],
                   ),
@@ -266,11 +379,48 @@ class _ReligioustourismState extends State<Religioustourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 115970.png',
+                                  'assets/image/Group 115973.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          S.of(context).CATHERINE_MONASTERY,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: Color(0xFFE4D1B9),
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],
@@ -281,6 +431,8 @@ class _ReligioustourismState extends State<Religioustourism> {
                   ),
                 ],
               ),
+              //hkmhcmg
+
               SizedBox(
                 height: MediaQuery.of(context).size.height * .02,
               ),

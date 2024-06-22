@@ -37,7 +37,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                           height: MediaQuery.of(context).size.height * .050,
                           width: MediaQuery.of(context).size.width * 1.0,
                           decoration: BoxDecoration(
-                            color: Color(0xFF6C3428).withOpacity(0.5),
+                            color: Color(0xFF6C3428).withOpacity(1.0),
                           ),
                         ),
                       ),
@@ -55,7 +55,7 @@ class _CoastaltourismState extends State<Coastaltourism> {
                                 style: TextStyle(
                                   color: Color(0xFFE4D1B9),
                                   fontSize: 24,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ],
@@ -109,23 +109,27 @@ class _CoastaltourismState extends State<Coastaltourism> {
                       style: TextStyle(
                         color: Color(0xFFBE8C63),
                         fontSize: 16,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
                 ),
               ),
 
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Text(
-                  S.of(context).some_pics,
-                  style: TextStyle(
-                    color: Color(0xFF6C3428),
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(
+                      S.of(context).some_pics,
+                      style: TextStyle(
+                        color: Color(0xFF6C3428),
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
 
               SizedBox(
@@ -161,6 +165,51 @@ class _CoastaltourismState extends State<Coastaltourism> {
                                   width:
                                       MediaQuery.of(context).size.width * .45,
                                 ),
+                                //
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              S.of(context).Blue_Lagoon,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Color(0xFFE4D1B9),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                //
                               ])
                             ],
                           ),
@@ -195,6 +244,49 @@ class _CoastaltourismState extends State<Coastaltourism> {
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              S.of(context).Ford_Bay,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Color(0xFFE4D1B9),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],
@@ -240,6 +332,49 @@ class _CoastaltourismState extends State<Coastaltourism> {
                                   width:
                                       MediaQuery.of(context).size.width * .45,
                                 ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              S.of(context).nuweiba,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Color(0xFFE4D1B9),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               ])
                             ],
                           ),
@@ -274,6 +409,49 @@ class _CoastaltourismState extends State<Coastaltourism> {
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              S.of(context).Marsa_Alam,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Color(0xFFE4D1B9),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],

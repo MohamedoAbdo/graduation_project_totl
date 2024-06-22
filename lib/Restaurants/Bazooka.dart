@@ -42,7 +42,8 @@ class _streoState extends State<Bazooka> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Search()),
+                              MaterialPageRoute(
+                                  builder: (context) => Restaurants()),
                             );
                           },
                           child: Row(
@@ -203,7 +204,7 @@ class _streoState extends State<Bazooka> {
                           padding: const EdgeInsets.only(
                               top: 16, right: 16, left: 16, bottom: 16),
                           child: Container(
-                            height: MediaQuery.of(context).size.height * .4,
+                            height: MediaQuery.of(context).size.height * .3,
                             width: MediaQuery.of(context).size.width * .9,
                             color: Colors.white,
                             child: Center(
@@ -297,7 +298,7 @@ class _streoState extends State<Bazooka> {
                         ),
 
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * .025,
+                          height: MediaQuery.of(context).size.height * .01,
                         ),
                         //
 
@@ -314,7 +315,7 @@ class _streoState extends State<Bazooka> {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.all(16.0),
-                                  child: Text("الاستاد بجوار مصر للطيران",
+                                  child: Text("The stadium is next to EgyptAir",
                                       style: TextStyle(
                                         color: Color(0xFF6C3428),
                                         fontSize: fontSize16,

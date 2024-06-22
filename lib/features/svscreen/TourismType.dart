@@ -62,7 +62,7 @@ class _TourismTypeState extends State<TourismType> {
                         color: Color(0xff6C3428),
                         fontSize: fontSize24,
                         fontFamily: 'intr',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
@@ -91,16 +91,20 @@ class _TourismTypeState extends State<TourismType> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 1,
-                        child: Text(
-                          S.of(context).Coastal_Tourism,
-                          style: TextStyle(
-                            color: Color(0xFF6C3428),
-                            fontSize: fontSize24,
-                            fontFamily: 'inter',
-                            fontWeight: FontWeight.w600,
-                            height: MediaQuery.of(context).size.height * .002,
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 0, right: 16, left: 16, bottom: 0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 1,
+                          child: Text(
+                            S.of(context).Coastal_Tourism,
+                            style: TextStyle(
+                              color: Color(0xFF6C3428),
+                              fontSize: fontSize24,
+                              fontFamily: 'inter',
+                              fontWeight: FontWeight.w600,
+                              height: MediaQuery.of(context).size.height * .002,
+                            ),
                           ),
                         ),
                       ),
@@ -166,16 +170,20 @@ class _TourismTypeState extends State<TourismType> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 1,
-                        child: Text(
-                          S.of(context).Religious_tourism,
-                          style: TextStyle(
-                            color: Color(0xFF6C3428),
-                            fontSize: fontSize24,
-                            fontFamily: 'inter',
-                            fontWeight: FontWeight.w600,
-                            height: MediaQuery.of(context).size.height * .002,
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 0, right: 16, left: 16, bottom: 0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 1,
+                          child: Text(
+                            S.of(context).Religious_tourism,
+                            style: TextStyle(
+                              color: Color(0xFF6C3428),
+                              fontSize: fontSize24,
+                              fontFamily: 'inter',
+                              fontWeight: FontWeight.w600,
+                              height: MediaQuery.of(context).size.height * .002,
+                            ),
                           ),
                         ),
                       ),
@@ -242,16 +250,20 @@ class _TourismTypeState extends State<TourismType> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 1,
-                        child: Text(
-                          S.of(context).Medical_tourism,
-                          style: TextStyle(
-                            color: Color(0xFF6C3428),
-                            fontSize: fontSize24,
-                            fontFamily: 'inter',
-                            fontWeight: FontWeight.w600,
-                            height: MediaQuery.of(context).size.height * .002,
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 0, right: 16, left: 16, bottom: 0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 1,
+                          child: Text(
+                            S.of(context).Medical_tourism,
+                            style: TextStyle(
+                              color: Color(0xFF6C3428),
+                              fontSize: fontSize24,
+                              fontFamily: 'inter',
+                              fontWeight: FontWeight.w600,
+                              height: MediaQuery.of(context).size.height * .002,
+                            ),
                           ),
                         ),
                       ),
@@ -318,16 +330,20 @@ class _TourismTypeState extends State<TourismType> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 1,
-                        child: Text(
-                          S.of(context).Archaeological_tourism,
-                          style: TextStyle(
-                            color: Color(0xFF6C3428),
-                            fontSize: fontSize24,
-                            fontFamily: 'inter',
-                            fontWeight: FontWeight.w600,
-                            height: MediaQuery.of(context).size.height * .002,
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 0, right: 16, left: 16, bottom: 0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 1,
+                          child: Text(
+                            S.of(context).Archaeological_tourism,
+                            style: TextStyle(
+                              color: Color(0xFF6C3428),
+                              fontSize: fontSize24,
+                              fontFamily: 'inter',
+                              fontWeight: FontWeight.w600,
+                              height: MediaQuery.of(context).size.height * .002,
+                            ),
                           ),
                         ),
                       ),

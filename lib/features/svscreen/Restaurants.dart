@@ -8,7 +8,9 @@ import 'package:tourism_app/Restaurants/Kunafa%20and%20basbousa.dart';
 import 'package:tourism_app/Restaurants/b%20labn.dart';
 import 'package:tourism_app/features/svscreen/responsive_text.dart';
 import 'package:tourism_app/features/svscreen/login.dart';
+import 'package:tourism_app/features/svscreen/search.dart';
 import 'package:tourism_app/features/svscreen/streo.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class Restaurants extends StatefulWidget {
   @override
@@ -24,60 +26,71 @@ class _RestaurantsState extends State<Restaurants> {
     double fontSize24 = (screenWidth <= 600) ? 24 : 28;
     double fontSize16 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: Icon(Icons.arrow_back_ios),
-        ),
-      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * .04,
+              height: MediaQuery.of(context).size.height * .07,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Material(
-                shadowColor: Color(0xffE4D1B9),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Container(
-                    height: 55,
-                    child: TextField(
-                      onSubmitted: (value) {
-                        print(value);
-                      },
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFFBE8C63),
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(22),
-                          borderSide: BorderSide(color: Color(0xFFBE8C63)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide(
-                            color: Color(0xFFBE8C63),
-                          ),
-                        ),
-                        hintText: 'Search',
-                        hintStyle: TextStyle(color: Color(0xffE4D1B9)),
-                        suffixIcon: Icon(Icons.search),
+            Row(
+              children: [
+                Padding(
+                  padding:
+                      EdgeInsets.only(top: 16, right: 0, left: 16, bottom: 16),
+                  child: Material(
+                    shadowColor: Color(0xffE4D1B9),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.055,
+                      width: 290,
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xFFBE8C63),
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                22,
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.white,
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                16,
+                              ),
+                            ),
+                            hintText: 'Search',
+                            hintStyle: TextStyle(color: Color(0xffE4D1B9)),
+                            prefixIconColor: Color(0xffffffff)),
                       ),
                     ),
                   ),
                 ),
-              ),
+                //
+                MaterialButton(
+                  onPressed: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(0),
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF6C3428),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Icon(
+                        Icons.search,
+                        color: Color(0xFFFFFFFF),
+                        size: 30,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .03,
@@ -85,7 +98,7 @@ class _RestaurantsState extends State<Restaurants> {
             Row(
               children: [
                 Text(
-                  "   Suggestted For You:",
+                  S.of(context).Suggestted,
                   style: TextStyle(
                     color: Color(0xff6C3428),
                     fontSize: fontSize24,
@@ -96,181 +109,84 @@ class _RestaurantsState extends State<Restaurants> {
               ],
             ),
 
-            //
+            //1
             SizedBox(
               width: MediaQuery.of(context).size.width * 1.0,
-              height: MediaQuery.of(context).size.height * .03,
+              height: MediaQuery.of(context).size.height * .0,
             ),
-            Padding(
-              padding:
-                  const EdgeInsets.only(top: 5, right: 5, left: 0, bottom: 5),
-              child: Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Karam()),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, right: 5, left: 5, bottom: 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _buildCategoryContainer('Karam Al-Sham'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => B_labn()),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, right: 5, left: 5, bottom: 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _buildCategoryContainer('b labn'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Kunafa()),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, right: 5, left: 5, bottom: 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _buildCategoryContainer('Kunafa and basbousa'),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            _settingItem(
+              title: "Bazooka",
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Bazooka()));
+              },
             ),
+            Image.asset('assets/image/Line 9.png',
+                width: MediaQuery.of(context).size.width * .9),
 
-            //
-            SizedBox(
-              height: MediaQuery.of(context).size.height * .03,
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.only(top: 5, right: 5, left: 0, bottom: 5),
-              child: Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Carrefour()),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, right: 5, left: 5, bottom: 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _buildCategoryContainer('Carrefour'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Bazooka()),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, right: 5, left: 5, bottom: 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _buildCategoryContainer('Bazooka'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => streo()),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, right: 5, left: 5, bottom: 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _buildCategoryContainer('streo'),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            //
+            //2
 
-            //
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 1.0,
-              height: MediaQuery.of(context).size.height * .03,
+            _settingItem(
+              title: "Karam Al-Sham",
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Karam()));
+              },
             ),
+            Image.asset('assets/image/Line 9.png',
+                width: MediaQuery.of(context).size.width * .9),
+
+            //3
+            _settingItem(
+              title: "B labn",
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => B_labn()));
+              },
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * .0001,
+            ),
+            Image.asset('assets/image/Line 9.png',
+                width: MediaQuery.of(context).size.width * .9),
+
+            //4
+
+            _settingItem(
+              title: "Kunafa and basbousa",
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Kunafa()));
+              },
+            ),
+            Image.asset('assets/image/Line 9.png',
+                width: MediaQuery.of(context).size.width * .9),
+
+            //5
           ],
         ),
       ),
     );
   }
 
-  Container _buildCategoryContainer(
-    String label,
-  ) {
+  Container _settingItem({
+    required String title,
+    required VoidCallback onTap,
+    Color? iconColor,
+  }) {
     return Container(
-      width: MediaQuery.of(context).size.width * .3,
-      height: MediaQuery.of(context).size.height * .045,
-      padding: const EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 5),
-      decoration: ShapeDecoration(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          side: BorderSide(
-            width: MediaQuery.of(context).size.width * .002,
-            strokeAlign: BorderSide.strokeAlignCenter,
-            color: Color(0xFFE4D1B9),
-          ),
-          borderRadius: BorderRadius.circular(25),
-        ),
-      ),
-      //
-      child: Text(
-        label,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          color: Color(0xFFBE8C63),
+      child: ListTile(
+        onTap: onTap,
+        title: Text(title),
+        textColor: Color(0xFFBE8C63),
+        titleTextStyle: TextStyle(
           fontSize: 16,
-          fontFamily: 'Poppins',
+          fontFamily: 'Inter',
           fontWeight: FontWeight.w500,
-          height: MediaQuery.of(context).size.height * .001,
+        ),
+        trailing: const Icon(
+          Icons.close,
+          color: Color(0xFFBE8C63),
         ),
       ),
     );

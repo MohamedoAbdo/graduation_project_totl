@@ -5,6 +5,7 @@ import 'package:tourism_app/features/svscreen/Coastaltourism.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
 import 'package:tourism_app/features/svscreen/search.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class streo extends StatefulWidget {
   const streo({super.key});
@@ -41,7 +42,8 @@ class _streoState extends State<streo> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Search()),
+                              MaterialPageRoute(
+                                  builder: (context) => Restaurants()),
                             );
                           },
                           child: Row(
@@ -200,7 +202,8 @@ class _streoState extends State<streo> {
                         Container(
                           width: MediaQuery.of(context).size.width * 1.0,
                           child: Text(
-                            '  Description:                                                          ',
+                            S.of(context).Description,
+                            textAlign: TextAlign.end,
                             style: TextStyle(
                               color: Color(0xFF6C3428),
                               fontSize: fontSize16,
@@ -219,7 +222,7 @@ class _streoState extends State<streo> {
                               color: Colors.white,
                               child: Center(
                                 child: Text(
-                                  'Lorem ipsum dolor sit amet, consectetur\nAdipiscing elit, sed do eiusmod tempor incididunt\nUt labore et dolore magna aliqua. Ut enim ad\nMinim veniam.\nLorem ipsum dolor sit amet, consectetur\nAdipiscing elit, sed do eiusmod tempor incididunt\nUt labore et dolore magna aliqua.  .  ',
+                                  S.of(context).streo_text,
                                   style: TextStyle(
                                     color: Color(0xFFBE8C63),
                                     fontSize: fontSize16,

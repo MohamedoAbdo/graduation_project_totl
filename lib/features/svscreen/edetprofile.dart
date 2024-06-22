@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tourism_app/features/svscreen/logup.dart';
 
 import 'package:tourism_app/features/svscreen/profile.dart';
 import 'package:tourism_app/generated/l10n.dart';
@@ -30,7 +32,7 @@ class _edetprofileState extends State<edetprofile> {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * .030),
+                    top: MediaQuery.of(context).size.height * .05),
                 child: Row(
                   children: [
                     InkWell(
@@ -64,7 +66,7 @@ class _edetprofileState extends State<edetprofile> {
                         color: Color(0xff6C3428),
                         fontSize: fontSize24,
                         fontFamily: 'intr',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                         height: MediaQuery.of(context).size.height * .002,
                       ),
                     ),
@@ -80,8 +82,10 @@ class _edetprofileState extends State<edetprofile> {
                 backgroundImage: AssetImage('assets/image/Ellipse 93.png'),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * .016),
+
               Text(
-                'Gamila_hesham',
+                email,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: fontSize24,
                   fontWeight: FontWeight.w500,
@@ -160,11 +164,6 @@ class _edetprofileState extends State<edetprofile> {
                     top: 16, right: 16, left: 16, bottom: 0),
                 child: TextFormField(
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (value) {
-                    if (value == null || value.length < 11) {
-                      return 'Enter valid phone';
-                    }
-                  },
                   decoration: InputDecoration(
                     label: Text(
                       S.of(context).Phone,
@@ -240,6 +239,7 @@ class _edetprofileState extends State<edetprofile> {
                 height: MediaQuery.of(context).size.height * .04,
               ),
               // bottom create
+              // bottom create
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: Container(
@@ -248,15 +248,25 @@ class _edetprofileState extends State<edetprofile> {
                     color: Color(0xFFBE8C63),
                     borderRadius: BorderRadius.circular(20),
                   ),
+                  width: MediaQuery.of(context).size.width * .35,
                   height: MediaQuery.of(context).size.height * .05,
-                  width: MediaQuery.of(context).size.width * 0.35,
 
                   child: MaterialButton(
                     onPressed: () async {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ProfileScreen()));
+                      if (_formKey.currentState!.validate()) {
+                        bool result = await fireBaseSingUp(
+                            emailcontroller.text, passwordcontroller.text);
+                        if (result == true) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('success')),
+                          );
+
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProfileScreen()));
+                        }
+                      }
                     },
                     child: Text(
                       S.of(context).save,
@@ -269,11 +279,34 @@ class _edetprofileState extends State<edetprofile> {
                   ),
                 ),
               ),
+
               //
             ],
           ),
         ),
       ),
     );
+  }
+
+  Future<bool> fireBaseSingUp(String email, String password) async {
+    try {
+      UserCredential usercredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      if (usercredential.user != null) {
+        return true;
+      }
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
+      }
+    } catch (e) {
+      print(e);
+    }
+    return false;
   }
 }

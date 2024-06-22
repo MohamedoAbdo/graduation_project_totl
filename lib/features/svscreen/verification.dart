@@ -247,7 +247,7 @@ class _verificationState extends State<verification> {
                         "Verify",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Color(0xFFE4D1B9),
+                          color: Color(0xFFFFFFFF),
                           fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w500,

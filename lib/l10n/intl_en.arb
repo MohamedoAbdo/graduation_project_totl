@@ -29,6 +29,8 @@
     "Phone":"Phone",
     "password":"password",
     "save":"save",
+    "":"",
+
 
 
 
@@ -50,7 +52,7 @@
     "Medical_text":"Each year, millions of US residents travel to another country for medical care which is called medical tourism. Medical tourists from the United States most commonly travel to Mexico and Canada, and to several other countries in Central America, South America, and the Caribbean.\r\nThe reasons people may seek medical care in another country include:\r\nCost: To get a treatment or procedure that may be cheaper in another country\r\nCulture: To receive care from a clinician who shares the traveler’s culture and language\r\nUnavailable or unapproved procedures: To get a procedure or therapy that is not available or approved in the United States\r\nThe most common procedures that people undergo on medical tourism trips include dental care, cosmetic surgery, fertility treatments, organ and tissue transplantation, and cancer treatment",
 
     "Archaeological_text":"Archaeological tourism can include all products associated with public archaeological promotion, including visits to archaeological sites, museums, interpretation centers, reenactments of historical occurrences, and the rediscovery of indigenous products, festivals, or theaters.Archaeological tourism promotes archaeological sites and an area's cultural heritage. Its intent is to not cause more damage to the sites, thus avoiding becoming invasive tourism.\r\nArchaeologists have expressed concerns that tourism encourages particular ways of seeing and knowing the past.When archaeological sites are run by tourist boards, ticket fees and souvenir revenues can become a priority.",
-    "some_pics":"some pics: ",
+    "some_pics":"  some pics: ",
 
     "Description":"  Description:                                                          ",
     "Karam":"Karam Al-Sham Restaurant is a distinctive destination for lovers of Levantine cuisine in the heart of the city. It is distinguished by serving delicious traditional dishes such as kebab, fattoush, and hummus, while using fresh, high-quality ingredients. The restaurant has a warm atmosphere and upscale service, making it an ideal place to experience the authentic taste of the Levant. Whether you are looking for a quick lunch or a sumptuous dinner, Karam El Sham offers an unforgettable experience to its visitors.",
@@ -58,6 +60,72 @@
     "Kunafa":"Kunafa and Basbousa sweets shop offers the most delicious types of kunafa and basbousa, fresh daily. The sweets are prepared with great skill and using excellent quality ingredients, to ensure the authentic taste and rich flavour. The store is an ideal destination for lovers of oriental sweets, where customers can enjoy a unique and distinctive experience with every visit. The store also offers a variety of options to suit all tastes.",
     "Carrefour":"Hyper Carrefour is a chain of famous retail stores, and is considered part of the French Carrefour group. It provides a wide range of products including food, clothing, electronics, and household appliances. Hyper Carrefour is distinguished by its competitive prices and attractive promotions that attract customers. It is also known for its excellent customer service and providing a comfortable and comprehensive shopping experience.",
     "Bazooka":"Bazooka Restaurant is a popular destination for fast food lovers in Egypt, featuring delicious and varied chicken sandwiches. The restaurant is famous for its unique dishes, such as chicken bazooka and its signature burgers, in addition to its special sauces that add a distinctive flavor. Bazooka's quality food and fast service make it an ideal choice for fast food. The restaurant is very popular with young people and families thanks to its fun atmosphere and reasonable prices.",
+    "textb":"Walking in front of the university",
+
+
+
+
+    "log":"  Log Into \n  Your Account..",
+    "Forget":"Forget password?",
+    "login_faild":"login faild",
+    "Login":"Login",
+    "Login_With":" Login With",
+    "you_don":"you don’t have account?",
+    "sign_up":" sign up",
+    
+    "Create":"  Create  \n  your account..",
+    "sign_in":"sign in",
+    "you_have":"you have account?",
+
+
+    "Blue_Lagoon":"       Blue Lagoon",
+    "Ford_Bay":"          Ford Bay",
+    "nuweiba":"             nuweiba",
+    "Marsa_Alam":"          Marsa Alam",
+
+    "Abu_Simbel":"           Abu Simbel",
+    "Dendera":"             Dendera",
+    "pyramids":"           pyramids",
+    "Villa_of_Birds":"       Villa of Birds",
+
+    "Dakrour_Mountain":"    Dakrour Mountain",
+    "siwa_Oasis":"           siwa Oasis",
+    "salt_cave":"           salt cave",
+    "pharaohs_bath":"        pharaoh's bath",
+
+    "Muhammad_Ali_Mosque":"Muhammad Ali Mosque",
+    "Khan":"    Khan el-Khalili",
+    "RED_MONASTERy":"     RED MONASTERy",
+    "CATHERINE_MONASTERY":"CATHERINE MONASTERY",
+    
+    "streo_text":"Lorem ipsum dolor sit amet, consecteturAdipiscing elit, sed do eiusmod tempor incididuntUt labore et dolore magna aliqua. Ut enim adMinim veniam.Lorem ipsum dolor sit amet, consecteturAdipiscing elit, sed do eiusmod tempor incididuntUt labore et dolore magna aliqua.  .  ",
+    "dost":"please allow kemet access to your location \n    to find restaurants or caffees near you.",
+    "Location_Access":"Location Access",
+    "Allow":"   Allow",
+    "Suggestted":" Suggestted For You:",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
     "":"",
     "":"",
     "":"",

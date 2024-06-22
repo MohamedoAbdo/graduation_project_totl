@@ -1,10 +1,12 @@
 import 'dart:ui';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/home/presentation/password_view/forget_pass.dart';
 import 'package:tourism_app/features/svscreen/bage6.dart';
 import 'package:tourism_app/features/svscreen/logup.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class signin extends StatefulWidget {
   const signin({super.key});
@@ -43,7 +45,7 @@ class _signinState extends State<signin> {
                           width: MediaQuery.of(context).size.width * 1.0,
                           height: MediaQuery.of(context).size.height * .15,
                           child: Text(
-                            '  Log Into \n  Your Account..',
+                            S.of(context).log,
                             style: TextStyle(
                               color: Color(0xff6C3428),
                               fontSize: 32,
@@ -87,12 +89,12 @@ class _signinState extends State<signin> {
                         size: 20,
                       ),
                       label: Text(
-                        'E-Mail',
+                        S.of(context).Email,
                         style: TextStyle(
-                          color: Color(0xFFBE8C63),
-                          fontSize: 16,
+                          color: Color(0xFF6C3428),
+                          fontSize: 12,
                           fontFamily: 'Inter',
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           height: MediaQuery.of(context).size.height * .00009,
                         ),
                       ),
@@ -117,12 +119,12 @@ class _signinState extends State<signin> {
                     },
                     decoration: InputDecoration(
                       label: Text(
-                        ' password',
+                        S.of(context).password,
                         style: TextStyle(
-                          color: Color(0xFFBE8C63),
-                          fontSize: 16,
+                          color: Color(0xFF6C3428),
+                          fontSize: 12,
                           fontFamily: 'Inter',
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           height: MediaQuery.of(context).size.height * .0009,
                         ),
                       ),
@@ -167,12 +169,12 @@ class _signinState extends State<signin> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        "Forget password?",
+                        S.of(context).Forget,
                         style: TextStyle(
-                          color: Color(0xFFBE8C63),
+                          color: Color(0xFF6C3428),
                           fontSize: 12,
                           fontFamily: 'Inter',
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           height: MediaQuery.of(context).size.height * .002,
                         ),
                         textAlign: TextAlign.right,
@@ -186,11 +188,28 @@ class _signinState extends State<signin> {
                 ),
 
                 InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => bage6()),
-                    );
+                  onTap: () async {
+                    if (_formKey.currentState!.validate()) {
+                      bool result = await firebaselogin(
+                          emailcontroller.text, passwordcontroller.text);
+                      if (result == true) {
+                        //final SharedPreferences prefs = await SharedPreferences.getInstance();
+                        // await prefs.setString('email', emailcontroller.text);
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Home_Screen()),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                              content: Text(
+                            S.of(context).login_faild,
+                          )),
+                        );
+                      }
+                    }
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -203,10 +222,10 @@ class _signinState extends State<signin> {
                       ),
                       child: Center(
                         child: Text(
-                          "Login",
+                          S.of(context).Login,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color(0xFFE4D1B9),
+                            color: Colors.white,
                             fontSize: 16,
                             fontFamily: 'inter',
                             fontWeight: FontWeight.w600,
@@ -230,13 +249,13 @@ class _signinState extends State<signin> {
                     ),
                     Row(
                       children: [
-                        Text(" Login With  ",
+                        Text(S.of(context).Login_With,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              color: Color(0xFFBE8C63),
+                              color: Color(0xFF6C3428),
                               fontSize: 16,
                               fontFamily: 'Inter',
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
                             ))
                       ],
                     ),
@@ -276,12 +295,12 @@ class _signinState extends State<signin> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'you don’t have account?',
+                      S.of(context).you_don,
                       style: TextStyle(
-                        color: Color(0xFFBE8C63),
+                        color: Color(0xFF6C3428),
                         fontSize: 12,
                         fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                     InkWell(
@@ -292,12 +311,12 @@ class _signinState extends State<signin> {
                         );
                       },
                       child: Text(
-                        "   sign up",
+                        S.of(context).sign_up,
                         style: TextStyle(
-                          color: Color(0xff6C3428),
+                          color: Color(0xFFBE8C63),
                           fontSize: 12,
                           fontFamily: 'Inter',
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),
@@ -312,5 +331,25 @@ class _signinState extends State<signin> {
         ),
       ),
     );
+  }
+
+  Future<bool> firebaselogin(String email, String password) async {
+    try {
+      UserCredential userCredential =
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      if (userCredential.user != null) {
+        return true;
+      }
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    }
+    return false;
   }
 }

@@ -16,7 +16,7 @@ class _bage1State extends State<bage1> {
     double screenWidth = MediaQuery.of(context).size.width;
     double fontSize32 = (screenWidth <= 600) ? 32 : 42;
     double fontSize24 = (screenWidth <= 600) ? 24 : 28;
-    double fontSize18 = (screenWidth <= 600) ? 18 : 22;
+    double fontSize18 = (screenWidth <= 600) ? 16 : 22;
     return Scaffold(
       //appBar: AppBar(
       //backgroundColor: Colors.white,

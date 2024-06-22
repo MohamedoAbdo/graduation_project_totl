@@ -34,15 +34,13 @@ class LogUp {
     required dynamic password,
     required dynamic phone,
   }) async {
-    Response response = await Api().post(
-        url:
-            'http://127.0.0.1:8000/api/auth/register?name=$name&email=$email&password=$password&phone=$phone',
-        bady: {
-          'name': name,
-          'email': email,
-          'password': password,
-          'phone': phone,
-        });
+    Response response =
+        await Api().post(url: 'http://127.0.0.1:8000/api/auth/register', bady: {
+      'name': name,
+      'email': email,
+      'password': password,
+      'phone': phone,
+    });
     var responseBody = jsonDecode(response.data);
   }
 }

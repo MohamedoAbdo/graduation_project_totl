@@ -31,7 +31,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * .03),
+                    top: MediaQuery.of(context).size.height * .05),
                 child: Row(
                   children: [
                     InkWell(
@@ -64,9 +64,9 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                       // S.of(context).change_language,
                       style: TextStyle(
                         color: Color(0xff6C3428),
-                        fontSize: fontSize32,
+                        fontSize: fontSize24,
                         fontFamily: 'intr',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],

@@ -262,6 +262,8 @@ class S {
     );
   }
 
+  // skipped getter for the '' key
+
   /// `tourism type`
   String get tourism_type {
     return Intl.message(
@@ -392,10 +394,10 @@ class S {
     );
   }
 
-  /// `some pics: `
+  /// `  some pics: `
   String get some_pics {
     return Intl.message(
-      'some pics: ',
+      '  some pics: ',
       name: 'some_pics',
       desc: '',
       args: [],
@@ -462,7 +464,325 @@ class S {
     );
   }
 
-  // skipped getter for the '' key
+  /// `Walking in front of the university`
+  String get textb {
+    return Intl.message(
+      'Walking in front of the university',
+      name: 'textb',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `  Log Into \n  Your Account..`
+  String get log {
+    return Intl.message(
+      '  Log Into \n  Your Account..',
+      name: 'log',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget password?`
+  String get Forget {
+    return Intl.message(
+      'Forget password?',
+      name: 'Forget',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `login faild`
+  String get login_faild {
+    return Intl.message(
+      'login faild',
+      name: 'login_faild',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get Login {
+    return Intl.message(
+      'Login',
+      name: 'Login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Login With`
+  String get Login_With {
+    return Intl.message(
+      ' Login With',
+      name: 'Login_With',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `you don’t have account?`
+  String get you_don {
+    return Intl.message(
+      'you don’t have account?',
+      name: 'you_don',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` sign up`
+  String get sign_up {
+    return Intl.message(
+      ' sign up',
+      name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `  Create  \n  your account..`
+  String get Create {
+    return Intl.message(
+      '  Create  \n  your account..',
+      name: 'Create',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `sign in`
+  String get sign_in {
+    return Intl.message(
+      'sign in',
+      name: 'sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `you have account?`
+  String get you_have {
+    return Intl.message(
+      'you have account?',
+      name: 'you_have',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `       Blue Lagoon`
+  String get Blue_Lagoon {
+    return Intl.message(
+      '       Blue Lagoon',
+      name: 'Blue_Lagoon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `          Ford Bay`
+  String get Ford_Bay {
+    return Intl.message(
+      '          Ford Bay',
+      name: 'Ford_Bay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `             nuweiba`
+  String get nuweiba {
+    return Intl.message(
+      '             nuweiba',
+      name: 'nuweiba',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `          Marsa Alam`
+  String get Marsa_Alam {
+    return Intl.message(
+      '          Marsa Alam',
+      name: 'Marsa_Alam',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `           Abu Simbel`
+  String get Abu_Simbel {
+    return Intl.message(
+      '           Abu Simbel',
+      name: 'Abu_Simbel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `             Dendera`
+  String get Dendera {
+    return Intl.message(
+      '             Dendera',
+      name: 'Dendera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `           pyramids`
+  String get pyramids {
+    return Intl.message(
+      '           pyramids',
+      name: 'pyramids',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `       Villa of Birds`
+  String get Villa_of_Birds {
+    return Intl.message(
+      '       Villa of Birds',
+      name: 'Villa_of_Birds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `    Dakrour Mountain`
+  String get Dakrour_Mountain {
+    return Intl.message(
+      '    Dakrour Mountain',
+      name: 'Dakrour_Mountain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `           siwa Oasis`
+  String get siwa_Oasis {
+    return Intl.message(
+      '           siwa Oasis',
+      name: 'siwa_Oasis',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `           salt cave`
+  String get salt_cave {
+    return Intl.message(
+      '           salt cave',
+      name: 'salt_cave',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `        pharaoh's bath`
+  String get pharaohs_bath {
+    return Intl.message(
+      '        pharaoh\'s bath',
+      name: 'pharaohs_bath',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Muhammad Ali Mosque`
+  String get Muhammad_Ali_Mosque {
+    return Intl.message(
+      'Muhammad Ali Mosque',
+      name: 'Muhammad_Ali_Mosque',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `    Khan el-Khalili`
+  String get Khan {
+    return Intl.message(
+      '    Khan el-Khalili',
+      name: 'Khan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `     RED MONASTERy`
+  String get RED_MONASTERy {
+    return Intl.message(
+      '     RED MONASTERy',
+      name: 'RED_MONASTERy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CATHERINE MONASTERY`
+  String get CATHERINE_MONASTERY {
+    return Intl.message(
+      'CATHERINE MONASTERY',
+      name: 'CATHERINE_MONASTERY',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem ipsum dolor sit amet, consecteturAdipiscing elit, sed do eiusmod tempor incididuntUt labore et dolore magna aliqua. Ut enim adMinim veniam.Lorem ipsum dolor sit amet, consecteturAdipiscing elit, sed do eiusmod tempor incididuntUt labore et dolore magna aliqua.  .  `
+  String get streo_text {
+    return Intl.message(
+      'Lorem ipsum dolor sit amet, consecteturAdipiscing elit, sed do eiusmod tempor incididuntUt labore et dolore magna aliqua. Ut enim adMinim veniam.Lorem ipsum dolor sit amet, consecteturAdipiscing elit, sed do eiusmod tempor incididuntUt labore et dolore magna aliqua.  .  ',
+      name: 'streo_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `please allow kemet access to your location \n    to find restaurants or caffees near you.`
+  String get dost {
+    return Intl.message(
+      'please allow kemet access to your location \n    to find restaurants or caffees near you.',
+      name: 'dost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location Access`
+  String get Location_Access {
+    return Intl.message(
+      'Location Access',
+      name: 'Location_Access',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `   Allow`
+  String get Allow {
+    return Intl.message(
+      '   Allow',
+      name: 'Allow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Suggestted For You:`
+  String get Suggestted {
+    return Intl.message(
+      ' Suggestted For You:',
+      name: 'Suggestted',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

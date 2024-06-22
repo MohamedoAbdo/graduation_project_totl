@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/home/presentation/password_view/forget_pass.dart';
 import 'package:tourism_app/features/svscreen/ChangeLanguage.dart';
@@ -9,9 +10,13 @@ import 'package:tourism_app/features/svscreen/TourismType.dart';
 import 'package:tourism_app/features/svscreen/responsive_text.dart';
 import 'package:tourism_app/features/svscreen/streo.dart';
 import 'package:tourism_app/features/svscreen/verification.dart';
+import 'package:tourism_app/firebase_options.dart';
 import 'package:tourism_app/splash/splash.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(DevicePreview(builder: (context) => MyApp()));
   // runApp(const MyApp());
 }

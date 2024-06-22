@@ -42,7 +42,8 @@ class _streoState extends State<Karam> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Search()),
+                              MaterialPageRoute(
+                                  builder: (context) => Restaurants()),
                             );
                           },
                           child: Row(
@@ -72,7 +73,7 @@ class _streoState extends State<Karam> {
               //
               Container(
                 width: MediaQuery.of(context).size.height * 1.0,
-                height: MediaQuery.of(context).size.height * 1.2,
+                height: MediaQuery.of(context).size.height * 1.5,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
@@ -297,7 +298,7 @@ class _streoState extends State<Karam> {
                         ),
 
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * .025,
+                          height: MediaQuery.of(context).size.height * .01,
                         ),
                         //
 
@@ -313,16 +314,21 @@ class _streoState extends State<Karam> {
                                   size: 20,
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.all(16.0),
-                                  child: Text("المنصورة ش الجلاء امام الجامعة",
-                                      style: TextStyle(
-                                        color: Color(0xFF6C3428),
-                                        fontSize: fontSize16,
-                                        fontWeight: FontWeight.w500,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                .0015,
-                                      )),
+                                  padding: const EdgeInsets.only(
+                                      top: 0, right: 16, left: 16, bottom: 0),
+                                  child: Container(
+                                    child: Text(
+                                        "Mansoura, Galaa Street, in front\n of the university",
+                                        style: TextStyle(
+                                          color: Color(0xFF6C3428),
+                                          fontSize: fontSize16,
+                                          fontWeight: FontWeight.w500,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              .0015,
+                                        )),
+                                  ),
                                 ),
                               ],
                             ),

@@ -42,7 +42,8 @@ class _streoState extends State<B_labn> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Search()),
+                              MaterialPageRoute(
+                                  builder: (context) => Restaurants()),
                             );
                           },
                           child: Row(
@@ -297,7 +298,7 @@ class _streoState extends State<B_labn> {
                         ),
 
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * .025,
+                          height: MediaQuery.of(context).size.height * .01,
                         ),
                         //
 
@@ -314,7 +315,8 @@ class _streoState extends State<B_labn> {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.all(16.0),
-                                  child: Text("المشايه امام الجامعة",
+                                  child: Text(
+                                      " Walking in front of the university ",
                                       style: TextStyle(
                                         color: Color(0xFF6C3428),
                                         fontSize: fontSize16,

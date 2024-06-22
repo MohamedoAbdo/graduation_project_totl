@@ -51,7 +51,7 @@ class aboutus extends StatelessWidget {
                         color: Color(0xff6C3428),
                         fontSize: fontSize24,
                         fontFamily: 'intr',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],

@@ -37,7 +37,7 @@ class Notifica extends StatelessWidget {
                     color: Color(0xff6C3428),
                     fontSize: 24,
                     fontFamily: 'Inter',
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ],

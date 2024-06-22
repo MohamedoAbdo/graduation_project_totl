@@ -25,7 +25,7 @@ class _MedicaltourismState extends State<Medicaltourism> {
                   children: [
                     Stack(children: [
                       Container(
-                        height: MediaQuery.of(context).size.height * .29,
+                        height: MediaQuery.of(context).size.height * .292,
                         child: Image.asset(
                           'assets/image/Rectangle 337.png',
                         ),
@@ -36,7 +36,7 @@ class _MedicaltourismState extends State<Medicaltourism> {
                           height: MediaQuery.of(context).size.height * .050,
                           width: MediaQuery.of(context).size.width * 1.0,
                           decoration: BoxDecoration(
-                            color: Color(0xFF6C3428).withOpacity(0.5),
+                            color: Color(0xFF6C3428).withOpacity(1),
                           ),
                         ),
                       ),
@@ -91,14 +91,12 @@ class _MedicaltourismState extends State<Medicaltourism> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .02,
-              ),
+
               Padding(
                 padding: const EdgeInsets.only(
                     top: 16, right: 16, left: 16, bottom: 16),
                 child: Container(
-                  height: MediaQuery.of(context).size.height * .45,
+                  height: MediaQuery.of(context).size.height * .5,
                   width: MediaQuery.of(context).size.width * 1.0,
                   color: Colors.white,
                   child: Center(
@@ -115,12 +113,15 @@ class _MedicaltourismState extends State<Medicaltourism> {
               ),
               Row(
                 children: [
-                  Text(
-                    S.of(context).some_pics,
-                    style: TextStyle(
-                      color: Color(0xFF6C3428),
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(
+                      S.of(context).some_pics,
+                      style: TextStyle(
+                        color: Color(0xFF6C3428),
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ],
@@ -152,11 +153,48 @@ class _MedicaltourismState extends State<Medicaltourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 115940.png',
+                                  'assets/image/Group 115942.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          S.of(context).Dakrour_Mountain,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: Color(0xFFE4D1B9),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],
@@ -187,11 +225,48 @@ class _MedicaltourismState extends State<Medicaltourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 115950.png',
+                                  'assets/image/Group 115952.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          S.of(context).siwa_Oasis,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: Color(0xFFE4D1B9),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],
@@ -231,11 +306,48 @@ class _MedicaltourismState extends State<Medicaltourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 115960.png',
+                                  'assets/image/Group 115962.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          S.of(context).salt_cave,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: Color(0xFFE4D1B9),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],
@@ -266,11 +378,48 @@ class _MedicaltourismState extends State<Medicaltourism> {
                             children: [
                               Stack(children: [
                                 Image.asset(
-                                  'assets/image/Group 115970.png',
+                                  'assets/image/Group 115972.png',
                                   height:
                                       MediaQuery.of(context).size.height * .25,
                                   width:
                                       MediaQuery.of(context).size.width * .45,
+                                ),
+                                Positioned(
+                                  top:
+                                      MediaQuery.of(context).size.height * .185,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        .04,
+                                    width:
+                                        MediaQuery.of(context).size.width * .45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFF6C3428).withOpacity(1.0),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.195,
+                                      right: 16,
+                                      left: 16,
+                                      bottom: 16),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          S.of(context).pharaohs_bath,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: Color(0xFFE4D1B9),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ])
                             ],

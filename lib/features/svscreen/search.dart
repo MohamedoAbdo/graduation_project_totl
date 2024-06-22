@@ -5,6 +5,7 @@ import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
 import 'package:tourism_app/features/svscreen/streo.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 import '../home/presentation/favourite/favourite.dart';
 
@@ -70,9 +71,8 @@ class _SearchState extends State<Search> {
                     context: context,
                     dialogType: DialogType.noHeader,
                     animType: AnimType.rightSlide,
-                    title: 'Location Access',
-                    desc:
-                        "please allow kemet access to your location \n    to find restaurants or caffees near you.",
+                    title: S.of(context).Location_Access,
+                    desc: S.of(context).dost,
                     titleTextStyle: TextStyle(
                       color: Color(0xff6C3428),
                       fontSize: 16,
@@ -83,9 +83,10 @@ class _SearchState extends State<Search> {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Search()));
                     },
+                    btnCancelText: (S.of(context).Log_Out),
                     btnCancelColor: Colors.white,
                     buttonsTextStyle: TextStyle(
-                      color: Color(0xFFBE8C63),
+                      color: Color(0xFFE4D1B9),
                       fontSize: 16,
                       fontFamily: 'intr',
                       fontWeight: FontWeight.w500,
@@ -96,7 +97,7 @@ class _SearchState extends State<Search> {
                           MaterialPageRoute(
                               builder: (context) => Restaurants()));
                     },
-                    btnOkText: ("   Allow"),
+                    btnOkText: (S.of(context).Allow),
                     btnOkColor: Color(0xff6C3428),
                   )..show();
                 },
@@ -111,7 +112,7 @@ class _SearchState extends State<Search> {
                     ),
                     child: Icon(
                       Icons.search,
-                      color: Color(0xFFBE8C63),
+                      color: Color(0xFFFFFFFF),
                       size: 30,
                     ),
                   ),

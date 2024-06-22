@@ -42,7 +42,8 @@ class _streoState extends State<Kunafa> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Search()),
+                              MaterialPageRoute(
+                                  builder: (context) => Restaurants()),
                             );
                           },
                           child: Row(
@@ -203,7 +204,7 @@ class _streoState extends State<Kunafa> {
                           padding: const EdgeInsets.only(
                               top: 16, right: 16, left: 16, bottom: 16),
                           child: Container(
-                            height: MediaQuery.of(context).size.height * .4,
+                            height: MediaQuery.of(context).size.height * .3,
                             width: MediaQuery.of(context).size.width * .9,
                             color: Colors.white,
                             child: Center(
@@ -297,7 +298,7 @@ class _streoState extends State<Kunafa> {
                         ),
 
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * .025,
+                          height: MediaQuery.of(context).size.height * .01,
                         ),
                         //
 
@@ -314,15 +315,17 @@ class _streoState extends State<Kunafa> {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.all(16.0),
-                                  child: Text("المشايه امام الجامعة",
-                                      style: TextStyle(
-                                        color: Color(0xFF6C3428),
-                                        fontSize: fontSize16,
-                                        fontWeight: FontWeight.w500,
-                                        height:
-                                            MediaQuery.of(context).size.height *
+                                  child:
+                                      Text("Walking in front of the university",
+                                          style: TextStyle(
+                                            color: Color(0xFF6C3428),
+                                            fontSize: fontSize16,
+                                            fontWeight: FontWeight.w500,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
                                                 .0015,
-                                      )),
+                                          )),
                                 ),
                               ],
                             ),
