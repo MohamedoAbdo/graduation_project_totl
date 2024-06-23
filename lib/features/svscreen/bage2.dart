@@ -37,7 +37,7 @@ class _bage2State extends State<bage2> {
             Row(
               children: [
                 Text(
-                  S.of(context).title,
+                  S.of(context).title1,
                   style: TextStyle(
                     color: Color(0xFFE4D1B9),
                     fontSize: fontSize24,
@@ -55,7 +55,7 @@ class _bage2State extends State<bage2> {
               padding: const EdgeInsets.only(
                   top: 10, right: 16, left: 16, bottom: 0),
               child: Text(
-                S.of(context).text,
+                S.of(context).text1,
                 style: TextStyle(
                   color: Color(0xFFE4D1B9),
                   fontSize: fontSize16,

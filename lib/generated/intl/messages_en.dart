@@ -111,7 +111,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Egypt is the best vacation spot in the world. It includes  recreational activities taking place in the proximity of the sea (such as swimming, sunbathing, coastal walks, and wildlife watching)."),
         "dost": MessageLookupByLibrary.simpleMessage(
             "please allow kemet access to your location \n    to find restaurants or caffees near you."),
-        "elgazouly": MessageLookupByLibrary.simpleMessage("elgazouly"),
         "fav": MessageLookupByLibrary.simpleMessage("favourite"),
         "log": MessageLookupByLibrary.simpleMessage(
             "  Log Into \n  Your Account.."),
@@ -139,14 +138,27 @@ class MessageLookup extends MessageLookupByLibrary {
         "siwa_Oasis":
             MessageLookupByLibrary.simpleMessage("           siwa Oasis"),
         "some_pics": MessageLookupByLibrary.simpleMessage("  some pics: "),
+        "start": MessageLookupByLibrary.simpleMessage("start"),
         "streo_text": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet, consecteturAdipiscing elit, sed do eiusmod tempor incididuntUt labore et dolore magna aliqua. Ut enim adMinim veniam.Lorem ipsum dolor sit amet, consecteturAdipiscing elit, sed do eiusmod tempor incididuntUt labore et dolore magna aliqua.  .  "),
-        "text": MessageLookupByLibrary.simpleMessage(
-            "Lorem Ipsum Dolor Sit Amet, Consectetur \nAdipiscing Elit, Sed Do Eiusmod Tempor  Incididunt \nUt Labore Et Dolore Magna Aliqua. Ut Enim  Ad \nMinim Veniam"),
+        "text1": MessageLookupByLibrary.simpleMessage(
+            "the application provides comprehensive information on various recommended tourist destination in egypt."),
+        "text2": MessageLookupByLibrary.simpleMessage(
+            "The Recombination feature enable you to find restaurants or cafes around you, wherever you are."),
+        "text3": MessageLookupByLibrary.simpleMessage(
+            "we provide you qr code helps you with information about artifacts and another feature help them determine the tourist places in Egypt."),
+        "text4": MessageLookupByLibrary.simpleMessage(
+            "you are able to book at comfortable, best hotel and resorts and make it easier for tourists to move around easily."),
         "textb": MessageLookupByLibrary.simpleMessage(
             "Walking in front of the university"),
-        "title":
-            MessageLookupByLibrary.simpleMessage("    Lorem Ipsum Dolor    "),
+        "title1": MessageLookupByLibrary.simpleMessage(
+            "the easiest way to discover Egypt."),
+        "title2": MessageLookupByLibrary.simpleMessage(
+            "find restaurants or cafes around you."),
+        "title3": MessageLookupByLibrary.simpleMessage(
+            "Availability of complete & valuable information."),
+        "title4": MessageLookupByLibrary.simpleMessage(
+            "book your hotel or rent car."),
         "tourism_type": MessageLookupByLibrary.simpleMessage("tourism type"),
         "you_don":
             MessageLookupByLibrary.simpleMessage("you don’t have account?"),

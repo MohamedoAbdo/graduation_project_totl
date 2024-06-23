@@ -120,7 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_faild": MessageLookupByLibrary.simpleMessage("login faild"),
         "mt_text": MessageLookupByLibrary.simpleMessage(
             "Les eaux bénites et les terres sacrées d’Égypte ont toujours été connues pour leurs pouvoirs magiques et curatifs. La chose la meilleure et la plus célèbre de l’Égypte est son eau minérale, qui ne contient pas d’humidité."),
-        "next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
         "not_text1": MessageLookupByLibrary.simpleMessage(
             "Désormais, lorsque vous réservez depuis l\'application, vous pouvez obtenir 10 % de réduction sur Taba Trip."),
         "notification": MessageLookupByLibrary.simpleMessage("avis"),
@@ -140,14 +140,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("           siwa Oasis"),
         "some_pics":
             MessageLookupByLibrary.simpleMessage("  quelques photos :"),
+        "start": MessageLookupByLibrary.simpleMessage("start"),
         "streo_text": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet, consecteturAdipiscing elit, sed do eiusmod tempor incididuntUt labore et dolore magna aliqua. Ut enim adMinim veniam.Lorem ipsum dolor sit amet, consecteturAdipiscing elit, sed do eiusmod tempor incididuntUt labore et dolore magna aliqua.  .  "),
-        "text": MessageLookupByLibrary.simpleMessage(
-            "لوريم إيبسوم دولور سيت أميت، كونسيكتور \nلوريم إيبسوم دولور سيت أميت، كونسيكتور  \nUt لوريم إيبسوم دولور سيت أميت، كونسيكتور  \n لوريم إيبسوم دولور سيت أميت، كونسيكتور "),
+        "text1": MessageLookupByLibrary.simpleMessage(
+            "the application provides comprehensive information on various recommended tourist destination in egypt."),
+        "text2": MessageLookupByLibrary.simpleMessage(
+            "The Recombination feature enable you to find restaurants or cafes around you, wherever you are."),
+        "text3": MessageLookupByLibrary.simpleMessage(
+            "we provide you qr code helps you with information about artifacts and another feature help them determine the tourist places in Egypt."),
+        "text4": MessageLookupByLibrary.simpleMessage(
+            "you are able to book at comfortable, best hotel and resorts and make it easier for tourists to move around easily."),
         "textb": MessageLookupByLibrary.simpleMessage(
             "Walking in front of the university"),
-        "title":
-            MessageLookupByLibrary.simpleMessage("    لوريم إيبسوم دولور    "),
+        "title1": MessageLookupByLibrary.simpleMessage(
+            "the easiest way to discover Egypt."),
+        "title2": MessageLookupByLibrary.simpleMessage(
+            "find restaurants or cafes around you."),
+        "title3": MessageLookupByLibrary.simpleMessage(
+            "Availability of complete & valuable information."),
+        "title4": MessageLookupByLibrary.simpleMessage(
+            "book your hotel or rent car."),
         "tourism_type":
             MessageLookupByLibrary.simpleMessage("type de tourisme"),
         "you_don":
