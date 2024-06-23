@@ -19,8 +19,9 @@ class _QuickPage1State extends State<QuickPage1> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            vertical:MediaQuery.of(context).size.width * 0.04 ,
-              horizontal: MediaQuery.of(context).size.width * 0.04, ),
+            vertical: MediaQuery.of(context).size.width * 0.04,
+            horizontal: MediaQuery.of(context).size.width * 0.04,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -98,11 +99,11 @@ class _QuickPage1State extends State<QuickPage1> {
                   Padding(
                     padding: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.01),
-                    child:  Text(
+                    child: Text(
                       'What Tourisms Do You Prefer ?',
                       style: TextStyle(
                         color: const Color(0xff6C3428),
-                        fontSize: 24.sp,
+                        fontSize: 24,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
                         height: 0,
@@ -167,7 +168,8 @@ class _QuickPage1State extends State<QuickPage1> {
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(
-                                      color: const Color(0xffE4D1B9), width: 1.9),
+                                      color: const Color(0xffE4D1B9),
+                                      width: 1.9),
                                 ),
                                 child: x == "10"
                                     ? const CircleAvatar(
@@ -207,7 +209,8 @@ class _QuickPage1State extends State<QuickPage1> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     border: Border.all(
-                                        color: const Color(0xffE4D1B9), width: 1.9)),
+                                        color: const Color(0xffE4D1B9),
+                                        width: 1.9)),
                                 child: z == "10"
                                     ? const CircleAvatar(
                                         radius: 5.5,
@@ -246,7 +249,8 @@ class _QuickPage1State extends State<QuickPage1> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     border: Border.all(
-                                        color: const Color(0xffE4D1B9), width: 1.9)),
+                                        color: const Color(0xffE4D1B9),
+                                        width: 1.9)),
                                 child: y == "10"
                                     ? const CircleAvatar(
                                         radius: 5.5,
@@ -280,26 +284,28 @@ class _QuickPage1State extends State<QuickPage1> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Container(
-                                width: 20.w,
-                                height: 20.h,
+                                width: 20,
+                                height: 20,
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     border: Border.all(
-                                        color: const Color(0xffE4D1B9), width: 1.9)),
+                                        color: const Color(0xffE4D1B9),
+                                        width: 1.9)),
                                 child: c == "10"
-                                    ?  CircleAvatar(
-                                        radius: 5.5.r,
-                                        backgroundColor: const Color(0xffE4D1B9))
+                                    ? CircleAvatar(
+                                        radius: 5.5,
+                                        backgroundColor:
+                                            const Color(0xffE4D1B9))
                                     : const SizedBox.shrink()),
                             const SizedBox(
                               width: 15,
                             ),
-                             Text(
+                            Text(
                               'Archaeological Tourism',
                               style: TextStyle(
                                 color: const Color(0xff6C3428),
-                                fontSize: 24.sp,
+                                fontSize: 24,
                                 fontFamily: 'Inter',
                                 fontWeight: FontWeight.w400,
                                 height: 0,
@@ -328,7 +334,13 @@ class _QuickPage1State extends State<QuickPage1> {
                     height: 51,
                     minWidth: 190,
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) =>  const Home_Screen(),),(route) =>false, );
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Home_Screen(),
+                        ),
+                        (route) => false,
+                      );
                     },
                     child: const Text(
                       'Submit',

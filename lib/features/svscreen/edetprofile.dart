@@ -79,7 +79,7 @@ class _edetprofileState extends State<edetprofile> {
               //
               const CircleAvatar(
                 radius: 50.0,
-                backgroundImage: AssetImage('assets/image/Ellipse 93.png'),
+                backgroundImage: AssetImage('assets/image/Ellipse 9310.png'),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * .016),
 

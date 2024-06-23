@@ -22,12 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "About_Us": MessageLookupByLibrary.simpleMessage("معلومات عنا"),
         "Abu_Simbel": MessageLookupByLibrary.simpleMessage("أبو سمبل"),
         "Allow": MessageLookupByLibrary.simpleMessage("يسمح"),
+        "Among": MessageLookupByLibrary.simpleMessage(
+            "ومن مميزات التطبيق سهولة التنقل داخل التطبيق، وعدم وجود تعقيدات في التصميم، ووجود أكثر من لغة، مما يجعله مناسبًا لأغلب المستخدمين."),
         "Archaeological_text": MessageLookupByLibrary.simpleMessage(
             "يمكن أن تشمل السياحة الأثرية جميع المنتجات المرتبطة بالترويج الأثري العام ، بما في ذلك زيارات المواقع الأثرية والمتاحف ومراكز التفسير وإعادة تمثيل الأحداث التاريخية وإعادة اكتشاف المنتجات الأصلية أو المهرجانات أو المسارح. تعزز السياحة الأثرية المواقع الأثرية والتراث الثقافي للمنطقة. هدفها هو عدم التسبب في مزيد من الضرر للمواقع ، وبالتالي تجنب أن تصبح سياحة غازية.أعرب علماء الآثار عن مخاوفهم من أن السياحة تشجع طرقا معينة لرؤية الماضي ومعرفته. عندما يتم تشغيل المواقع الأثرية من قبل المجالس السياحية ، يمكن أن تصبح رسوم التذاكر وعائدات الهدايا التذكارية أولوية"),
         "Archaeological_tourism":
             MessageLookupByLibrary.simpleMessage("السياحة الأثرية"),
+        "Artificial": MessageLookupByLibrary.simpleMessage("الذكاء الاصطناعي:"),
         "B_labn": MessageLookupByLibrary.simpleMessage(
             "محل حلويات بلبن ليس فقط مشهورًا بتقديم الحلويات التقليدية، بل يبدع أيضًا في تقديم اختراعات حلوى جديدة ومبتكرة. من بين هذه الاختراعات يمكن العثور على الكنافة بصلصة الشوكولاتة الداكنة، والبسبوسة بحشوة الكريمة والفواكه الطازجة. كما يقدم المحل تشكيلة من الحلويات التي تمزج بين النكهات الشرقية والغربية، مثل الماكرون بنكهات الزعفران والورد. بفضل هذه الابتكارات، يصبح محل حلويات بلبن وجهة مفضلة لمحبي الحلويات الباحثين عن تجارب طعمية فريدة ومميزة."),
         "Bazooka": MessageLookupByLibrary.simpleMessage(
@@ -46,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Dendera": MessageLookupByLibrary.simpleMessage("دنديرا"),
         "Description": MessageLookupByLibrary.simpleMessage(
             " وصف                                                            "),
+        "Ease": MessageLookupByLibrary.simpleMessage("سهولة الاستعمال:"),
         "Edit_Profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "Email": MessageLookupByLibrary.simpleMessage("بريد إلكتروني"),
         "Ford_Bay": MessageLookupByLibrary.simpleMessage(" خليج فورد"),
@@ -71,12 +76,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "Name": MessageLookupByLibrary.simpleMessage("اسم"),
         "Phone": MessageLookupByLibrary.simpleMessage("هاتف"),
         "Profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "QR": MessageLookupByLibrary.simpleMessage("رمز الاستجابة السريعة:"),
         "RED_MONASTERy": MessageLookupByLibrary.simpleMessage("الدير الأحمر"),
         "Religious_text": MessageLookupByLibrary.simpleMessage(
             "السياحة الدينية حدثت منذ فجر الحضارة. سافر الحجاج لتكريم الأماكن المقدسة وأولياء أمورهم في جميع أنحاء العالم. اندمجت السياحة إلى الأماكن المقدسة مع الحج في السنوات ال 2000 الماضيةتمثل إدارة السياحة الدينية العديد من التحديات الفريدة من نوعها في كل من الاتساع والتطبيق. توجد مواقع ذات أهمية دينية منذ العصور التوراتية والحج في السياق اليهودي المسيحي مذكور في العهد القديم من الكتاب المقدس ، على سبيل المثال ، في قصة إلكانا ، الذي يسافر سنويا إلى شيلوه للعبادة والتضحية"),
         "Religious_tourism":
             MessageLookupByLibrary.simpleMessage("السياحة الدينية"),
         "Suggestted": MessageLookupByLibrary.simpleMessage("مقترحة لك:"),
+        "TQR": MessageLookupByLibrary.simpleMessage(
+            "ومن الخدمات المقدمة في التطبيق ميزة رمز الاستجابة السريعة والتي تساعد المستخدم وتسهل عليه معرفة المعلومات التي يحتاجها بسهولة ويسر من خلال قراءة الرمز الموجود بجانب كل قطعة أثرية."),
+        "The_Kemet": MessageLookupByLibrary.simpleMessage(
+            "يهدف تطبيق كيمت إلى تقديم الخدمات للسياح القادمين من جميع أنحاء العالم ليحصلوا على تجربة سياحية فريدة من خلال التطبيق، وذلك لتوفر عدة مميزات منها:"),
         "Villa_of_Birds": MessageLookupByLibrary.simpleMessage("فيلا الطيور"),
         "at_text": MessageLookupByLibrary.simpleMessage(
             "نظرًا لوجود مناطق جذب رائعة في مصر القديمة، فهذا هو النوع الأساسي من السياحة في مصر. يوجد في مصر الكثير من المواقع السياحية الأثرية الجميلة التي يعود تاريخها إلى أكثر من 5000 عام."),

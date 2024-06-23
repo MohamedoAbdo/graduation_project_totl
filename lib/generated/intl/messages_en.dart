@@ -22,13 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "About_Us": MessageLookupByLibrary.simpleMessage("About Us "),
         "Abu_Simbel":
             MessageLookupByLibrary.simpleMessage("           Abu Simbel"),
         "Allow": MessageLookupByLibrary.simpleMessage("   Allow"),
+        "Among": MessageLookupByLibrary.simpleMessage(
+            " Among the advantages of the application is the ease of navigation within the application, the absence of complications in the design, and the presence of more than one language, which makes it suitable for most users."),
+        "Another": MessageLookupByLibrary.simpleMessage(
+            "Another thing that has been provided in the application is artificial intelligence, which in turn helps the user by displaying the user’s preferences, displays each user’s preferences individually, and provides nearby services based on geographical location."),
         "Archaeological_text": MessageLookupByLibrary.simpleMessage(
             "Archaeological tourism can include all products associated with public archaeological promotion, including visits to archaeological sites, museums, interpretation centers, reenactments of historical occurrences, and the rediscovery of indigenous products, festivals, or theaters.Archaeological tourism promotes archaeological sites and an area\'s cultural heritage. Its intent is to not cause more damage to the sites, thus avoiding becoming invasive tourism.\r\nArchaeologists have expressed concerns that tourism encourages particular ways of seeing and knowing the past.When archaeological sites are run by tourist boards, ticket fees and souvenir revenues can become a priority."),
         "Archaeological_tourism":
             MessageLookupByLibrary.simpleMessage("Archaeological tourism"),
+        "Artificial":
+            MessageLookupByLibrary.simpleMessage("Artificial Intelligence: "),
         "B_labn": MessageLookupByLibrary.simpleMessage(
             "Balban Sweets Shop is not only famous for serving traditional sweets, but it is also creative in offering new and innovative sweet inventions. Among these inventions you can find kunafa with dark chocolate sauce, and basbousa with cream filling and fresh fruits. The shop also offers a variety of sweets that combine Eastern and Western flavors, such as macarons with saffron and rose flavors. Thanks to these innovations, Balban Sweets Shop has become a favorite destination for sweet lovers looking for unique and distinctive taste experiences."),
         "Bazooka": MessageLookupByLibrary.simpleMessage(
@@ -50,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Dendera": MessageLookupByLibrary.simpleMessage("             Dendera"),
         "Description": MessageLookupByLibrary.simpleMessage(
             "  Description:                                                          "),
+        "Ease": MessageLookupByLibrary.simpleMessage("Ease of use: "),
         "Edit_Profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "Email": MessageLookupByLibrary.simpleMessage("Email"),
         "Ford_Bay": MessageLookupByLibrary.simpleMessage("          Ford Bay"),
@@ -77,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "Phone": MessageLookupByLibrary.simpleMessage("Phone"),
         "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "QR": MessageLookupByLibrary.simpleMessage("QR code:"),
         "RED_MONASTERy":
             MessageLookupByLibrary.simpleMessage("     RED MONASTERy"),
         "Religious_text": MessageLookupByLibrary.simpleMessage(
@@ -85,6 +94,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Religious tourism"),
         "Suggestted":
             MessageLookupByLibrary.simpleMessage(" Suggestted For You:"),
+        "TQR": MessageLookupByLibrary.simpleMessage(
+            "One of the services provided in the application is the QR code feature, which helps the user and makes it easier for him to find out the information he needs easily and conveniently by reading the code next to each artifact."),
+        "The_Kemet": MessageLookupByLibrary.simpleMessage(
+            "The Kemet application aims to provide services to tourists coming from all over the world so that they can have a unique tourist experience through the application, due to the availability of several advantages, including:"),
         "Villa_of_Birds":
             MessageLookupByLibrary.simpleMessage("       Villa of Birds"),
         "at_text": MessageLookupByLibrary.simpleMessage(

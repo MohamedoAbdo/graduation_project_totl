@@ -48,31 +48,31 @@ class Favourite extends StatelessWidget {
               child: GridView.count(
                 physics: const BouncingScrollPhysics(),
                 crossAxisCount: 2,
-                mainAxisSpacing: 20.h,
-                crossAxisSpacing: 20.w,
-                childAspectRatio: 188.w / 188.h,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
+                childAspectRatio: 188 / 188,
                 children: List.generate(
                   2,
                   (index) =>
                       Stack(alignment: Alignment.bottomCenter, children: [
                     Image.asset(
                       'assets/image/streo.png',
-                      // width: 188.w,
+                      // width: 188,
                     ),
                     Container(
-                      height: 45.h,
-                      width: 170.w,
+                      height: 45,
+                      width: 170,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: const Color(0xff6C3428).withOpacity(.6),
                         borderRadius: BorderRadius.only(
-                            bottomRight: Radius.circular(20.r),
-                            bottomLeft: Radius.circular(20.r)),
+                            bottomRight: Radius.circular(20),
+                            bottomLeft: Radius.circular(20)),
                       ),
                       child: Text(
                         'streo restaurant',
                         style: TextStyle(
-                            fontSize: 16.sp, color: const Color(0xffE4D1B9)),
+                            fontSize: 16, color: const Color(0xffE4D1B9)),
                       ),
                     ),
                   ]),
@@ -194,7 +194,7 @@ class Favourite extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProfileScreen()));
+                              builder: (context) => const ProfileScreen()));
                     },
                     child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,

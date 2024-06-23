@@ -1,9 +1,12 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/features/svscreen/verification.dart';
 
 class ForgetPass extends StatelessWidget {
+  TextEditingController emailcontroller = TextEditingController();
+
   ForgetPass({super.key});
 
   final forKey = GlobalKey<FormState>();
@@ -64,8 +67,12 @@ class ForgetPass extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: TextFormField(
-              onChanged: (value) {
-                email = value;
+              controller: emailcontroller,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              validator: (value) {
+                if (value == null || !value.contains('@')) {
+                  return 'Enter valid Email';
+                }
               },
               decoration: InputDecoration(
                 prefixIcon: Icon(
@@ -95,9 +102,36 @@ class ForgetPass extends StatelessWidget {
               ),
               height: 51,
               minWidth: 210,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => verification()));
+              onPressed: () async {
+                if (emailcontroller.text == "") {
+                  AwesomeDialog(
+                          context: context,
+                          dialogType: DialogType.error,
+                          title: "Error",
+                          desc:
+                              "Please write your email and then click forget password")
+                      .show();
+                  return;
+                }
+                try {
+                  await FirebaseAuth.instance
+                      .sendPasswordResetEmail(email: emailcontroller.text);
+                  AwesomeDialog(
+                          context: context,
+                          dialogType: DialogType.success,
+                          title: "Error",
+                          desc:
+                              "A link to reset your password has been sent to your email")
+                      .show();
+                } catch (e) {
+                  AwesomeDialog(
+                          context: context,
+                          dialogType: DialogType.error,
+                          title: "Error",
+                          desc:
+                              "Please make sure that the email you entered is correct")
+                      .show();
+                }
               },
               child: Text(
                 'Send Mail',

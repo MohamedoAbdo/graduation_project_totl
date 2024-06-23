@@ -112,7 +112,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               CircleAvatar(
                 radius: 60.0,
-                backgroundImage: AssetImage('assets/image/Ellipse 93.png'),
+                backgroundImage: AssetImage('assets/image/Ellipse 9310.png'),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * .016,
@@ -178,6 +178,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       MaterialPageRoute(builder: (context) => Notifica()));
                 },
               ),
+              SizedBox(height: .001),
               Image.asset(
                 'assets/image/Line 9.png',
               ),
@@ -191,6 +192,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           builder: (context) => ChangeLanguage()));
                 },
               ),
+              SizedBox(height: .001),
+
               Image.asset(
                 'assets/image/Line 9.png',
               ),
@@ -202,6 +205,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       MaterialPageRoute(builder: (context) => Favourite()));
                 },
               ),
+              SizedBox(height: .001),
+
               Image.asset(
                 'assets/image/Line 9.png',
               ),
@@ -211,6 +216,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   // Navigator.push( context, MaterialPageRoute( builder: (context) => PharaonicVillage()));
                 },
               ),
+              SizedBox(height: .001),
+
               Image.asset(
                 'assets/image/Line 9.png',
               ),

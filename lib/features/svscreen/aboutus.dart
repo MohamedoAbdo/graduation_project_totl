@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tourism_app/features/home/presentation/drawer.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
+import 'package:tourism_app/generated/l10n.dart';
 
 class aboutus extends StatelessWidget {
   const aboutus({super.key});
@@ -46,7 +47,7 @@ class aboutus extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'About Us    ',
+                      S.of(context).About_Us,
                       style: TextStyle(
                         color: Color(0xff6C3428),
                         fontSize: fontSize24,
@@ -61,16 +62,43 @@ class aboutus extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              Container(
-                width: MediaQuery.of(context).size.width * 1,
-                child: Text(
-                  '   Lorem Ipsum Dolor Sit Amet:    ',
-                  style: TextStyle(
-                    color: Color(0xFF6C3428),
-                    fontSize: fontSize16,
-                    fontFamily: 'inter',
-                    fontWeight: FontWeight.w600,
-                    height: MediaQuery.of(context).size.height * .002,
+
+              //
+
+              //
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 16, right: 16, left: 16, bottom: 16),
+                child: Container(
+                  child: Text(
+                    S.of(context).The_Kemet,
+                    style: TextStyle(
+                      color: Color(0xFFBE8C63),
+                      fontSize: fontSize16,
+                      fontFamily: 'inter',
+                      fontWeight: FontWeight.w500,
+                      height: MediaQuery.of(context).size.height * .002,
+                    ),
+                  ),
+                ),
+              ),
+
+              //
+
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 16, right: 16, left: 16, bottom: 0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 1,
+                  child: Text(
+                    S.of(context).QR,
+                    style: TextStyle(
+                      color: Color(0xFF6C3428),
+                      fontSize: 20,
+                      fontFamily: 'inter',
+                      fontWeight: FontWeight.w500,
+                      height: MediaQuery.of(context).size.height * .002,
+                    ),
                   ),
                 ),
               ),
@@ -82,32 +110,33 @@ class aboutus extends StatelessWidget {
                     top: 16, right: 16, left: 16, bottom: 16),
                 child: Container(
                   child: Text(
-                    'Consectetur adipiscing elit, sed do eiusmod \nTempor incididunt ut labore et dolore magna \nAliqua. Ut enim ad minim veniam. \nLorem ipsum dolor sit amet, consectetur \nAdipiscing elit, sed do eiusmod tempor incididunt \nUt labore et dolore magna aliqua. Ut enim Ad \nminim veniam.Lorem ipsum dolor sit amet.',
+                    S.of(context).TQR,
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
                       fontSize: fontSize16,
                       fontFamily: 'inter',
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                       height: MediaQuery.of(context).size.height * .002,
                     ),
                   ),
                 ),
               ),
-
               //
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 1,
-                child: Text(
-                  '   Lorem Ipsum Dolor Sit Amet:    ',
-                  style: TextStyle(
-                    color: Color(0xFF6C3428),
-                    fontSize: fontSize16,
-                    fontFamily: 'inter',
-                    fontWeight: FontWeight.w600,
-                    height: MediaQuery.of(context).size.height * .002,
+
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 16, right: 16, left: 16, bottom: 0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 1,
+                  child: Text(
+                    S.of(context).Ease,
+                    style: TextStyle(
+                      color: Color(0xFF6C3428),
+                      fontSize: 20,
+                      fontFamily: 'inter',
+                      fontWeight: FontWeight.w500,
+                      height: MediaQuery.of(context).size.height * .002,
+                    ),
                   ),
                 ),
               ),
@@ -119,34 +148,34 @@ class aboutus extends StatelessWidget {
                     top: 16, right: 16, left: 16, bottom: 16),
                 child: Container(
                   child: Text(
-                    'Consectetur adipiscing elit, sed do eiusmod \nTempor incididunt ut labore et dolore magna \nAliqua. Ut enim ad minim veniam. \nLorem ipsum dolor sit amet, consectetur \nAdipiscing elit, sed do eiusmod tempor incididunt \nUt labore et dolore magna aliqua. Ut enim Ad \nminim veniam.Lorem ipsum dolor sit amet.',
+                    S.of(context).Among,
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
                       fontSize: fontSize16,
                       fontFamily: 'inter',
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                       height: MediaQuery.of(context).size.height * .002,
                     ),
                   ),
                 ),
               ),
               //
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 1,
-                child: Text(
-                  '   Lorem Ipsum Dolor Sit Amet:    ',
-                  style: TextStyle(
-                    color: Color(0xFF6C3428),
-                    fontSize: fontSize16,
-                    fontFamily: 'inter',
-                    fontWeight: FontWeight.w600,
-                    height: MediaQuery.of(context).size.height * .002,
+
+              //
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 16, right: 16, left: 16, bottom: 0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 1,
+                  child: Text(
+                    S.of(context).Artificial,
+                    style: TextStyle(
+                      color: Color(0xFF6C3428),
+                      fontSize: 20,
+                      fontFamily: 'inter',
+                      fontWeight: FontWeight.w500,
+                      height: MediaQuery.of(context).size.height * .002,
+                    ),
                   ),
                 ),
               ),
@@ -158,20 +187,16 @@ class aboutus extends StatelessWidget {
                     top: 16, right: 16, left: 16, bottom: 16),
                 child: Container(
                   child: Text(
-                    'Consectetur adipiscing elit, sed do eiusmod \nTempor incididunt ut labore et dolore magna \nAliqua. Ut enim ad minim veniam. \nLorem ipsum dolor sit amet, consectetur \nAdipiscing elit, sed do eiusmod tempor incididunt \nUt labore et dolore magna aliqua. Ut enim Ad \nminim veniam.Lorem ipsum dolor sit amet.',
+                    S.of(context).Another,
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
                       fontSize: fontSize16,
                       fontFamily: 'inter',
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                       height: MediaQuery.of(context).size.height * .002,
                     ),
                   ),
                 ),
-              ),
-              //
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
               ),
             ],
           ),

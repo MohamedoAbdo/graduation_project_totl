@@ -783,6 +783,86 @@ class S {
       args: [],
     );
   }
+
+  /// `About Us `
+  String get About_Us {
+    return Intl.message(
+      'About Us ',
+      name: 'About_Us',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Kemet application aims to provide services to tourists coming from all over the world so that they can have a unique tourist experience through the application, due to the availability of several advantages, including:`
+  String get The_Kemet {
+    return Intl.message(
+      'The Kemet application aims to provide services to tourists coming from all over the world so that they can have a unique tourist experience through the application, due to the availability of several advantages, including:',
+      name: 'The_Kemet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `QR code:`
+  String get QR {
+    return Intl.message(
+      'QR code:',
+      name: 'QR',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `One of the services provided in the application is the QR code feature, which helps the user and makes it easier for him to find out the information he needs easily and conveniently by reading the code next to each artifact.`
+  String get TQR {
+    return Intl.message(
+      'One of the services provided in the application is the QR code feature, which helps the user and makes it easier for him to find out the information he needs easily and conveniently by reading the code next to each artifact.',
+      name: 'TQR',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ease of use: `
+  String get Ease {
+    return Intl.message(
+      'Ease of use: ',
+      name: 'Ease',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Among the advantages of the application is the ease of navigation within the application, the absence of complications in the design, and the presence of more than one language, which makes it suitable for most users.`
+  String get Among {
+    return Intl.message(
+      ' Among the advantages of the application is the ease of navigation within the application, the absence of complications in the design, and the presence of more than one language, which makes it suitable for most users.',
+      name: 'Among',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Artificial Intelligence: `
+  String get Artificial {
+    return Intl.message(
+      'Artificial Intelligence: ',
+      name: 'Artificial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Another thing that has been provided in the application is artificial intelligence, which in turn helps the user by displaying the user’s preferences, displays each user’s preferences individually, and provides nearby services based on geographical location.`
+  String get Another {
+    return Intl.message(
+      'Another thing that has been provided in the application is artificial intelligence, which in turn helps the user by displaying the user’s preferences, displays each user’s preferences individually, and provides nearby services based on geographical location.',
+      name: 'Another',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
