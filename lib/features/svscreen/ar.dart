@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tourism_app/features/svscreen/bage2.dart';
+import 'package:tourism_app/features/svscreen/login.dart';
 import 'package:tourism_app/generated/l10n.dart';
 
 class ar extends StatefulWidget {
@@ -24,7 +25,9 @@ class _arState extends State<ar> {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      home: bage2(),
+      home: signin(),
     );
   }
 }
+
+//bage2
