@@ -78,7 +78,7 @@ class _signinState extends State<signin> {
                     controller: emailcontroller,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     validator: (value) {
-                      if (value == null || !value.contains('@')) {
+                      if (value == null || !value.contains('@gmail.com')) {
                         return 'Enter valid Email';
                       }
                     },
@@ -198,8 +198,7 @@ class _signinState extends State<signin> {
 
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => Home_Screen()),
+                          MaterialPageRoute(builder: (context) => bage6()),
                         );
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
