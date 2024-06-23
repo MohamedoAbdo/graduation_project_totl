@@ -25,7 +25,7 @@ class _frState extends State<fr> {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      home: signin(),
+      home: bage2(),
     );
   }
 }

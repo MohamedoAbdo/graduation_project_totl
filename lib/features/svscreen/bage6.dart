@@ -169,27 +169,7 @@ class _bage6State extends State<bage6> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * .024,
               ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Home_Screen()),
-                  );
-                },
-                child: Row(
-                  children: [
-                    Text(
-                      S.of(context).elgazouly,
-                      style: TextStyle(
-                        color: Color(0xff6C3428),
-                        fontSize: fontSize24,
-                        fontWeight: FontWeight.w500,
-                        height: MediaQuery.of(context).size.height * .0017,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+
               //
             ],
           ),

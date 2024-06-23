@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Allow": MessageLookupByLibrary.simpleMessage("يسمح"),
         "Among": MessageLookupByLibrary.simpleMessage(
             "ومن مميزات التطبيق سهولة التنقل داخل التطبيق، وعدم وجود تعقيدات في التصميم، ووجود أكثر من لغة، مما يجعله مناسبًا لأغلب المستخدمين."),
+        "Another": MessageLookupByLibrary.simpleMessage(
+            "ومن الأمور الأخرى التي تم توفيرها في التطبيق هو الذكاء الاصطناعي والذي بدوره يساعد المستخدم من خلال عرض تفضيلات المستخدم، وعرض تفضيلات كل مستخدم على حدة، وتوفير الخدمات القريبة بناءً على الموقع الجغرافي."),
         "Archaeological_text": MessageLookupByLibrary.simpleMessage(
             "يمكن أن تشمل السياحة الأثرية جميع المنتجات المرتبطة بالترويج الأثري العام ، بما في ذلك زيارات المواقع الأثرية والمتاحف ومراكز التفسير وإعادة تمثيل الأحداث التاريخية وإعادة اكتشاف المنتجات الأصلية أو المهرجانات أو المسارح. تعزز السياحة الأثرية المواقع الأثرية والتراث الثقافي للمنطقة. هدفها هو عدم التسبب في مزيد من الضرر للمواقع ، وبالتالي تجنب أن تصبح سياحة غازية.أعرب علماء الآثار عن مخاوفهم من أن السياحة تشجع طرقا معينة لرؤية الماضي ومعرفته. عندما يتم تشغيل المواقع الأثرية من قبل المجالس السياحية ، يمكن أن تصبح رسوم التذاكر وعائدات الهدايا التذكارية أولوية"),
         "Archaeological_tourism":
@@ -121,13 +123,26 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_up": MessageLookupByLibrary.simpleMessage("اشتراك"),
         "siwa_Oasis": MessageLookupByLibrary.simpleMessage("واحة سيوة"),
         "some_pics": MessageLookupByLibrary.simpleMessage("بعض الصور:  "),
+        "start": MessageLookupByLibrary.simpleMessage("يبدأ"),
         "streo_text": MessageLookupByLibrary.simpleMessage(
             "الألم في حد ذاته مهم جدًا، وسوف يتبعه شحوب، ولكنه سيحدث في نفس الوقت كما هو الحال مع بعض العمل العظيم والألم. لأني سأتي إليك فالألم في حد ذاته مهم جداً، وسيتبعه السمنة."),
-        "text": MessageLookupByLibrary.simpleMessage(
-            "لوريم إيبسوم دولور سيت أميت، كونسيكتور \nلوريم إيبسوم دولور سيت أميت، كونسيكتور  \nUt لوريم إيبسوم دولور سيت أميت، كونسيكتور  \n لوريم إيبسوم دولور سيت أميت، كونسيكتور "),
+        "text1": MessageLookupByLibrary.simpleMessage(
+            "يوفر التطبيق معلومات شاملة عن مختلف الوجهات السياحية الموصى بها في مصر."),
+        "text2": MessageLookupByLibrary.simpleMessage(
+            "تمكنك ميزة إعادة التركيب من العثور على المطاعم أو المقاهي من حولك أينما كنت."),
+        "text3": MessageLookupByLibrary.simpleMessage(
+            "نوفر لك رمز الاستجابة السريعm يساعدك في الحصول على معلومات عن القطع الأثرية وميزة أخرى تساعد في تحديد الأماكن السياحية في مصر."),
+        "text4": MessageLookupByLibrary.simpleMessage(
+            "يمكنك الحجز في أفضل الفنادق والمنتجعات المريحة وتسهيل تنقل السائحين بسهولة."),
         "textb": MessageLookupByLibrary.simpleMessage("المشايه امام الجامعة "),
-        "title":
-            MessageLookupByLibrary.simpleMessage("    لوريم إيبسوم دولور    "),
+        "title1":
+            MessageLookupByLibrary.simpleMessage("أسهل طريقة لاكتشاف مصر."),
+        "title2": MessageLookupByLibrary.simpleMessage(
+            "ابحث عن المطاعم أو المقاهي من حولك."),
+        "title3": MessageLookupByLibrary.simpleMessage(
+            "توافر المعلومات الكاملة والقيمة."),
+        "title4":
+            MessageLookupByLibrary.simpleMessage("احجز فندقك أو استأجر سيارة."),
         "tourism_type": MessageLookupByLibrary.simpleMessage("نوع السياحة"),
         "you_don": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "you_have": MessageLookupByLibrary.simpleMessage("لديك حساب؟")

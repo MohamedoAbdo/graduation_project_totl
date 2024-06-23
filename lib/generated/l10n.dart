@@ -50,31 +50,81 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `elgazouly`
-  String get elgazouly {
+  /// `the easiest way to discover Egypt.`
+  String get title1 {
     return Intl.message(
-      'elgazouly',
-      name: 'elgazouly',
+      'the easiest way to discover Egypt.',
+      name: 'title1',
       desc: '',
       args: [],
     );
   }
 
-  /// `    Lorem Ipsum Dolor    `
-  String get title {
+  /// `the application provides comprehensive information on various recommended tourist destination in egypt.`
+  String get text1 {
     return Intl.message(
-      '    Lorem Ipsum Dolor    ',
-      name: 'title',
+      'the application provides comprehensive information on various recommended tourist destination in egypt.',
+      name: 'text1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Lorem Ipsum Dolor Sit Amet, Consectetur \nAdipiscing Elit, Sed Do Eiusmod Tempor  Incididunt \nUt Labore Et Dolore Magna Aliqua. Ut Enim  Ad \nMinim Veniam`
-  String get text {
+  /// `find restaurants or cafes around you.`
+  String get title2 {
     return Intl.message(
-      'Lorem Ipsum Dolor Sit Amet, Consectetur \nAdipiscing Elit, Sed Do Eiusmod Tempor  Incididunt \nUt Labore Et Dolore Magna Aliqua. Ut Enim  Ad \nMinim Veniam',
-      name: 'text',
+      'find restaurants or cafes around you.',
+      name: 'title2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Recombination feature enable you to find restaurants or cafes around you, wherever you are.`
+  String get text2 {
+    return Intl.message(
+      'The Recombination feature enable you to find restaurants or cafes around you, wherever you are.',
+      name: 'text2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Availability of complete & valuable information.`
+  String get title3 {
+    return Intl.message(
+      'Availability of complete & valuable information.',
+      name: 'title3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `we provide you qr code helps you with information about artifacts and another feature help them determine the tourist places in Egypt.`
+  String get text3 {
+    return Intl.message(
+      'we provide you qr code helps you with information about artifacts and another feature help them determine the tourist places in Egypt.',
+      name: 'text3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `book your hotel or rent car.`
+  String get title4 {
+    return Intl.message(
+      'book your hotel or rent car.',
+      name: 'title4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `you are able to book at comfortable, best hotel and resorts and make it easier for tourists to move around easily.`
+  String get text4 {
+    return Intl.message(
+      'you are able to book at comfortable, best hotel and resorts and make it easier for tourists to move around easily.',
+      name: 'text4',
       desc: '',
       args: [],
     );
@@ -85,6 +135,16 @@ class S {
     return Intl.message(
       'Next',
       name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `start`
+  String get start {
+    return Intl.message(
+      'start',
+      name: 'start',
       desc: '',
       args: [],
     );

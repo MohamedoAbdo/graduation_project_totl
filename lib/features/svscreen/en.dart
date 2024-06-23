@@ -25,7 +25,7 @@ class _enState extends State<en> {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      home: signin(),
+      home: bage2(),
     );
   }
 }

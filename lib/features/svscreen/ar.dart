@@ -25,7 +25,7 @@ class _arState extends State<ar> {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      home: signin(),
+      home: bage2(),
     );
   }
 }

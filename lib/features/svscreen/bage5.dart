@@ -32,19 +32,18 @@ class _bage5State extends State<bage5> {
               width: MediaQuery.of(context).size.width * 1.0,
               height: MediaQuery.of(context).size.height * .66,
             ),
-            Row(
-              children: [
-                Text(
-                  S.of(context).title,
-                  style: TextStyle(
-                    color: Color(0xFFE4D1B9),
-                    fontSize: fontSize24,
-                    fontFamily: 'inter',
-                    fontWeight: FontWeight.w600,
-                    height: MediaQuery.of(context).size.height * .002,
-                  ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 10, right: 16, left: 16, bottom: 0),
+              child: Text(
+                S.of(context).title4,
+                style: TextStyle(
+                  color: Color(0xFFFFFFFF),
+                  fontSize: 32,
+                  fontFamily: 'inter',
+                  fontWeight: FontWeight.w600,
                 ),
-              ],
+              ),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .02,
@@ -53,7 +52,7 @@ class _bage5State extends State<bage5> {
               padding: const EdgeInsets.only(
                   top: 10, right: 16, left: 16, bottom: 0),
               child: Text(
-                S.of(context).text,
+                S.of(context).text4,
                 style: TextStyle(
                   color: Color(0xFFE4D1B9),
                   fontSize: fontSize16,
@@ -76,7 +75,7 @@ class _bage5State extends State<bage5> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    S.of(context).next,
+                    S.of(context).start,
                     style: TextStyle(
                       color: Color(0xFFE4D1B9),
                       fontSize: fontSize24,
