@@ -40,12 +40,9 @@ class _GizaState extends State<Giza> {
                             top: MediaQuery.of(context).size.height * 0.05),
                         child: InkWell(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Home_Screen()));
+                            Navigator.pop(context);
                           },
-                          child: Row(
+                          child: const Row(
                             children: [
                               Row(
                                 children: [
@@ -83,14 +80,14 @@ class _GizaState extends State<Giza> {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * .03,
                         ),
-                        Container(
+                        SizedBox(
                           height: MediaQuery.of(context).size.height * .05,
                           width: MediaQuery.of(context).size.width * 1.0,
                           child: Text(
                             '   Giza    ',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                              color: Color(0xFF6C3428),
+                              color: const Color(0xFF6C3428),
                               fontSize: fontSize24,
                               fontWeight: FontWeight.w500,
                             ),
@@ -112,7 +109,7 @@ class _GizaState extends State<Giza> {
                                 'Lorem ipsum dolor sit amet, consectetur\nAdipiscing elit, sed do eiusmod tempor incididunt\nUt labore et dolore magna aliqua. Ut enim ad\nMinim veniam.\nLorem ipsum dolor sit amet, consectetur\nAdipiscing elit, sed do eiusmod tempor incididunt\nUt labore et dolore magna aliqua. Ut enim ad\nMinim veniam.Lorem ipsum dolor sit amet,\nConsectetur adipiscing elit, sed do eiusmod\nTempor incididunt ut labore et dolore magna\nAliqua. Ut enim ad minim veniam.\nLorem ipsum dolor sit amet, consectetur\nAdipiscing elit, sed do eiusmod tempor incididunt\nUt labore et dolore magna aliqua. Ut enim ad\nMinim veniam .Ut enim ad minim veniam.Lorem\nIpsum dolor sit amet, consectetur adipiscing elit .   ',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                  color: Color(0xFFBE8C63),
+                                  color: const Color(0xFFBE8C63),
                                   fontSize: fontSize16,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -124,14 +121,14 @@ class _GizaState extends State<Giza> {
                           height: MediaQuery.of(context).size.height * .02,
                         ),
 
-                        Container(
+                        SizedBox(
                           height: MediaQuery.of(context).size.height * .045,
                           width: MediaQuery.of(context).size.width * 1.0,
                           child: Text(
                             '   popular places:     ',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                              color: Color(0xFF6C3428),
+                              color: const Color(0xFF6C3428),
                               fontSize: fontSize24,
                               fontWeight: FontWeight.w500,
                               height:
@@ -146,7 +143,7 @@ class _GizaState extends State<Giza> {
                           children: [
                             Row(
                               children: [
-                                Row(
+                                const Row(
                                   children: [
                                     Text(
                                       "  ",
@@ -159,7 +156,7 @@ class _GizaState extends State<Giza> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              PharaonicVillage()),
+                                              const PharaonicVillage()),
                                     );
                                   },
                                   child: Container(
@@ -184,7 +181,7 @@ class _GizaState extends State<Giza> {
                                 ),
                               ],
                             ),
-                            Row(
+                            const Row(
                               children: [
                                 Text(
                                   "      ",
@@ -199,7 +196,7 @@ class _GizaState extends State<Giza> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              PharaonicVillage()),
+                                              const PharaonicVillage()),
                                     );
                                   },
                                   child: Container(
@@ -235,7 +232,7 @@ class _GizaState extends State<Giza> {
                           children: [
                             Row(
                               children: [
-                                Row(
+                                const Row(
                                   children: [
                                     Text(
                                       "  ",
@@ -248,7 +245,7 @@ class _GizaState extends State<Giza> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              PharaonicVillage()),
+                                              const PharaonicVillage()),
                                     );
                                   },
                                   child: Container(
@@ -273,7 +270,7 @@ class _GizaState extends State<Giza> {
                                 ),
                               ],
                             ),
-                            Row(
+                            const Row(
                               children: [
                                 Text(
                                   "      ",
@@ -288,7 +285,7 @@ class _GizaState extends State<Giza> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              PharaonicVillage()),
+                                              const PharaonicVillage()),
                                     );
                                   },
                                   child: Container(

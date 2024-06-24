@@ -1,16 +1,16 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:tourism_app/Helper/app_helper.dart';
+import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/ar.dart';
 import 'package:tourism_app/features/svscreen/ar_lan.dart';
 import 'package:tourism_app/features/svscreen/en.dart';
 import 'package:tourism_app/features/svscreen/en_lan.dart';
 import 'package:tourism_app/features/svscreen/fr.dart';
 import 'package:tourism_app/features/svscreen/fr_lan.dart';
+import 'package:tourism_app/main.dart';
 
 import 'package:tourism_app/features/svscreen/profile.dart';
-import 'package:tourism_app/generated/l10n.dart';
+import 'package:tourism_app/features/svscreen/responsive_text.dart';
 
 class ChangeLanguage extends StatefulWidget {
   const ChangeLanguage({super.key});
@@ -139,11 +139,14 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
 
                             InkWell(
                               onTap: () async {
-                                AppHelper.setLocal('en');
+                                MyApp.setLocale(
+                                    context, const Locale('en', 'US'));
+
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const en_lan()),
+                                      builder: (context) =>
+                                          const Home_Screen()),
                                 );
                               },
                               child: Container(
@@ -199,11 +202,14 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
 
                             InkWell(
                               onTap: () async {
-                                AppHelper.setLocal('ar');
+                                MyApp.setLocale(
+                                    context, const Locale('ar', 'EG'));
+
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const ar_lan()),
+                                      builder: (context) =>
+                                          const Home_Screen()),
                                 );
                               },
                               child: Container(
@@ -258,11 +264,13 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                             //
                             InkWell(
                               onTap: () async {
-                                AppHelper.setLocal('fr');
+                                MyApp.setLocale(
+                                    context, const Locale('fr', 'FR'));
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const fr_lan()),
+                                      builder: (context) =>
+                                          const Home_Screen()),
                                 );
                               },
                               child: Container(

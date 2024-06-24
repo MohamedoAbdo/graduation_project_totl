@@ -1,4 +1,6 @@
 import 'dart:developer';
+import 'package:flutter/material.dart';
+import 'package:tourism_app/features/svscreen/responsive_text.dart';
 
 class AppHelper {
   static String selectedAnswer = '';
@@ -13,9 +15,7 @@ class AppHelper {
     userUuid = uuid;
   }
 
-  static setLocal(String locale) {
-    log(local);
-
-    local = locale;
+  static setLocal(Locale locale) {
+    local = locale.languageCode;
   }
 }

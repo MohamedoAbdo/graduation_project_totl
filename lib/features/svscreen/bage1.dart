@@ -5,6 +5,7 @@ import 'package:tourism_app/features/svscreen/ar.dart';
 import 'package:tourism_app/features/svscreen/bage2.dart';
 import 'package:tourism_app/features/svscreen/en.dart';
 import 'package:tourism_app/features/svscreen/fr.dart';
+import 'package:tourism_app/main.dart';
 
 class bage1 extends StatefulWidget {
   const bage1({super.key});
@@ -99,11 +100,11 @@ class _bage1State extends State<bage1> {
                         ),
                         InkWell(
                           onTap: () async {
-                            AppHelper.setLocal('en');
+                            MyApp.setLocale(context, const Locale('en', 'US'));
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const en()),
+                                  builder: (context) => const bage2()),
                             );
                           },
                           child: Container(
@@ -154,11 +155,11 @@ class _bage1State extends State<bage1> {
                         ),
                         InkWell(
                           onTap: () async {
-                            AppHelper.setLocal('ar');
+                            MyApp.setLocale(context, const Locale('ar', 'AR'));
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const ar()),
+                                  builder: (context) => const bage2()),
                             );
                           },
                           child: Container(
@@ -211,11 +212,11 @@ class _bage1State extends State<bage1> {
                         //
                         InkWell(
                           onTap: () async {
-                            AppHelper.setLocal('fr');
+                            MyApp.setLocale(context, const Locale('fr', 'FR'));
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const fr()),
+                                  builder: (context) => const bage2()),
                             );
                           },
                           child: Container(

@@ -4,7 +4,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-const base = 'http://192.168.43.252:8001';
+// const base = 'http://192.168.43.252:8001';
+const base = 'http://127.0.0.1:8000';
 
 class Api {
   Future<dynamic> get({required String url}) async {
