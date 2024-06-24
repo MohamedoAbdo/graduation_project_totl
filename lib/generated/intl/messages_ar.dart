@@ -90,12 +90,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "The_Kemet": MessageLookupByLibrary.simpleMessage(
             "يهدف تطبيق كيمت إلى تقديم الخدمات للسياح القادمين من جميع أنحاء العالم ليحصلوا على تجربة سياحية فريدة من خلال التطبيق، وذلك لتوفر عدة مميزات منها:"),
         "Villa_of_Birds": MessageLookupByLibrary.simpleMessage("فيلا الطيور"),
+        "archaeologicalTourism":
+            MessageLookupByLibrary.simpleMessage("السياحة الاركانية"),
         "at_text": MessageLookupByLibrary.simpleMessage(
             "نظرًا لوجود مناطق جذب رائعة في مصر القديمة، فهذا هو النوع الأساسي من السياحة في مصر. يوجد في مصر الكثير من المواقع السياحية الأثرية الجميلة التي يعود تاريخها إلى أكثر من 5000 عام."),
         "cancel": MessageLookupByLibrary.simpleMessage("يلغي"),
         "change_language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
         "cl_text": MessageLookupByLibrary.simpleMessage(
             "اختر لغتك المفضلة\n            لمواصلة مغامرتك."),
+        "coastal_tourism":
+            MessageLookupByLibrary.simpleMessage("السياحة الساحرة"),
         "ct_text": MessageLookupByLibrary.simpleMessage(
             "مصر هي أفضل مكان لقضاء العطلات في العالم. وتشمل الأنشطة الترفيهية التي تتم على مقربة من البحر (مثل السباحة والتشمس والمشي على الساحل ومشاهدة الحياة البرية)."),
         "dost": MessageLookupByLibrary.simpleMessage(
@@ -105,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "log_title": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد أنك تريد تسجيل الخروج؟"),
         "login_faild": MessageLookupByLibrary.simpleMessage("فشل تسجيل الدخول"),
+        "medical_tourism":
+            MessageLookupByLibrary.simpleMessage("السياحة الطبية"),
         "mt_text": MessageLookupByLibrary.simpleMessage(
             "من المعروف دائمًا أن المياه المقدسة والأراضي المقدسة في مصر تتمتع بقوى سحرية وشفائية. وأفضل وأشهر ما في مصر هو مياهها المعدنية التي لا يوجد بها رطوبة."),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
@@ -115,6 +121,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "pharaohs_bath": MessageLookupByLibrary.simpleMessage("حمام فرعون"),
         "pyramids": MessageLookupByLibrary.simpleMessage("الأهرامات"),
+        "religious_tourism":
+            MessageLookupByLibrary.simpleMessage("السياحة الدينية"),
         "rt_text": MessageLookupByLibrary.simpleMessage(
             "مصر هي موطن الديانات السماوية، حيث التقى الناس من مختلف الأديان وعاشوا معًا لسنوات عديدة. ونتيجة لذلك، جمعت أرض الفراعنة كل الممالك."),
         "salt_cave": MessageLookupByLibrary.simpleMessage("كهف الملح"),

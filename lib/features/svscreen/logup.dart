@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tourism_app/Helper/app_helper.dart';
 import 'package:tourism_app/Helper/serices.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/bage6.dart';
@@ -89,7 +90,7 @@ class _signupState extends State<signup> {
                 children: [
                   Text(
                     S.of(context).Create,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color(0xFF6C3428),
                       fontSize: 32,
                       fontFamily: 'Inter',
@@ -103,7 +104,7 @@ class _signupState extends State<signup> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * .02,
               ),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.height * .128,
                 height: MediaQuery.of(context).size.height * .128,
                 child: Image.asset("assets/image/bro.png"),
@@ -127,7 +128,7 @@ class _signupState extends State<signup> {
                     label: Text(
                       S.of(context).Name,
                       style: TextStyle(
-                        color: Color(0xFF6C3428),
+                        color: const Color(0xFF6C3428),
                         fontSize: 12,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w600,
@@ -159,6 +160,7 @@ class _signupState extends State<signup> {
                         value.contains('@gmail.com') == false) {
                       return 'Enter valid Email';
                     }
+                    return null;
                   },
                   decoration: InputDecoration(
                     label: Text(
@@ -195,19 +197,20 @@ class _signupState extends State<signup> {
                     if (value == null || value.length < 11) {
                       return 'Enter valid phone';
                     }
+                    return null;
                   },
                   decoration: InputDecoration(
                     label: Text(
                       S.of(context).Phone,
                       style: TextStyle(
-                        color: Color(0xFF6C3428),
+                        color: const Color(0xFF6C3428),
                         fontSize: 12,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w600,
                         height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.call,
                       color: Color(0xffBE8C63),
                     ),
@@ -231,25 +234,26 @@ class _signupState extends State<signup> {
                     if (value == null || value.length < 8) {
                       return 'Enter valid password';
                     }
+                    return null;
                   },
                   decoration: InputDecoration(
                     label: Text(
                       S.of(context).password,
                       style: TextStyle(
-                        color: Color(0xFF6C3428),
+                        color: const Color(0xFF6C3428),
                         fontSize: 12,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w600,
                         height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.lock,
                       color: Color(0xffBE8C63),
                     ),
                     suffixIcon: ispassword
                         ? IconButton(
-                            icon: Icon(Icons.visibility_off),
+                            icon: const Icon(Icons.visibility_off),
                             onPressed: () {
                               setState(() {
                                 ispassword = !ispassword;
@@ -257,7 +261,7 @@ class _signupState extends State<signup> {
                             },
                           )
                         : IconButton(
-                            icon: Icon(Icons.visibility),
+                            icon: const Icon(Icons.visibility),
                             onPressed: () {
                               setState(() {
                                 ispassword = !ispassword;
@@ -281,25 +285,26 @@ class _signupState extends State<signup> {
                     if (value == null || value.length < 8) {
                       return 'Enter valid password';
                     }
+                    return null;
                   },
                   decoration: InputDecoration(
                     label: Text(
                       S.of(context).password,
                       style: TextStyle(
-                        color: Color(0xFF6C3428),
+                        color: const Color(0xFF6C3428),
                         fontSize: 12,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w600,
                         height: MediaQuery.of(context).size.height * .00009,
                       ),
                     ),
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.lock,
                       color: Color(0xffBE8C63),
                     ),
                     suffixIcon: ispassword
                         ? IconButton(
-                            icon: Icon(Icons.visibility_off),
+                            icon: const Icon(Icons.visibility_off),
                             onPressed: () {
                               setState(() {
                                 ispassword = !ispassword;
@@ -307,7 +312,7 @@ class _signupState extends State<signup> {
                             },
                           )
                         : IconButton(
-                            icon: Icon(Icons.visibility),
+                            icon: const Icon(Icons.visibility),
                             onPressed: () {
                               setState(() {
                                 ispassword = !ispassword;
@@ -327,7 +332,7 @@ class _signupState extends State<signup> {
                 child: Container(
                   //padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: Color(0xFFBE8C63),
+                    color: const Color(0xFFBE8C63),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   width: MediaQuery.of(context).size.height * .181,
@@ -350,16 +355,17 @@ class _signupState extends State<signup> {
                             const SnackBar(content: Text('success')),
                           );
 
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Home_Screen()));
+                                  builder: (context) => const bage6()),
+                              (route) => false);
                         }
                       }
                     },
                     child: Text(
                       S.of(context).sign_in,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
@@ -377,7 +383,7 @@ class _signupState extends State<signup> {
                   Text(
                     S.of(context).you_have,
                     style: TextStyle(
-                      color: Color(0xFF6C3428),
+                      color: const Color(0xFF6C3428),
                       fontSize: 12,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
@@ -388,13 +394,13 @@ class _signupState extends State<signup> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => signin()),
+                        MaterialPageRoute(builder: (context) => const signin()),
                       );
                     },
                     child: Text(
                       S.of(context).sign_in,
                       style: TextStyle(
-                        color: Color(0xFFBE8C63),
+                        color: const Color(0xFFBE8C63),
                         fontSize: 12,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w600,
@@ -422,6 +428,7 @@ class _signupState extends State<signup> {
         password: password,
       );
       if (usercredential.user != null) {
+        AppHelper.setUserUuid(usercredential.user!.uid);
         return true;
       }
     } on FirebaseAuthException catch (e) {

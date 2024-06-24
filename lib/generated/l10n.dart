@@ -923,6 +923,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Medical tourism`
+  String get medical_tourism {
+    return Intl.message(
+      'Medical tourism',
+      name: 'medical_tourism',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Coastal tourism`
+  String get coastal_tourism {
+    return Intl.message(
+      'Coastal tourism',
+      name: 'coastal_tourism',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Religious tourism`
+  String get religious_tourism {
+    return Intl.message(
+      'Religious tourism',
+      name: 'religious_tourism',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Archaeological tourism`
+  String get archaeologicalTourism {
+    return Intl.message(
+      'Archaeological tourism',
+      name: 'archaeologicalTourism',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

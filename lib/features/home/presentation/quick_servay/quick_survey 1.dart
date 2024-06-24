@@ -1,16 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tourism_app/Helper/app_helper.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
+import 'package:tourism_app/generated/l10n.dart';
+
+enum Answers {
+  coastalTourism,
+  religiousTourism,
+  archaeologicalTourism,
+  medicalTourism;
+
+  String name(BuildContext context) {
+    // use  the context if u want to translate the text
+    switch (this) {
+      case Answers.coastalTourism:
+        return S.of(context).coastal_tourism;
+      case Answers.religiousTourism:
+        return S.of(context).religious_tourism;
+      case Answers.archaeologicalTourism:
+        return S.of(context).archaeologicalTourism;
+      case Answers.medicalTourism:
+        return S.of(context).medical_tourism;
+    }
+  }
+
+  String value() {
+    switch (this) {
+      case Answers.coastalTourism:
+        return 'Coastal tourism';
+      case Answers.religiousTourism:
+        return 'Religious tourism';
+      case Answers.archaeologicalTourism:
+        return 'Medical tourism';
+      case Answers.medicalTourism:
+        return 'Archaeological tourism';
+    }
+  }
+}
 
 class QuickPage1 extends StatefulWidget {
-  const QuickPage1({super.key});
-
+  const QuickPage1({super.key, required this.isVisit});
+  final bool isVisit;
   @override
   State<QuickPage1> createState() => _QuickPage1State();
 }
 
 class _QuickPage1State extends State<QuickPage1> {
-  String x = '0', y = '0', z = '0', c = '0';
+  Answers? selectedAnswer;
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +66,14 @@ class _QuickPage1State extends State<QuickPage1> {
               ),
               Row(
                 children: [
-                  const Icon(
-                    Icons.arrow_back_ios_new,
-                    color: Color(0xff6C3428),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios_new,
+                      color: Color(0xff6C3428),
+                    ),
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.05,
@@ -51,58 +92,60 @@ class _QuickPage1State extends State<QuickPage1> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.03,
               ),
-              const Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6),
-                    child: Text(
-                      'What Place Did You Visit ?',
-                      style: TextStyle(
-                        color: Color(0xff6C3428),
-                        fontSize: 24,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500,
-                        height: 0,
+              if (widget.isVisit) ...[
+                const Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 6),
+                      child: Text(
+                        'What Place Did You Visit ?',
+                        style: TextStyle(
+                          color: Color(0xff6C3428),
+                          fontSize: 24,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                          height: 0,
+                        ),
                       ),
-                    ),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.elliptical(18, 18)),
-                          borderSide: BorderSide(color: Color(0xffE4D1B9))),
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xffE4D1B9)),
-                          borderRadius:
-                              BorderRadius.all(Radius.elliptical(18, 18))),
-                      labelText: 'Enter Places Name',
-                      labelStyle: TextStyle(color: Color(0xffE4D1B9)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.elliptical(18, 18)),
-                          borderSide: BorderSide(color: Color(0xffE4D1B9)))),
+                    )
+                  ],
                 ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.05,
-              ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.elliptical(18, 18)),
+                            borderSide: BorderSide(color: Color(0xffE4D1B9))),
+                        border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffE4D1B9)),
+                            borderRadius:
+                                BorderRadius.all(Radius.elliptical(18, 18))),
+                        labelText: 'Enter Places Name',
+                        labelStyle: TextStyle(color: Color(0xffE4D1B9)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.elliptical(18, 18)),
+                            borderSide: BorderSide(color: Color(0xffE4D1B9)))),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+              ],
               Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.01),
-                    child: Text(
+                    child: const Text(
                       'What Tourisms Do You Prefer ?',
                       style: TextStyle(
-                        color: const Color(0xff6C3428),
+                        color: Color(0xff6C3428),
                         fontSize: 24,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
@@ -153,167 +196,45 @@ class _QuickPage1State extends State<QuickPage1> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      InkWell(
-                        onTap: () {
-                          x == '10' ? x = 'e' : x = '10';
-                          setState(() {});
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Container(
-                                width: 20,
-                                height: 20,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                      color: const Color(0xffE4D1B9),
-                                      width: 1.9),
+                      for (var answer in Answers.values)
+                        InkWell(
+                          onTap: () {
+                            selectedAnswer = answer;
+                            setState(() {});
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                  width: 20,
+                                  height: 20,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                        color: const Color(0xffE4D1B9),
+                                        width: 1.9),
+                                  ),
+                                  child: answer == selectedAnswer
+                                      ? const CircleAvatar(
+                                          radius: 5.5,
+                                          backgroundColor: Color(0xffE4D1B9))
+                                      : const SizedBox.shrink()),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Text(
+                                answer.name(context),
+                                style: const TextStyle(
+                                  color: Color(0xff6C3428),
+                                  fontSize: 24,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w400,
                                 ),
-                                child: x == "10"
-                                    ? const CircleAvatar(
-                                        radius: 5.5,
-                                        backgroundColor: Color(0xffE4D1B9))
-                                    : const SizedBox.shrink()),
-                            const SizedBox(
-                              width: 15,
-                            ),
-                            const Text(
-                              'Coastal Tourism',
-                              style: TextStyle(
-                                color: Color(0xff6C3428),
-                                fontSize: 24,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w400,
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          z == '10' ? z = 'e' : z = '10';
-                          setState(() {});
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Container(
-                                width: 20,
-                                height: 20,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                        color: const Color(0xffE4D1B9),
-                                        width: 1.9)),
-                                child: z == "10"
-                                    ? const CircleAvatar(
-                                        radius: 5.5,
-                                        backgroundColor: Color(0xffE4D1B9))
-                                    : const SizedBox.shrink()),
-                            const SizedBox(
-                              width: 15,
-                            ),
-                            const Text(
-                              'Religious Tourism',
-                              style: TextStyle(
-                                color: Color(0xff6C3428),
-                                fontSize: 24,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          y == '10' ? y = 'e' : y = '10';
-                          setState(() {});
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Container(
-                                width: 20,
-                                height: 20,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                        color: const Color(0xffE4D1B9),
-                                        width: 1.9)),
-                                child: y == "10"
-                                    ? const CircleAvatar(
-                                        radius: 5.5,
-                                        backgroundColor: Color(0xffE4D1B9))
-                                    : const SizedBox.shrink()),
-                            const SizedBox(
-                              width: 15,
-                            ),
-                            const Text(
-                              'Medical Tourism',
-                              style: TextStyle(
-                                color: Color(0xff6C3428),
-                                fontSize: 24,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w400,
-                                height: 0,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          c == '10' ? c = 'e' : c = '10';
-                          setState(() {});
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Container(
-                                width: 20,
-                                height: 20,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                        color: const Color(0xffE4D1B9),
-                                        width: 1.9)),
-                                child: c == "10"
-                                    ? CircleAvatar(
-                                        radius: 5.5,
-                                        backgroundColor:
-                                            const Color(0xffE4D1B9))
-                                    : const SizedBox.shrink()),
-                            const SizedBox(
-                              width: 15,
-                            ),
-                            Text(
-                              'Archaeological Tourism',
-                              style: TextStyle(
-                                color: const Color(0xff6C3428),
-                                fontSize: 24,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w400,
-                                height: 0,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.01,
                       ),
@@ -334,6 +255,9 @@ class _QuickPage1State extends State<QuickPage1> {
                     height: 51,
                     minWidth: 190,
                     onPressed: () {
+                      if (selectedAnswer != null) {
+                        AppHelper.setSelectedAnswer(selectedAnswer!.value());
+                      }
                       Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(

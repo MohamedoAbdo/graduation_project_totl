@@ -101,6 +101,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "The Kemet application aims to provide services to tourists coming from all over the world so that they can have a unique tourist experience through the application, due to the availability of several advantages, including:"),
         "Villa_of_Birds":
             MessageLookupByLibrary.simpleMessage("       Villa of Birds"),
+        "archaeologicalTourism":
+            MessageLookupByLibrary.simpleMessage("Archaeological tourism"),
         "at_text": MessageLookupByLibrary.simpleMessage(
             "Étant donné que de grandes attractions ont été découvertes dans l’Égypte ancienne, il s’agit du principal type de tourisme égyptien. L’Égypte possède de nombreux sites touristiques archéologiques magnifiques datant de plus de 5 000 ans."),
         "cancel": MessageLookupByLibrary.simpleMessage("Annuler"),
@@ -108,6 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("changement de langue"),
         "cl_text": MessageLookupByLibrary.simpleMessage(
             "Choisissez votre langue préférée\n            pour continuer votre aventure."),
+        "coastal_tourism":
+            MessageLookupByLibrary.simpleMessage("Coastal tourism"),
         "ct_text": MessageLookupByLibrary.simpleMessage(
             "L\'Égypte est la meilleure destination de vacances au monde. Cela comprend les activités récréatives se déroulant à proximité de la mer (telles que la baignade, les bains de soleil, les promenades côtières et l\'observation de la faune)."),
         "dost": MessageLookupByLibrary.simpleMessage(
@@ -118,6 +122,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "log_title": MessageLookupByLibrary.simpleMessage(
             "Êtes-vous sûr de vouloir vous déconnecter?"),
         "login_faild": MessageLookupByLibrary.simpleMessage("login faild"),
+        "medical_tourism":
+            MessageLookupByLibrary.simpleMessage("Medical tourism"),
         "mt_text": MessageLookupByLibrary.simpleMessage(
             "Les eaux bénites et les terres sacrées d’Égypte ont toujours été connues pour leurs pouvoirs magiques et curatifs. La chose la meilleure et la plus célèbre de l’Égypte est son eau minérale, qui ne contient pas d’humidité."),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
@@ -129,6 +135,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "pharaohs_bath":
             MessageLookupByLibrary.simpleMessage("        pharaoh\'s bath"),
         "pyramids": MessageLookupByLibrary.simpleMessage("           pyramids"),
+        "religious_tourism":
+            MessageLookupByLibrary.simpleMessage("Religious tourism"),
         "rt_text": MessageLookupByLibrary.simpleMessage(
             "L’Égypte est le foyer des religions célestes, où des personnes de confessions différentes se sont rencontrées et ont vécu ensemble pendant de nombreuses années. En conséquence, le pays des pharaons avait rassemblé tous les domaines."),
         "salt_cave":

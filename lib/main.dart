@@ -14,10 +14,14 @@ import 'package:tourism_app/firebase_options.dart';
 import 'package:tourism_app/splash/splash.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(DevicePreview(builder: (context) => MyApp()));
+  runApp(DevicePreview(
+    builder: (context) => const MyApp(),
+    enabled: false,
+  ));
   // runApp(const MyApp());
 }
 
@@ -30,10 +34,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff6C3428)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff6C3428)),
         useMaterial3: true,
       ),
-      home: Splash(),
+      home: const Splash(),
     );
   }
 }

@@ -1,19 +1,26 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:tourism_app/Helper/api.dart';
+import 'package:tourism_app/Helper/app_helper.dart';
 import 'package:tourism_app/features/home/presentation/favourite/favourite.dart';
+import 'package:tourism_app/features/home/presentation/quick_servay/quick_survey%201.dart';
 import 'package:tourism_app/features/home/presentation/trip_info/trip_info.dart';
 import 'package:tourism_app/features/svscreen/Coastaltourism.dart';
 import 'package:tourism_app/features/svscreen/Giza.dart';
 import 'package:tourism_app/features/svscreen/PharaonicVillage.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
 import 'package:tourism_app/features/svscreen/search.dart';
+import 'package:tourism_app/models/home_places_model.dart';
 
 import '../scan/scan_design.dart';
 import 'drawer.dart';
 
 class Home_Screen extends StatefulWidget {
-  const Home_Screen({Key? key}) : super(key: key);
-
+  const Home_Screen({
+    Key? key,
+  }) : super(key: key);
   @override
   State<Home_Screen> createState() => _Home_ScreenState();
 }
@@ -24,13 +31,13 @@ final GlobalKey<ScaffoldState> key = GlobalKey();
 class _Home_ScreenState extends State<Home_Screen> {
   int currentIndex = 0;
 
-  List imgList = [
-    'assets/image/giza.png',
-    'assets/image/luxor.jpg',
-    'assets/image/aswan.png',
-    'assets/image/hurghada.png',
-    'assets/image/siwa.png',
-  ];
+  // List imgList = [
+  //   'assets/image/giza.png',
+  //   'assets/image/luxor.jpg',
+  //   'assets/image/aswan.png',
+  //   'assets/image/hurghada.png',
+  //   'assets/image/siwa.png',
+  // ];
 
   List photo1 = [
     'assets/image/cleopatra Bath.png',
@@ -40,6 +47,29 @@ class _Home_ScreenState extends State<Home_Screen> {
     'assets/image/taba10%.png',
     'assets/image/luxoraswan.png',
   ];
+
+  Future<PlacesModel> getPlaces() async {
+    final response =
+        await Api().get(url: "$base/api/places/${AppHelper.local}");
+    return PlacesModel.fromJson(response);
+  }
+
+  Future<PlacesModel> getSuggestionPlaces() async {
+    final response = await Api().get(
+        url: "$base/api/places/${AppHelper.selectedAnswer}/${AppHelper.local}");
+    return PlacesModel.fromJson(response);
+  }
+
+  late Future<PlacesModel> places;
+  late Future<PlacesModel> suggestionPlaces;
+
+  @override
+  void initState() {
+    super.initState();
+
+    places = getPlaces();
+    suggestionPlaces = getSuggestionPlaces();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +100,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                       scrollDirection: Axis.vertical,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: 10, bottom: 20),
+                          padding: const EdgeInsets.only(left: 10, bottom: 20),
                           child: Text(
                             'Choose City You Need:',
                             style: TextStyle(
@@ -84,29 +114,57 @@ class _Home_ScreenState extends State<Home_Screen> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Giza()),
+                              MaterialPageRoute(
+                                  builder: (context) => const Giza()),
                             );
                           },
-                          child: CarouselSlider.builder(
-                            itemCount: imgList.length,
-                            itemBuilder: (BuildContext context, int index,
-                                int realIndex) {
-                              return buildImage(imgList, index, realIndex);
-                            },
-                            options: CarouselOptions(
-                              viewportFraction: 0.45,
-                              padEnds: false,
-                              height: 180,
-                              initialPage: 0,
-                              enlargeCenterPage: false,
-                              autoPlay: false,
-                              onPageChanged: (index, _) {
-                                setState(() {
-                                  currentIndex = index;
-                                });
-                              },
-                            ),
-                          ),
+                          child: FutureBuilder<PlacesModel>(
+                              future: places,
+                              builder: (context, snapShot) {
+                                if (snapShot.connectionState ==
+                                    ConnectionState.waiting) {
+                                  return const Center(
+                                      child: CircularProgressIndicator());
+                                }
+
+                                if (snapShot.hasError) {
+                                  return Text('Error: ${snapShot.error}');
+                                }
+
+                                if (snapShot.hasData) {
+                                  final data = snapShot.data!.data!;
+                                  return CarouselSlider.builder(
+                                    itemCount: snapShot.data!.data!.length,
+                                    itemBuilder: (BuildContext context,
+                                        int index, int realIndex) {
+                                      return buildImage(
+                                          data
+                                              .map(
+                                                (e) =>
+                                                    '$base/images/${e.image}',
+                                              )
+                                              .toList(),
+                                          index,
+                                          realIndex);
+                                    },
+                                    options: CarouselOptions(
+                                      viewportFraction: 0.45,
+                                      padEnds: false,
+                                      height: 180,
+                                      initialPage: 0,
+                                      enlargeCenterPage: false,
+                                      autoPlay: false,
+                                      onPageChanged: (index, _) {
+                                        setState(() {
+                                          currentIndex = index;
+                                        });
+                                      },
+                                    ),
+                                  );
+                                } else {
+                                  return const Text('No data');
+                                }
+                              }),
                         ),
                         //
 
@@ -138,37 +196,58 @@ class _Home_ScreenState extends State<Home_Screen> {
                         // ده ايه
                         InkWell(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Coastaltourism()),
-                            );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) => const Coastaltourism()),
+                            // );
                           },
-                          child: Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 16.0),
-                            child: GridView.count(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              crossAxisCount: 2,
-                              mainAxisSpacing: 20,
-                              crossAxisSpacing: 15,
-                              childAspectRatio: 188 / 271,
-                              children: List.generate(
-                                  photo1.length,
-                                  (index) => GridViewItem(
-                                        photo1: photo1[index],
-                                      )),
-                            ),
-                          ),
+                          child: FutureBuilder<PlacesModel>(
+                              future: suggestionPlaces,
+                              builder: (context, snapShot) {
+                                if (snapShot.connectionState ==
+                                    ConnectionState.waiting) {
+                                  return const Center(
+                                      child: CircularProgressIndicator());
+                                }
+
+                                if (snapShot.hasError) {
+                                  return Text('Error: ${snapShot.error}');
+                                }
+
+                                if (snapShot.hasData) {
+                                  final data = snapShot.data!.data!;
+                                  return Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 16.0),
+                                    child: GridView.count(
+                                      shrinkWrap: true,
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
+                                      crossAxisCount: 2,
+                                      mainAxisSpacing: 20,
+                                      crossAxisSpacing: 15,
+                                      childAspectRatio: 188 / 271,
+                                      children: List.generate(
+                                          data.length,
+                                          (index) => GridViewItem(
+                                                place: data[index],
+                                                photo1:
+                                                    '$base/images/${data[index].image}',
+                                              )),
+                                    ),
+                                  );
+                                }
+                                return const Text('No data');
+                              }),
                         ),
 
                         //
 
                         //
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              bottom: 32, top: 43, left: 18),
+                        const Padding(
+                          padding:
+                              EdgeInsets.only(bottom: 32, top: 43, left: 18),
                           child: Text(
                             'Recommendation Trips :',
                             style: TextStyle(
@@ -181,7 +260,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                           height: MediaQuery.of(context).size.height * 0.55,
                           child: GridView.builder(
                             gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2),
                             itemCount: photo2.length,
                             itemBuilder: (context, index) {
@@ -190,7 +269,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Taba()));
+                                          builder: (context) => const Taba()));
                                 },
                                 child: Card(
                                   child: Image.asset(photo2[index]),
@@ -214,13 +293,13 @@ class _Home_ScreenState extends State<Home_Screen> {
         backgroundColor: Colors.white,
         child: FloatingActionButton(
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 3, color: Colors.brown),
+            side: const BorderSide(width: 3, color: Colors.brown),
             borderRadius: BorderRadius.circular(100),
           ),
-          backgroundColor: Color(
+          backgroundColor: const Color(
             0xff6C3428,
           ),
-          child: Icon(
+          child: const Icon(
             Icons.camera_alt_rounded,
             size: 32,
             color: Color(
@@ -230,7 +309,7 @@ class _Home_ScreenState extends State<Home_Screen> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ScanDesign()),
+              MaterialPageRoute(builder: (context) => const ScanDesign()),
             );
           },
         ),
@@ -239,11 +318,11 @@ class _Home_ScreenState extends State<Home_Screen> {
       bottomNavigationBar: BottomAppBar(
         height: MediaQuery.of(context).size.height * 0.1,
         padding: EdgeInsets.zero,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 4,
         child: Container(
           padding: EdgeInsets.zero,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
@@ -262,9 +341,9 @@ class _Home_ScreenState extends State<Home_Screen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Home_Screen()));
+                              builder: (context) => const Home_Screen()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -277,10 +356,12 @@ class _Home_ScreenState extends State<Home_Screen> {
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Favourite()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Favourite()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -298,10 +379,12 @@ class _Home_ScreenState extends State<Home_Screen> {
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Search()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Search()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -317,9 +400,9 @@ class _Home_ScreenState extends State<Home_Screen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProfileScreen()));
+                              builder: (context) => const ProfileScreen()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -335,7 +418,7 @@ class _Home_ScreenState extends State<Home_Screen> {
           ),
         ),
       ),
-      endDrawer: NavDrawer(),
+      endDrawer: const NavDrawer(),
       key: key,
     );
   }
@@ -361,7 +444,7 @@ Container buildImage(List<dynamic> imgList, int index, int realIndex) {
     margin: const EdgeInsets.symmetric(horizontal: 5),
     child: ClipRRect(
       borderRadius: BorderRadius.circular(15),
-      child: Image.asset(
+      child: Image.network(
         imgList[index],
         fit: BoxFit.fill,
       ),
@@ -373,9 +456,11 @@ class GridViewItem extends StatelessWidget {
   const GridViewItem({
     super.key,
     this.photo1,
+    required this.place,
   });
 
   final photo1;
+  final Place place;
 
   @override
   Widget build(BuildContext context) {
@@ -390,23 +475,23 @@ class GridViewItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Image.asset(photo1),
+          Image.network(photo1),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4),
             child: Text(
-              'Cleopatra bath',
-              style: TextStyle(
+              place.name ?? "",
+              style: const TextStyle(
                   color: Colors.brown,
                   fontSize: 16,
                   fontWeight: FontWeight.w600),
             ),
           ),
-          const Expanded(
+          Expanded(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 4),
+              padding: const EdgeInsets.symmetric(horizontal: 4),
               child: Text(
-                'seddoeiusmodtempor incididunt ut laboreet doloremagnaaliqua.Ut enim ad minim.',
-                style: TextStyle(
+                place.description ?? "",
+                style: const TextStyle(
                     color: Color(0xffBE8C63),
                     fontSize: 16,
                     fontWeight: FontWeight.w500),
