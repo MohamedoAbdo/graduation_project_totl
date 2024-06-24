@@ -5,7 +5,7 @@ import 'package:tourism_app/Helper/app_helper.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/home/presentation/password_view/forget_pass.dart';
 import 'package:tourism_app/features/svscreen/ChangeLanguage.dart';
-import 'package:tourism_app/features/svscreen/Giza.dart';
+import 'package:tourism_app/features/svscreen/place_details.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
 import 'package:tourism_app/features/svscreen/TourismType.dart';
 import 'package:tourism_app/features/svscreen/responsive_text.dart';

@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:tourism_app/Helper/api.dart';
 import 'package:tourism_app/Helper/app_helper.dart';
+import 'package:tourism_app/features/controllers/favourit_controller.dart';
+import 'package:tourism_app/features/controllers/home_controller.dart';
 import 'package:tourism_app/features/home/presentation/favourite/favourite.dart';
 import 'package:tourism_app/features/home/presentation/quick_servay/quick_survey%201.dart';
 import 'package:tourism_app/features/home/presentation/trip_info/trip_info.dart';
 import 'package:tourism_app/features/svscreen/Coastaltourism.dart';
-import 'package:tourism_app/features/svscreen/Giza.dart';
+import 'package:tourism_app/features/svscreen/place_details.dart';
 import 'package:tourism_app/features/svscreen/PharaonicVillage.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
 import 'package:tourism_app/features/svscreen/search.dart';
@@ -26,7 +28,7 @@ class Home_Screen extends StatefulWidget {
 }
 
 var mainColor = const Color(0xff6C3428);
-final GlobalKey<ScaffoldState> key = GlobalKey();
+GlobalKey<ScaffoldState> key = GlobalKey();
 
 class _Home_ScreenState extends State<Home_Screen> {
   int currentIndex = 0;
@@ -48,27 +50,19 @@ class _Home_ScreenState extends State<Home_Screen> {
     'assets/image/luxoraswan.png',
   ];
 
-  Future<PlacesModel> getPlaces() async {
-    final response =
-        await Api().get(url: "$base/api/places/${AppHelper.local}");
-    return PlacesModel.fromJson(response);
-  }
-
-  Future<PlacesModel> getSuggestionPlaces() async {
-    final response = await Api().get(
-        url: "$base/api/places/${AppHelper.selectedAnswer}/${AppHelper.local}");
-    return PlacesModel.fromJson(response);
-  }
-
+  final HomeController homeController = HomeController();
+  final FavouritController favouritController = FavouritController();
   late Future<PlacesModel> places;
   late Future<PlacesModel> suggestionPlaces;
 
   @override
   void initState() {
     super.initState();
-
-    places = getPlaces();
-    suggestionPlaces = getSuggestionPlaces();
+    // to solve the error of dublicated GlobalKey
+    key = GlobalKey();
+    places = homeController.getPlaces();
+    suggestionPlaces = homeController.getSuggestionPlaces();
+    favouritController.getFavourit();
   }
 
   @override
@@ -110,34 +104,37 @@ class _Home_ScreenState extends State<Home_Screen> {
                           ),
                         ),
                         //
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Giza()),
-                            );
-                          },
-                          child: FutureBuilder<PlacesModel>(
-                              future: places,
-                              builder: (context, snapShot) {
-                                if (snapShot.connectionState ==
-                                    ConnectionState.waiting) {
-                                  return const Center(
-                                      child: CircularProgressIndicator());
-                                }
+                        FutureBuilder<PlacesModel>(
+                            future: places,
+                            builder: (context, snapShot) {
+                              if (snapShot.connectionState ==
+                                  ConnectionState.waiting) {
+                                return const Center(
+                                    child: CircularProgressIndicator());
+                              }
 
-                                if (snapShot.hasError) {
-                                  return Text('Error: ${snapShot.error}');
-                                }
+                              if (snapShot.hasError) {
+                                return Text('Error: ${snapShot.error}');
+                              }
 
-                                if (snapShot.hasData) {
-                                  final data = snapShot.data!.data!;
-                                  return CarouselSlider.builder(
-                                    itemCount: snapShot.data!.data!.length,
-                                    itemBuilder: (BuildContext context,
-                                        int index, int realIndex) {
-                                      return buildImage(
+                              if (snapShot.hasData) {
+                                final data = snapShot.data!.data!;
+                                return CarouselSlider.builder(
+                                  itemCount: snapShot.data!.data!.length,
+                                  itemBuilder: (BuildContext context, int index,
+                                      int realIndex) {
+                                    return InkWell(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  PlaceDetailsScreen(
+                                                    id: data[index].id!,
+                                                  )),
+                                        );
+                                      },
+                                      child: buildImage(
                                           data
                                               .map(
                                                 (e) =>
@@ -145,27 +142,27 @@ class _Home_ScreenState extends State<Home_Screen> {
                                               )
                                               .toList(),
                                           index,
-                                          realIndex);
+                                          realIndex),
+                                    );
+                                  },
+                                  options: CarouselOptions(
+                                    viewportFraction: 0.45,
+                                    padEnds: false,
+                                    height: 180,
+                                    initialPage: 0,
+                                    enlargeCenterPage: false,
+                                    autoPlay: false,
+                                    onPageChanged: (index, _) {
+                                      setState(() {
+                                        currentIndex = index;
+                                      });
                                     },
-                                    options: CarouselOptions(
-                                      viewportFraction: 0.45,
-                                      padEnds: false,
-                                      height: 180,
-                                      initialPage: 0,
-                                      enlargeCenterPage: false,
-                                      autoPlay: false,
-                                      onPageChanged: (index, _) {
-                                        setState(() {
-                                          currentIndex = index;
-                                        });
-                                      },
-                                    ),
-                                  );
-                                } else {
-                                  return const Text('No data');
-                                }
-                              }),
-                        ),
+                                  ),
+                                );
+                              } else {
+                                return const Text('No data');
+                              }
+                            }),
                         //
 
                         const SizedBox(
@@ -230,10 +227,23 @@ class _Home_ScreenState extends State<Home_Screen> {
                                       childAspectRatio: 188 / 271,
                                       children: List.generate(
                                           data.length,
-                                          (index) => GridViewItem(
-                                                place: data[index],
-                                                photo1:
-                                                    '$base/images/${data[index].image}',
+                                          (index) => InkWell(
+                                                onTap: () {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            PlaceDetailsScreen(
+                                                              id: data[index]
+                                                                  .id!,
+                                                            )),
+                                                  );
+                                                },
+                                                child: GridViewItem(
+                                                  place: data[index],
+                                                  photo1:
+                                                      '$base/images/${data[index].image}',
+                                                ),
                                               )),
                                     ),
                                   );

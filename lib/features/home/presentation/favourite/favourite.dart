@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tourism_app/Helper/app_helper.dart';
+import 'package:tourism_app/Restaurants/restaurants_details.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
 import 'package:tourism_app/features/svscreen/search.dart';
 import '../../scan/scan_design.dart';
 
-class Favourite extends StatelessWidget {
+class Favourite extends StatefulWidget {
   const Favourite({super.key});
 
+  @override
+  State<Favourite> createState() => _FavouriteState();
+}
+
+class _FavouriteState extends State<Favourite> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,30 +59,41 @@ class Favourite extends StatelessWidget {
                 crossAxisSpacing: 20,
                 childAspectRatio: 188 / 188,
                 children: List.generate(
-                  2,
-                  (index) =>
-                      Stack(alignment: Alignment.bottomCenter, children: [
-                    Image.asset(
-                      'assets/image/streo.png',
-                      // width: 188,
-                    ),
-                    Container(
-                      height: 45,
-                      width: 170,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: const Color(0xff6C3428).withOpacity(.6),
-                        borderRadius: BorderRadius.only(
-                            bottomRight: Radius.circular(20),
-                            bottomLeft: Radius.circular(20)),
+                  AppHelper.myFavourit.length,
+                  (index) => InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RestaurantsDetails(
+                            model: AppHelper.myFavourit[index],
+                          ),
+                        ),
+                      ).then((value) => setState(() {}));
+                    },
+                    child: Stack(alignment: Alignment.bottomCenter, children: [
+                      Image.asset(
+                        AppHelper.myFavourit[index].image ?? "",
+                        // width: 188,
                       ),
-                      child: Text(
-                        'streo restaurant',
-                        style: TextStyle(
-                            fontSize: 16, color: const Color(0xffE4D1B9)),
+                      Container(
+                        height: 45,
+                        width: 170,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: const Color(0xff6C3428).withOpacity(.6),
+                          borderRadius: const BorderRadius.only(
+                              bottomRight: Radius.circular(20),
+                              bottomLeft: Radius.circular(20)),
+                        ),
+                        child: Text(
+                          AppHelper.myFavourit[index].name ?? "",
+                          style: const TextStyle(
+                              fontSize: 16, color: Color(0xffE4D1B9)),
+                        ),
                       ),
-                    ),
-                  ]),
+                    ]),
+                  ),
                 ),
               ),
             ),
