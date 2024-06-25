@@ -73,6 +73,7 @@ class _Home_ScreenState extends State<Home_Screen> {
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
+              automaticallyImplyLeading: false,
               backgroundColor: Colors.white,
               title: Padding(
                 padding: const EdgeInsets.only(top: 12.0),

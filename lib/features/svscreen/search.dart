@@ -174,7 +174,7 @@ class _SearchState extends State<Search> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.03,
           ),
-          if (restaurants.isEmpty)
+          if (searchResult.isEmpty)
             const Row(
               children: [
                 Padding(
@@ -191,7 +191,7 @@ class _SearchState extends State<Search> {
                 ),
               ],
             ),
-          if (restaurants.isEmpty)
+          if (searchResult.isEmpty)
             const Row(
               children: [
                 Padding(

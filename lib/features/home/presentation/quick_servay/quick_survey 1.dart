@@ -30,9 +30,9 @@ enum Answers {
         return 'Coastal tourism';
       case Answers.religiousTourism:
         return 'Religious tourism';
-      case Answers.archaeologicalTourism:
-        return 'Medical tourism';
       case Answers.medicalTourism:
+        return 'Medical tourism';
+      case Answers.archaeologicalTourism:
         return 'Archaeological tourism';
     }
   }

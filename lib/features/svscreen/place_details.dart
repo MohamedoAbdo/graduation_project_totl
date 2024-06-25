@@ -69,6 +69,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                                   "$base/images/${data.image}",
                                   fit: BoxFit.cover,
                                   width: MediaQuery.of(context).size.width,
+                                  height: 300,
                                 ),
                               ),
                               Padding(
