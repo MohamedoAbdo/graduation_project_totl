@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -26,7 +28,6 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
     // TODO: implement initState
     super.initState();
     place = placeDetailsController.getPlace(widget.id);
-    popularPlace = placeDetailsController.getPopularPlaces();
   }
 
   final _formKey = GlobalKey<FormState>();
@@ -56,7 +57,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
               }
 
               if (snapshot.hasData) {
-                final data = snapshot.data as Place;
+                final country = snapshot.data as Place;
                 return SingleChildScrollView(
                   child: Column(
                     children: [
@@ -66,7 +67,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                             Stack(children: [
                               Container(
                                 child: Image.network(
-                                  "$base/images/${data.image}",
+                                  "$base/images/${country.image}",
                                   fit: BoxFit.cover,
                                   width: MediaQuery.of(context).size.width,
                                   height: 300,
@@ -104,171 +105,95 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                       ),
                       //
 
-                      Baseline(
-                        baselineType: TextBaseline.alphabetic,
-                        baseline: -5,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Row(
-                            children: [
-                              Column(
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                        ),
+                        child: Column(
+                          children: [
+                            Container(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 16),
+                              width: MediaQuery.of(context).size.width * 1.0,
+                              color: const Color(0xFF6C3428),
+                              child: Row(
                                 children: [
-                                  SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        .03,
-                                  ),
-                                  SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        .05,
-                                    width:
-                                        MediaQuery.of(context).size.width * 1.0,
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.symmetric(vertical: 3),
                                     child: Text(
-                                      '   ${data.name}    ',
+                                      '${country.name}',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        color: const Color(0xFF6C3428),
+                                        color: Colors.white,
                                         fontSize: fontSize24,
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        .005,
-                                  ),
-                                  Container(
-                                    height:
-                                        MediaQuery.of(context).size.height * .4,
-                                    width:
-                                        MediaQuery.of(context).size.width * 1.0,
-                                    color: Colors.white,
-                                    child: Center(
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 16,
-                                            right: 16,
-                                            left: 16,
-                                            bottom: 16),
-                                        child: Text(
-                                          '${data.description}',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            color: const Color(0xFFBE8C63),
-                                            fontSize: fontSize16,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        .02,
-                                  ),
-                                  SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        .045,
-                                    width:
-                                        MediaQuery.of(context).size.width * 1.0,
-                                    child: Text(
-                                      '   popular places:     ',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                        color: const Color(0xFF6C3428),
-                                        fontSize: fontSize24,
-                                        fontWeight: FontWeight.w500,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                .0015,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              .032),
-                                  FutureBuilder(
-                                    future: popularPlace,
-                                    builder: (context, snapshot) {
-                                      if (snapshot.connectionState ==
-                                          ConnectionState.waiting) {
-                                        return const SizedBox();
-                                      }
-
-                                      if (snapshot.hasError) {
-                                        return const Center(
-                                          child: Text("Error"),
-                                        );
-                                      }
-
-                                      if (snapshot.hasData) {
-                                        var data = snapshot.data!.data!;
-                                        data.shuffle();
-                                        if (data.length > 4) {
-                                          data = data.sublist(0, 4);
-                                        }
-
-                                        return SizedBox(
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          child: GridView.count(
-                                              shrinkWrap: true,
-                                              physics:
-                                                  const NeverScrollableScrollPhysics(),
-                                              crossAxisCount: 2,
-                                              mainAxisSpacing: 20,
-                                              crossAxisSpacing: 15,
-                                              childAspectRatio: 0.82,
-                                              children: List.generate(
-                                                  data.length,
-                                                  (index) => InkWell(
-                                                        onTap: () {
-                                                          Navigator.push(
-                                                            context,
-                                                            MaterialPageRoute(
-                                                                builder:
-                                                                    (context) =>
-                                                                        PlaceDetailsScreen(
-                                                                          id: data[index]
-                                                                              .id!,
-                                                                        )),
-                                                          );
-                                                        },
-                                                        child: SizedBox(
-                                                          child: Column(
-                                                            children: [
-                                                              Image.network(
-                                                                '$base/images/${data[index].image}',
-                                                                height: MediaQuery.of(
-                                                                            context)
-                                                                        .size
-                                                                        .height *
-                                                                    .25,
-                                                                width: MediaQuery.of(
-                                                                            context)
-                                                                        .size
-                                                                        .width *
-                                                                    .45,
-                                                                fit: BoxFit
-                                                                    .cover,
-                                                              )
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ))),
-                                        );
-                                      } else {
-                                        return const Text('No data');
-                                      }
-                                    },
-                                  ),
+                                  const Spacer(),
+                                  const Icon(Icons.location_on,
+                                      color: Color(0xffbe8c63)),
                                 ],
-                              )
-                            ],
-                          ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * .01,
+                            ),
+                            // SizedBox(
+                            //   width: MediaQuery.of(context).size.width * 1.0,
+                            //   child: Text(
+                            //     '   ${country.name}    ',
+                            //     textAlign: TextAlign.left,
+                            //     style: TextStyle(
+                            //       color: const Color(0xFF6C3428),
+                            //       fontSize: fontSize24,
+                            //       fontWeight: FontWeight.w500,
+                            //     ),
+                            //   ),
+                            // ),
+
+                            Container(
+                              width: MediaQuery.of(context).size.width * 1.0,
+                              color: Colors.white,
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 16, right: 16, left: 16, bottom: 16),
+                                  child: Text(
+                                    '${country.description}',
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      color: const Color(0xFFBE8C63),
+                                      fontSize: fontSize16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * .02,
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * .045,
+                              width: MediaQuery.of(context).size.width * 1.0,
+                              child: Text(
+                                '   Some pics&video:     ',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  color: const Color(0xFF6C3428),
+                                  fontSize: fontSize24,
+                                  fontWeight: FontWeight.w500,
+                                  height: MediaQuery.of(context).size.height *
+                                      .0015,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * .032),
+                          ],
                         ),
                       ),
                     ],

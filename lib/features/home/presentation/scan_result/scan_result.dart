@@ -1,409 +1,197 @@
 import 'package:flutter/material.dart';
+import 'package:tourism_app/Helper/api.dart';
+import 'package:tourism_app/features/controllers/qr_controller.dart';
+
 import 'package:tourism_app/features/svscreen/search.dart';
+import 'package:tourism_app/models/qr_data_model.dart';
 
 import '../favourite/favourite.dart';
 import '../home_view.dart';
 
-class ScanResult extends StatelessWidget {
-  const ScanResult({super.key});
+class ScanResult extends StatefulWidget {
+  const ScanResult({
+    Key? key,
+    required this.id,
+  }) : super(key: key);
+  final String id;
+
+  @override
+  State<ScanResult> createState() => _ScanResultState();
+}
+
+class _ScanResultState extends State<ScanResult> {
+  late Future<QrData> qrData;
+  final QrController QRController = QrController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    qrData = QRController.getData(widget.id);
+  }
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize32 = (screenWidth <= 600) ? 32 : 42;
+    double fontSize24 = (screenWidth <= 600) ? 24 : 32;
+    double fontSize16 = (screenWidth <= 600) ? 16 : 24;
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height,
-                child: Stack(
-                  children: [
-                    ClipRRect(
-                      child: Image(
-                        image: AssetImage("assets/image/image1.png"),
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                        height: MediaQuery.of(context).size.height * 0.41,
-                      ),
-                    ),
-                    Positioned(
-                      top: MediaQuery.of(context).size.height * 0.39,
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 568,
-                        decoration: ShapeDecoration(
-                          color: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20),
-                            ),
-                          ),
+      body: Container(
+        // decoration: const BoxDecoration(color: Colors.black),
+        child: FutureBuilder(
+            future: qrData,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+
+              if (snapshot.hasError) {
+                return const Center(
+                  child: Text("No Data Found Scan Again"),
+                );
+              }
+
+              if (snapshot.hasData) {
+                final qr = snapshot.data as QrData;
+                return SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Container(
+                        child: Column(
+                          children: [
+                            Stack(children: [
+                              Container(
+                                child: Image.network(
+                                  "$base/images/${qr.image}",
+                                  fit: BoxFit.cover,
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 300,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.05),
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Row(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "     ",
+                                          )
+                                        ],
+                                      ),
+                                      Icon(
+                                        Icons.arrow_back_ios,
+                                        color: Color(0xFF6C3428),
+                                        size: 30,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ])
+                          ],
                         ),
-                        child: SingleChildScrollView(
-                          child: Column(
+                      ),
+                      //
+
+                      Baseline(
+                        baselineType: TextBaseline.alphabetic,
+                        baseline: -5,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
                             children: [
-                              Row(
+                              Column(
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 16, vertical: 24),
+                                  SizedBox(
+                                    height: MediaQuery.of(context).size.height *
+                                        .03,
+                                  ),
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width * 1.0,
                                     child: Text(
-                                      'Name Of The Statue',
+                                      '   ${qr.name}    ',
+                                      textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        color: Color(0xff6C3428),
-                                        fontSize: 24,
-                                        fontFamily: 'Inter',
+                                        color: const Color(0xFF6C3428),
+                                        fontSize: fontSize24,
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
                                   ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Lorem Ipsum Dolor Sit Amet, Consectetur Adipi',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
+                                  SizedBox(
+                                    height: MediaQuery.of(context).size.height *
+                                        .005,
+                                  ),
+                                  Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 1.0,
+                                    color: Colors.white,
+                                    child: Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 16,
+                                            right: 16,
+                                            left: 16,
+                                            bottom: 16),
+                                        child: Text(
+                                          '${qr.description}',
+                                          textAlign: TextAlign.left,
+                                          style: TextStyle(
+                                            color: const Color(0xFFBE8C63),
+                                            fontSize: fontSize16,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                  )
+                                  ),
+                                  SizedBox(
+                                    height: MediaQuery.of(context).size.height *
+                                        .02,
+                                  ),
+                                  SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              .032),
                                 ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Minim Veniam.',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Lorem Ipsum Dolor Sit Amet, Consectetur ',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad ',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Minim Veniam.Lorem Ipsum Dolor Sit Amet,',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Consectetur Adipiscing Elit, Sed Do Eiusmod',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Tempor Incididunt Ut Labore Et Dolore Magna',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Aliqua. Ut Enim Ad Minim Veniam.',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Lorem Ipsum Dolor Sit Amet, Consectetur ',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Minim Veniam .Ut Enim Ad Minim Veniam.Lorem',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.001),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Ipsum Dolor Sit Amet,Consectetur Adipiscing Elit',
-                                      style: TextStyle(
-                                        color: Color(0xFFBE8C63),
-                                        fontSize: 16,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.26),
+                              )
                             ],
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+                    ],
+                  ),
+                );
+              }
+              return const SizedBox();
+            }),
       ),
       floatingActionButton: CircleAvatar(
         radius: 32,
         backgroundColor: Colors.white,
         child: FloatingActionButton(
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 3, color: Colors.brown),
+            side: const BorderSide(width: 3, color: Colors.brown),
             borderRadius: BorderRadius.circular(100),
           ),
-          backgroundColor: Color(
+          backgroundColor: const Color(
             0xff6C3428,
           ),
-          child: Icon(
+          child: const Icon(
             Icons.camera_alt_rounded,
             size: 32,
             color: Color(
@@ -417,11 +205,11 @@ class ScanResult extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         height: MediaQuery.of(context).size.height * 0.1,
         padding: EdgeInsets.zero,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 4,
         child: Container(
           padding: EdgeInsets.zero,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
@@ -440,9 +228,9 @@ class ScanResult extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Home_Screen()));
+                              builder: (context) => const Home_Screen()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -455,10 +243,12 @@ class ScanResult extends StatelessWidget {
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Favourite()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Favourite()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -476,10 +266,12 @@ class ScanResult extends StatelessWidget {
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Search()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Search()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -492,7 +284,7 @@ class ScanResult extends StatelessWidget {
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {},
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
