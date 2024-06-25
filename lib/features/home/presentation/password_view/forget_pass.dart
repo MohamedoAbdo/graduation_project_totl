@@ -25,6 +25,7 @@ class ForgetPass extends StatelessWidget {
           ),
           Center(
             child: Text('Forget Password',
+                // S.of(context).Forget_Password,
                 style: TextStyle(
                   color: Color(0xff6C3428),
                   fontSize: 32,
@@ -119,7 +120,7 @@ class ForgetPass extends StatelessWidget {
                   AwesomeDialog(
                           context: context,
                           dialogType: DialogType.success,
-                          title: "Error",
+                          title: "success",
                           desc:
                               "A link to reset your password has been sent to your email")
                       .show();
