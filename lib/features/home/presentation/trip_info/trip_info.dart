@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tourism_app/features/home/presentation/home_view.dart';
 
 class Taba extends StatelessWidget {
   const Taba({super.key});
@@ -12,26 +13,76 @@ class Taba extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Stack(
-              children: [
-                ClipRRect(
-                  child: Image(
-                    image: const AssetImage("assets/image/taba1.png"),
-                    fit: BoxFit.fill,
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height * 0.20,
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 85.0),
-                  child: ClipRRect(
-                    child: Image(
-                      image: AssetImage("assets/image/taba_text.png"),
-                      fit: BoxFit.cover,
+            Container(
+              child: Column(
+                children: [
+                  Stack(children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height * .292,
+                      child: Image.asset(
+                        'assets/image/taba1.png',
+                      ),
                     ),
-                  ),
-                ),
-              ],
+                    Positioned(
+                      top: MediaQuery.of(context).size.height * .250,
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * .050,
+                        width: MediaQuery.of(context).size.width * 1.0,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF6C3428).withOpacity(1.0),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: MediaQuery.of(context).size.height * .250,
+                      left: MediaQuery.of(context).size.height * .016,
+                      child: Container(
+                        child: Column(
+                          children: [
+                            Text(
+                              "Tapa",
+                              style: TextStyle(
+                                color: Color(0xFFE4D1B9),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.05),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Home_Screen()),
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  "     ",
+                                )
+                              ],
+                            ),
+                            Icon(
+                              Icons.arrow_back_ios,
+                              color: Color(0xFF6C3428),
+                              size: 30,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ])
+                ],
+              ),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.width * 0.03,
