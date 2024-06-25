@@ -3,9 +3,9 @@ import 'package:tourism_app/Helper/app_helper.dart';
 import 'package:tourism_app/models/home_places_model.dart';
 
 class HomeController {
-  Future<PlacesModel> getPlaces() async {
+  Future<PlacesModel> getCountries() async {
     final response =
-        await Api().get(url: "$base/api/places/${AppHelper.local}");
+        await Api().get(url: "$base/api/countrys/${AppHelper.local}");
     return PlacesModel.fromJson(response);
   }
 

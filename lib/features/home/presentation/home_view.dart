@@ -10,6 +10,7 @@ import 'package:tourism_app/features/home/presentation/favourite/favourite.dart'
 import 'package:tourism_app/features/home/presentation/quick_servay/quick_survey%201.dart';
 import 'package:tourism_app/features/home/presentation/trip_info/trip_info.dart';
 import 'package:tourism_app/features/svscreen/Coastaltourism.dart';
+import 'package:tourism_app/features/svscreen/country_details.dart';
 import 'package:tourism_app/features/svscreen/place_details.dart';
 import 'package:tourism_app/features/svscreen/PharaonicVillage.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
@@ -60,7 +61,7 @@ class _Home_ScreenState extends State<Home_Screen> {
     super.initState();
     // to solve the error of dublicated GlobalKey
     key = GlobalKey();
-    places = homeController.getPlaces();
+    places = homeController.getCountries();
     suggestionPlaces = homeController.getSuggestionPlaces();
     favouritController.getFavourit();
   }
@@ -130,7 +131,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  PlaceDetailsScreen(
+                                                  CountryDetails(
                                                     id: data[index].id!,
                                                   )),
                                         );

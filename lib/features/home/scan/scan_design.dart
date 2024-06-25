@@ -100,13 +100,15 @@ class _ScanDesignState extends State<ScanDesign> {
         setState(() {
           qrstr = value;
         });
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ScanAction(
-                value: value,
-              ),
-            ));
+        if (value.isNotEmpty) {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ScanAction(
+                  value: value,
+                ),
+              ));
+        }
       });
     } catch (e) {
       setState(() {
