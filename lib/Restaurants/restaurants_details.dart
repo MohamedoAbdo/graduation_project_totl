@@ -1,21 +1,42 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tourism_app/Helper/app_helper.dart';
+import 'package:tourism_app/features/controllers/favourit_controller.dart';
 import 'package:tourism_app/features/svscreen/Coastaltourism.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
 import 'package:tourism_app/features/svscreen/search.dart';
 import 'package:tourism_app/generated/l10n.dart';
+import 'package:tourism_app/models/Resturant_model.dart';
 
-class B_labn extends StatefulWidget {
-  const B_labn({super.key});
-
+class RestaurantsDetails extends StatefulWidget {
+  const RestaurantsDetails({super.key, required this.model});
+  final RestaurantModel model;
   @override
-  State<B_labn> createState() => _streoState();
+  State<RestaurantsDetails> createState() => _RestaurantsDetailsState();
 }
 
-class _streoState extends State<B_labn> {
+class _RestaurantsDetailsState extends State<RestaurantsDetails> {
   final _formKey = GlobalKey<FormState>();
+
+  String description(BuildContext context, String value) {
+    if (value == "bazooka") {
+      return S.of(context).Bazooka;
+    }
+    if (value == "blabn") {
+      return S.of(context).B_labn;
+    }
+    if (value == "carrefour") {
+      return S.of(context).Carrefour;
+    }
+
+    return " --- ";
+  }
+
+  FavouritController favouritController = FavouritController();
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -24,8 +45,8 @@ class _streoState extends State<B_labn> {
     double fontSize16 = (screenWidth <= 600) ? 16 : 24;
     return Scaffold(
       body: Container(
-        key: _formKey,
         decoration: const BoxDecoration(color: Colors.black),
+        key: _formKey,
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -34,12 +55,14 @@ class _streoState extends State<B_labn> {
                   children: [
                     Stack(children: [
                       Image.asset(
-                        'assets/image/014.jpg',
+                        widget.model.image ?? "",
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 50),
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
                           child: const Row(
                             children: [
                               Row(
@@ -85,15 +108,32 @@ class _streoState extends State<B_labn> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("  B labn",
+                                Text("  ${widget.model.name}",
                                     style: TextStyle(
                                       color: const Color(0xFF6C3428),
                                       fontSize: fontSize24,
                                       fontWeight: FontWeight.w500,
                                     )),
-                                const Icon(
-                                  Icons.favorite,
-                                  color: Color(0xFF6C3428),
+                                InkWell(
+                                  onTap: () async {
+                                    log("asdsd");
+                                    AppHelper.isINFavourit(widget.model)
+                                        ? await favouritController
+                                            .removeFromFavourit(
+                                                model: widget.model)
+                                        : await favouritController
+                                            .addToFavourit(model: widget.model);
+                                    setState(() {});
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Icon(
+                                      AppHelper.isINFavourit(widget.model)
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      color: const Color(0xFF6C3428),
+                                    ),
+                                  ),
                                 ),
                               ],
                             )),
@@ -101,80 +141,49 @@ class _streoState extends State<B_labn> {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * .015,
                         ),
-                        Row(
-                          children: [
-                            Row(
+                        SingleChildScrollView(
+                          child: SizedBox(
+                            height: MediaQuery.of(context).size.height * .32,
+                            child: Row(
                               children: [
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => const B_labn()),
-                                    );
-                                  },
-                                  child: Container(
-                                    child: Column(
-                                      children: [
-                                        Stack(children: [
-                                          Image.asset(
-                                            'assets/image/0141.jpg',
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                .35,
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                .3,
-                                          ),
-                                        ])
-                                      ],
+                                for (var i = 0;
+                                    i < widget.model.album!.length;
+                                    i++)
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: InkWell(
+                                      onTap: () {
+                                        // Navigator.push(
+                                        //   context,
+                                        //   MaterialPageRoute(
+                                        //       builder: (context) =>
+                                        //           const RestaurantsDetails()),
+                                        // );
+                                      },
+                                      child: Container(
+                                        child: Column(
+                                          children: [
+                                            Stack(children: [
+                                              Image.asset(
+                                                widget.model.album?[i] ?? "",
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    .35,
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    .3,
+                                              ),
+                                            ])
+                                          ],
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
                               ],
                             ),
-                            const Row(
-                              children: [
-                                Text(
-                                  "       ",
-                                )
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => const B_labn()),
-                                    );
-                                  },
-                                  child: Container(
-                                    child: Column(
-                                      children: [
-                                        Stack(children: [
-                                          Image.asset(
-                                            'assets/image/0142.jpg',
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                .42,
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                .3,
-                                          ),
-                                        ])
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                          ),
                         ),
 
                         //
@@ -203,7 +212,8 @@ class _streoState extends State<B_labn> {
                             color: Colors.white,
                             child: Center(
                               child: Text(
-                                S.of(context).B_labn,
+                                description(
+                                    context, widget.model.description ?? ""),
                                 style: TextStyle(
                                   color: const Color(0xFFBE8C63),
                                   fontSize: fontSize16,
@@ -238,8 +248,7 @@ class _streoState extends State<B_labn> {
                                 ),
                                 Row(
                                   children: [
-                                    Text(
-                                        "    https://www.facebook.com/b labn/about",
+                                    Text("     ${widget.model.website ?? ""}",
                                         style: TextStyle(
                                           color: const Color(0xFF6C3428),
                                           fontSize: 13,
@@ -274,7 +283,7 @@ class _streoState extends State<B_labn> {
                                 ),
                                 Row(
                                   children: [
-                                    Text("     1092131801   ",
+                                    Text("     ${widget.model.phone ?? ""} ",
                                         style: TextStyle(
                                           color: const Color(0xFF6C3428),
                                           fontSize: fontSize16,
@@ -309,16 +318,17 @@ class _streoState extends State<B_labn> {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(16.0),
-                                  child: Text(
-                                      " Walking in front of the university ",
-                                      style: TextStyle(
-                                        color: const Color(0xFF6C3428),
-                                        fontSize: fontSize16,
-                                        fontWeight: FontWeight.w500,
-                                        height:
-                                            MediaQuery.of(context).size.height *
+                                  child:
+                                      Text("     ${widget.model.address ?? ""}",
+                                          style: TextStyle(
+                                            color: const Color(0xFF6C3428),
+                                            fontSize: fontSize16,
+                                            fontWeight: FontWeight.w500,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
                                                 .0015,
-                                      )),
+                                          )),
                                 ),
                               ],
                             ),

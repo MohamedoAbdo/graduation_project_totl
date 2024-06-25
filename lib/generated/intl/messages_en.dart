@@ -100,6 +100,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "The Kemet application aims to provide services to tourists coming from all over the world so that they can have a unique tourist experience through the application, due to the availability of several advantages, including:"),
         "Villa_of_Birds":
             MessageLookupByLibrary.simpleMessage("       Villa of Birds"),
+        "archaeologicalTourism":
+            MessageLookupByLibrary.simpleMessage("Archaeological tourism"),
         "at_text": MessageLookupByLibrary.simpleMessage(
             "Since great attractions were found in ancient Egypt, this is Egypt’s primary type of tourism. Egypt has a lot of beautiful archaeological tourist sites that date back more than 5000 years."),
         "cancel": MessageLookupByLibrary.simpleMessage("cancel"),
@@ -107,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Change Language "),
         "cl_text": MessageLookupByLibrary.simpleMessage(
             " choose your preferred language to\n           continue your adventure."),
+        "coastal_tourism":
+            MessageLookupByLibrary.simpleMessage("Coastal tourism"),
         "ct_text": MessageLookupByLibrary.simpleMessage(
             "Egypt is the best vacation spot in the world. It includes  recreational activities taking place in the proximity of the sea (such as swimming, sunbathing, coastal walks, and wildlife watching)."),
         "dost": MessageLookupByLibrary.simpleMessage(
@@ -117,6 +121,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "log_title": MessageLookupByLibrary.simpleMessage(
             "Are You Sure You Want To Log Out?"),
         "login_faild": MessageLookupByLibrary.simpleMessage("login faild"),
+        "medical_tourism":
+            MessageLookupByLibrary.simpleMessage("Medical tourism"),
         "mt_text": MessageLookupByLibrary.simpleMessage(
             "Egypt’s holy waters and sacred lands have always been known to have magical and healing powers. Egypt’s best and most famous thing is its mineral water, which has no moisture."),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
@@ -128,6 +134,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "pharaohs_bath":
             MessageLookupByLibrary.simpleMessage("        pharaoh\'s bath"),
         "pyramids": MessageLookupByLibrary.simpleMessage("           pyramids"),
+        "religious_tourism":
+            MessageLookupByLibrary.simpleMessage("Religious tourism"),
         "rt_text": MessageLookupByLibrary.simpleMessage(
             "Egypt is the home of heavenly religions, where people of different faiths met and lived together for many years. As a result, the land of the pharaohs had gathered all the dominions."),
         "salt_cave":

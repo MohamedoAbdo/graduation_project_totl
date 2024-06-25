@@ -16,19 +16,18 @@ class Taba extends StatelessWidget {
               children: [
                 ClipRRect(
                   child: Image(
-                    image: AssetImage("assets/image/taba1.png"),
+                    image: const AssetImage("assets/image/taba1.png"),
                     fit: BoxFit.fill,
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * 0.20,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 85.0),
+                const Padding(
+                  padding: EdgeInsets.only(top: 85.0),
                   child: ClipRRect(
                     child: Image(
                       image: AssetImage("assets/image/taba_text.png"),
                       fit: BoxFit.cover,
-
                     ),
                   ),
                 ),
@@ -42,7 +41,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     ' Attractions of The Trip:',
                     style: TextStyle(
                       color: Color(0xff6C3428),
@@ -62,7 +61,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     '_Fjord Bay.  ',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
@@ -75,10 +74,10 @@ class Taba extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Row(
+            const Row(
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10),
@@ -103,7 +102,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     'Program:',
                     style: TextStyle(
                       color: Color(0xff6C3428),
@@ -123,11 +122,11 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     '_We Will Go To The Citadel Of Salah El-Din And',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                     ),
@@ -140,7 +139,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     'Take Pictures There (From Outside Only) .',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
@@ -157,11 +156,11 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     '_Visit Fjord Bay, And This is The Place Where I ',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                     ),
@@ -174,11 +173,11 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     ' Shoot Many Movies, Such As The Road To Eilat.',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                     ),
@@ -194,7 +193,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     'Ticket:',
                     style: TextStyle(
                       color: Color(0xff6C3428),
@@ -215,7 +214,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     ' Price Per Person: 450 EGP .',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
@@ -236,7 +235,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     'Movements:',
                     style: TextStyle(
                       color: Color(0xff6C3428),
@@ -256,7 +255,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     ' Air-Conditioned Tourist Bus',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
@@ -276,7 +275,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     'For Reservations And Inquiries: ',
                     style: TextStyle(
                       color: Color(0xff6C3428),
@@ -296,7 +295,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     'Headquarters: kemet Rahal',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
@@ -313,7 +312,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     'Phone: 01092791774 - 01092065207 ',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
@@ -330,11 +329,11 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     'Address : 1eladawy St. Elfardos Square (Second ',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                     ),
@@ -347,7 +346,7 @@ class Taba extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.03),
-                  child: Text(
+                  child: const Text(
                     ' Floor).',
                     style: TextStyle(
                       color: Color(0xFFBE8C63),
@@ -366,14 +365,14 @@ class Taba extends StatelessWidget {
               padding: EdgeInsets.only(
                   right: MediaQuery.of(context).size.width * 0.05),
               child: MaterialButton(
-                color: Color(0xffBE8C63),
+                color: const Color(0xffBE8C63),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
                 height: 51,
                 minWidth: 190,
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   'Contact',
                   style: TextStyle(
                     color: Color(0xffE4D1B9),

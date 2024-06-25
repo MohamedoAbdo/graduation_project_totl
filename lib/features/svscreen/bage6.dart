@@ -7,6 +7,8 @@ import 'package:tourism_app/features/svscreen/login.dart';
 import 'package:tourism_app/generated/l10n.dart';
 
 class bage6 extends StatefulWidget {
+  const bage6({super.key});
+
   @override
   State<bage6> createState() => _bage6State();
 }
@@ -36,10 +38,11 @@ class _bage6State extends State<bage6> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => signin()),
+                          MaterialPageRoute(
+                              builder: (context) => const signin()),
                         );
                       },
-                      child: Row(
+                      child: const Row(
                         children: [
                           Row(
                             children: [
@@ -58,7 +61,7 @@ class _bage6State extends State<bage6> {
                     Text(
                       '  Quick Survey    ',
                       style: TextStyle(
-                        color: Color(0xff6C3428),
+                        color: const Color(0xff6C3428),
                         fontSize: fontSize24,
                         fontFamily: 'inter',
                         fontWeight: FontWeight.w500,
@@ -84,7 +87,7 @@ class _bage6State extends State<bage6> {
                   Text(
                     "  Did You Visit Egypt Before ?",
                     style: TextStyle(
-                      color: Color(0xff6C3428),
+                      color: const Color(0xff6C3428),
                       fontSize: fontSize24,
                       fontWeight: FontWeight.w600,
                       height: MediaQuery.of(context).size.height * .0017,
@@ -97,6 +100,20 @@ class _bage6State extends State<bage6> {
                 height: MediaQuery.of(context).size.height * .032,
               ),
               Container(
+                width: MediaQuery.of(context).size.width * .955,
+                height: MediaQuery.of(context).size.height * .150,
+                padding: const EdgeInsets.all(15),
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                      width: MediaQuery.of(context).size.width * .002,
+                      strokeAlign: BorderSide.strokeAlignCenter,
+                      color: const Color(0xFFE4D1B9),
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -104,7 +121,10 @@ class _bage6State extends State<bage6> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => QuickPage1()),
+                          MaterialPageRoute(
+                              builder: (context) => const QuickPage1(
+                                    isVisit: true,
+                                  )),
                         );
                       },
                       child: Row(
@@ -112,7 +132,7 @@ class _bage6State extends State<bage6> {
                           Text(
                             "Yes",
                             style: TextStyle(
-                              color: Color(0xff6C3428),
+                              color: const Color(0xff6C3428),
                               fontSize: fontSize24,
                               fontWeight: FontWeight.w500,
                               height:
@@ -131,7 +151,10 @@ class _bage6State extends State<bage6> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Quick()),
+                          MaterialPageRoute(
+                              builder: (context) => const QuickPage1(
+                                    isVisit: false,
+                                  )),
                         );
                       },
                       child: Row(
@@ -139,7 +162,7 @@ class _bage6State extends State<bage6> {
                           Text(
                             "No",
                             style: TextStyle(
-                              color: Color(0xff6C3428),
+                              color: const Color(0xff6C3428),
                               fontSize: fontSize24,
                               fontWeight: FontWeight.w500,
                               height:
@@ -150,20 +173,6 @@ class _bage6State extends State<bage6> {
                       ),
                     ),
                   ],
-                ),
-                width: MediaQuery.of(context).size.width * .955,
-                height: MediaQuery.of(context).size.height * .150,
-                padding: const EdgeInsets.all(15),
-                decoration: ShapeDecoration(
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      width: MediaQuery.of(context).size.width * .002,
-                      strokeAlign: BorderSide.strokeAlignCenter,
-                      color: Color(0xFFE4D1B9),
-                    ),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
                 ),
               ),
               SizedBox(

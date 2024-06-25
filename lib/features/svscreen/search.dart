@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:tourism_app/Restaurants/restaurants_data.dart';
+import 'package:tourism_app/Restaurants/restaurants_details.dart';
 
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/Restaurants.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
 import 'package:tourism_app/features/svscreen/streo.dart';
 import 'package:tourism_app/generated/l10n.dart';
+import 'package:tourism_app/models/Resturant_model.dart';
 
 import '../home/presentation/favourite/favourite.dart';
 
@@ -17,6 +20,14 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
+  bool isEnabledLocation = false;
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  List<RestaurantModel> searchResult = [];
+  final searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,19 +39,20 @@ class _SearchState extends State<Search> {
           Row(
             children: [
               Padding(
-                padding:
-                    EdgeInsets.only(top: 16, right: 0, left: 16, bottom: 16),
+                padding: const EdgeInsets.only(
+                    top: 16, right: 0, left: 16, bottom: 16),
                 child: Material(
-                  shadowColor: Color(0xffE4D1B9),
+                  shadowColor: const Color(0xffE4D1B9),
                   child: SizedBox(
                     height: MediaQuery.of(context).size.height * 0.055,
                     width: 290,
                     child: TextFormField(
+                      controller: searchController,
                       decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFFBE8C63),
                             ),
                             borderRadius: BorderRadius.circular(
@@ -56,8 +68,8 @@ class _SearchState extends State<Search> {
                             ),
                           ),
                           hintText: 'Search',
-                          hintStyle: TextStyle(color: Color(0xffE4D1B9)),
-                          prefixIconColor: Color(0xffE4D1B9)),
+                          hintStyle: const TextStyle(color: Color(0xffE4D1B9)),
+                          prefixIconColor: const Color(0xffE4D1B9)),
                     ),
                   ),
                 ),
@@ -65,6 +77,22 @@ class _SearchState extends State<Search> {
               //
               MaterialButton(
                 onPressed: () {
+                  if (isEnabledLocation) {
+                    if (searchController.text.isEmpty) {
+                      searchResult = [];
+                      setState(() {});
+                      return;
+                    }
+                    searchResult = restaurants.where((element) {
+                      return element.name
+                          .toString()
+                          .toLowerCase()
+                          .contains(searchController.text.toLowerCase());
+                    }).toList();
+                    setState(() {});
+                    return;
+                  }
+
                   AwesomeDialog(
                     width: MediaQuery.of(context).size.width * 1,
                     bodyHeaderDistance: 24,
@@ -73,33 +101,29 @@ class _SearchState extends State<Search> {
                     animType: AnimType.rightSlide,
                     title: S.of(context).Location_Access,
                     desc: S.of(context).dost,
-                    titleTextStyle: TextStyle(
+                    titleTextStyle: const TextStyle(
                       color: Color(0xff6C3428),
                       fontSize: 16,
                       fontFamily: 'intr',
                       fontWeight: FontWeight.w500,
                     ),
                     btnCancelOnPress: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Search()));
+                      isEnabledLocation = false;
                     },
                     btnCancelText: (S.of(context).Log_Out),
                     btnCancelColor: Colors.white,
-                    buttonsTextStyle: TextStyle(
+                    buttonsTextStyle: const TextStyle(
                       color: Color(0xFFE4D1B9),
                       fontSize: 16,
                       fontFamily: 'intr',
                       fontWeight: FontWeight.w500,
                     ),
                     btnOkOnPress: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Restaurants()));
+                      isEnabledLocation = true;
                     },
                     btnOkText: (S.of(context).Allow),
-                    btnOkColor: Color(0xff6C3428),
-                  )..show();
+                    btnOkColor: const Color(0xff6C3428),
+                  ).show();
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(0),
@@ -107,10 +131,10 @@ class _SearchState extends State<Search> {
                     width: 50,
                     height: 50,
                     decoration: BoxDecoration(
-                      color: Color(0xFF6C3428),
+                      color: const Color(0xFF6C3428),
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.search,
                       color: Color(0xFFFFFFFF),
                       size: 30,
@@ -120,43 +144,72 @@ class _SearchState extends State<Search> {
               ),
             ],
           ),
+          const SizedBox(height: 10),
+          Column(
+            children: <Widget>[
+              for (int i = 0; i < searchResult.length; i++)
+                ListTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RestaurantsDetails(
+                          model: searchResult[i],
+                        ),
+                      ),
+                    );
+                  },
+                  title: Text(
+                    searchResult[i].name ?? "",
+                    style: const TextStyle(
+                      color: Color(0xFFBE8C63),
+                      fontSize: 16,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                )
+            ],
+          ),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.03,
           ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  'Now You Can Search About Near Coffee Or',
-                  style: TextStyle(
-                    color: Color(0xFFBE8C63),
-                    fontSize: 16,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w500,
+          if (searchResult.isEmpty)
+            const Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    'Now You Can Search About Near Coffee Or',
+                    style: TextStyle(
+                      color: Color(0xFFBE8C63),
+                      fontSize: 16,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  'Restaurant.',
-                  style: TextStyle(
-                    color: Color(0xFFBE8C63),
-                    fontSize: 16,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w500,
+              ],
+            ),
+          if (searchResult.isEmpty)
+            const Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    'Restaurant.',
+                    style: TextStyle(
+                      color: Color(0xFFBE8C63),
+                      fontSize: 16,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            ),
           //
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
           //
 
           //
@@ -167,13 +220,13 @@ class _SearchState extends State<Search> {
         backgroundColor: Colors.white,
         child: FloatingActionButton(
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 3, color: Colors.brown),
+            side: const BorderSide(width: 3, color: Colors.brown),
             borderRadius: BorderRadius.circular(100),
           ),
-          backgroundColor: Color(
+          backgroundColor: const Color(
             0xff6C3428,
           ),
-          child: Icon(
+          child: const Icon(
             Icons.camera_alt_rounded,
             size: 32,
             color: Color(
@@ -187,11 +240,11 @@ class _SearchState extends State<Search> {
       bottomNavigationBar: BottomAppBar(
         height: MediaQuery.of(context).size.height * 0.1,
         padding: EdgeInsets.zero,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 4,
         child: Container(
           padding: EdgeInsets.zero,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
@@ -210,9 +263,9 @@ class _SearchState extends State<Search> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Home_Screen()));
+                              builder: (context) => const Home_Screen()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -225,10 +278,12 @@ class _SearchState extends State<Search> {
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Favourite()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Favourite()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -246,10 +301,12 @@ class _SearchState extends State<Search> {
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.2,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Search()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Search()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -265,9 +322,9 @@ class _SearchState extends State<Search> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProfileScreen()));
+                              builder: (context) => const ProfileScreen()));
                     },
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(

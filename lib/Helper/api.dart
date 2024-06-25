@@ -1,13 +1,19 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+const base = 'http://192.168.1.15:8001';
+// const base = 'http://127.0.0.1:8000';
+
 class Api {
   Future<dynamic> get({required String url}) async {
-    http.Response response = await http.post(Uri.parse(url));
+    log(url);
+    http.Response response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
+      log(response.body);
       return jsonDecode(response.body);
     } else {
       throw Exception(

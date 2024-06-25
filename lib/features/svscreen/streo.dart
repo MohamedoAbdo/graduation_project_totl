@@ -40,13 +40,13 @@ class _streoState extends State<streo> {
                         padding: const EdgeInsets.only(top: 50),
                         child: InkWell(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Restaurants()),
-                            );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) => Restaurants()),
+                            // );
                           },
-                          child: Row(
+                          child: const Row(
                             children: [
                               Row(
                                 children: [
@@ -86,19 +86,19 @@ class _streoState extends State<streo> {
                           height: MediaQuery.of(context).size.height * .030,
                         ),
                         //
-                        Container(
+                        SizedBox(
                             width: MediaQuery.of(context).size.width * 1.0,
                             child: Row(
                               children: [
                                 Text("  Streo",
                                     style: TextStyle(
-                                      color: Color(0xFF6C3428),
+                                      color: const Color(0xFF6C3428),
                                       fontSize: fontSize24,
                                       fontWeight: FontWeight.w500,
                                     )),
-                                Container(
+                                SizedBox(
                                   width: MediaQuery.of(context).size.width * .8,
-                                  child: Row(
+                                  child: const Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Icon(
@@ -127,7 +127,7 @@ class _streoState extends State<streo> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => streo()),
+                                          builder: (context) => const streo()),
                                     );
                                   },
                                   child: Container(
@@ -152,7 +152,7 @@ class _streoState extends State<streo> {
                                 ),
                               ],
                             ),
-                            Row(
+                            const Row(
                               children: [
                                 Text(
                                   "   ",
@@ -166,7 +166,7 @@ class _streoState extends State<streo> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => streo()),
+                                          builder: (context) => const streo()),
                                     );
                                   },
                                   child: Container(
@@ -199,19 +199,19 @@ class _streoState extends State<streo> {
                         SizedBox(
                             height: MediaQuery.of(context).size.height * .02),
 
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 1.0,
                           child: Text(
                             S.of(context).Description,
                             textAlign: TextAlign.end,
                             style: TextStyle(
-                              color: Color(0xFF6C3428),
+                              color: const Color(0xFF6C3428),
                               fontSize: fontSize16,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 1.0,
                           child: Padding(
                             padding: const EdgeInsets.only(
@@ -224,7 +224,7 @@ class _streoState extends State<streo> {
                                 child: Text(
                                   S.of(context).streo_text,
                                   style: TextStyle(
-                                    color: Color(0xFFBE8C63),
+                                    color: const Color(0xFFBE8C63),
                                     fontSize: fontSize16,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -245,11 +245,11 @@ class _streoState extends State<streo> {
                         SizedBox(
                             height: MediaQuery.of(context).size.height * .04),
 
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.height * .396,
                           child: Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.mail,
                                 color: Color(0xFF6C3428),
                                 size: 20,
@@ -258,7 +258,7 @@ class _streoState extends State<streo> {
                                 children: [
                                   Text("     Streo.restaurant.com    ",
                                       style: TextStyle(
-                                        color: Color(0xFF6C3428),
+                                        color: const Color(0xFF6C3428),
                                         fontSize: fontSize16,
                                         fontWeight: FontWeight.w500,
                                         height:
@@ -276,11 +276,11 @@ class _streoState extends State<streo> {
                         ),
                         //
 
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.height * .396,
                           child: Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.call,
                                 color: Color(0xFF6C3428),
                                 size: 20,
@@ -289,7 +289,7 @@ class _streoState extends State<streo> {
                                 children: [
                                   Text("     01092065207   ",
                                       style: TextStyle(
-                                        color: Color(0xFF6C3428),
+                                        color: const Color(0xFF6C3428),
                                         fontSize: fontSize16,
                                         fontWeight: FontWeight.w500,
                                         height:
@@ -307,11 +307,11 @@ class _streoState extends State<streo> {
                         ),
                         //
 
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.height * .396,
                           child: Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.location_on,
                                 color: Color(0xFF6C3428),
                                 size: 20,
@@ -320,7 +320,7 @@ class _streoState extends State<streo> {
                                 children: [
                                   Text("     Location    ",
                                       style: TextStyle(
-                                        color: Color(0xFF6C3428),
+                                        color: const Color(0xFF6C3428),
                                         fontSize: fontSize16,
                                         fontWeight: FontWeight.w500,
                                         height:

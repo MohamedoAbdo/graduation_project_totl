@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tourism_app/Helper/app_helper.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/home/presentation/password_view/forget_pass.dart';
 import 'package:tourism_app/features/svscreen/bage6.dart';
@@ -41,12 +42,12 @@ class _signinState extends State<signin> {
                   children: [
                     Row(
                       children: [
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 1.0,
                           height: MediaQuery.of(context).size.height * .15,
                           child: Text(
                             S.of(context).log,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xff6C3428),
                               fontSize: 32,
                               fontFamily: 'inter',
@@ -62,7 +63,7 @@ class _signinState extends State<signin> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * .040,
                 ),
-                Container(
+                SizedBox(
                   height: MediaQuery.of(context).size.height * .15,
                   child: Image.asset("assets/image/bro.png"),
 
@@ -81,9 +82,10 @@ class _signinState extends State<signin> {
                       if (value == null || !value.contains('@gmail.com')) {
                         return 'Enter valid Email';
                       }
+                      return null;
                     },
                     decoration: InputDecoration(
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Icons.email,
                         color: Color(0xFFBE8C63),
                         size: 20,
@@ -91,7 +93,7 @@ class _signinState extends State<signin> {
                       label: Text(
                         S.of(context).Email,
                         style: TextStyle(
-                          color: Color(0xFF6C3428),
+                          color: const Color(0xFF6C3428),
                           fontSize: 12,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w600,
@@ -116,26 +118,27 @@ class _signinState extends State<signin> {
                       if (value == null || value.length < 8) {
                         return 'Enter valid password';
                       }
+                      return null;
                     },
                     decoration: InputDecoration(
                       label: Text(
                         S.of(context).password,
                         style: TextStyle(
-                          color: Color(0xFF6C3428),
+                          color: const Color(0xFF6C3428),
                           fontSize: 12,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w600,
                           height: MediaQuery.of(context).size.height * .0009,
                         ),
                       ),
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Icons.lock,
                         color: Color(0xFFBE8C63),
                         size: 20,
                       ),
                       suffixIcon: ispassword
                           ? IconButton(
-                              icon: Icon(Icons.visibility_off),
+                              icon: const Icon(Icons.visibility_off),
                               onPressed: () {
                                 setState(() {
                                   ispassword = !ispassword;
@@ -143,7 +146,7 @@ class _signinState extends State<signin> {
                               },
                             )
                           : IconButton(
-                              icon: Icon(Icons.visibility),
+                              icon: const Icon(Icons.visibility),
                               onPressed: () {
                                 setState(() {
                                   ispassword = !ispassword;
@@ -171,7 +174,7 @@ class _signinState extends State<signin> {
                       Text(
                         S.of(context).Forget,
                         style: TextStyle(
-                          color: Color(0xFF6C3428),
+                          color: const Color(0xFF6C3428),
                           fontSize: 12,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w600,
@@ -179,7 +182,7 @@ class _signinState extends State<signin> {
                         ),
                         textAlign: TextAlign.right,
                       ),
-                      Text("    ")
+                      const Text("    ")
                     ],
                   ),
                 ),
@@ -198,7 +201,8 @@ class _signinState extends State<signin> {
 
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => bage6()),
+                          MaterialPageRoute(
+                              builder: (context) => const bage6()),
                         );
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -216,14 +220,14 @@ class _signinState extends State<signin> {
                       height: MediaQuery.of(context).size.height * .055,
                       width: MediaQuery.of(context).size.width * 0.5,
                       decoration: BoxDecoration(
-                        color: Color(0xFFBE8C63),
+                        color: const Color(0xFFBE8C63),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Center(
                         child: Text(
                           S.of(context).Login,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 16,
                             fontFamily: 'inter',
@@ -240,7 +244,7 @@ class _signinState extends State<signin> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("     "),
+                    const Text("     "),
                     Image.asset(
                       "assets/image/Line 2.png",
                       width: MediaQuery.of(context).size.width * 0.25,
@@ -250,7 +254,7 @@ class _signinState extends State<signin> {
                       children: [
                         Text(S.of(context).Login_With,
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xFF6C3428),
                               fontSize: 16,
                               fontFamily: 'Inter',
@@ -272,7 +276,7 @@ class _signinState extends State<signin> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Row(
+                    const Row(
                       children: [],
                     ),
                     Image.asset(
@@ -295,7 +299,7 @@ class _signinState extends State<signin> {
                   children: [
                     Text(
                       S.of(context).you_don,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color(0xFF6C3428),
                         fontSize: 12,
                         fontFamily: 'Inter',
@@ -306,12 +310,13 @@ class _signinState extends State<signin> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => signup()),
+                          MaterialPageRoute(
+                              builder: (context) => const signup()),
                         );
                       },
                       child: Text(
                         S.of(context).sign_up,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Color(0xFFBE8C63),
                           fontSize: 12,
                           fontFamily: 'Inter',
@@ -340,6 +345,7 @@ class _signinState extends State<signin> {
         password: password,
       );
       if (userCredential.user != null) {
+        AppHelper.setUserUuid(userCredential.user!.uid);
         return true;
       }
     } on FirebaseAuthException catch (e) {
