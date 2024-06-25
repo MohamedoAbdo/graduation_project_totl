@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/features/svscreen/verification.dart';
-import 'package:tourism_app/generated/l10n.dart';
 
 class ForgetPass extends StatelessWidget {
   TextEditingController emailcontroller = TextEditingController();
@@ -25,7 +24,8 @@ class ForgetPass extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.10,
           ),
           Center(
-            child: Text(S.of(context).Forget_Password,
+            child: Text('Forget Password',
+                // S.of(context).Forget_Password,
                 style: TextStyle(
                   color: Color(0xff6C3428),
                   fontSize: 32,

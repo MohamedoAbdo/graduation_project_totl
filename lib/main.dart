@@ -22,10 +22,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(DevicePreview(
-    builder: (context) => const MyApp(),
-    enabled: false,
-  ));
+  runApp(DevicePreview(builder: (context) => MyApp()));
+  // runApp(DevicePreview(
+
+  //   builder: (context) => const MyApp(),
+  //   enabled: false,
+  // ));
   // runApp(const MyApp());
 }
 
