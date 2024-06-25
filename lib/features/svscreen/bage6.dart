@@ -71,15 +71,9 @@ class _bage6State extends State<bage6> {
                   ],
                 ),
               ),
+
               SizedBox(
-                height: MediaQuery.of(context).size.height * .04,
-              ),
-              Image.asset(
-                'assets/image/photo_35.png',
-                width: MediaQuery.of(context).size.height * .380,
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .04,
+                height: MediaQuery.of(context).size.height * .07,
               ),
               //
               Row(
