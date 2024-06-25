@@ -76,11 +76,11 @@ class Transprant extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/image/uber.png',
-                        width: 188.w,
+                        width: 18,
                       ),
                       Image.asset(
                         'assets/image/uberr.png',
-                        width: 188.w,
+                        width: 18,
                       ),
                     ],
                   ),
@@ -89,11 +89,11 @@ class Transprant extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/image/careem.png',
-                        width: 188.w,
+                        width: 188,
                       ),
                       Image.asset(
                         'assets/image/careemm.png',
-                        width: 188.w,
+                        width: 188,
                       ),
                     ],
                   ),
@@ -121,9 +121,9 @@ class Transprant extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 shrinkWrap: true,
                 crossAxisCount: 2,
-                mainAxisSpacing: 20.h,
-                crossAxisSpacing: 20.w,
-                childAspectRatio: 187.w / 188.h,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
+                childAspectRatio: 187 / 188,
                 children: List.generate(
                     10,
                     (index) =>
@@ -134,7 +134,7 @@ class Transprant extends StatelessWidget {
                           ),
                           Image.asset(
                             'assets/image/carr.png',
-                            width:187.w,
+                            width: 187,
                           ),
                         ])),
               )
