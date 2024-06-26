@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tourism_app/Helper/api.dart';
 import 'package:tourism_app/Helper/app_helper.dart';
+import 'package:tourism_app/features/controllers/favourit_controller.dart';
 import 'package:tourism_app/features/controllers/place_details_controller.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/PharaonicVillage.dart';
@@ -22,6 +23,8 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
   late Future<PlacesModel> popularPlace;
   final PlaceDetailsController placeDetailsController =
       PlaceDetailsController();
+
+  final FavouritController favouritController = FavouritController();
 
   @override
   void initState() {
@@ -57,7 +60,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
               }
 
               if (snapshot.hasData) {
-                final country = snapshot.data as Place;
+                final placeData = snapshot.data as Place;
                 return SingleChildScrollView(
                   child: Column(
                     children: [
@@ -67,7 +70,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                             Stack(children: [
                               Container(
                                 child: Image.network(
-                                  "$base/images/${country.image}",
+                                  "$base/images/${placeData.image}",
                                   fit: BoxFit.cover,
                                   width: MediaQuery.of(context).size.width,
                                   height: 300,
@@ -99,6 +102,31 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                                   ),
                                 ),
                               ),
+                              Positioned(
+                                right: MediaQuery.of(context).size.width * 0.01,
+                                top: 50,
+                                child: InkWell(
+                                  onTap: () async {
+                                    log("asdsd");
+                                    AppHelper.isINFavourit(placeData)
+                                        ? await favouritController
+                                            .removeFromFavourit(
+                                                model: placeData)
+                                        : await favouritController
+                                            .addToFavourit(model: placeData);
+                                    setState(() {});
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Icon(
+                                      AppHelper.isINFavourit(placeData)
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ])
                           ],
                         ),
@@ -122,7 +150,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                                     padding:
                                         const EdgeInsets.symmetric(vertical: 3),
                                     child: Text(
-                                      '${country.name}',
+                                      '${placeData.name}',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
                                         color: Colors.white,
@@ -161,7 +189,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                                   padding: const EdgeInsets.only(
                                       top: 16, right: 16, left: 16, bottom: 16),
                                   child: Text(
-                                    '${country.description}',
+                                    '${placeData.description}',
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
                                       color: const Color(0xFFBE8C63),

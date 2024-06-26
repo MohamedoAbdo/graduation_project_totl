@@ -2,11 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:tourism_app/Helper/app_helper.dart';
 import 'package:tourism_app/models/Resturant_model.dart';
+import 'package:tourism_app/models/home_places_model.dart';
 
 class FavouritController {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  addToFavourit({required RestaurantModel model}) async {
+  addToFavourit({required Place model}) async {
     try {
       final doc = await firestore
           .collection("favourit")
@@ -20,7 +21,7 @@ class FavouritController {
     }
   }
 
-  removeFromFavourit({required RestaurantModel model}) async {
+  removeFromFavourit({required Place model}) async {
     try {
       final doc = await firestore
           .collection("favourit")
@@ -35,13 +36,12 @@ class FavouritController {
     }
   }
 
-  Future<List<RestaurantModel>> getFavourit() async {
+  Future<List<Place>> getFavourit() async {
     final response = await firestore
         .collection("favourit")
         .where("uuid", isEqualTo: AppHelper.userUuid)
         .get();
-    final data =
-        response.docs.map((e) => RestaurantModel.fromJson(e.data())).toList();
+    final data = response.docs.map((e) => Place.fromJson(e.data())).toList();
 
     AppHelper.addMyFavourit(data);
     return data;

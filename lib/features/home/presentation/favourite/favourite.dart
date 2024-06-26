@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tourism_app/Helper/api.dart';
 import 'package:tourism_app/Helper/app_helper.dart';
 import 'package:tourism_app/Restaurants/restaurants_details.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
+import 'package:tourism_app/features/svscreen/place_details.dart';
 import 'package:tourism_app/features/svscreen/profile.dart';
 import 'package:tourism_app/features/svscreen/search.dart';
 import '../../scan/scan_design.dart';
@@ -65,16 +67,22 @@ class _FavouriteState extends State<Favourite> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => RestaurantsDetails(
-                            model: AppHelper.myFavourit[index],
+                          builder: (context) => PlaceDetailsScreen(
+                            id: AppHelper.myFavourit[index].id ?? 0,
                           ),
                         ),
                       ).then((value) => setState(() {}));
                     },
                     child: Stack(alignment: Alignment.bottomCenter, children: [
-                      Image.asset(
-                        AppHelper.myFavourit[index].image ?? "",
-                        // width: 188,
+                      Positioned.fill(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.network(
+                            "$base/images/${AppHelper.myFavourit[index].image}",
+                            fit: BoxFit.cover,
+                            // width: 188,
+                          ),
+                        ),
                       ),
                       Container(
                         height: 45,

@@ -223,7 +223,7 @@ class _CountryDetailsState extends State<CountryDetails> {
                                               crossAxisCount: 2,
                                               mainAxisSpacing: 20,
                                               crossAxisSpacing: 15,
-                                              childAspectRatio: 0.82,
+                                              childAspectRatio: 1,
                                               children: List.generate(
                                                   data.length,
                                                   (index) => InkWell(
@@ -239,23 +239,49 @@ class _CountryDetailsState extends State<CountryDetails> {
                                                                         )),
                                                           );
                                                         },
-                                                        child: SizedBox(
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(30),
                                                           child: Column(
                                                             children: [
-                                                              Image.network(
-                                                                '$base/images/${data[index].image}',
-                                                                height: MediaQuery.of(
-                                                                            context)
-                                                                        .size
-                                                                        .height *
-                                                                    .25,
+                                                              Expanded(
+                                                                child: Image
+                                                                    .network(
+                                                                  '$base/images/${data[index].image}',
+                                                                  width: MediaQuery.of(
+                                                                              context)
+                                                                          .size
+                                                                          .width *
+                                                                      .45,
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                ),
+                                                              ),
+                                                              Container(
+                                                                height: 30,
                                                                 width: MediaQuery.of(
                                                                             context)
                                                                         .size
                                                                         .width *
                                                                     .45,
-                                                                fit: BoxFit
-                                                                    .cover,
+                                                                alignment:
+                                                                    Alignment
+                                                                        .center,
+                                                                color: const Color(
+                                                                    0xff6C3428),
+                                                                child: Text(
+                                                                  data[index]
+                                                                      .name!,
+                                                                  style: const TextStyle(
+                                                                      color: Colors
+                                                                          .white,
+                                                                      fontSize:
+                                                                          16,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500),
+                                                                ),
                                                               )
                                                             ],
                                                           ),
