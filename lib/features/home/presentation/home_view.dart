@@ -137,21 +137,15 @@ class _Home_ScreenState extends State<Home_Screen> {
                                         );
                                       },
                                       child: buildImage(
-                                          data
-                                              .map(
-                                                (e) =>
-                                                    '$base/images/${e.image}',
-                                              )
-                                              .toList(),
-                                          index,
-                                          realIndex),
+                                        data[index],
+                                      ),
                                     );
                                   },
                                   options: CarouselOptions(
                                     viewportFraction: 0.45,
                                     padEnds: false,
-                                    height: 180,
                                     initialPage: 0,
+                                    height: 150,
                                     enlargeCenterPage: false,
                                     autoPlay: false,
                                     onPageChanged: (index, _) {
@@ -450,15 +444,36 @@ class _Home_ScreenState extends State<Home_Screen> {
   }
 }
 
-Container buildImage(List<dynamic> imgList, int index, int realIndex) {
+Container buildImage(Place place) {
   return Container(
     width: 200,
     margin: const EdgeInsets.symmetric(horizontal: 5),
     child: ClipRRect(
       borderRadius: BorderRadius.circular(15),
-      child: Image.network(
-        imgList[index],
-        fit: BoxFit.fill,
+      child: Column(
+        children: [
+          Expanded(
+            child: Image.network(
+              '$base/images/${place.image}',
+              fit: BoxFit.cover,
+              height: 100,
+              width: double.infinity,
+            ),
+          ),
+          Container(
+            height: 30,
+            width: 190,
+            alignment: Alignment.center,
+            color: const Color(0xff6C3428),
+            child: Text(
+              place.name!,
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500),
+            ),
+          )
+        ],
       ),
     ),
   );

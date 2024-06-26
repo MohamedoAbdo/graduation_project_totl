@@ -114,27 +114,27 @@ class _RestaurantsDetailsState extends State<RestaurantsDetails> {
                                       fontSize: fontSize24,
                                       fontWeight: FontWeight.w500,
                                     )),
-                                InkWell(
-                                  onTap: () async {
-                                    log("asdsd");
-                                    AppHelper.isINFavourit(widget.model)
-                                        ? await favouritController
-                                            .removeFromFavourit(
-                                                model: widget.model)
-                                        : await favouritController
-                                            .addToFavourit(model: widget.model);
-                                    setState(() {});
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Icon(
-                                      AppHelper.isINFavourit(widget.model)
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color: const Color(0xFF6C3428),
-                                    ),
-                                  ),
-                                ),
+                                // InkWell(
+                                //   onTap: () async {
+                                //     log("asdsd");
+                                //     AppHelper.isINFavourit(widget.model)
+                                //         ? await favouritController
+                                //             .removeFromFavourit(
+                                //                 model: widget.model)
+                                //         : await favouritController
+                                //             .addToFavourit(model: widget.model);
+                                //     setState(() {});
+                                //   },
+                                //   child: Padding(
+                                //     padding: const EdgeInsets.all(8.0),
+                                //     child: Icon(
+                                //       AppHelper.isINFavourit(widget.model)
+                                //           ? Icons.favorite
+                                //           : Icons.favorite_border,
+                                //       color: const Color(0xFF6C3428),
+                                //     ),
+                                //   ),
+                                // ),
                               ],
                             )),
 
