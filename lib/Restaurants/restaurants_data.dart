@@ -1,5 +1,11 @@
 import 'package:tourism_app/models/Resturant_model.dart';
 
+final searchKeys = [
+  "Restaurant",
+  "Food",
+  "مطعم",
+  "مطاعم",
+];
 final restaurants = [
   RestaurantModel(
     id: 1,
