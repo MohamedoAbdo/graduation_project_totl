@@ -10,6 +10,7 @@ import 'package:tourism_app/features/controllers/place_details_controller.dart';
 import 'package:tourism_app/features/home/presentation/home_view.dart';
 import 'package:tourism_app/features/svscreen/PharaonicVillage.dart';
 import 'package:tourism_app/models/home_places_model.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class PlaceDetailsScreen extends StatefulWidget {
   const PlaceDetailsScreen({super.key, required this.id});
@@ -160,8 +161,13 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                                     ),
                                   ),
                                   const Spacer(),
-                                  const Icon(Icons.location_on,
-                                      color: Color(0xffbe8c63)),
+                                  IconButton(
+                                      onPressed: () {
+                                        launchUrlString(
+                                            'https://maps.app.goo.gl/xcYRQyBKhvGpXNDVA');
+                                      },
+                                      icon: const Icon(Icons.location_on),
+                                      color: const Color(0xffbe8c63)),
                                 ],
                               ),
                             ),

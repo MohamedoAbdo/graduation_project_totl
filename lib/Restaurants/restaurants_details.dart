@@ -33,7 +33,7 @@ class _RestaurantsDetailsState extends State<RestaurantsDetails> {
       return S.of(context).Carrefour;
     }
 
-    return " --- ";
+    return value;
   }
 
   FavouritController favouritController = FavouritController();

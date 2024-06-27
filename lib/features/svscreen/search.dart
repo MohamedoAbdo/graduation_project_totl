@@ -21,6 +21,7 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   bool isEnabledLocation = false;
+  bool isLoading = false;
   @override
   void initState() {
     super.initState();
@@ -45,7 +46,7 @@ class _SearchState extends State<Search> {
                   shadowColor: const Color(0xffE4D1B9),
                   child: SizedBox(
                     height: MediaQuery.of(context).size.height * 0.055,
-                    width: 290,
+                    width: 280,
                     child: TextFormField(
                       controller: searchController,
                       decoration: InputDecoration(
@@ -76,19 +77,22 @@ class _SearchState extends State<Search> {
               ),
               //
               MaterialButton(
-                onPressed: () {
+                onPressed: () async {
                   if (isEnabledLocation) {
                     if (searchController.text.isEmpty) {
                       searchResult = [];
                       setState(() {});
                       return;
                     }
-                    searchResult = restaurants.where((element) {
-                      return element.name
-                          .toString()
-                          .toLowerCase()
-                          .contains(searchController.text.toLowerCase());
-                    }).toList();
+                    isLoading = true;
+                    setState(() {});
+                    await Future.delayed(const Duration(seconds: 1));
+                    if (searchKeys.contains(searchController.text)) {
+                      searchResult = restaurants;
+                    } else {
+                      searchResult = [];
+                    }
+                    isLoading = false;
                     setState(() {});
                     return;
                   }
@@ -208,6 +212,8 @@ class _SearchState extends State<Search> {
                 ),
               ],
             ),
+          if (isLoading) const CircularProgressIndicator(),
+
           //
           const SizedBox(height: 50),
           //
